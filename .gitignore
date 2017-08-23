@@ -1,0 +1,44 @@
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild
+/[Bb]uilds/
+/Assets/AssetStoreTools*
+/[Ll]ibrary/
+sysinfo.txt
+*.stackdump
+
+# ============================================= #
+# Visual Studio / MonoDevelop / Rider generated #
+# ============================================= #
+[Ee]xported[Oo]bj/
+.vs/
+/*.userprefs
+/*.csproj
+/*.pidb
+/*.suo
+/*.sln*
+/*.user
+/*.unityproj
+/*.booproj
+/.idea*/
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+Library
+Sistema Solar.sln
+Sistema Solar.userprefs
+/Sistema Solar/*.csproj
+Assembly-CSharp.csproj
+Bowling.sln
+clase_28_3.sln
+clase_28_3.userprefs
