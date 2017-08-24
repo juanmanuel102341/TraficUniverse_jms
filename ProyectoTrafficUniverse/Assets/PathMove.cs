@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PathMove : MonoBehaviour {
-	private List<Vector3> listPaths=new List<Vector3>();
+	private List<Vector2> listPaths=new List<Vector2>();
 	public GameObject obj;
 	private Transform tf;
-	public Camera camara;
+
 	private Vector3 ve;
 	public float anchoScreenMundo;
 	public float altoScreenMundo;
 	public float lix;
 	public float liy;
-
-	private Vector2 posw;
+	public float distanceNode;//distancia entre los nodos del path
+	 
 
 	Transform n;
 	void Awake () {
@@ -33,24 +33,27 @@ public class PathMove : MonoBehaviour {
 		//print("mundo width "+Input.mousePosition.x*anchoScreenMundo/Screen.width );
 		print("click screen"+Input.mousePosition);
 		//print("mundo  "+Input.mousePosition.x*anchoScreenMundo/Screen.width );
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButton(0)){
 
-		
+			Vector2 posw;
 			posw.x=TransformScreenToWorldX(Input.mousePosition.x)-lix;
 			posw.y=TransformScreenToWorldY(Input.mousePosition.y)-liy;
-			Instantiate(obj,posw,transform.rotation);
-			if(listPaths.Count>1){
-				if(listPaths[0]!=listPaths[1]){
-				//	AddPoint(Input.mousePosition);
-					//Dibujo();
-				}
-				
+
+			if(listPaths.Count==0){
+				listPaths.Add(posw);
+				Instantiate(obj,posw,transform.rotation);
+				print("entrando 1er nodo "+posw);
 			}else{
-				//AddPoint(Input.mousePosition);
-				//Dibujo();
+				if(CalcDistancePoint(listPaths[listPaths.Count-1],posw)>distanceNode){
+					listPaths.Add(posw);
+					Instantiate(obj,posw,transform.rotation);
+					print("nodo adentro "+posw);
+				}else{
+					print("nodo demasiado cerca");
+				}
+			
 			}
-
-
+		
 		}
 	
 		//print("click x"+Input.mousePosition);
@@ -60,6 +63,9 @@ public class PathMove : MonoBehaviour {
 		//vec.z=0;
 	
 		//listPaths.Add(vec);
+	}
+	private float CalcDistancePoint(Vector2 v1, Vector2 v2){
+		return Vector2.Distance(v1,v2);
 	}
 	private void Dibujo(){
 		for(int i=0;i<listPaths.Count;i++){
