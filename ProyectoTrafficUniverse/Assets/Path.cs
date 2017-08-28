@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathMove : MonoBehaviour {
+public class Path : MonoBehaviour {
+	//genera un path
+
 	private List<Vector2> listPaths=new List<Vector2>();
+	private List<GameObject>listSpritePoint=new List<GameObject>();
+	private Move move;
 	public GameObject obj;
 	private Transform tf;
 
-	private Vector3 ve;
+
 	public float anchoScreenMundo;
 	public float altoScreenMundo;
 	public float lix;
@@ -18,38 +22,54 @@ public class PathMove : MonoBehaviour {
 	Transform n;
 	void Awake () {
 		tf=GetComponent<Transform>();
-		ve=new Vector3(100.0f,100.0f,0.0f);
-		lix=Mathf.Abs(lix);
-		liy=Mathf.Abs(liy);
-		anchoScreenMundo+=lix;
-		altoScreenMundo+=liy;
+		move=GetComponent<Move>();
+		lix=Mathf.Abs(lix);//pto minimo en x data del mundo
+		liy=Mathf.Abs(liy);//pto minimo en y data del mundo
+		anchoScreenMundo+=lix;//llevo a 0 x , para poder comparar correctamente con el sistema d coordenadas d la screen
+		altoScreenMundo+=liy;//levo a 0 el eje y 
 		//n=GetComponent<Transform>();
 	}
 		
 
 	void Update () {
-	//	tf.position=new Vector3(Input.mousePosition.x,Input.mousePosition.y,0.0f);
-		//print("click screen"+Input.mousePosition);
-		//print("mundo width "+Input.mousePosition.x*anchoScreenMundo/Screen.width );
-		print("click screen"+Input.mousePosition);
+
+//		print("click screen"+Input.mousePosition);
 		//print("mundo  "+Input.mousePosition.x*anchoScreenMundo/Screen.width );
+		if(Input.GetMouseButtonDown(0)){
+			print("click mouse");
+			if(listSpritePoint.Count>0){
+				print("borrando paths y nodos");
+				DeletePointSprites();
+				listPaths.Clear();
+				move.SetIndex=0;//seteo indice de la lista previa para q "recorra"la nueva path
+			}
+		}
+
 		if(Input.GetMouseButton(0)){
+			//click usuario
+
 
 			Vector2 posw;
 			posw.x=TransformScreenToWorldX(Input.mousePosition.x)-lix;
 			posw.y=TransformScreenToWorldY(Input.mousePosition.y)-liy;
-
+			print("cantidad d puntos "+listSpritePoint.Count);
+			print("cantidad d paths "+listPaths.Count);
 			if(listPaths.Count==0){
+				//si n hay ninungun punto
 				listPaths.Add(posw);
-				Instantiate(obj,posw,transform.rotation);
+				GameObject objAux=Instantiate(obj,posw,transform.rotation);
+				listSpritePoint.Add(objAux);
 				print("entrando 1er nodo "+posw);
+			
 			}else{
+				//si hay mas d uno, y si la distancia es menor a distanceNode
 				if(CalcDistancePoint(listPaths[listPaths.Count-1],posw)>distanceNode){
 					listPaths.Add(posw);
-					Instantiate(obj,posw,transform.rotation);
-					print("nodo adentro "+posw);
+					GameObject objAux=Instantiate(obj,posw,transform.rotation);
+					listSpritePoint.Add(objAux);//guardo el sprite del punto
+					//print("nodo adentro "+posw);
 				}else{
-					print("nodo demasiado cerca");
+					//print("nodo demasiado cerca");
 				}
 			
 			}
@@ -58,12 +78,7 @@ public class PathMove : MonoBehaviour {
 	
 		//print("click x"+Input.mousePosition);
 	}
-	private void AddPoint(Vector3 input){
-//		Vector3 vec=camara.ScreenToWorldPoint(input);
-		//vec.z=0;
-	
-		//listPaths.Add(vec);
-	}
+
 	private float CalcDistancePoint(Vector2 v1, Vector2 v2){
 		return Vector2.Distance(v1,v2);
 	}
@@ -75,6 +90,13 @@ public class PathMove : MonoBehaviour {
 		}
 
 	}
+	private void DeletePointSprites(){
+		for(int i =0;i<listSpritePoint.Count;i++){
+			Destroy(listSpritePoint[i]);
+		}
+		listSpritePoint.Clear();
+	}
+
 	void OnMouseDown()
 	{
 			
@@ -84,13 +106,18 @@ public class PathMove : MonoBehaviour {
 	float TransformScreenToWorldX(float inputSx){
 		float n=(inputSx*anchoScreenMundo);
 			n=n/Screen.width;
-		print("x mundo "+n);
+//		print("x mundo "+n);
 		return n;
 	}
 	float TransformScreenToWorldY(float inputSy){
 		float n=(inputSy*altoScreenMundo)/Screen.height;
-		print("y mundo "+n);
+	//	print("y mundo "+n);
 		return n;
+	}
+	public List<Vector2> getPath{
+		get{
+			return listPaths;
+		}
 	}
 
 
