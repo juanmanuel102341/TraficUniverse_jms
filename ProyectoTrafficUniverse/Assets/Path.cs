@@ -17,7 +17,11 @@ public class Path : MonoBehaviour {
 	public float lix;
 	public float liy;
 	public float distanceNode;//distancia entre los nodos del path
-	 
+
+	private Vector2 vecBase;//vector tomado como base d calculo para cuando no haya paths
+
+
+	//private Vector2[] vectorBase=new Vector2[2];
 
 	Transform n;
 	void Awake () {
@@ -43,6 +47,11 @@ public class Path : MonoBehaviour {
 				listPaths.Clear();
 				move.SetIndex=0;//seteo indice de la lista previa para q "recorra"la nueva path
 			}
+		}
+		if(Input.GetMouseButtonUp(0)){
+			print("click mouse fuera ");
+			vecBase=CalcVector();
+
 		}
 
 		if(Input.GetMouseButton(0)){
@@ -114,9 +123,70 @@ public class Path : MonoBehaviour {
 	//	print("y mundo "+n);
 		return n;
 	}
+
 	public List<Vector2> getPath{
 		get{
 			return listPaths;
+		}
+	}
+	private Vector2[] CalcLastPaths(){
+		//calculo los ultimos 2 elementos del path para tener la data correspondiente cuando el objeto no tenga mas paths
+		Vector2 [] aux=new Vector2[2];
+		if(listPaths.Count>2){
+			aux[0].x=listPaths[listPaths.Count-2].x;//copio el ante_ultimo elemento x del path 
+			aux[0].y=listPaths[listPaths.Count-2].y;//copio el ante_ultimo elemento y del path
+
+			aux[1].x=listPaths[listPaths.Count-1].x;//copio el ultimo elemento x del path
+			aux[1].y=listPaths[listPaths.Count-1].y;//copio el ultimo elemento y del path
+
+		}else{
+			print("warning path muy chico!!!!!!!!!!!!111");
+
+		}
+	
+		return aux;
+	}
+	private int CalcDireccionY(float y1, float y2 ){
+		if(y2<y1){
+			print("y abajo");
+			return -1;
+		}else{
+			return 1;
+		}
+	}
+	private int CalcDireccionX(float x1, float x2 ){
+		if(x2<x1){
+			print("y abajo");
+			return -1;
+		}else{
+			return 1;
+		}
+	}
+	private Vector2 CalcVector(){
+		
+		Vector2 [] aux=CalcLastPaths();//obtengo los ultimos 2 paths
+		Vector2 vec;
+		float n;
+
+		float distancia=Vector2.Distance(aux[0],aux[1]);//calculo distanvcia en teoria tendria q ser constante 
+
+		n=aux[1].x-aux[0].x;//diferencia entre el ultimo y anteultimo en x
+		n=Mathf.Abs(n);
+		n=n/distancia;
+		vec.x=n*CalcDireccionX(aux[0].x,aux[1].x);//multiplico proporcion x por la direccion x
+
+		n=0;//reseteo n
+		n=aux[1].y-aux[0].y;//diferencia entre el ultimo y anteultimo en y
+		n=Mathf.Abs(n);
+		n=n/distancia;
+		vec.y=n*CalcDireccionY(aux[0].y,aux[1].y);
+		print("vector "+vec);
+		return vec;
+	}
+
+	public Vector2 getLastVector{
+		get{
+			return vecBase; 
 		}
 	}
 

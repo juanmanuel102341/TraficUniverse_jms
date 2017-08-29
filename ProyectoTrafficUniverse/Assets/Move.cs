@@ -9,7 +9,10 @@ public class Move : MonoBehaviour {
 	private Vector2 currentTarget;
 	private int index=0;
 	public float velocity;
+
+
 	void Awake () {
+		//falta q el personaje siga en el vector adecuado cuando llega al ultimo indice,
 		rb=GetComponent<Rigidbody2D>();	
 		path=GetComponent<Path>();
 		transform_1=GetComponent<Transform>();
@@ -22,7 +25,13 @@ public class Move : MonoBehaviour {
 			transform_1.position=Vector2.MoveTowards(this.transform.position,path.getPath[index],velocity*Time.deltaTime);
 //			print("moviendo a nodo "+path.getPath[index]);
 			Finish();
-				}
+				
+		}else if (index==path.getPath.Count&&index!=0){
+			print("ultimo indice");
+			rb.transform.Translate(path.getLastVector*velocity*Time.deltaTime);
+
+		}
+			
 	
 	}
 
