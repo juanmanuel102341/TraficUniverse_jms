@@ -8,30 +8,33 @@ public class Move : MonoBehaviour {
 	private Transform transform_1;
 	private Vector2 currentTarget;
 	private int index=0;
+	//private bool idle=true;
 	public float velocity;
 
 
 	void Awake () {
-		//falta q el personaje siga en el vector adecuado cuando llega al ultimo indice,
+//		idle=true;
 		rb=GetComponent<Rigidbody2D>();	
 		path=GetComponent<Path>();
 		transform_1=GetComponent<Transform>();
+
 	}
 	
 
 	void Update () {
+		//print("lista obj "+path.getPath.Count);
 		if(path.getPath.Count>0&&index<path.getPath.Count){
 			currentTarget=path.getPath[index];  
 			transform_1.position=Vector2.MoveTowards(this.transform.position,path.getPath[index],velocity*Time.deltaTime);
 //			print("moviendo a nodo "+path.getPath[index]);
 			Finish();
 				
-		}else if (index==path.getPath.Count&&index!=0){
-			print("ultimo indice");
+		}else if (index==path.getPath.Count){
+		//	print("base entrando ");
+			
 			rb.transform.Translate(path.getLastVector*velocity*Time.deltaTime);
 
 		}
-			
 	
 	}
 
@@ -50,5 +53,11 @@ public class Move : MonoBehaviour {
 			index=value;
 		}
 	}
+//	public bool setBoolIdle{
+//		set{
+//			idle=value;
+//		}
+//	}
+
 
 }
