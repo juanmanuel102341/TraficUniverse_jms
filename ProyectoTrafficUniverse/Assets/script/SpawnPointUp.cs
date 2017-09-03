@@ -35,4 +35,13 @@ public class SpawnPointUp : MonoBehaviour {
 			return myPos;
 		}
 	}
+	public List<GameObject> getValuesListA{
+		get{
+			return listaObjA;
+			}
+	}
+	public void GetOutObjectFromList(GameObject obj){
+		listaObjA.Remove(obj);
+	}
+
 }

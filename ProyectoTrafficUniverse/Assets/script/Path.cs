@@ -116,7 +116,7 @@ public class Path : MonoBehaviour {
 	}
 	private void DibujoPath(){
 		if(Input.GetMouseButton(0)){
-			print("click usuario");
+//			print("click usuario");
 				
 					Vector2 posw=GetInputMouse();
 		
@@ -145,7 +145,7 @@ public class Path : MonoBehaviour {
 									
 							}
 				}else{
-					//click del mouse toca al spfrite
+					//click del mouse toca al spfrite, importante sino me tira error, no puede ir a su mismo lugar
 				print("warning path encima del sprite");
 				}
 			}
@@ -159,6 +159,7 @@ public class Path : MonoBehaviour {
 				}
 					
 	private void DeletePointSprites(){
+		//destruyo paths y la parte del sprite del mismo al hacer click nuevamente
 		for(int i =0;i<listSpritePoint.Count;i++){
 			Destroy(listSpritePoint[i]);
 		}
@@ -252,13 +253,29 @@ public class Path : MonoBehaviour {
 		//bounds.max.x =maxima extension en x del borde del sprite
 		//bounds.min.y=seria el alto del objeto (no el 0,0 por favor!!)
 		//extents es la mitad tanto d x como d y
-	
+
+		//para q al hacer click el path no aparezca dentro del objeto al q se queire aplicar el path
 
 		if(_inputMouse.y<spr.bounds.max.y&&_inputMouse.y>spr.bounds.min.y&&_inputMouse.x>spr.bounds.center.x-spr.bounds.extents.x&&_inputMouse.x<spr.bounds.max.x){
 			print("tocando 22222");
 			return true;
 		}
 		return false;
+	}
+	public void RemovePaths(){
+		for(int i=0;i<listSpritePoint.Count;i++){
+			//Vector2 auxPaths=listPaths[i];//accedo a los elementos de la lista d transforms
+			GameObject auxObj=listSpritePoint[i];//accedo a los elementos de la lista d objetos visuales(mismo tamano)
+
+			Destroy(auxObj);
+
+		}
+		print("listPaths "+listPaths.Count);
+		print(" listSpritePoint "+listSpritePoint.Count);
+		listPaths.RemoveRange(0,listPaths.Count);
+		listSpritePoint.RemoveRange(0,listSpritePoint.Count);
+		print("listPaths des"+listPaths.Count);
+		print(" listSpritePoint des"+listSpritePoint.Count);
 	}
 
 
