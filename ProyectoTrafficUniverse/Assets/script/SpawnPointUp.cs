@@ -13,10 +13,12 @@ public class SpawnPointUp : MonoBehaviour {
 	private float widthObj;
 	private float heihtObj;
 	private Vector2 myPos;
+
 	//private Transform transformObj;
 	void Awake () {
 		myPos.x=transform.position.x;
 		myPos.y=transform.position.y;
+
 		//widthObj=GetComponent<SpriteRenderer>().bounds.max.x
 	//	transformObj=GetComponent<Transform>();
 	}
