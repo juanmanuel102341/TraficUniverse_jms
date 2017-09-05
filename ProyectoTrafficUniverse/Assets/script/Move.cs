@@ -17,14 +17,15 @@ public class Move : MonoBehaviour {
 		rb=GetComponent<Rigidbody2D>();	
 		path=GetComponent<Path>();
 		transform_1=GetComponent<Transform>();
-
+//		transform.Rotate(new Vector3 (0,0,180));
 	}
 	
 
 	void Update () {
 		//print("lista obj "+path.getPath.Count);
 		if(path.getPath.Count>0&&index<path.getPath.Count){
-			currentTarget=path.getPath[index];  
+			currentTarget=path.getPath[index]; 
+
 			transform_1.position=Vector2.MoveTowards(this.transform.position,path.getPath[index],velocity*Time.deltaTime);
 //			print("moviendo a nodo "+path.getPath[index]);
 			Finish();
@@ -52,6 +53,12 @@ public class Move : MonoBehaviour {
 		set {
 			index=value;
 		}
+	}
+	private float RandomSet(float v1, float v2){
+		float n=Random.Range(v1,v2);
+
+		print("random "+n);
+		return n;
 	}
 //	public bool setBoolIdle{
 //		set{
