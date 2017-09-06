@@ -37,7 +37,7 @@ public class SetRotation : MonoBehaviour {
 			apply=true;
 			currentRotation=Random.Range(90,250);
 		
-			print("rot up "+currentRotation);
+//			print("rot up "+currentRotation);
 			print("transform y "+transform.position.y);
 
 			break;
@@ -57,20 +57,32 @@ public class SetRotation : MonoBehaviour {
 			break;
 		case "left":
 			transform.position=new Vector3(bounds.lWidth_izq,transform.position.y,transform.position.z);
-			print("rot right "+currentRotation);
+
 			apply=true;
 			currentRotation=Random.Range(190,280);
-			print("rot left "+currentRotation);
+			//print("rot left "+currentRotation);
+			print("posicion x "+transform.position.x);
 			break;
 		case "right":
 			transform.position=new Vector3(bounds.lWidth_der,transform.position.y,transform.position.z);
 			apply=true;
 			print("posicion x "+transform.position.x);
 			currentRotation=Random.Range(45,90);
-			print("rot right "+currentRotation);
+			//print("rot right "+currentRotation);
 
 			break;
 		}
 
+	}
+	public float setRot{
+		set{
+			currentRotation=value;
+		}
+			
+	}
+	public bool setBool{
+		set{
+			apply=value;
+		}
 	}
 }

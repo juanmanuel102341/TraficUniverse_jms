@@ -4,11 +4,11 @@ using System.Collections;
 public class Detect : MonoBehaviour {
 
 
-	private  SpawnPointUp spawnUp;
+	private  GameManager gameManager_obj;
 	private string id;
 	private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
-		spawnUp=GameObject.FindGameObjectWithTag("spawnA").GetComponent<SpawnPointUp>();
+		gameManager_obj=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<GameManager>();
 		id=gameObject.tag;
 		choque=false;//cuidado hay q resetearo en replay
 	}
@@ -22,7 +22,7 @@ public class Detect : MonoBehaviour {
 		print("aterrizando 2d");
 		if(col.gameObject.tag=="naveA"&&id=="planetaTarget"){
 			print("nave A aterrizaje");
-			print("cantidad elemntos lista antes "+spawnUp.getValuesListA.Count);
+			print("cantidad elemntos lista antes "+gameManager_obj.getValuesList.Count);
 			ObjOut(col.gameObject);
 //			print("cantidad elemntos lista despues "+spawnUp.getValuesListA.Count);
 			GameManager.aterrizajes++;
@@ -37,7 +37,7 @@ public class Detect : MonoBehaviour {
 	}
 	public void ObjOut(GameObject _obj){
 		GameObject aux=_obj;
-		spawnUp.GetOutObjectFromList(aux);
+		gameManager_obj.GetOutObjectFromList(aux);
 		aux.gameObject.GetComponent<SpriteRenderer>().enabled=false;
 		aux.gameObject.GetComponent<Path>().RemovePaths();
 		if(aux.gameObject.GetComponent<Path>().getPath.Count==0){
