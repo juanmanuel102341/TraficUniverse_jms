@@ -4,11 +4,11 @@ using System.Collections;
 public class Detect : MonoBehaviour {
 
 
-	private  GameManager gameManager_obj;
+	private  SpawnManager gameManager_obj;
 	private string id;
 	private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
-		gameManager_obj=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<GameManager>();
+		gameManager_obj=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
 		id=gameObject.tag;
 		choque=false;//cuidado hay q resetearo en replay
 	}
@@ -21,10 +21,10 @@ public class Detect : MonoBehaviour {
 			print("cantidad elementos lista antes "+gameManager_obj.getValuesList.Count);
 			ObjOut(col.gameObject);
 //			print("cantidad elemntos lista despues "+spawnUp.getValuesListA.Count);
-			GameManager.aterrizajes++;
+			SpawnManager.aterrizajes++;
 
 		}else {
-			GameManager.aviones++;
+			SpawnManager.aviones++;
 			print("choque entre objetos");
 			ObjOut(this.gameObject);
 
