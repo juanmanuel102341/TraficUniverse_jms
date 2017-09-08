@@ -14,15 +14,11 @@ public class Detect : MonoBehaviour {
 	}
 	
 
-	void Update () {
-		
-	}
 	void OnTriggerEnter2D(Collider2D col){
-		
 		print("aterrizando 2d");
 		if(col.gameObject.tag=="naveA"&&id=="planetaTarget"){
 			print("nave A aterrizaje");
-			print("cantidad elemntos lista antes "+gameManager_obj.getValuesList.Count);
+			print("cantidad elementos lista antes "+gameManager_obj.getValuesList.Count);
 			ObjOut(col.gameObject);
 //			print("cantidad elemntos lista despues "+spawnUp.getValuesListA.Count);
 			GameManager.aterrizajes++;
@@ -33,7 +29,6 @@ public class Detect : MonoBehaviour {
 			ObjOut(this.gameObject);
 
 		}
-	
 	}
 	public void ObjOut(GameObject _obj){
 		GameObject aux=_obj;

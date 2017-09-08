@@ -13,18 +13,17 @@ public class Bounds : MonoBehaviour {
 	private bool down=false;
 	private bool left=false;
 	private bool right=false;
-
 	private bool faceUp=false;
 	private bool limite=false;
 	private string id;
 
-	// Use this for initialization
+
 	void Awake () {
 		
 		transform=GetComponent<Transform>();
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		//print("euler "+transform.eulerAngles.z);
 		up=BoundUp();
@@ -32,10 +31,8 @@ public class Bounds : MonoBehaviour {
 		right=BoundRight();
 		left=BoundLeft();
 		limite=ActiveLimit();
-
 	}
 	private bool BoundUp(){
-		
 		if(transform.position.y>lHeight_up){
 			print("limite up");
 			id="up";
@@ -73,10 +70,8 @@ public class Bounds : MonoBehaviour {
 			id="left";
 			faceUp=GetFaceUp("left");
 			return true;
-
 		}
 		return false;
-
 	}
 	private bool ActiveLimit(){
 		if(up==false&&down==false&&right==false&&left==false){
@@ -96,8 +91,7 @@ public class Bounds : MonoBehaviour {
 			}else{
 				print("face up  false");
 				return false;
-
-			}
+				}
 			break;
 	
 		case "left":
@@ -111,7 +105,6 @@ public class Bounds : MonoBehaviour {
 			break;
 		
 		case "right":
-			
 			if(transform.eulerAngles.z>180){
 				print("face up right true");
 				return true;
@@ -121,8 +114,6 @@ public class Bounds : MonoBehaviour {
 			}
 			break;
 		}
-
-
 		return false;
 	}
 	public bool limiteActive{

@@ -22,6 +22,7 @@ public class Move : MonoBehaviour {
 	
 
 	void Update () {
+		print("base entrando "+path.getLastVector);
 		//print("lista obj "+path.getPath.Count);
 		if(path.getPath.Count>0&&index<path.getPath.Count){
 			currentTarget=path.getPath[index]; 
@@ -34,7 +35,7 @@ public class Move : MonoBehaviour {
 		//	print("base entrando ");
 			
 			rb.transform.Translate(path.getLastVector*velocity*Time.deltaTime);
-
+	
 		}
 	
 	}
