@@ -16,7 +16,7 @@ public class Detect : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
 		print("aterrizando 2d");
-		if(col.gameObject.tag=="naveA"&&id=="planetaTarget"){
+		if(col.gameObject.tag=="nave"&&id=="planetaTarget"){
 			print("nave A aterrizaje");
 			print("cantidad elementos lista antes "+gameManager_obj.getValuesList.Count);
 			ObjOut(col.gameObject);

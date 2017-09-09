@@ -45,7 +45,7 @@ public class SetRotation : MonoBehaviour {
 			transform.position=new Vector3(transform.position.x,bounds.lHeight_down,transform.position.z);
 			apply=true;
 			print("transform y "+transform.position.y);
-			float n1=Random.Range(270,340);//aplico rotacion para un lado 
+			float n1=Random.Range(270,350);//aplico rotacion para un lado 
 			float n2=Random.Range(0,80);//aplico para otro
 			float r=Random.Range(1,3);//random entre las 2, lo hago por q ni puedo hacer un solo random
 			if(r==1){
@@ -59,7 +59,7 @@ public class SetRotation : MonoBehaviour {
 			transform.position=new Vector3(bounds.lWidth_izq,transform.position.y,transform.position.z);
 
 			apply=true;
-			currentRotation=Random.Range(190,280);
+			currentRotation=Random.Range(170,350);
 			//print("rot left "+currentRotation);
 			print("posicion x "+transform.position.x);
 			break;
@@ -67,7 +67,7 @@ public class SetRotation : MonoBehaviour {
 			transform.position=new Vector3(bounds.lWidth_der,transform.position.y,transform.position.z);
 			apply=true;
 			print("posicion x "+transform.position.x);
-			currentRotation=Random.Range(45,90);
+			currentRotation=Random.Range(10,170);
 			//print("rot right "+currentRotation);
 
 			break;
