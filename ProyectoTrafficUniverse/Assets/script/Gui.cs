@@ -16,11 +16,11 @@ public class Gui : MonoBehaviour {
 		switch(id){
 
 		case "guiVidas":
-			target.text=SpawnManager.vidas.ToString();	
+			target.text=GameManager.vidas.ToString();	
 			break;
 		case "guiAterrizajes":
 
-			target.text=SpawnManager.aterrizajes.ToString();
+			target.text=GameManager.aterrizajes.ToString();
 			break;
 
 		}

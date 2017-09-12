@@ -39,6 +39,8 @@ public class Path : MonoBehaviour {
 	//	rb=GetComponent<Rigidbody2D>();
 		spr=GetComponent<SpriteRenderer>();
 		colorInitial=spr.color;
+		//activePath=true;
+		//clickActiveObject=true;
 	}
 		
 	void OnMouseDown(){
@@ -118,7 +120,7 @@ public class Path : MonoBehaviour {
 					Vector2 posw=GetInputMouse();
 		
 				//PathTouchingBounds(posw);//verifico si toca al objeto el click
-				if(!PathTouchingBounds2(posw)){
+				if(!PathTouchingObject(posw)){
 				print("entrando click encima");
 				//print("cantidad d puntos "+listSpritePoint.Count);
 				//print("cantidad d paths "+listPaths.Count);
@@ -236,8 +238,8 @@ public class Path : MonoBehaviour {
 		}else{
 			//paths insufientes
 			print("paths insuficientes");
-			vecBase.x=0.0f;
-			vecBase.y=1.0f;
+			vecBase.x=0;
+			vecBase.y=1;
 			return vecBase;
 		}
 	}
@@ -246,7 +248,7 @@ public class Path : MonoBehaviour {
 			return vecBase; 
 		}
 	}
-		private bool PathTouchingBounds2(Vector2 _inputMouse){
+		private bool PathTouchingObject(Vector2 _inputMouse){
 		//bounds.max.x =maxima extension en x del borde del sprite
 		//bounds.min.y=seria el alto del objeto (no el 0,0 por favor!!)
 		//extents es la mitad tanto d x como d y

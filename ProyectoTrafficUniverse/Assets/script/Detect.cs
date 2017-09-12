@@ -21,10 +21,10 @@ public class Detect : MonoBehaviour {
 			print("cantidad elementos lista antes "+gameManager_obj.getValuesList.Count);
 			ObjOut(col.gameObject);
 //			print("cantidad elemntos lista despues "+spawnUp.getValuesListA.Count);
-			SpawnManager.aterrizajes++;
+			GameManager.aterrizajes++;
 
 		}else {
-			SpawnManager.aviones++;
+			GameManager.aviones++;
 			print("choque entre objetos");
 			ObjOut(this.gameObject);
 

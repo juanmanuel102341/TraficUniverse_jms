@@ -3,9 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class SpawnManager : MonoBehaviour {
-	public static int aterrizajes=0;
-	public static  int vidas=3;
-	public static int aviones=0;
+	
 	public float frecuencia;
 
 	public float limitLeft;
@@ -24,10 +22,7 @@ public class SpawnManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time+=Time.deltaTime;	
-		if(aviones==2){
-			vidas--;
-			aviones=0;
-		}
+
 
 		if(time>frecuencia){
 			int n=GetRandomSpawns(1,4);
