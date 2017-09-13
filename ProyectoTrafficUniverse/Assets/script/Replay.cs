@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Replay : MonoBehaviour {
+	public delegate void ReplayGame();
+	public static event ReplayGame activateReplay;
 
-	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
-		
+		//ReplayMethod();
+	}
+	public void ReplayMethod(){
+		print("replay ");
+		activateReplay();
 	}
 }

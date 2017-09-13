@@ -98,4 +98,14 @@ public class SpawnManager : MonoBehaviour {
 
 		return objA;
 	}
+	public List<GameObject> getListaNaves{
+		get{
+			return listaObj;
+		}
+		set{
+			listaObj=value;
+		}
+
+	}
+	
 }

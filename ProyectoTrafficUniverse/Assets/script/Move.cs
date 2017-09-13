@@ -28,11 +28,11 @@ public class Move : MonoBehaviour {
 	void Update () {
 //		print("base entrando "+path.getLastVector);
 		//print("lista obj "+path.getPath.Count);
-		if(path.getPath.Count>0&&index<path.getPath.Count){
+		if(path.getPathVectors.Count>0&&index<path.getPathVectors.Count){
 
-			currentTarget=path.getPath[index]; 
+			currentTarget=path.getPathVectors[index]; 
 		
-		transform_1.position=Vector2.MoveTowards(this.transform.position,path.getPath[index],velocity*Time.deltaTime);
+		transform_1.position=Vector2.MoveTowards(this.transform.position,path.getPathVectors[index],velocity*Time.deltaTime);
 //			print("moviendo a nodo "+path.getPath[index]);
 		
 			Vector2 vecBase2D;
@@ -41,27 +41,13 @@ public class Move : MonoBehaviour {
 			if(setRot.setRotation){
 				
 				setRot.ChangeRotation(currentTarget);	
-			//	Quaternion a=Quaternion.FromToRotation(vecBase2D,currentTarget);	
-				//float a=Quaternion.Angle(transform.rotation,path.transform.rotation);
-				//print("a "+a);
-		//		Quaternion a2=Quaternion.FromToRotation(transform.position,Vector2.Distance(transform.position,currentTarget));
-
-				//transform.rotation.Set(a2);
-				//transform.Rotate(0,0,a);
-			//	print("angulo final "+	a2);
-
-		//		setRot.setRotation=false;
+			
 			}
 		
 			Finish();
-		}else if (index==path.getPath.Count){
+		}else if (index==path.getPathVectors.Count){
 			
-		//	print("base entrando ");
-			//Vector2 vecBase2D;
-			//vecBase2D.x=this.transform.position.x;
-			//vecBase2D.y=this.transform.position.y;
-			//rb.transform.Rotate(0,0,setRot.ChangeRotation(vecBase2D,path.getPath[index]));
-			//rb.transform.Translate(Vector2.up*velocity*Time.deltaTime);
+	
 			rb.transform.Translate(path.getLastVector*velocity*Time.deltaTime);
 	
 		}

@@ -92,30 +92,8 @@ public class SetRotation : MonoBehaviour {
 		}
 			
 	}
-	private void TransformWhorldToLocalObj(){
 
-	
-	//	vecRelativeObj=aux;
 
-		print("vector mundo transformado relativo "+vecRelativeObj);
-
-		print("vector mundo "+transform.position);
-	
-	}
-	public Vector2 ChangeLocalTwhorld(Vector2 v){
-		v.x+=vecRelativeObj.x;
-		v.y+=vecRelativeObj.y;
-		print("vec whorld "+v);
-		return v;
-	}
-	public float TransformPathToLocal(Vector2 vecTarget){
-		Vector2 aux=vecTarget;//x si acaso la guardo
-		TransformWhorldToLocalObj();
-		vecRelativePath=vecTarget-vecRelativeObj;
-		print("vecRelativePath "+vecRelativePath);
-		//Cuadrante(aux)
-		return  0;
-	}
 	public void ChangeRotation(Vector2 vt){
 		Vector2 aux;
 		aux.x=transform.position.x;
@@ -144,26 +122,7 @@ public class SetRotation : MonoBehaviour {
 		}
 			
 	}
-	public float Prop(Vector2 vecT){
-	
 
-
-		Vector2 aux;
-		aux.x=vecT.x-transform.position.x;
-		aux.y=vecT.y-transform.position.y;
-		Vector2 aux2;
-		aux2.x=transform.position.x;
-		aux2.y=transform.position.y;
-		float d=Vector2.Distance(aux2,vecT);
-		Vector2 p;
-		p.x=aux.x/d;
-		p.y=aux.y/d;
-		float n=p.x*270;
-		//float angle=Mathf.Atan(res);
-		//float angleDegrees=angle*Mathf.Rad2Deg;
-
-		return n;
-	}
 
 		
 	public bool setBool{

@@ -23,7 +23,8 @@ public class Detect : MonoBehaviour {
 //			print("cantidad elemntos lista despues "+spawnUp.getValuesListA.Count);
 			GameManager.aterrizajes++;
 
-		}else {
+		}else if(id=="nave"&&col.gameObject.tag=="nave") {
+			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			GameManager.aviones++;
 			print("choque entre objetos");
 			ObjOut(this.gameObject);
@@ -35,7 +36,7 @@ public class Detect : MonoBehaviour {
 		gameManager_obj.GetOutObjectFromList(aux);
 		aux.gameObject.GetComponent<SpriteRenderer>().enabled=false;
 		aux.gameObject.GetComponent<Path>().RemovePaths();
-		if(aux.gameObject.GetComponent<Path>().getPath.Count==0){
+		if(aux.gameObject.GetComponent<Path>().getPathVectors.Count==0){
 			Destroy(aux);
 		}
 	}

@@ -54,7 +54,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720355740432820}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   altoScreenMundo: 17.5
   lix: -31.5
   liy: -17.5
-  distanceNode: 2.5
+  distanceNode: 0.8
 --- !u!114 &114572818108204360
 MonoBehaviour:
   m_ObjectHideFlags: 1

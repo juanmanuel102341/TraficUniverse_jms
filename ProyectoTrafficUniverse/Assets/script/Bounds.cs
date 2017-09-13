@@ -25,7 +25,7 @@ public class Bounds : MonoBehaviour {
 	
 
 	void Update () {
-		print("euler "+transform.eulerAngles.z);
+//		print("euler "+transform.eulerAngles.z);
 		up=BoundUp();
 		down=BoundDown();
 		right=BoundRight();

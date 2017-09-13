@@ -180,9 +180,20 @@ public class Path : MonoBehaviour {
 		return n;
 	}
 
-	public List<Vector2> getPath{
+	public List<Vector2> getPathVectors{
 		get{
 			return listPaths;
+		}
+		set{
+			listPaths=value;
+		}
+	}
+	public List<GameObject> getListSprite{
+		get{
+			return listSpritePoint;
+		}
+		set{
+			listSpritePoint=value;
 		}
 	}
 	private Vector2[] CalcLastPaths(){
