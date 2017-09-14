@@ -135,7 +135,7 @@ MonoBehaviour:
   altoScreenMundo: 17.5
   lix: -31.5
   liy: -17.5
-  distanceNode: 2.5
+  distanceNode: 0.8
 --- !u!114 &114982271299193792
 MonoBehaviour:
   m_ObjectHideFlags: 1

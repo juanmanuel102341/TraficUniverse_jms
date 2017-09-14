@@ -5,13 +5,13 @@ using UnityEngine;
 public class Move : MonoBehaviour {
 	private Rigidbody2D rb;
 	private Path path;
-	private Transform transform_1;
+	//private Transform transform_1;
 	private Vector2 currentTarget;
 	private int index=0;
 	//private bool idle=true;
 	public float velocity;
 	private SetRotation setRot;
-
+	private Vector2 lastVector;
 	//private Vector2 currentPath;
 
 	void Awake () {
@@ -19,8 +19,10 @@ public class Move : MonoBehaviour {
 
 		rb=GetComponent<Rigidbody2D>();	
 		path=GetComponent<Path>();
-		transform_1=GetComponent<Transform>();
+		//transform_1=GetComponent<Transform>();
 		setRot=GetComponent<SetRotation>();
+		lastVector.x=0;
+		lastVector.y=1;
 		//		transform.Rotate(new Vector3 (0,0,180));
 	}
 	
@@ -32,32 +34,40 @@ public class Move : MonoBehaviour {
 
 			currentTarget=path.getPathVectors[index]; 
 		
-		transform_1.position=Vector2.MoveTowards(this.transform.position,path.getPathVectors[index],velocity*Time.deltaTime);
+			transform.position=Vector2.MoveTowards(this.transform.position,path.getPathVectors[index],velocity*Time.deltaTime);
 //			print("moviendo a nodo "+path.getPath[index]);
 		
 			Vector2 vecBase2D;
 			vecBase2D.x=this.transform.position.x;
 			vecBase2D.y=this.transform.position.y;
-			if(setRot.setRotation){
-				
-				setRot.ChangeRotation(currentTarget);	
-			
-			}
-		
+			Vector2 fv=setRot.GetVectorDirection(currentTarget,vecBase2D);
+			print("tamanio lista "+path.getPathVectors.Count);
+
+			transform.up=fv;
+
 			Finish();
 		}else if (index==path.getPathVectors.Count){
-			
-	
-			rb.transform.Translate(path.getLastVector*velocity*Time.deltaTime);
-	
+			print("ultimo vector "+lastVector);
+	//		transform_1.position=Vector2.MoveTowards(this.transform.position,path.getLastVector,velocity*Time.deltaTime);
+
+			rb.transform.Translate(Vector2.up*velocity*Time.deltaTime);
+
 		}
-	
+		if(path.getMouseUp&&path.getMouseDown&&path.getPathVectors.Count>=2){
+			//si dejaste d clickear y has clickiado y has generado un path
+			//ya se cual es el ultimo
+			print("obteniendo valore buscados ");
+
+			lastVector=setRot.GetVectorDirection(path.getPathVectors[path.getPathVectors.Count-1],path.getPathVectors[path.getPathVectors.Count-2]);
+			transform.up=lastVector;
+			print("vector ultimo "+lastVector);
+		}
 	}
 
 	void Finish(){
 		Vector2 aux;
-		aux.x=transform_1.position.x;
-		aux.y=transform_1.position.y;
+		aux.x=transform.position.x;
+		aux.y=transform.position.y;
 
 		if(Vector2.Distance(aux,currentTarget)<=0.0f){
 			print("entrando cambio rotacion");

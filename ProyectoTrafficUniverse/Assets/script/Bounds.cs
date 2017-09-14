@@ -13,7 +13,7 @@ public class Bounds : MonoBehaviour {
 	private bool down=false;
 	private bool left=false;
 	private bool right=false;
-	private bool faceUp=false;
+//	private bool faceUp=false;
 	private bool limite=false;
 	private string id;
 
@@ -37,7 +37,7 @@ public class Bounds : MonoBehaviour {
 			print("limite up");
 			id="up";
 			limite=true;
-			faceUp=GetFaceUp("up");
+			//faceUp=GetFaceUp("up");
 			return true;
 			}
 		limite=false;
@@ -48,7 +48,7 @@ public class Bounds : MonoBehaviour {
 			print("limite down!");
 			id="down";
 			limite=true;
-			faceUp=GetFaceUp("down");
+			//faceUp=GetFaceUp("down");
 		
 			return true;
 		}
@@ -59,7 +59,7 @@ public class Bounds : MonoBehaviour {
 			print("limite right");
 			id="right";
 			limite=true;
-			faceUp=GetFaceUp("right");
+		//	faceUp=GetFaceUp("right");
 			return true;
 		}
 		return false;
@@ -68,7 +68,7 @@ public class Bounds : MonoBehaviour {
 		if(transform.position.x<lWidth_izq){
 			print("limite left");
 			id="left";
-			faceUp=GetFaceUp("left");
+		//	faceUp=GetFaceUp("left");
 			return true;
 		}
 		return false;
@@ -82,51 +82,51 @@ public class Bounds : MonoBehaviour {
 		}
 		return false;
 	}
-	private bool GetFaceUp(string currentLimite){
-		switch(currentLimite){
-		case "up":
-			if(transform.eulerAngles.z<90||transform.transform.eulerAngles.z>270){
-				print("face up  true");
-				return true;
-			}else{
-				print("face up  false");
-				return false;
-				}
-			break;
-	
-		case "left":
-			if(transform.eulerAngles.z<180){
-				print("face up left true");
-				return true;
-			}else{
-				print("face up left false");
-				return false;
-			}
-			break;
-		
-		case "right":
-			if(transform.eulerAngles.z>180){
-				print("face up right true");
-				return true;
-			}else{
-				print("face up right false");
-				return false;
-			}
-			break;
-		}
-		return false;
-	}
+//	private bool GetFaceUp(string currentLimite){
+//		switch(currentLimite){
+//		case "up":
+//			if(transform.eulerAngles.z<90||transform.transform.eulerAngles.z>270){
+//				print("face up  true");
+//				return true;
+//			}else{
+//				print("face up  false");
+//				return false;
+//				}
+//			break;
+//	
+//		case "left":
+//			if(transform.eulerAngles.z<180){
+//				print("face up left true");
+//				return true;
+//			}else{
+//				print("face up left false");
+//				return false;
+//			}
+//			break;
+//		
+//		case "right":
+//			if(transform.eulerAngles.z>180){
+//				print("face up right true");
+//				return true;
+//			}else{
+//				print("face up right false");
+//				return false;
+//			}
+//			break;
+//		}
+//		return false;
+//	}
 	public bool limiteActive{
 		get {
 			return limite;
 		}
 	}
-	public bool getFaceUp{
-		//obtiene si esta mirando para arriba
-		get{
-			return faceUp;
-		}
-	}
+//	public bool getFaceUp{
+//		//obtiene si esta mirando para arriba
+//		get{
+//			return faceUp;
+//		}
+//	}
 	public string idLimite{
 		get{
 			return id; 

@@ -29,7 +29,7 @@ public class SetRotation : MonoBehaviour {
 
 	void Update () {
 		if(bounds.limiteActive){
-			ChangeRotation(bounds.idLimite);
+			GetVectorDirection(bounds.idLimite);
 		}
 		if(apply){
 		RotateObject();
@@ -40,32 +40,32 @@ public class SetRotation : MonoBehaviour {
 		transform.Rotate(new Vector3(0,0,currentRotation));
 		apply=false;
 	}
-	private void ChangeRotation(string _id){
+	private void GetVectorDirection(string _id){
 		switch(_id)
 		{
 
 		case "up":
 			transform.position=new Vector3(transform.position.x,bounds.lHeight_up,transform.position.z);
 			apply=true;
-			currentRotation=Random.Range(90,250);
+			currentRotation=Random.Range(90,260);
 		
 //			print("rot up "+currentRotation);
-			print("transform y "+transform.position.y);
+		//	print("transform y "+transform.position.y);
 
 			break;
 		case "down":
 			transform.position=new Vector3(transform.position.x,bounds.lHeight_down,transform.position.z);
 			apply=true;
-			print("transform y "+transform.position.y);
-			float n1=Random.Range(270,350);//aplico rotacion para un lado 
+			//print("transform y "+transform.position.y);
+			float n1=Random.Range(260,350);//aplico rotacion para un lado 
 			float n2=Random.Range(0,80);//aplico para otro
-			float r=Random.Range(1,3);//random entre las 2, lo hago por q ni puedo hacer un solo random
+			float r=Random.Range(1,3);//random entre las 2, lo hago por q no puedo hacer un solo random
 			if(r==1){
 				currentRotation=n1;
 			}else{
 				currentRotation=n2;
 			}
-			print("rot down "+currentRotation);
+			//print("rot down "+currentRotation);
 			break;
 		case "left":
 			transform.position=new Vector3(bounds.lWidth_izq,transform.position.y,transform.position.z);
@@ -73,14 +73,14 @@ public class SetRotation : MonoBehaviour {
 			apply=true;
 			currentRotation=Random.Range(170,350);
 			//print("rot left "+currentRotation);
-			print("posicion x "+transform.position.x);
+		//	print("posicion x "+transform.position.x);
 			break;
 		case "right":
 			transform.position=new Vector3(bounds.lWidth_der,transform.position.y,transform.position.z);
 			apply=true;
-			print("posicion x "+transform.position.x);
+		//	print("posicion x "+transform.position.x);
 			currentRotation=Random.Range(10,170);
-			//print("rot right "+currentRotation);
+		//	print("rot right "+currentRotation);
 
 			break;
 		}
@@ -94,12 +94,11 @@ public class SetRotation : MonoBehaviour {
 	}
 
 
-	public void ChangeRotation(Vector2 vt){
-		Vector2 aux;
-		aux.x=transform.position.x;
-		aux.y=transform.position.y;
-		Vector2 vec =vt-aux;
-		transform.up=vec;
+	public Vector2 GetVectorDirection(Vector2 vfinal,Vector2 vafter){
+
+
+		Vector2 vec =vfinal-vafter;
+		return vec;
 	}
 	private float Cuadrante( Vector2 t){
 

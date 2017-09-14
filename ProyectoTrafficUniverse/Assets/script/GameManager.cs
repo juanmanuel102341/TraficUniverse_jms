@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
-	public static  int vidas=1;
+	public static  int vidas=100;
 	public static int aviones=0;
 	public GameObject guiLoose;
 	public GameObject guiWin;
