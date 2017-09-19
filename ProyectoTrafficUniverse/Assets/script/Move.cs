@@ -81,8 +81,11 @@ public class Move : MonoBehaviour {
 		}else if(!empty2){
 		//	print("entrando path sin path");
 			if(calcLast==false){
-				vecLast=path.getLastVector;				
+				//vecLast=path.getLastVector;				
+				transform.up=path.getLastVector;
 				calcLast=true;
+				print("vec last"+vecLast);
+				print("trans up "+transform.up);
 			}
 
 			if(bounds.limiteActive){
@@ -91,19 +94,19 @@ public class Move : MonoBehaviour {
 				//vecLast*=-1;
 			}
 			//transform.up=path.getLastVector;
-			rb.transform.Translate(vecLast*velocity*Time.deltaTime);
+			rb.transform.Translate(path.getLastVector*velocity*Time.deltaTime,Space.Self);
 			//print("transform up last "+path.getLastVector);
-			//print("bound "+bounds.limiteActive);
+			print("vec last "+vecLast);
 
 		}else if(empty2){
 		//	print("eje x "+ejeX);
 			if(boolEmpty==false){
 				
 				if(ejeX){
-				//	print("vec right");
+					print("vec right");
 					vecEmpty=transform.right*direc;
 				}else{
-				//	print("vec up ");
+		print("vec up ");
 					vecEmpty=transform.up;
 				}
 				boolEmpty=true;

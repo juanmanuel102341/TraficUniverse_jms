@@ -29,7 +29,6 @@ public class Path : MonoBehaviour {
 	private bool mouseUp=false;
 	private bool mouseDown=false;
 
-	private Direction direction;
 
 	private bool empty=true;
 	void Awake () {
@@ -46,7 +45,7 @@ public class Path : MonoBehaviour {
 		colorInitial=spr.color;
 		mouseUp=false;
 		mouseDown=false;
-		direction=GetComponent<Direction>();
+	
 		//activePath=true;
 		//clickActiveObject=true;
 
