@@ -14,9 +14,14 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject objB;
 	public GameObject objC;
 	private float time;
+	private Bounds bounds;
 	private List<GameObject>listaObj=new List<GameObject>();
+	//private float widthA;
+	GameObject obj;
 	void Awake () {
 		time=frecuencia;
+		bounds=objA.GetComponent<Bounds>();
+	//	widthA=objA.GetComponent<SpriteRenderer>().bounds.extents;
 	}
 	
 	// Update is called once per frame
@@ -26,23 +31,32 @@ public class SpawnManager : MonoBehaviour {
 
 		if(time>frecuencia){
 			int n=GetRandomSpawns(1,4);
-
+			//n=4;
 			switch(n){
 			case 1://**left
-
-				GenerateSpawn(GetObjetRandom(),limitLeft,limitDown,limitUp,270,false);//genero un spawn a la izquierda,entre un random de y de los extremos y una rotacion especfica
+				
+				obj=GetObjetRandom();
+				obj.GetComponent<Move>().setBoolEje=true;
+				float w=obj.GetComponent<SpriteRenderer>().bounds.extents.x;
+				//w+=0.8f;
+				//obj.GetComponent<Move>().setVecInitial=transform.right;
+				GenerateSpawn(obj,bounds.lWidth_izq,bounds.lHeight_down,bounds.lHeight_up,obj.transform.right,false);//genero un spawn a la izquierda,entre un random de y de los extremos y una rotacion especfica
 				break;
 			case 2:
 				//down
-				GenerateSpawn(GetObjetRandom(),limitDown,limitLeft,limitRight,0,true);//generp un spawn en el nivel inferior q varia en x de los extremos,rotacion 0 "va para arriba"
+				obj=GetObjetRandom();
+
+				GenerateSpawn(obj,bounds.lHeight_down,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);//generp un spawn en el nivel inferior q varia en x de los extremos,rotacion 0 "va para arriba"
 				break;
 			case 3:
 				//**right
-				GenerateSpawn(GetObjetRandom(),limitRight,limitDown,limitUp,90,false);
+				obj=GetObjetRandom();
+				GenerateSpawn(obj,bounds.lWidth_der,bounds.lHeight_down,bounds.lHeight_up,obj.transform.right,false);
 				break;
 			case 4:
 				//up
-				GenerateSpawn(GetObjetRandom(),limitUp,limitLeft,limitRight,180,true);
+				obj=GetObjetRandom();
+				GenerateSpawn(obj,bounds.lHeight_up,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);
 				break;
 				}
 			time=0;
@@ -60,14 +74,16 @@ public class SpawnManager : MonoBehaviour {
 	public void GetOutObjectFromList(GameObject obj){
 		listaObj.Remove(obj);
 	}
-	private void GenerateSpawn(GameObject _obj,float ptoFijoSalida,float r1,float r2,float rotacion,bool fijoY){
+	private void GenerateSpawn(GameObject _obj,float ptoFijoSalida,float r1,float r2,Vector2 rotacion,bool fijoY){
 		if(fijoY){
 			//up down, varia x 
 			Vector2 spawnfY;
 			spawnfY.x=Random.Range(r1,r2);
 			spawnfY.y=ptoFijoSalida;
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
-			auxObjFY.transform.Rotate(new Vector3(0,0,rotacion));
+			//auxObjFY.transform.Rotate(new Vector3(0,0,rotacion));
+			auxObjFY.transform.up=rotacion;
+
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -76,7 +92,9 @@ public class SpawnManager : MonoBehaviour {
 			spawnFX.x=ptoFijoSalida;
 			spawnFX.y=Random.Range(r1,r2);
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
-			auxObjFX.transform.Rotate(new Vector3(0,0,rotacion));
+			//auxObjFX.transform.Rotate(new Vector3(0,0,rotacion));
+			auxObjFX.transform.up=rotacion;
+		
 			listaObj.Add(auxObjFX);
 		}
 

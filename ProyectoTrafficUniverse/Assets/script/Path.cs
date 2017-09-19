@@ -28,6 +28,10 @@ public class Path : MonoBehaviour {
 	private Color colorInitial;
 	private bool mouseUp=false;
 	private bool mouseDown=false;
+
+	private Direction direction;
+
+	private bool empty=true;
 	void Awake () {
 
 		move=GetComponent<Move>();
@@ -36,22 +40,25 @@ public class Path : MonoBehaviour {
 		anchoScreenMundo+=lix;//llevo a 0 x , para poder comparar correctamente con el sistema d coordenadas d la screen
 		altoScreenMundo+=liy;//levo a 0 el eje y 
 		//n=GetComponent<Transform>();
-		vecBase.x=0.0f;
-		vecBase.y=1.0f;
+
 	//	rb=GetComponent<Rigidbody2D>();
 		spr=GetComponent<SpriteRenderer>();
 		colorInitial=spr.color;
 		mouseUp=false;
 		mouseDown=false;
+		direction=GetComponent<Direction>();
 		//activePath=true;
 		//clickActiveObject=true;
+
 	}
 		
 	void OnMouseDown(){
 		
-		print("click objeto "+contadorClicks);
+
 		DeleteNodos_sprites();
+
 		if(!clickActiveObject){
+		print("click active object");
 		clickActiveObject=true;
 		spr.color=Color.green;
 		}
@@ -63,20 +70,21 @@ public class Path : MonoBehaviour {
 		}
 		contadorClicks+=1;
 //		if(!PathTouchingBounds2(GetInputMouse())&&clickActiveObject){
+		print("click objeto "+contadorClicks);
 
 	}
 	void Update () {
 		if(clickActiveObject){
 			if(Input.GetMouseButtonDown(0)){
-				print("click mismo objeto");
+			//	print("click mismo objeto");
 				contadorClicks2+=1;//contador para chequear y ver"si se hizo click en el objeto q estas moviendo
 			}
 			if(contadorClicks!=contadorClicks2){
 				//si hizo click en otro objeto, resetiate
-				print("click otro objeto");
+			//	print("click otro objeto");
 				//reseteo valores
 				ResetCicle();
-				mouseDown=false;
+				//mouseDown=false;
 			}else{
 				
 			}
@@ -89,6 +97,7 @@ public class Path : MonoBehaviour {
 		EventoMouseUp();
 		}
 	//print("click x"+Input.mousePosition);
+		print("lista paths "+listPaths.Count);
 	}
 
 	private float CalcDistancePoint(Vector2 v1, Vector2 v2){
@@ -101,20 +110,26 @@ public class Path : MonoBehaviour {
 				//	print("borrando paths y nodos");
 				DeletePointSprites();
 				listPaths.Clear();
-				move.SetIndex=0;//seteo indice de la lista previa para q "recorra"la nueva path
+
 			}
+		move.setIndex_m=0;
 	}
 	private void EventoMouseUp(){
 		if(Input.GetMouseButtonUp(0)){
 			//	print("click mouse fuera ");
+
+			if(listPaths.Count>=2){
+				print("entrando path last 2");
+			vecBase=CalcLastVector();
+			}
 			ResetCicle();
 		}
 		mouseUp=true;
 	}
 	private void ResetCicle(){
 
-		transform.up=vecBase;
-		print("last vector "+vecBase);
+//		transform.up=vecBase;
+//		print("last vector "+vecBase);
 		contadorClicks=0;//reseteo contador para q el usuario tenga q volver hacer click en el objeto si quiere moverlo 
 		contadorClicks2=0;
 		clickActiveObject=false;//resete boolean d objeto
@@ -123,17 +138,17 @@ public class Path : MonoBehaviour {
 	}
 	private void DibujoPath(){
 		if(Input.GetMouseButton(0)){
-			print("click usuario");
+//			print("click usuario");
 				
 					Vector2 posw=GetInputMouse();
 		
 				//PathTouchingBounds(posw);//verifico si toca al objeto el click
 				if(!PathTouchingObject(posw)){
-
+				print("click fuera objeto");
 				if(mouseDown==false){
 					mouseDown=true;
 				}
-				//print("cantidad d puntos "+listSpritePoint.Count);
+//				print("cantidad d puntos "+listSpritePoint.Count);
 				//print("cantidad d paths "+listPaths.Count);
 				//************** click del mouse n toca al path****************
 					if(listPaths.Count==0){
@@ -142,14 +157,15 @@ public class Path : MonoBehaviour {
 							GameObject objAux=Instantiate(obj,posw,transform.rotation);
 							listSpritePoint.Add(objAux);
 							//print("entrando 1er nodo "+posw);
-
+					empty=false;
 						}else{
 							//si hay mas d uno, y si la distancia es menor a distanceNode
 							if(CalcDistancePoint(listPaths[listPaths.Count-1],posw)>distanceNode){
 							listPaths.Add(posw);
 							GameObject objAux=Instantiate(obj,posw,transform.rotation);
 							listSpritePoint.Add(objAux);//guardo el sprite del punto
-								//print("nodo adentro "+posw);
+							
+						//print("nodo adentro "+posw);
 								}else{
 								//print("nodo demasiado cerca");
 								}
@@ -238,7 +254,7 @@ public class Path : MonoBehaviour {
 		//para q al hacer click el path no aparezca dentro del objeto al q se queire aplicar el path
 
 		if(_inputMouse.y<spr.bounds.max.y&&_inputMouse.y>spr.bounds.min.y&&_inputMouse.x>spr.bounds.center.x-spr.bounds.extents.x&&_inputMouse.x<spr.bounds.max.x){
-			print("tocando 22222");
+			//print("tocando 22222");
 			return true;
 		}
 		return false;
@@ -251,12 +267,12 @@ public class Path : MonoBehaviour {
 			Destroy(auxObj);
 
 		}
-		print("listPaths "+listPaths.Count);
-		print(" listSpritePoint "+listSpritePoint.Count);
+//		print("listPaths "+listPaths.Count);
+//		print(" listSpritePoint "+listSpritePoint.Count);
 		listPaths.RemoveRange(0,listPaths.Count);
 		listSpritePoint.RemoveRange(0,listSpritePoint.Count);
-		print("listPaths des"+listPaths.Count);
-		print(" listSpritePoint des"+listSpritePoint.Count);
+//		print("listPaths des"+listPaths.Count);
+//		print(" listSpritePoint des"+listSpritePoint.Count);
 	}
 	public bool getMouseUp{
 		get{
@@ -276,6 +292,28 @@ public class Path : MonoBehaviour {
 		}
 
 	}
-
+	public bool getActivePath{
+		get{
+			return activePath;
+		}
+	}
+	private Vector2 CalcLastVector(){
+		Vector2 lastPath=listPaths[listPaths.Count-1];
+		Vector2 last2=listPaths[listPaths.Count-2];
+		Vector2 aux;
+		aux=lastPath-last2;
+		//aux.x=Mathf.Abs(aux.x);
+		//aux.y=Mathf.Abs(aux.y);
+		print("last vector "+aux);
+		return aux;
+	}
+	public bool getEmpty{
+		get{
+			return empty;
+		}
+		set{
+			empty=value;
+		}
+	}
 
 }

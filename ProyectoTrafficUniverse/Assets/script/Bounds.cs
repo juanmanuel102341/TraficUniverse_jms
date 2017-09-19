@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bounds : MonoBehaviour {
-	private Transform transform;
+	//private Transform transform;
 
 	public float lWidth_izq;
 	public float lWidth_der;
@@ -20,7 +20,7 @@ public class Bounds : MonoBehaviour {
 
 	void Awake () {
 		
-		transform=GetComponent<Transform>();
+
 	}
 	
 
@@ -32,12 +32,43 @@ public class Bounds : MonoBehaviour {
 		left=BoundLeft();
 		limite=ActiveLimit();
 	}
+	public Vector2 ChangeVector(){
+		Vector2 aux;
+		print("limite "+id);
+		switch(id){
+		case "down":
+			transform.position=new Vector2(transform.position.x,lHeight_down);
+			aux=transform.up;
+			print("lim down "+aux);
+			return aux;
+			break;
+		case "up":
+			transform.position=new Vector2(transform.position.x,lHeight_up);
+			aux=transform.up*-1;
+			print("lim up "+aux);
+			return aux;
+			break;
+		case "left":
+			transform.position=new Vector2(lWidth_izq,transform.position.y);
+			aux=transform.right;
+			print("lim up "+aux);
+			return aux;
+			break;
+		case"right":
+			transform.position=new Vector2(lWidth_der,transform.position.y);
+			aux=transform.right*-1;
+			print("lim up "+aux);
+			return aux;
+			break;
+		}
+		return transform.up;
+	}
 	private bool BoundUp(){
 		if(transform.position.y>lHeight_up){
-			print("limite up");
+//			print("limite up");
 			id="up";
 			limite=true;
-			//faceUp=GetFaceUp("up");
+		
 			return true;
 			}
 		limite=false;
@@ -45,7 +76,7 @@ public class Bounds : MonoBehaviour {
 	}
 	private bool BoundDown(){
 		if(transform.position.y<lHeight_down){
-			print("limite down!");
+//			print("limite down!");
 			id="down";
 			limite=true;
 			//faceUp=GetFaceUp("down");
@@ -56,17 +87,17 @@ public class Bounds : MonoBehaviour {
 	}
 	private bool BoundRight(){
 		if(transform.position.x>lWidth_der){
-			print("limite right");
+		//	print("limite right");
 			id="right";
 			limite=true;
-		//	faceUp=GetFaceUp("right");
+
 			return true;
 		}
 		return false;
 	}
 	private bool BoundLeft(){
 		if(transform.position.x<lWidth_izq){
-			print("limite left");
+		//	print("limite left");
 			id="left";
 		//	faceUp=GetFaceUp("left");
 			return true;
@@ -80,7 +111,7 @@ public class Bounds : MonoBehaviour {
 			print("limite activo");
 			return true;
 		}
-		return false;
+	
 	}
 //	private bool GetFaceUp(string currentLimite){
 //		switch(currentLimite){

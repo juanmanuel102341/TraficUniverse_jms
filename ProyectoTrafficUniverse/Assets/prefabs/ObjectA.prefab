@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 61337800651799920}
   - component: {fileID: 114842931690996728}
   - component: {fileID: 114889363449729238}
-  - component: {fileID: 114572818108204360}
   m_Layer: 0
   m_Name: ObjectA
   m_TagString: nave
@@ -110,18 +109,6 @@ MonoBehaviour:
   lix: -31.5
   liy: -17.5
   distanceNode: 0.8
---- !u!114 &114572818108204360
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1720355740432820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaec17392d485b240a3505ee082ee2e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounds: {fileID: 114889363449729238}
 --- !u!114 &114842931690996728
 MonoBehaviour:
   m_ObjectHideFlags: 1
