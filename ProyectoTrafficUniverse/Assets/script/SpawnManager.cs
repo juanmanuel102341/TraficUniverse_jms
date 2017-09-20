@@ -29,38 +29,38 @@ public class SpawnManager : MonoBehaviour {
 		time+=Time.deltaTime;	
 
 
-		if(time>frecuencia){
-			int n=GetRandomSpawns(1,4);
-			//n=4;
-			switch(n){
-			case 1://**left
-				
-				obj=GetObjetRandom();
-				obj.GetComponent<Move>().setBoolEje=true;
-				float w=obj.GetComponent<SpriteRenderer>().bounds.extents.x;
-				//w+=0.8f;
-				//obj.GetComponent<Move>().setVecInitial=transform.right;
-				GenerateSpawn(obj,bounds.lWidth_izq,bounds.lHeight_down,bounds.lHeight_up,obj.transform.right,false);//genero un spawn a la izquierda,entre un random de y de los extremos y una rotacion especfica
-				break;
-			case 2:
-				//down
-				obj=GetObjetRandom();
-
-				GenerateSpawn(obj,bounds.lHeight_down,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);//generp un spawn en el nivel inferior q varia en x de los extremos,rotacion 0 "va para arriba"
-				break;
-			case 3:
-				//**right
-				obj=GetObjetRandom();
-				GenerateSpawn(obj,bounds.lWidth_der,bounds.lHeight_down,bounds.lHeight_up,obj.transform.right,false);
-				break;
-			case 4:
-				//up
-				obj=GetObjetRandom();
-				GenerateSpawn(obj,bounds.lHeight_up,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);
-				break;
-				}
-			time=0;
-		}
+//		if(time>frecuencia){
+//			int n=GetRandomSpawns(1,4);
+//			//n=4;
+//			switch(n){
+//			case 1://**left
+//				
+//				obj=GetObjetRandom();
+//			
+//				float w=obj.GetComponent<SpriteRenderer>().bounds.extents.x;
+//				//w+=0.8f;
+//				//obj.GetComponent<Move>().setVecInitial=transform.right;
+//			//GenerateSpawn(obj,bounds.lWidth_izq,bounds.lHeight_down,bounds.lHeight_up,obj.transform.up,false);//genero un spawn a la izquierda,entre un random de y de los extremos y una rotacion especfica
+//				break;
+//			case 2:
+//				//down
+//				obj=GetObjetRandom();
+//
+//				//GenerateSpawn(obj,bounds.lHeight_down,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);//generp un spawn en el nivel inferior q varia en x de los extremos,rotacion 0 "va para arriba"
+//				break;
+//			case 3:
+//				//**right
+//				obj=GetObjetRandom();
+//				//GenerateSpawn(obj,bounds.lWidth_der,bounds.lHeight_down,bounds.lHeight_up,obj.transform.right,false);
+//				break;
+//			case 4:
+//				//up
+//				obj=GetObjetRandom();
+//				//GenerateSpawn(obj,bounds.lHeight_up,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);
+//				break;
+//				}
+//			time=0;
+//		}
 	}
 	private int  GetRandomSpawns(int v1,int v2Exclusive){
 		return Random.Range(v1,v2Exclusive);  
