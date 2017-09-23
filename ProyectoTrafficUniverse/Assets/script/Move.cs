@@ -8,7 +8,7 @@ public class Move : MonoBehaviour {
 	private MoveWhithoutPath moveWhithoutPath;
 	private MoveFirst moveFirst;
 	private Rigidbody2D rb;
-	private Path path;
+	private PathController path;
 
 
 
@@ -18,7 +18,7 @@ public class Move : MonoBehaviour {
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
 	
 		rb=GetComponent<Rigidbody2D>();
-		path=GetComponent<Path>();
+		path=GetComponent<PathController>();
 		MonoBehaviour[] obj=new MonoBehaviour[2];
 		obj[0]=movePath;
 		obj[1]=moveWhithoutPath;
@@ -45,7 +45,7 @@ public class Move : MonoBehaviour {
 			return rb;
 		}
 	}
-	public Path getPath{
+	public PathController getPath{
 		get{
 			return path;
 		}

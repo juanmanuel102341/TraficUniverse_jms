@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path : MonoBehaviour {
+public class PathController : MonoBehaviour {
 	//genera un path
 
 	private List<Vector2> listPaths=new List<Vector2>();

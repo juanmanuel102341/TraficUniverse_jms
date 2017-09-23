@@ -35,8 +35,8 @@ public class Detect : MonoBehaviour {
 		GameObject aux=_obj;
 		gameManager_obj.GetOutObjectFromList(aux);
 		aux.gameObject.GetComponent<SpriteRenderer>().enabled=false;
-		aux.gameObject.GetComponent<Path>().RemovePaths();
-		if(aux.gameObject.GetComponent<Path>().getPathVectors.Count==0){
+		aux.gameObject.GetComponent<PathController>().RemovePaths();
+		if(aux.gameObject.GetComponent<PathController>().getPathVectors.Count==0){
 			Destroy(aux);
 		}
 	}

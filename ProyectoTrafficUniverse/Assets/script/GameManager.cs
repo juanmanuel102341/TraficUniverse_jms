@@ -53,14 +53,14 @@ public class GameManager : MonoBehaviour {
 		//destruccion de naves y sus paths si los hay
 		for(int i=0;i<spawnManager.getListaNaves.Count;i++){
 			GameObject obj=spawnManager.getListaNaves[i];//obtenemos objeto
-			for(int i2=0;i2<obj.GetComponent<Path>().getListSprite.Count;i2++){
-				GameObject auxSpritePath=obj.GetComponent<Path>().getListSprite[i2];//destruimos el path
+			for(int i2=0;i2<obj.GetComponent<PathController>().getListSprite.Count;i2++){
+				GameObject auxSpritePath=obj.GetComponent<PathController>().getListSprite[i2];//destruimos el path
 				Destroy(auxSpritePath);
 			
 			}
-			if(obj.GetComponent<Path>().getPathVectors.Count>0){
-				obj.GetComponent<Path>().getPathVectors.RemoveRange(0,obj.GetComponent<Path>().getPathVectors.Count);//vaciamos la lista
-				obj.GetComponent<Path>().getListSprite.RemoveRange(0,obj.GetComponent<Path>().getListSprite.Count);
+			if(obj.GetComponent<PathController>().getPathVectors.Count>0){
+				obj.GetComponent<PathController>().getPathVectors.RemoveRange(0,obj.GetComponent<PathController>().getPathVectors.Count);//vaciamos la lista
+				obj.GetComponent<PathController>().getListSprite.RemoveRange(0,obj.GetComponent<PathController>().getListSprite.Count);
 			}
 
 			Destroy(obj);//destruccion nave
