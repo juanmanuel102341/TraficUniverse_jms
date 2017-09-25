@@ -4,31 +4,28 @@ using UnityEngine;
 
 public class PathManagment : MonoBehaviour {
 
-	public Path_01 path;
-	public Camera cameraGame;
+	public GameObject graphicPath;//parte grafica del path
+	private List<GameObject>listGraphicsPaths=new List<GameObject>();
+
+
+
 	void Awake () {
-		path=new Path_01();
+
+	
+	
+	}
+	void Start(){
+		Path_01.activate+=SpawnGraphicPath;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-		if(Input.GetMouseButtonDown(0)){
-			GetPositionMouse();
+	private void SpawnGraphicPath(Vector2 pos){
+		listGraphicsPaths.Add(Instantiate(graphicPath,pos,transform.rotation));
+	}
+	public void DeleteMyList(){
+		for(int i=0;i<listGraphicsPaths.Count;i++){
+//			print("destruccion ");
+			Destroy(listGraphicsPaths[i]);
 		}
-
-	}
-
-	private void GetPositionMouse(){
-		print("CLICKmOUSE");
-		Vector3 vec=new Vector3(0,0,0);
-		vec=Input.mousePosition;
-		vec.z=10;
-		cameraGame.ScreenToWorldPoint(vec);
-		Vector2 aux;
-		aux.x=vec.x;
-		aux.y=vec.y;
-		path.DataMousse(aux);
-				
+//		Debug.Log("borrando nodos "+listGraphicsPaths.Count);
 	}
 }

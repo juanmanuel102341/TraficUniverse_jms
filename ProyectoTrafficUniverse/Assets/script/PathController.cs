@@ -63,20 +63,28 @@ public class PathController : MonoBehaviour {
 		print("click objeto "+contadorClicks);
 
 	}
+	void OnMouseUp(){
+		if(activePath){
+		ResetCicle();
+		}
+	}
 	void Update () {
-		ClickFueraDelObjeto();
+//		print(" objeto activo "+clickActiveObject);
+		//print(" path activo "+activePath);
+		//ClickFueraDelObjeto();
 //		print("click screen"+Input.mousePosition);
 		//print("mundo  "+Input.mousePosition.x*anchoScreenMundo/Screen.width );
 		if(clickActiveObject&&activePath){
-	//	DeleteNodos_sprites();
+			
+			//	DeleteNodos_sprites();
 		DibujoPath();
-		EventoMouseUp();
+		//EventoMouseUp();
 		}
 	//print("click x"+Input.mousePosition);
-		print("lista paths "+listPaths.Count);
+//		print("lista paths "+listPaths.Count);
 	}
 	private void DibujoPath(){
-		if(Input.GetMouseButton(0)){
+		
 			//			print("click usuario");
 
 			Vector2 posw=GetInputMouse();
@@ -114,7 +122,7 @@ public class PathController : MonoBehaviour {
 			}
 		}
 
-	}
+
 
 	private void EventoMouseUp(){
 		if(Input.GetMouseButtonUp(0)){
@@ -139,7 +147,7 @@ public class PathController : MonoBehaviour {
 				//si hizo click en otro objeto, resetiate
 				//	print("click otro objeto");
 				//reseteo valores
-				ResetCicle();
+			//	ResetCicle();
 				//mouseDown=false;
 			}else{
 
