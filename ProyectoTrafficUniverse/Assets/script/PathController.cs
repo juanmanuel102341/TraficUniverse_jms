@@ -179,7 +179,7 @@ public class PathController : MonoBehaviour {
 				listPaths.Clear();
 
 			}
-		move.setIndex_m=0;
+//		move.setIndex_m=0;
 	}
 
 	private void ResetCicle(){

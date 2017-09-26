@@ -5,21 +5,19 @@ public class MoveWhithoutPath : MonoBehaviour {
 
 	private Vector2 vector;
 
-	private Move moveBase;
+	private Move move;
+	private Rigidbody2D rb;
 	void Awake () {
 
-		moveBase=GetComponent<Move>();
+		move=GetComponent<Move>();
+		rb=GetComponent<Rigidbody2D>();
 	}
 	
 
 	void Update () {
-		moveBase.getRigidBody2D.transform.Translate(vector*moveBase.getVelocity*Time.deltaTime);
-	
-	}
-	public Vector2 setFinalVector{
-		set{
-			vector=value; 
+		
+		rb.transform.Translate(move.getFinalVec*move.velocity*Time.deltaTime);
 		}
-	}
+
 
 }

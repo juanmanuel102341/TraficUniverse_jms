@@ -1,54 +1,78 @@
 ﻿
 using UnityEngine;
-
-public class Move : MonoBehaviour {
-
+using System.Collections;
+using System.Collections.Generic;
+public class Move:MonoBehaviour {
+	protected Rigidbody2D rb;
 	public float velocity;
-	private MovePath movePath;
-	private MoveWhithoutPath moveWhithoutPath;
-	private MoveFirst moveFirst;
-	private Rigidbody2D rb;
-	private PathController path;
+	MoveFirst moveFirst;
 
+	MovePath movePath;
+	MoveWhithoutPath moveWhithoutPath;
+	public PathInputs pathInputs;
 
+	private bool activePath=false;//para activar el path cuando posteriormente no  lo haya
+	private Vector2 finalVec;
 
 	void Awake () {
-		moveFirst=GetComponent<MoveFirst>();
+		rb=GetComponent<Rigidbody2D>();
+		//print("rb move "+rb);
+	
+		moveFirst=new MoveFirst();
 		movePath=GetComponent<MovePath>();
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
-	
-		rb=GetComponent<Rigidbody2D>();
-		path=GetComponent<PathController>();
-		MonoBehaviour[] obj=new MonoBehaviour[2];
-		obj[0]=movePath;
-		obj[1]=moveWhithoutPath;
-		Deactive(obj);
+		movePath.enabled=false;
+		moveWhithoutPath.enabled=false;
+	//	moveWhithoutPath=new MoveWhithoutPath();
+		//falta aplicar move path bn generar metodo dentro y canalizarlos via update
+	}
+	void Start(){
+
+
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
-		
-	}
-	private void Deactive(MonoBehaviour[] objeto){
-		for(int i=0;i<objeto.Length;i++){
-		objeto[i].enabled=false;
-		
+
+		if(pathInputs.path.listNodos.Count>0){
+			//path activo
+
+
+			if(!movePath.enabled){
+				movePath.enabled=true;
+			}
+			if(moveWhithoutPath.enabled){
+				moveWhithoutPath.enabled=false;
+			}
+
+			//Move_Path();
+			//transform.position=Vector2.MoveTowards(posObj,pathInputs.path.listNodos[index].posicion,velocity*Time.deltaTime);
+		}else if (movePath.enabled||moveWhithoutPath.enabled){
+			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
+					print("final vector");
+					if(!movePath.enabled){
+					movePath.enabled=false;
+					}
+					if(moveWhithoutPath.enabled==false){
+						moveWhithoutPath.enabled=true;
+					}
+
+		}else{
+			Move_Idle();
 		}
+	//	movePath.Update();
+
 	}
-	public float getVelocity{
-		get{
-			return velocity;
-		}
-	}
-	public Rigidbody2D getRigidBody2D{
-		get{
-			return rb;
-		}
-	}
-	public PathController getPath{
-		get{
-			return path;
-		}
+	private void Move_Idle(){
+		rb.transform.Translate(moveFirst.MoveIdle()*velocity*Time.deltaTime);
 	}
 
+	public Vector2 getFinalVec{
+		get{
+			return finalVec;
+		}
+		set{
+			finalVec=value;
+		}
+	}
 }

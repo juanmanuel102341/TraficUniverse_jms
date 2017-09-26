@@ -68,8 +68,8 @@ public class PathInputs : MonoBehaviour {
 			path.GeneratePath(GetPositionMouse());
 		}
 	}
-	private void Delete(){
-		
+	public void Delete(){
+		print("borrando");
 		//over=false;
 		if(path.listNodos.Count>0){
 			colorObj.ColorIdle();

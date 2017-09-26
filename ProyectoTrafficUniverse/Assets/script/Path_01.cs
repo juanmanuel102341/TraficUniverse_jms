@@ -10,19 +10,10 @@ public class Path_01  {
 	public delegate void NewPathCreation(Vector2 _pos);
 	public static event NewPathCreation activate;
 
-	//faltaria preguntar s=q si me haces click al objeto n genere info de vectores ni d sprites
-
-
-
 	void Awake () {
 		
 	}
 	
-//	// Update is called once per frame
-	void Update () {
-			
-
-	}
 	private void SetNewNode(Vector2 input){
 		node=new Nodo();
 		node.SetPosition(input);

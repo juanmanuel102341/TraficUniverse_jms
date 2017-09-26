@@ -9,9 +9,7 @@ public class Nodo  {
 		
 	}
 
-	void Update () {
-		
-	}
+
 	public void SetPosition(Vector2 pos){
 		posicion.x=pos.x;
 		posicion.y=pos.y;

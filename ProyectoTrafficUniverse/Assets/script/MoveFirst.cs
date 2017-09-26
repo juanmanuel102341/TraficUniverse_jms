@@ -1,15 +1,19 @@
 ﻿
 using UnityEngine;
 
-public class MoveFirst : MonoBehaviour {
-	private Move move;
+public class MoveFirst :Move {
+	
 
 	void Awake () {
-		move=GetComponent<Move>();
+
+
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		move.getRigidBody2D.transform.Translate(Vector2.up*move.getVelocity*Time.deltaTime);
+	public Vector2 MoveIdle(){
+		Vector2 vec=Vector2.up;
+		return vec;
 	}
+
+
+
 }
