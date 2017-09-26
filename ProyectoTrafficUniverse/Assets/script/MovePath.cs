@@ -48,7 +48,7 @@ public class MovePath : MonoBehaviour {
 			aux2.x=transform.position.x;//busco posicion x e y
 			aux2.y=transform.position.y;
 			aux=move.pathInputs.path.listNodos[move.pathInputs.path.listNodos.Count-1].posicion-aux2;
-			print("vec final "+aux);
+			print("vec final path "+aux);
 			return aux;
 		}
 	}
@@ -56,8 +56,21 @@ public class MovePath : MonoBehaviour {
 	private void Move_01(){
 		
 		transform.position=Vector2.MoveTowards(transform.position,move.pathInputs.path.listNodos[index].posicion,move.velocity*Time.deltaTime);
-
+		transform.up=VecDirection();
 		}
+	private Vector2 VecDirection(){
+		Vector2 posPlayer;
+		Vector2 target;
+		Vector2 r;
+		posPlayer.x=transform.position.x;
+		posPlayer.y=transform.position.y;
+		target=move.pathInputs.path.listNodos[index].posicion;
+		r=target-posPlayer;
+		print("posplayer "+posPlayer);
+		print("target "+target);
+		print("res "+r);
+		return r;
+	}
 
 
 

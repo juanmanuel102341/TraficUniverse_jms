@@ -58,6 +58,7 @@ public class Move:MonoBehaviour {
 					}
 
 		}else{
+			print("idle");
 			Move_Idle();
 		}
 	//	movePath.Update();
