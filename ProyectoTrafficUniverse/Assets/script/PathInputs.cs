@@ -8,12 +8,13 @@ public class PathInputs : MonoBehaviour {
 	private bool activatePath=false;
 	private bool clickObj=false;
 	private int contador=0;
-	public Camera cameraGame;
+	private Camera cameraGame;
 	public Path_01 path;
 	private ChangeColor colorObj;
 	private PathManagment pathManagment;
 	private bool over=false;
 	void Awake () {
+		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		path=new Path_01();
 		colorObj=GetComponent<ChangeColor>();
 		pathManagment=GetComponent<PathManagment>();

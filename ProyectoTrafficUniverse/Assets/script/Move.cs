@@ -42,6 +42,7 @@ public class Move:MonoBehaviour {
 				movePath.enabled=true;
 			}
 			if(moveWhithoutPath.enabled){
+				moveWhithoutPath.setBooleanDirection=false;
 				moveWhithoutPath.enabled=false;
 			}
 

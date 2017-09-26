@@ -5,7 +5,7 @@ using UnityEngine;
 public class Path_01  {
 
 	public List<Nodo>listNodos=new List<Nodo>();
-	private Nodo node;
+
 	private float distanceNodes=0.5f;
 	public delegate void NewPathCreation(Vector2 _pos);
 	public static event NewPathCreation activate;
@@ -15,6 +15,7 @@ public class Path_01  {
 	}
 	
 	private void SetNewNode(Vector2 input){
+		Nodo node;
 		node=new Nodo();
 		node.SetPosition(input);
 //		Debug.Log("node "+node.posicion);
