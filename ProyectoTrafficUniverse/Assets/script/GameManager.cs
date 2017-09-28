@@ -49,31 +49,31 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	private void Reset(){
-	//primero borrar objetos despues listas
-		//destruccion de naves y sus paths si los hay
-		for(int i=0;i<spawnManager.getListaNaves.Count;i++){
-			GameObject obj=spawnManager.getListaNaves[i];//obtenemos objeto
-			for(int i2=0;i2<obj.GetComponent<PathController>().getListSprite.Count;i2++){
-				GameObject auxSpritePath=obj.GetComponent<PathController>().getListSprite[i2];//destruimos el path
-				Destroy(auxSpritePath);
-			
-			}
-			if(obj.GetComponent<PathController>().getPathVectors.Count>0){
-				obj.GetComponent<PathController>().getPathVectors.RemoveRange(0,obj.GetComponent<PathController>().getPathVectors.Count);//vaciamos la lista
-				obj.GetComponent<PathController>().getListSprite.RemoveRange(0,obj.GetComponent<PathController>().getListSprite.Count);
-			}
-
-			Destroy(obj);//destruccion nave
-		}
-		if(spawnManager.getListaNaves.Count>0){
-			spawnManager.getListaNaves.RemoveRange(0,spawnManager.getListaNaves.Count);//vacio lista d naves
-		}
-	
-
-	
-		target.SetActive(false);
-		spawnManager.enabled=false;
-		guiGame.SetActive(false);
+//	//primero borrar objetos despues listas
+//		//destruccion de naves y sus paths si los hay
+//		for(int i=0;i<spawnManager.getListaNaves.Count;i++){
+//			GameObject obj=spawnManager.getListaNaves[i];//obtenemos objeto
+//			for(int i2=0;i2<obj.GetComponent<PathController>().getListSprite.Count;i2++){
+//				GameObject auxSpritePath=obj.GetComponent<PathController>().getListSprite[i2];//destruimos el path
+//				Destroy(auxSpritePath);
+//			
+//			}
+//			if(obj.GetComponent<PathController>().getPathVectors.Count>0){
+//				obj.GetComponent<PathController>().getPathVectors.RemoveRange(0,obj.GetComponent<PathController>().getPathVectors.Count);//vaciamos la lista
+//				obj.GetComponent<PathController>().getListSprite.RemoveRange(0,obj.GetComponent<PathController>().getListSprite.Count);
+//			}
+//
+//			Destroy(obj);//destruccion nave
+//		}
+//		if(spawnManager.getListaNaves.Count>0){
+//			spawnManager.getListaNaves.RemoveRange(0,spawnManager.getListaNaves.Count);//vacio lista d naves
+//		}
+//	
+//
+//	
+//		target.SetActive(false);
+//		spawnManager.enabled=false;
+//		guiGame.SetActive(false);
 	}
 	private void OnReplay(){
 		print("replay new");

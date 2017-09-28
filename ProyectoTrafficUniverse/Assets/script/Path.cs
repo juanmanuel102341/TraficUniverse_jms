@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path_01  {
+public class Path  {
 
-	public List<Nodo>listNodos=new List<Nodo>();
+	public List<Node>listNodos=new List<Node>();
 
 	private float distanceNodes=0.5f;
 	public delegate void NewPathCreation(Vector2 _pos);
@@ -15,8 +15,8 @@ public class Path_01  {
 	}
 	
 	private void SetNewNode(Vector2 input){
-		Nodo node;
-		node=new Nodo();
+		Node node;
+		node=new Node();
 		node.SetPosition(input);
 //		Debug.Log("node "+node.posicion);
 		listNodos.Add(node);
@@ -39,10 +39,12 @@ public class Path_01  {
 			activate(input);
 		}
 	}
-	public void DeleteNodosPaths(){
+	public void Delete(){
 		if(listNodos.Count>0){
-			listNodos.Clear();
-		}
+			
+			listNodos.RemoveRange(0,listNodos.Count);
+			}
+
 		Debug.Log("borrando nodos "+listNodos.Count);
 	}
 

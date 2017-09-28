@@ -9,23 +9,26 @@ public class PathInputs : MonoBehaviour {
 	private bool clickObj=false;
 	private int contador=0;
 	private Camera cameraGame;
-	public Path_01 path;
+	public Path path;
 	private ChangeColor colorObj;
-	private PathManagment pathManagment;
+	private PathGraphic pathGraphic;
 	private bool over=false;
+	private MovePath movePath;
 	void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-		path=new Path_01();
+		path=new Path();
 		colorObj=GetComponent<ChangeColor>();
-		pathManagment=GetComponent<PathManagment>();
+		pathGraphic=GetComponent<PathGraphic>();
+		movePath=GetComponent<MovePath>();
 	}
 	void Update () {
-		print("mouse fuera "+over);
+		print("cantidad d nodos"+path.listNodos.Count);
 		GetInputMouse();
 	}
 	// Update is called once per frame
 	void OnMouseDown(){
 		colorObj.ColorActive();
+
 		Delete();
 		contador++;
 		if(!clickObj){
@@ -36,7 +39,7 @@ public class PathInputs : MonoBehaviour {
 			print("activate path");
 			activatePath=true;
 		}
-
+		movePath.setIndex=0;
 	}
 	void OnMouseUp(){
 		if(activatePath){
@@ -75,8 +78,14 @@ public class PathInputs : MonoBehaviour {
 		if(path.listNodos.Count>0){
 			colorObj.ColorIdle();
 		}
-		pathManagment.DeleteMyList();
-		path.DeleteNodosPaths();
+		pathGraphic.Delete_ngraphics();
+		path.Delete();
 	}
 
+	public PathGraphic getPathGraphic{
+		get{
+			return pathGraphic;
+		}
+	}
+	 
 }

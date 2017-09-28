@@ -2,30 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathManagment : MonoBehaviour {
+public class PathGraphic : MonoBehaviour {
 
 	public GameObject graphicPath;//parte grafica del path
 	private List<GameObject>listGraphicsPaths=new List<GameObject>();
-
-
-
-	void Awake () {
-
-	
-	
-	}
 	void Start(){
-		Path_01.activate+=SpawnGraphicPath;
+		Path.activate+=SpawnGraphicPath;
 	}
 	
 	private void SpawnGraphicPath(Vector2 pos){
-		listGraphicsPaths.Add(Instantiate(graphicPath,pos,transform.rotation));
+		GameObject obj=Instantiate(graphicPath,pos,transform.rotation);
+		listGraphicsPaths.Add(obj);
 	}
-	public void DeleteMyList(){
+	public void Delete_ngraphics(){
 		for(int i=0;i<listGraphicsPaths.Count;i++){
-//			print("destruccion ");
+			print("destruccion ");
 			Destroy(listGraphicsPaths[i]);
 		}
 //		Debug.Log("borrando nodos "+listGraphicsPaths.Count);
+	}
+	public List<GameObject> getListGraphic{
+		get{
+			return listGraphicsPaths;
+		}
 	}
 }

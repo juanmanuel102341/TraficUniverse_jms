@@ -9,7 +9,7 @@ public class Move:MonoBehaviour {
 
 	MovePath movePath;
 	MoveWhithoutPath moveWhithoutPath;
-	public PathInputs pathInputs;
+	private PathInputs pathInputs;
 
 	private bool activePath=false;//para activar el path cuando posteriormente no  lo haya
 	private Vector2 finalVec;
@@ -17,7 +17,8 @@ public class Move:MonoBehaviour {
 	void Awake () {
 		rb=GetComponent<Rigidbody2D>();
 		//print("rb move "+rb);
-	
+
+		pathInputs=GetComponent<PathInputs>();
 		moveFirst=new MoveFirst();
 		movePath=GetComponent<MovePath>();
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
@@ -75,6 +76,11 @@ public class Move:MonoBehaviour {
 		}
 		set{
 			finalVec=value;
+		}
+	}
+	public PathInputs getPathInputs{
+		get{
+			return pathInputs;
 		}
 	}
 }

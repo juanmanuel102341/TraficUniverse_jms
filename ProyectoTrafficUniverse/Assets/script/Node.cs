@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class Nodo  {
+public class Node  {
 
 	public Vector2 posicion;
 
