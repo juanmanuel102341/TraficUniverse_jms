@@ -35,11 +35,7 @@ public class Detect : MonoBehaviour {
 			print("choque entre objetos");
 			//ObjOut(this.gameObject);
 			print("cantidad nodos "+pathInputs.path.listNodos.Count);
-//			for(int i=0;i<pathInputs.getPathGraphic.getListGraphic.Count;i++){
-//				print("destruccion");
-//				Destroy(pathInputs.getPathGraphic.getListGraphic[i]);
-//			}
-//			pathInputs.path.listNodos.RemoveRange(0,pathInputs.path.listNodos.Count);
+//			
 			pathInputs.Delete();
 			print("cantidad nodos despues "+pathInputs.path.listNodos.Count);
 			//	Destroy(this.gameObject);

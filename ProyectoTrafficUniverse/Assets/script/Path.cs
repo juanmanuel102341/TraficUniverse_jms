@@ -16,12 +16,10 @@ public class Path  {
 	
 	private void SetNewNode(Vector2 input){
 		Node node;
-		node=new Node();
-		node.SetPosition(input);
+		node=new Node(input);
 //		Debug.Log("node "+node.posicion);
 		listNodos.Add(node);
-
-	}
+		}
 
 	public void GeneratePath(Vector2 input){
 		if(listNodos.Count!=0){
