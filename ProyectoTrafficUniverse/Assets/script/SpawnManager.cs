@@ -6,10 +6,16 @@ public class SpawnManager : MonoBehaviour {
 	
 	public float frecuencia;
 
-	public float limitLeft;
-	public float limitRight;
-	public float limitDown;
-	public float limitUp;
+	private float limitMinX;
+	private float limitMaxX;
+	private float limitMinY;
+	private float limitMaxY;
+
+	public Transform tLimitMinX;
+	public Transform tLimitMaxX;
+	public Transform tLimitMinY;
+	public Transform tLimitMaxY;
+
 	public GameObject objA;
 	public GameObject objB;
 	public GameObject objC;
@@ -21,7 +27,11 @@ public class SpawnManager : MonoBehaviour {
 	void Awake () {
 		time=frecuencia;
 		bounds=objA.GetComponent<Bounds>();
-	//	widthA=objA.GetComponent<SpriteRenderer>().bounds.extents;
+		limitMinX=tLimitMinX.position.x;
+		limitMaxX=tLimitMaxX.position.x;
+		limitMinY=tLimitMinY.position.y;
+		limitMaxY=tLimitMaxY.position.y;
+		//	widthA=objA.GetComponent<SpriteRenderer>().bounds.extents;
 	}
 	
 	// Update is called once per frame
@@ -30,37 +40,29 @@ public class SpawnManager : MonoBehaviour {
 
 
 		if(time>frecuencia){
-			int n=GetRandomSpawns(1,4);
+			int n=GetRandomSpawns(1,5);
 
 			switch(n){
 			case 1://**left
 				
 				obj=GetObjetRandom();
 
-				GenerateSpawn(obj,limitLeft,limitDown,limitUp,false,270);
-				//float w=obj.GetComponent<SpriteRenderer>().bounds.extents.x;
-				//w+=0.8f;
-				//obj.GetComponent<Move>().setVecInitial=transform.right;
-			//GenerateSpawn(obj,bounds.lWidth_izq,bounds.lHeight_down,bounds.lHeight_up,obj.transform.up,false);//genero un spawn a la izquierda,entre un random de y de los extremos y una rotacion especfica
-			
+				GenerateSpawn(obj,limitMinX,limitMinY,limitMaxY,false,270);
 				break;
 			case 2:
 				//down
 				obj=GetObjetRandom();
-				GenerateSpawn(obj,limitDown,limitLeft,limitRight,true,0);
-				//GenerateSpawn(obj,bounds.lHeight_down,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);//generp un spawn en el nivel inferior q varia en x de los extremos,rotacion 0 "va para arriba"
+				GenerateSpawn(obj,limitMaxY,limitMinX,limitMaxX,true,0);
 				break;
 			case 3:
 				//**right
 				obj=GetObjetRandom();
-				GenerateSpawn(obj,limitRight,limitDown,limitUp,false,90);
-				//GenerateSpawn(obj,bounds.lWidth_der,bounds.lHeight_down,bounds.lHeight_up,obj.transform.right,false);
+				GenerateSpawn(obj,limitMaxX,limitMinY,limitMaxY,false,90);
 				break;
 			case 4:
 				//up
 				obj=GetObjetRandom();
-				GenerateSpawn(obj,limitUp,limitLeft,limitRight,true,180);
-				//GenerateSpawn(obj,bounds.lHeight_up,bounds.lWidth_izq,bounds.lWidth_der,obj.transform.up,true);
+				GenerateSpawn(obj,limitMinY,limitMinX,limitMaxX,true,180);
 				break;
 				}
 			time=0;
@@ -85,9 +87,7 @@ public class SpawnManager : MonoBehaviour {
 			spawnfY.x=Random.Range(r1,r2);
 			spawnfY.y=ptoFijoSalida;
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
-		
-			
-
+			auxObjFY.transform.Rotate(new Vector3(0,0,rot));
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -97,26 +97,22 @@ public class SpawnManager : MonoBehaviour {
 			spawnFX.y=Random.Range(r1,r2);
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
 			auxObjFX.transform.Rotate(new Vector3(0,0,rot));
-
-
-		
 			listaObj.Add(auxObjFX);
 		}
-
-		
+			
 	}
 	private GameObject GetObjetRandom(){
 		int r=GetRandomSpawns(1,4);
 		switch (r){
 		case 1:
 			return objA;
-			break;
+//			break;
 		case 2:
 			return objB;
-			break;
+//			break;
 		case 3:
 			return objC;
-			break;
+//			break;
 		}
 
 		return objA;

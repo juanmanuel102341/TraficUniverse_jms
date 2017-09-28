@@ -25,12 +25,13 @@ GameObject:
   - component: {fileID: 114838246835216978}
   - component: {fileID: 114142300612597662}
   - component: {fileID: 114133653280781024}
-  - component: {fileID: 114117540176965574}
   - component: {fileID: 114566612993045724}
   - component: {fileID: 114801082867009134}
+  - component: {fileID: 114774769156420218}
+  - component: {fileID: 114890921749364552}
   m_Layer: 0
   m_Name: NaveA (1)
-  m_TagString: Untagged
+  m_TagString: nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +42,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1666489747368688}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0009786827, w: 0.9999995}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7064144, w: 0.7077985}
   m_LocalPosition: {x: -15.94, y: -8.08, z: 0}
   m_LocalScale: {x: 2.5, y: 2.4658155, z: 2.5}
   m_Children: []
@@ -82,19 +83,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.11}
   serializedVersion: 2
   m_Size: {x: 1, y: 0.79}
---- !u!114 &114117540176965574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1666489747368688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cbd20e57eddae044bd6bf4b5daa1946, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
-    type: 2}
 --- !u!114 &114133653280781024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 1.5
-  pathInputs: {fileID: 114142300612597662}
 --- !u!114 &114142300612597662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,7 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edfd42dde21b7846911b5b6945c4f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraGame: {fileID: 0}
 --- !u!114 &114566612993045724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +115,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e010647faf45394479ca4e01fea3d514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114774769156420218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666489747368688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90a0bec317c92d419a7767bae232414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114801082867009134
@@ -155,6 +152,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cactive: {r: 0.39655173, g: 1, b: 0.6006593, a: 0}
   cPersuit: {r: 1, g: 0, b: 0, a: 0}
+--- !u!114 &114890921749364552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666489747368688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5507815e211608e4fb2aee3cdf9a46d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
+    type: 2}
 --- !u!212 &212296023027733464
 SpriteRenderer:
   m_ObjectHideFlags: 1
