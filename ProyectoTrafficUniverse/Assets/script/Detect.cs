@@ -6,11 +6,11 @@ public class Detect : MonoBehaviour {
 	private PathInputs  pathInputs;
 	private  SpawnManager gameManager_obj;
 	private string id;
-	private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
+	//private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
 		//gameManager_obj=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
 		id=gameObject.tag;
-		choque=false;//cuidado hay q resetearo en replay
+		//choque=false;//cuidado hay q resetearo en replay
 		pathInputs=GetComponent<PathInputs>();
 	}
 	

@@ -6,6 +6,7 @@ public class MovePath : MonoBehaviour {
 	private int index=0;
 	//private PathInputs pathInput;
 	private Move move;
+	private int direccion=1;
 	void Awake () {
 	//	pathInput=GetComponent<PathInputs>();
 		move=GetComponent<Move>();
@@ -55,7 +56,7 @@ public class MovePath : MonoBehaviour {
 
 	private void Move_01(){
 		
-		transform.position=Vector2.MoveTowards(transform.position,move.getPathInputs.path.listNodos[index].posicion,move.velocity*Time.deltaTime);
+		transform.position=Vector2.MoveTowards(transform.position,move.getPathInputs.path.listNodos[index].posicion,move.velocity*Time.deltaTime*direccion);
 		transform.up=VecDirection();
 		}
 	private Vector2 VecDirection(){

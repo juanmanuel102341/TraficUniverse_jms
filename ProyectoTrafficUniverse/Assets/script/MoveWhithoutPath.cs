@@ -6,6 +6,7 @@ public class MoveWhithoutPath : MonoBehaviour {
 	private Vector2 vector;
 
 	private Move move;
+	private int direccion=1;
 	//private Rigidbody2D rb;
 	private bool active=false;
 	void Awake () {
@@ -23,7 +24,7 @@ public class MoveWhithoutPath : MonoBehaviour {
 		}
 
 
-		transform.Translate(Vector3.up*move.velocity*Time.deltaTime);
+		transform.Translate(Vector3.up*move.velocity*Time.deltaTime*direccion);
 
 	}
 	private Vector2 calcDirection(){

@@ -22,7 +22,7 @@ public class PathInputs : MonoBehaviour {
 		movePath=GetComponent<MovePath>();
 	}
 	void Update () {
-		print("cantidad d nodos"+path.listNodos.Count);
+//		print("cantidad d nodos"+path.listNodos.Count);
 		GetInputMouse();
 	}
 	// Update is called once per frame

@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour {
 	public GameObject guiLoose;
 	public GameObject guiWin;
 	public int targetPlanes;
-	public SpawnManager spawnManager;
 	public GameObject target;
 	private int initialVidas;
 	private int initialTarget;
@@ -49,8 +48,8 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	private void Reset(){
-//	//primero borrar objetos despues listas
-//		//destruccion de naves y sus paths si los hay
+	//primero borrar objetos despues listas
+		//destruccion de naves y sus paths si los hay
 //		for(int i=0;i<spawnManager.getListaNaves.Count;i++){
 //			GameObject obj=spawnManager.getListaNaves[i];//obtenemos objeto
 //			for(int i2=0;i2<obj.GetComponent<PathController>().getListSprite.Count;i2++){
@@ -90,7 +89,7 @@ public class GameManager : MonoBehaviour {
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;//reseteo vidas
 		target.SetActive(true);
-		spawnManager.enabled=true;
+		//spawnManager.enabled=true;
 		guiGame.SetActive(true);
 	}
 	private void SpawnVictoriaGui(){

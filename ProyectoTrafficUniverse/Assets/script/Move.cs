@@ -11,7 +11,7 @@ public class Move:MonoBehaviour {
 	MoveWhithoutPath moveWhithoutPath;
 	private PathInputs pathInputs;
 
-	private bool activePath=false;//para activar el path cuando posteriormente no  lo haya
+	//private bool activePath=false;//para activar el path cuando posteriormente no  lo haya
 	private Vector2 finalVec;
 
 	void Awake () {
@@ -37,7 +37,7 @@ public class Move:MonoBehaviour {
 
 		if(pathInputs.path.listNodos.Count>0){
 			//path activo
-
+			//****************momento path*****************************
 
 			if(!movePath.enabled){
 				movePath.enabled=true;
@@ -51,7 +51,9 @@ public class Move:MonoBehaviour {
 			//transform.position=Vector2.MoveTowards(posObj,pathInputs.path.listNodos[index].posicion,velocity*Time.deltaTime);
 		}else if (movePath.enabled||moveWhithoutPath.enabled){
 			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
-					print("final vector");
+			//******************despues del path**********************************
+			print("final vector");
+
 					if(!movePath.enabled){
 					movePath.enabled=false;
 					}
@@ -60,7 +62,7 @@ public class Move:MonoBehaviour {
 					}
 
 		}else{
-			print("idle");
+//			print("idle");
 			Move_Idle();
 		}
 	//	movePath.Update();

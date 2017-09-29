@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class MoveFirst :Move {
-	
+	private int direccion=1;
 
 	void Awake () {
 
@@ -10,7 +10,7 @@ public class MoveFirst :Move {
 	}
 	
 	public Vector2 MoveIdle(){
-		Vector2 vec=Vector2.up;
+		Vector2 vec=Vector2.up*direccion;
 		return vec;
 	}
 
