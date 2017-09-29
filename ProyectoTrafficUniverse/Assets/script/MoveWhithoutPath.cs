@@ -9,11 +9,11 @@ public class MoveWhithoutPath : MonoBehaviour {
 	private int direccion=1;
 	//private Rigidbody2D rb;
 	private bool active=false;
+	private Bounds bounds;
 	void Awake () {
 
 		move=GetComponent<Move>();
-	//	rb=GetComponent<Rigidbody2D>();
-		//transform.up=calcDirection();
+		bounds=GetComponent<Bounds>();
 	}
 	
 
@@ -23,28 +23,21 @@ public class MoveWhithoutPath : MonoBehaviour {
 			active=true;
 		}
 
-
+		Direction();
 		transform.Translate(Vector3.up*move.velocity*Time.deltaTime*direccion);
 
 	}
-	private Vector2 calcDirection(){
-		Vector2 auxPosP;
-		Vector2 target;
-		Vector2 r;
-
-		//Vector2 direccion=transform.position-;
-
-		auxPosP.x=transform.position.x;
-		auxPosP.y=transform.position.y;
-		target=move.getFinalVec;
-		r=target-auxPosP;
-		Debug.Log("vector final !!!!!!!!!!!!!!!!!!!!!!!!! "+r);
-		return r;
+	private void Direction(){
+		if(bounds.limiteActive){
+			transform.up=-transform.up;
+		
+		}
 	}
+
 	public bool setBooleanDirection{
 
 		set{
-			active=value;
+			active=value;//boolean q seteo en move para una proxima vez
 		}
 	}
 

@@ -24,35 +24,54 @@ public class Bounds : MonoBehaviour {
 		print("width obj "+widthObj);
 		print("alto obj "+heightObj);
 	}
-	
-
 	void Update () {
-		if(AxisX()||AxisY()){
+		if(AxisXMin()||AxisYMin()||AxisXMax()||AxisYMax()){
 			print("limite activo");
 			limite=true;		
 		}else{
 			limite=false;
 		}
 	}
-
-
-	private bool AxisX(){
-		if(transform.position.x+widthObj>widthScene||transform.position.x-widthObj<-widthScene){
-
+	private bool AxisXMin(){
+		if(transform.position.x-widthObj<-widthScene){
+			
+			float l=-widthScene+widthObj;
+			transform.position=new Vector2(l,transform.position.y);
+//			print("w "+widthObj);
+//			print("scene max "+widthScene);
+//			print("lim x min "+l);
+//			print("pos x "+transform.position.x);
 			return true;
 		}
 		return false;
 	}
-	private bool AxisY(){
-		if(transform.position.y+heightObj>heightScene||transform.position.y-heightObj<-heightScene){
+	private bool AxisXMax(){
+		if(transform.position.x+widthObj>widthScene){
+			transform.position=new Vector2 (widthScene-widthObj,transform.position.y);//posiciono el objeto en el punto maximo menos el ancho para q n traiga prblemas cuando le cambie d direccion
 			return true;
 		}
 		return false;
 	}
-
+	private bool AxisYMin(){
+		if(transform.position.y-heightObj<-heightScene){
+			transform.position=new Vector2 (transform.position.x,-heightScene+heightObj);
+			return true;
+		}
+		return false;
+	}
+	private bool AxisYMax(){
+		if(transform.position.y+heightObj>heightScene){
+			transform.position=new Vector2 (transform.position.x,heightScene-heightObj);
+			return true;
+		}
+		return false;	
+	}
 	public bool limiteActive{
 		get {
 			return limite;
+		}
+		set{
+			limite=value;
 		}
 	}
 

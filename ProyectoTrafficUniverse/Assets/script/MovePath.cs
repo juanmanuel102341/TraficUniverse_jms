@@ -7,17 +7,25 @@ public class MovePath : MonoBehaviour {
 	//private PathInputs pathInput;
 	private Move move;
 	private int direccion=1;
+	private Bounds bounds;
 	void Awake () {
 	//	pathInput=GetComponent<PathInputs>();
 		move=GetComponent<Move>();
+		bounds=GetComponent<Bounds>();
 	}
 
 	void Update () {
 		
 	
 		if(move.getPathInputs.path.listNodos.Count>0){
+			if(!bounds.limiteActive){
 			Move_01();
 			ChangeIndexPath();	
+			}else{
+				//limite activo , path "dentro" del limite, borro paths, entra en juego moveWhithouth path q "cambia de sentido"
+				DeletePaths();
+				bounds.limiteActive=false;
+			}
 		}
 	}
 	public void ChangeIndexPath(){
@@ -30,12 +38,15 @@ public class MovePath : MonoBehaviour {
 			}else if(index==move.getPathInputs.path.listNodos.Count-1){
 				//ultimo path
 				print("utlimo path");
-				move.getFinalVec=CalcFinal();//guardamo data del ultimo vector 
-				move.getPathInputs.Delete();//borramos paths
+				DeletePaths();
 				index=0;
 			}
 		}
 
+	}
+	private void DeletePaths(){
+		move.getFinalVec=CalcFinal();//guardamo data del ultimo vector 
+		move.getPathInputs.Delete();//borramos paths
 	}
 	private Vector2 CalcFinal(){
 		Vector2 aux;
@@ -77,7 +88,6 @@ public class MovePath : MonoBehaviour {
 			index=value;
 		}
 	}
-
 
 
 }

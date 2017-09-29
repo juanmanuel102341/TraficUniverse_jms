@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114774769156420218}
   - component: {fileID: 114890921749364552}
   m_Layer: 0
-  m_Name: NaveA (1)
+  m_Name: NaveA
   m_TagString: nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

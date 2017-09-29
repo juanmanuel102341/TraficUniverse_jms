@@ -6,18 +6,17 @@ public class Move:MonoBehaviour {
 	protected Rigidbody2D rb;
 	public float velocity;
 	MoveFirst moveFirst;
-
 	MovePath movePath;
 	MoveWhithoutPath moveWhithoutPath;
 	private PathInputs pathInputs;
+	private Bounds bounds;
 
-	//private bool activePath=false;//para activar el path cuando posteriormente no  lo haya
 	private Vector2 finalVec;
-
+	private int direction=1;
 	void Awake () {
 		rb=GetComponent<Rigidbody2D>();
 		//print("rb move "+rb);
-
+		bounds=GetComponent<Bounds>();
 		pathInputs=GetComponent<PathInputs>();
 		moveFirst=new MoveFirst();
 		movePath=GetComponent<MovePath>();
@@ -38,7 +37,6 @@ public class Move:MonoBehaviour {
 		if(pathInputs.path.listNodos.Count>0){
 			//path activo
 			//****************momento path*****************************
-
 			if(!movePath.enabled){
 				movePath.enabled=true;
 			}
@@ -51,25 +49,25 @@ public class Move:MonoBehaviour {
 			//transform.position=Vector2.MoveTowards(posObj,pathInputs.path.listNodos[index].posicion,velocity*Time.deltaTime);
 		}else if (movePath.enabled||moveWhithoutPath.enabled){
 			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
+
 			//******************despues del path**********************************
 			print("final vector");
-
 					if(!movePath.enabled){
 					movePath.enabled=false;
 					}
 					if(moveWhithoutPath.enabled==false){
 						moveWhithoutPath.enabled=true;
 					}
-
-		}else{
-//			print("idle");
-			Move_Idle();
+					
+			}else{
+					//			print("idle");
+					Move_Idle();
+					}
 		}
-	//	movePath.Update();
-
-	}
 	private void Move_Idle(){
-		rb.transform.Translate(moveFirst.MoveIdle()*velocity*Time.deltaTime);
+		Direction();
+		transform.Translate(moveFirst.MoveIdle()*direction* velocity*Time.deltaTime);
+
 	}
 
 	public Vector2 getFinalVec{
@@ -84,5 +82,19 @@ public class Move:MonoBehaviour {
 		get{
 			return pathInputs;
 		}
+	}
+	public void Direction(){
+		if(bounds.limiteActive){
+			
+			print("limite idle");
+	
+	//		direction*=-1;
+			bounds.limiteActive=false;
+			transform.up=-transform.up;
+			//return direction;
+
+		}
+
+	
 	}
 }

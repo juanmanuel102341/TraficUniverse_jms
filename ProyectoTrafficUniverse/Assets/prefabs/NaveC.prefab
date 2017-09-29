@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114346529784997412}
   - component: {fileID: 114753824822015572}
   m_Layer: 0
-  m_Name: NaveB
+  m_Name: NaveC
   m_TagString: nave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,6 +197,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c6c11f090870b904b9b818dcbf4512f3, type: 3}
-  m_Color: {r: 0.43241778, g: 0.9485294, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
