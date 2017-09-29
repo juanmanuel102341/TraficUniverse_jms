@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class Bounds : MonoBehaviour {
 	private bool limite=false;
-	private Camera cameraGame;
-	private float widthScene;
-	private float heightScene;
-	private float widthObj;
-	private float heightObj;
-	void Awake () {
-		//camara tiene q estar poscionada en (0,0)!!!
-		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-		//cameraGame.ScreenToWorldPoint(
-		print ("camera "+cameraGame.orthographicSize);
-		heightScene=cameraGame.orthographicSize;//alto de la camara 
-		widthScene=cameraGame.aspect*cameraGame.orthographicSize;//ancho del tama;o d la camara multiplicado por la razon del ancho divido height(en mi caso 16/9)
-		widthObj=GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
-		heightObj=GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
-		print("height "+heightScene);
-		print("width "+widthScene);
-	
-		print("width obj "+widthObj);
-		print("alto obj "+heightObj);
+	private ScreenValues screenData;
+	private float widthObj=0;
+	private float heightObj=0;
+	void Start () {
+		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
 	}
+
 	void Update () {
 		if(AxisXMin()||AxisYMin()||AxisXMax()||AxisYMax()){
 			print("limite activo");
@@ -33,10 +20,10 @@ public class Bounds : MonoBehaviour {
 		}
 	}
 	private bool AxisXMin(){
-		if(transform.position.x-widthObj<-widthScene){
+		if(transform.position.x-widthObj<-screenData.getWidthScene){
 			
-			float l=-widthScene+widthObj;
-			transform.position=new Vector2(l,transform.position.y);
+
+			transform.position=new Vector2(-screenData.getWidthScene+widthObj,transform.position.y);
 //			print("w "+widthObj);
 //			print("scene max "+widthScene);
 //			print("lim x min "+l);
@@ -46,22 +33,22 @@ public class Bounds : MonoBehaviour {
 		return false;
 	}
 	private bool AxisXMax(){
-		if(transform.position.x+widthObj>widthScene){
-			transform.position=new Vector2 (widthScene-widthObj,transform.position.y);//posiciono el objeto en el punto maximo menos el ancho para q n traiga prblemas cuando le cambie d direccion
+		if(transform.position.x+widthObj>screenData.getWidthScene){
+			transform.position=new Vector2 (screenData.getWidthScene-widthObj,transform.position.y);//posiciono el objeto en el punto maximo menos el ancho para q n traiga prblemas cuando le cambie d direccion
 			return true;
 		}
 		return false;
 	}
 	private bool AxisYMin(){
-		if(transform.position.y-heightObj<-heightScene){
-			transform.position=new Vector2 (transform.position.x,-heightScene+heightObj);
+		if(transform.position.y-heightObj<-screenData.getHeightScene){
+			transform.position=new Vector2 (transform.position.x,-screenData.getHeightScene+heightObj);
 			return true;
 		}
 		return false;
 	}
 	private bool AxisYMax(){
-		if(transform.position.y+heightObj>heightScene){
-			transform.position=new Vector2 (transform.position.x,heightScene-heightObj);
+		if(transform.position.y+heightObj>screenData.getHeightScene){
+			transform.position=new Vector2 (transform.position.x,screenData.getHeightScene-heightObj);
 			return true;
 		}
 		return false;	
@@ -74,8 +61,17 @@ public class Bounds : MonoBehaviour {
 			limite=value;
 		}
 	}
-
-
-
+	public float setWidth{
+		set{
+			widthObj=value;
+			print("width b "+widthObj);
+		}
+	}
+	public float setHeight{
+		set{
+			heightObj=value;
+			print("height b"+heightObj);
+		}
+	}
 }
 

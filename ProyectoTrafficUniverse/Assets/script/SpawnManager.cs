@@ -6,32 +6,38 @@ public class SpawnManager : MonoBehaviour {
 	
 	public float frecuencia;
 
-	private float limitMinX;
-	private float limitMaxX;
-	private float limitMinY;
-	private float limitMaxY;
-
-	public Transform tLimitMinX;
-	public Transform tLimitMaxX;
-	public Transform tLimitMinY;
-	public Transform tLimitMaxY;
+//	private float limitMinX;
+//	private float limitMaxX;
+//	private float limitMinY;
+//	private float limitMaxY;
+//
+//	public Transform tLimitMinX;
+//	public Transform tLimitMaxX;
+//	public Transform tLimitMinY;
+//	public Transform tLimitMaxY;
 
 	public GameObject objA;
 	public GameObject objB;
 	public GameObject objC;
 	private float time;
-	private Bounds bounds;
+
 	private List<GameObject>listaObj=new List<GameObject>();
+	private ScreenValues screenData;
 	//private float widthA;
-	GameObject obj;
+
+
 	void Awake () {
 		time=frecuencia;
-		bounds=objA.GetComponent<Bounds>();
-		limitMinX=tLimitMinX.position.x;
-		limitMaxX=tLimitMaxX.position.x;
-		limitMinY=tLimitMinY.position.y;
-		limitMaxY=tLimitMaxY.position.y;
+
+
+//		limitMinX=tLimitMinX.position.x;
+//		limitMaxX=tLimitMaxX.position.x;
+//		limitMinY=tLimitMinY.position.y;
+//		limitMaxY=tLimitMaxY.position.y;
 		//	widthA=objA.GetComponent<SpriteRenderer>().bounds.extents;
+	}
+	void Start(){
+		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
 	}
 	
 	// Update is called once per frame
@@ -40,29 +46,56 @@ public class SpawnManager : MonoBehaviour {
 
 
 		if(time>frecuencia){
+			float widthObj;
+			float heightObj;
+			GameObject obj;
 			int n=GetRandomSpawns(1,5);
-
+			n=1;
 			switch(n){
 			case 1://**left
 				
 				obj=GetObjetRandom();
+			
+				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
+				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 
-				GenerateSpawn(obj,limitMinX,limitMinY,limitMaxY,false,270);
+				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
+				obj.GetComponent<Bounds>().setHeight=heightObj;
+				GenerateSpawn(obj,-screenData.getWidthScene+widthObj,-screenData.getHeightScene+widthObj,screenData.getHeightScene-heightObj,false,270);
+			//	GenerateSpawn(obj,limitMinX,limitMinY,limitMaxY,false,270);
 				break;
 			case 2:
 				//down
 				obj=GetObjetRandom();
-				GenerateSpawn(obj,limitMaxY,limitMinX,limitMaxX,true,0);
+
+				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
+				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
+				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
+				obj.GetComponent<Bounds>().setHeight=heightObj;
+				GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0);
+			//	GenerateSpawn(obj,limitMaxY,limitMinX,limitMaxX,true,0);
 				break;
 			case 3:
 				//**right
 				obj=GetObjetRandom();
-				GenerateSpawn(obj,limitMaxX,limitMinY,limitMaxY,false,90);
+
+				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
+				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
+				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
+				obj.GetComponent<Bounds>().setHeight=heightObj;
+				GenerateSpawn(obj,screenData.getWidthScene-widthObj,-screenData.getHeightScene+heightObj,screenData.getHeightScene-heightObj,false,90);
+			//	GenerateSpawn(obj,limitMaxX,limitMinY,limitMaxY,false,90);
 				break;
 			case 4:
 				//up
 				obj=GetObjetRandom();
-				GenerateSpawn(obj,limitMinY,limitMinX,limitMaxX,true,180);
+
+				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
+				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
+				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
+				obj.GetComponent<Bounds>().setHeight=heightObj;
+				GenerateSpawn(obj,screenData.getHeightScene-heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,180);
+			//	GenerateSpawn(obj,limitMinY,limitMinX,limitMaxX,true,180);
 				break;
 				}
 			time=0;
