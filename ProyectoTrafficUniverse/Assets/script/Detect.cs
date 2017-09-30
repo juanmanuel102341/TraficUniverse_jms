@@ -29,7 +29,7 @@ public class Detect : MonoBehaviour {
 	private void TakeOutPlane(){
 		//pathInputs.Delete();//te borro los paths si tenes
 		spawnManager.GetOutObjectFromList(this.gameObject);//te saco d la lista
-		gameObject.GetComponent<Delete>().DeleteMe(); //te borro
+		gameObject.GetComponent<Delete>().DeleteMe(); //te borro y tb paths
 	}
 
 

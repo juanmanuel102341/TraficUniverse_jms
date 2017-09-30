@@ -24,7 +24,7 @@ public class MovePath : MonoBehaviour {
 			}else{
 				//limite activo , path "dentro" del limite, borro paths, entra en juego moveWhithouth path q "cambia de sentido"
 		
-				move.getFinalVec=CalcFinal();//guardamo data del ultimo vector y lo setiemos
+				move.getFinalVec=CalcFinal();//guardamos data del ultimo vector y lo setiemos
 				GetComponent<Delete>().DeleteNodes();
 				bounds.limiteActive=false;
 				index=0;
@@ -37,11 +37,11 @@ public class MovePath : MonoBehaviour {
 		if(Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position)<=0){
 			if(index<move.getPathInputs.path.listNodes.Count-1){
 			index++;			
-				print("vambio indice");
+				print("cambio indice");
 			}else if(index==move.getPathInputs.path.listNodes.Count-1){
 				//borro nodos
 				move.getFinalVec=CalcFinal();//guardamo data del ultimo vector y lo setiemos
-				GetComponent<Delete>().DeleteNodes();
+				GetComponent<Delete>().DeleteNodes();//borro nodos
 				index=0;
 			}
 		}
@@ -84,7 +84,7 @@ public class MovePath : MonoBehaviour {
 	}
 	public int setIndex{
 		set{
-			index=value;
+			index=value;//viene de path inputs cuando clickea usuario y se borran los nodos
 		}
 	}
 

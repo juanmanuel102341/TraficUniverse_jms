@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
-	public static  int vidas=3;
+	public static  int vidas=1;
 	public static int aviones=0;
 	public GameObject guiLoose;
 	public GameObject guiWin;
@@ -52,12 +52,12 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	private void Reset(){
-//		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
-//			spawnManager.GetOutObjectFromList(spawnManager.getListPlanes[i]);//saco d la lista	
-//
-//
-//			spawnManager.getListPlanes[i].GetComponent<Delete>().DeleteMe();//destruyo nave
-//		}
+		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
+			GameObject aux=spawnManager.getListPlanes[i];
+			spawnManager.GetOutObjectFromList(aux);
+			aux.GetComponent<Delete>().DeleteMe();//destruyo nave y nodos
+		
+		}
 		guiGame.SetActive(false);//apago gui
 		target.SetActive(false);//apago planeta
 		spawnManager.enabled=false;;//apago generacion de naves
@@ -73,13 +73,13 @@ public class GameManager : MonoBehaviour {
 			buttonWin.SetActive(false);
 			guiWin.SetActive(false);
 		}
-
+	
 		target.SetActive(true);//prendo planeta
 		spawnManager.enabled=true;;//prendo generacion de naves
 		targetPlanes=initialTarget;//reseteo aviones
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;//reseteo vidas
-
+		guiGame.SetActive(true);//prendo gui del juego
 	}
 	private void SpawnVictoriaGui(){
 		

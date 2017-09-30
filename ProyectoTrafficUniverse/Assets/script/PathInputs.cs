@@ -84,6 +84,7 @@ public class PathInputs : MonoBehaviour {
 		if(path.listNodes.Count>0){
 			colorObj.ColorIdle();
 		}
+	
 		pathGraphic.Delete_ngraphics();
 		path.Delete();
 	}
