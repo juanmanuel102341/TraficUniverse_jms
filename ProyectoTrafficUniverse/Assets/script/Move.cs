@@ -23,15 +23,8 @@ public class Move:MonoBehaviour {
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
 		movePath.enabled=false;
 		moveWhithoutPath.enabled=false;
-	//	moveWhithoutPath=new MoveWhithoutPath();
-		//falta aplicar move path bn generar metodo dentro y canalizarlos via update
-	}
-	void Start(){
-
 
 	}
-	
-
 	void Update () {
 
 		if(pathInputs.path.listNodes.Count>0){
@@ -45,9 +38,6 @@ public class Move:MonoBehaviour {
 				moveWhithoutPath.setBooleanDirection=false;
 				moveWhithoutPath.enabled=false;
 			}
-
-			//Move_Path();
-			//transform.position=Vector2.MoveTowards(posObj,pathInputs.path.listNodos[index].posicion,velocity*Time.deltaTime);
 		}else if (movePath.enabled||moveWhithoutPath.enabled){
 			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
 

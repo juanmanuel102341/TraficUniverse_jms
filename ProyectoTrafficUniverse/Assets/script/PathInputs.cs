@@ -14,6 +14,7 @@ public class PathInputs : MonoBehaviour {
 	private PathGraphic pathGraphic;
 	private bool over=false;
 	private MovePath movePath;
+	private Move move;
 	public float distanceNodes;
 	void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -21,6 +22,7 @@ public class PathInputs : MonoBehaviour {
 		colorObj=GetComponent<ChangeColor>();
 		pathGraphic=GetComponent<PathGraphic>();
 		movePath=GetComponent<MovePath>();
+		move=GetComponent<Move>();	
 	}
 	void Update () {
 //		print("cantidad d nodos"+path.listNodos.Count);
@@ -29,7 +31,10 @@ public class PathInputs : MonoBehaviour {
 	// Update is called once per frame
 	void OnMouseDown(){
 		colorObj.ColorActive();
-
+		if(path.listNodes.Count>0){
+		Vector2 vecFinal=movePath.getCurrentVector;//vector q viene de movePath , osea es el vector en el q estaba hasta q hizo el click
+		move.getFinalVec=vecFinal;
+		}
 		Delete();
 		contador++;
 		if(!clickObj){
@@ -40,6 +45,7 @@ public class PathInputs : MonoBehaviour {
 			print("activate path");
 			activatePath=true;
 		}
+
 		movePath.setIndex=0;
 	}
 	void OnMouseUp(){
@@ -52,6 +58,7 @@ public class PathInputs : MonoBehaviour {
 
 	}
 	void OnMouseOver(){
+		//si el jugador clickea encima "xra q n se genere ningun path" para eso este booleano
 		over=true;
 	
 	

@@ -48,6 +48,7 @@ public class MovePath : MonoBehaviour {
 
 	}
 	private Vector2 CalcFinal(){
+		//metodo publico asi puedo accede desde path inputs y obtener el vectir apropiado cuando clickea de nuevo el usuario sobre y genera otro path
 		Vector2 aux;
 		if(move.getPathInputs.path.listNodes.Count>1){
 			//si hay 2 entras
@@ -87,6 +88,12 @@ public class MovePath : MonoBehaviour {
 			index=value;//viene de path inputs cuando clickea usuario y se borran los nodos
 		}
 	}
+	public Vector2 getCurrentVector{
+		get{
+			return VecDirection();
+		}
+	}
+
 
 
 }
