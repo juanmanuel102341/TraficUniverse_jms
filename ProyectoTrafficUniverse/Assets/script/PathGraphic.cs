@@ -7,10 +7,10 @@ public class PathGraphic : MonoBehaviour {
 	public GameObject graphicPath;//parte grafica del path
 	private List<GameObject>listGraphicsPaths=new List<GameObject>();
 	void Start(){
-		Path.activate+=SpawnGraphicPath;
+	//	Path.activate+=SpawnGraphicPath;
 	}
 	
-	private void SpawnGraphicPath(Vector2 pos){
+	public void SpawnGraphicPath(Vector2 pos){
 		GameObject obj=Instantiate(graphicPath,pos,transform.rotation);
 		listGraphicsPaths.Add(obj);
 	}

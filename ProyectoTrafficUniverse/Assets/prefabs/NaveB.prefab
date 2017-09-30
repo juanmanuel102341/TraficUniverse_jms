@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 114101461203757142}
   - component: {fileID: 114346529784997412}
   - component: {fileID: 114753824822015572}
+  - component: {fileID: 114634734531372358}
+  - component: {fileID: 114917199751601860}
   m_Layer: 0
   m_Name: NaveB
   m_TagString: nave
@@ -94,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33416f7bb7bd374fbbc925dcba126b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cactive: {r: 0.39655173, g: 1, b: 0.6006593, a: 0}
+  cactive: {r: 0.3790568, g: 0.5741596, b: 0.9558824, a: 0}
   cPersuit: {r: 1, g: 0, b: 0, a: 0}
 --- !u!114 &114219914520283862
 MonoBehaviour:
@@ -141,6 +143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e010647faf45394479ca4e01fea3d514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114634734531372358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253122fb9cc89bd489ce5ce29dc74a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114753824822015572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +167,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
+--- !u!114 &114917199751601860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79a6cff940becf4db9cd69c2020f885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114983464266292078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edfd42dde21b7846911b5b6945c4f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceNodes: 0
 --- !u!212 &212546909787966930
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -197,6 +222,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c6c11f090870b904b9b818dcbf4512f3, type: 3}
-  m_Color: {r: 0.43241778, g: 0.9485294, b: 0, a: 1}
+  m_Color: {r: 0.05622843, g: 0, b: 0.9558824, a: 1}
   m_FlipX: 0
   m_FlipY: 0

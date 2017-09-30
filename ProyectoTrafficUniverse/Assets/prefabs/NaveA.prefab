@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 114801082867009134}
   - component: {fileID: 114774769156420218}
   - component: {fileID: 114890921749364552}
+  - component: {fileID: 114216479019748736}
+  - component: {fileID: 114480309822349600}
   m_Layer: 0
   m_Name: NaveA
   m_TagString: nave
@@ -104,6 +106,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3edfd42dde21b7846911b5b6945c4f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceNodes: 1
+--- !u!114 &114216479019748736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666489747368688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253122fb9cc89bd489ce5ce29dc74a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114480309822349600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1666489747368688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79a6cff940becf4db9cd69c2020f885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114566612993045724

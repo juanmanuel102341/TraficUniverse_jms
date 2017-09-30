@@ -9,15 +9,19 @@ public class GameManager : MonoBehaviour {
 	public GameObject guiWin;
 	public int targetPlanes;
 	public GameObject target;
+	private SpawnManager spawnManager;
 	private int initialVidas;
 	private int initialTarget;
 	public GameObject guiGame;
 	public GameObject buttonWin;
 	public GameObject buttonLoose;
 
+
+
 	void Awake () {
 		initialVidas=vidas;
 		initialTarget=targetPlanes;
+		spawnManager=GetComponent<SpawnManager>();
 	}
 	void Start(){
 		Replay.activateReplay+=OnReplay;	
@@ -35,12 +39,12 @@ public class GameManager : MonoBehaviour {
 	private void Conditions(){
 		if(vidas<=0){
 			print("loose");
+
 			Reset();
 			buttonLoose.SetActive(true);
 			guiLoose.SetActive(true);
 		
 		}else if(aterrizajes>=targetPlanes){
-
 			print("victory");
 			Reset();
 			buttonWin.SetActive(true);
@@ -48,36 +52,20 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	private void Reset(){
-	//primero borrar objetos despues listas
-		//destruccion de naves y sus paths si los hay
-//		for(int i=0;i<spawnManager.getListaNaves.Count;i++){
-//			GameObject obj=spawnManager.getListaNaves[i];//obtenemos objeto
-//			for(int i2=0;i2<obj.GetComponent<PathController>().getListSprite.Count;i2++){
-//				GameObject auxSpritePath=obj.GetComponent<PathController>().getListSprite[i2];//destruimos el path
-//				Destroy(auxSpritePath);
-//			
-//			}
-//			if(obj.GetComponent<PathController>().getPathVectors.Count>0){
-//				obj.GetComponent<PathController>().getPathVectors.RemoveRange(0,obj.GetComponent<PathController>().getPathVectors.Count);//vaciamos la lista
-//				obj.GetComponent<PathController>().getListSprite.RemoveRange(0,obj.GetComponent<PathController>().getListSprite.Count);
-//			}
+//		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
+//			spawnManager.GetOutObjectFromList(spawnManager.getListPlanes[i]);//saco d la lista	
 //
-//			Destroy(obj);//destruccion nave
-//		}
-//		if(spawnManager.getListaNaves.Count>0){
-//			spawnManager.getListaNaves.RemoveRange(0,spawnManager.getListaNaves.Count);//vacio lista d naves
-//		}
-//	
 //
-//	
-//		target.SetActive(false);
-//		spawnManager.enabled=false;
-//		guiGame.SetActive(false);
-	}
+//			spawnManager.getListPlanes[i].GetComponent<Delete>().DeleteMe();//destruyo nave
+//		}
+		guiGame.SetActive(false);//apago gui
+		target.SetActive(false);//apago planeta
+		spawnManager.enabled=false;;//apago generacion de naves
+		}
 	private void OnReplay(){
 		print("replay new");
 		if(buttonLoose.activeSelf){
-			print("button loose deacctiva");
+			print("button loose desacctiva");
 			buttonLoose.SetActive(false);
 			guiLoose.SetActive(false);
 		}else{
@@ -85,12 +73,13 @@ public class GameManager : MonoBehaviour {
 			buttonWin.SetActive(false);
 			guiWin.SetActive(false);
 		}
+
+		target.SetActive(true);//prendo planeta
+		spawnManager.enabled=true;;//prendo generacion de naves
 		targetPlanes=initialTarget;//reseteo aviones
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;//reseteo vidas
-		target.SetActive(true);
-		//spawnManager.enabled=true;
-		guiGame.SetActive(true);
+
 	}
 	private void SpawnVictoriaGui(){
 		

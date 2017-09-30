@@ -17,49 +17,48 @@ public class MovePath : MonoBehaviour {
 	void Update () {
 		
 	
-		if(move.getPathInputs.path.listNodos.Count>0){
+		if(move.getPathInputs.path.listNodes.Count>0){
 			if(!bounds.limiteActive){
 			Move_01();
 			ChangeIndexPath();	
 			}else{
 				//limite activo , path "dentro" del limite, borro paths, entra en juego moveWhithouth path q "cambia de sentido"
-				DeletePaths();
+		
+				move.getFinalVec=CalcFinal();//guardamo data del ultimo vector y lo setiemos
+				GetComponent<Delete>().DeleteNodes();
 				bounds.limiteActive=false;
+				index=0;
 			}
 		}
 	}
 	public void ChangeIndexPath(){
 //		print("nodo desde move path  "+pathInputs.path.listNodos[index]);
 		print("index "+index);
-		if(Vector2.Distance(move.getPathInputs.path.listNodos[index].posicion,transform.position)<=0){
-			if(index<move.getPathInputs.path.listNodos.Count-1){
+		if(Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position)<=0){
+			if(index<move.getPathInputs.path.listNodes.Count-1){
 			index++;			
 				print("vambio indice");
-			}else if(index==move.getPathInputs.path.listNodos.Count-1){
-				//ultimo path
-				print("utlimo path");
-				DeletePaths();
+			}else if(index==move.getPathInputs.path.listNodes.Count-1){
+				//borro nodos
+				move.getFinalVec=CalcFinal();//guardamo data del ultimo vector y lo setiemos
+				GetComponent<Delete>().DeleteNodes();
 				index=0;
 			}
 		}
 
 	}
-	private void DeletePaths(){
-		move.getFinalVec=CalcFinal();//guardamo data del ultimo vector 
-		move.getPathInputs.Delete();//borramos paths
-	}
 	private Vector2 CalcFinal(){
 		Vector2 aux;
-		if(move.getPathInputs.path.listNodos.Count>1){
+		if(move.getPathInputs.path.listNodes.Count>1){
 			//si hay 2 entras
-			aux=move.getPathInputs.path.listNodos[move.getPathInputs.path.listNodos.Count-1].posicion-move.getPathInputs.path.listNodos[move.getPathInputs.path.listNodos.Count-2].posicion;
+			aux=move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-1].posicion-move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-2].posicion;
 			print("vec final "+aux);
 			return aux;
 		}else{
 			Vector2 aux2;
 			aux2.x=transform.position.x;//busco posicion x e y
 			aux2.y=transform.position.y;
-			aux=move.getPathInputs.path.listNodos[move.getPathInputs.path.listNodos.Count-1].posicion-aux2;
+			aux=move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-1].posicion-aux2;
 			print("vec final path "+aux);
 			return aux;
 		}
@@ -67,7 +66,7 @@ public class MovePath : MonoBehaviour {
 
 	private void Move_01(){
 		
-		transform.position=Vector2.MoveTowards(transform.position,move.getPathInputs.path.listNodos[index].posicion,move.velocity*Time.deltaTime*direccion);
+		transform.position=Vector2.MoveTowards(transform.position,move.getPathInputs.path.listNodes[index].posicion,move.velocity*Time.deltaTime*direccion);
 		transform.up=VecDirection();
 		}
 	private Vector2 VecDirection(){
@@ -76,7 +75,7 @@ public class MovePath : MonoBehaviour {
 		Vector2 r;
 		posPlayer.x=transform.position.x;
 		posPlayer.y=transform.position.y;
-		target=move.getPathInputs.path.listNodos[index].posicion;
+		target=move.getPathInputs.path.listNodes[index].posicion;
 		r=target-posPlayer;
 //		print("posplayer "+posPlayer);
 		//print("target "+target);

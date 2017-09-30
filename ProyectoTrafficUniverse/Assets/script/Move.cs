@@ -34,13 +34,14 @@ public class Move:MonoBehaviour {
 
 	void Update () {
 
-		if(pathInputs.path.listNodos.Count>0){
+		if(pathInputs.path.listNodes.Count>0){
 			//path activo
 			//****************momento path*****************************
 			if(!movePath.enabled){
 				movePath.enabled=true;
 			}
 			if(moveWhithoutPath.enabled){
+				//si volves de movewhithout path, osea si generaste un path anteriormente y ya los recorrsite
 				moveWhithoutPath.setBooleanDirection=false;
 				moveWhithoutPath.enabled=false;
 			}
@@ -50,7 +51,7 @@ public class Move:MonoBehaviour {
 		}else if (movePath.enabled||moveWhithoutPath.enabled){
 			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
 
-			//******************despues del path**********************************
+			//******************despues de quedarme sin nodos**********************************
 			print("final vector");
 					if(!movePath.enabled){
 					movePath.enabled=false;
@@ -60,6 +61,7 @@ public class Move:MonoBehaviour {
 					}
 					
 			}else{
+			//******************momento inicial sin nodos**************************
 					//			print("idle");
 					Move_Idle();
 					}
@@ -85,14 +87,9 @@ public class Move:MonoBehaviour {
 	}
 	public void Direction(){
 		if(bounds.limiteActive){
-			
 			print("limite idle");
-	
-	//		direction*=-1;
 			bounds.limiteActive=false;
-			transform.up=-transform.up;
-			//return direction;
-
+			transform.up=-transform.up;//cambio vector por el sentido contrario
 		}
 
 	

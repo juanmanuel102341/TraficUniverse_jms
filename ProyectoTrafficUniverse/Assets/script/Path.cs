@@ -4,46 +4,56 @@ using UnityEngine;
 
 public class Path  {
 
-	public List<Node>listNodos=new List<Node>();
+	public List<Node>listNodes=new List<Node>();
 
-	private float distanceNodes=0.5f;
-	public delegate void NewPathCreation(Vector2 _pos);
-	public static event NewPathCreation activate;
+	private float distanceNodes;
 
-	void Awake () {
-		
+	public Path (float _distanceNodes){
+		distanceNodes=_distanceNodes;
 	}
 	
-	private void SetNewNode(Vector2 input){
-		Node node;
-		node=new Node(input);
-//		Debug.Log("node "+node.posicion);
-		listNodos.Add(node);
-		}
-
-	public void GeneratePath(Vector2 input){
-		if(listNodos.Count!=0){
-			//hay x lo menos 1
-			float d=Vector2.Distance(listNodos[listNodos.Count-1].posicion,input);
-			if(d>distanceNodes){
-//				Debug.Log("distancia mayor  "+d);
-				SetNewNode(input);
-				activate(input);
+	public bool SetNewNode(Vector2 input){
+		if(listNodes.Count!=0){
+			if(DistanceBetween(input)){
+			
+			Node node;
+			node=new Node(input);
+			listNodes.Add(node);
+				Debug.Log("creacion nodo "+node.posicion);
+				return true;
+			}else{
+				Debug.Log("nodo n cumple condicion ");
+				return false;
 			}
 		}else{
-//			Debug.Log("lista =0");
-			//igual a 0 
-			SetNewNode(input);
-			activate(input);
-		}
-	}
-	public void Delete(){
-		if(listNodos.Count>0){
 			
-			listNodos.RemoveRange(0,listNodos.Count);
-			}
+			//igual a 0
+			Node node;
+			node=new Node(input);
+			listNodes.Add(node);
+			Debug.Log("promer node "+node.posicion);
+			return true;
+		}
+	
+	}
 
-		Debug.Log("borrando nodos "+listNodos.Count);
+
+	private bool DistanceBetween(Vector2 _input){
+		float d=Vector2.Distance(listNodes[listNodes.Count-1].posicion,_input);//distancia entre el nodo q hay y el input del mouse
+		if(d>distanceNodes){
+			return true;
+		}
+		return false;
+	}
+
+	public void Delete(){
+		if(listNodes.Count>0){
+			Debug.Log("borrando nodos "+listNodes.Count);
+			listNodes.RemoveRange(0,listNodes.Count);
+			Debug.Log("nodos "+listNodes.Count);
+		}
+
+	
 	}
 
 }

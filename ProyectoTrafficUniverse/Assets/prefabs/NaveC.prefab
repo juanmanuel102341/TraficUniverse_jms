@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 114101461203757142}
   - component: {fileID: 114346529784997412}
   - component: {fileID: 114753824822015572}
+  - component: {fileID: 114884316770222948}
+  - component: {fileID: 114426898829304568}
   m_Layer: 0
   m_Name: NaveC
   m_TagString: nave
@@ -130,6 +132,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6da0cbbcfac4c4fb9b0cee5a0d1ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114426898829304568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79a6cff940becf4db9cd69c2020f885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114501664967458842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +167,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
+--- !u!114 &114884316770222948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253122fb9cc89bd489ce5ce29dc74a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114983464266292078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -165,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3edfd42dde21b7846911b5b6945c4f29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceNodes: 0
 --- !u!212 &212546909787966930
 SpriteRenderer:
   m_ObjectHideFlags: 1

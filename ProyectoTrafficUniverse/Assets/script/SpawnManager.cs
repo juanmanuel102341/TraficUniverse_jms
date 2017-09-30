@@ -5,52 +5,33 @@ using System.Collections.Generic;
 public class SpawnManager : MonoBehaviour {
 	
 	public float frecuencia;
-
-//	private float limitMinX;
-//	private float limitMaxX;
-//	private float limitMinY;
-//	private float limitMaxY;
-//
-//	public Transform tLimitMinX;
-//	public Transform tLimitMaxX;
-//	public Transform tLimitMinY;
-//	public Transform tLimitMaxY;
-
 	public GameObject objA;
 	public GameObject objB;
 	public GameObject objC;
 	private float time;
-
 	private List<GameObject>listaObj=new List<GameObject>();
 	private ScreenValues screenData;
-	//private float widthA;
-
-
 	void Awake () {
 		time=frecuencia;
-
-
-//		limitMinX=tLimitMinX.position.x;
-//		limitMaxX=tLimitMaxX.position.x;
-//		limitMinY=tLimitMinY.position.y;
-//		limitMaxY=tLimitMaxY.position.y;
-		//	widthA=objA.GetComponent<SpriteRenderer>().bounds.extents;
-	}
+		}
 	void Start(){
 		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
 	}
-	
-	// Update is called once per frame
 	void Update () {
 		time+=Time.deltaTime;	
-
+		if(listaObj.Count>0){
+			for(int i=0;i<listaObj.Count;i++){
+				Debug.Log("objeto cantidad pathNodes"+")"+i+" "+listaObj[i].GetComponent<PathInputs>().path.listNodes.Count);
+				Debug.Log("objeto cantidad pathGraphic"+")"+i+" "+listaObj[i].GetComponent<PathGraphic>().getListGraphic.Count);
+			}
+		}
 
 		if(time>frecuencia){
 			float widthObj;
 			float heightObj;
 			GameObject obj;
 			int n=GetRandomSpawns(1,5);
-			n=1;
+
 			switch(n){
 			case 1://**left
 				
@@ -62,7 +43,7 @@ public class SpawnManager : MonoBehaviour {
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,-screenData.getWidthScene+widthObj,-screenData.getHeightScene+widthObj,screenData.getHeightScene-heightObj,false,270);
-			//	GenerateSpawn(obj,limitMinX,limitMinY,limitMaxY,false,270);
+			
 				break;
 			case 2:
 				//down
@@ -73,7 +54,7 @@ public class SpawnManager : MonoBehaviour {
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0);
-			//	GenerateSpawn(obj,limitMaxY,limitMinX,limitMaxX,true,0);
+			
 				break;
 			case 3:
 				//**right
@@ -84,7 +65,7 @@ public class SpawnManager : MonoBehaviour {
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,screenData.getWidthScene-widthObj,-screenData.getHeightScene+heightObj,screenData.getHeightScene-heightObj,false,90);
-			//	GenerateSpawn(obj,limitMaxX,limitMinY,limitMaxY,false,90);
+		
 				break;
 			case 4:
 				//up
@@ -95,7 +76,7 @@ public class SpawnManager : MonoBehaviour {
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,screenData.getHeightScene-heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,180);
-			//	GenerateSpawn(obj,limitMinY,limitMinX,limitMaxX,true,180);
+		
 				break;
 				}
 			time=0;
@@ -113,6 +94,7 @@ public class SpawnManager : MonoBehaviour {
 	public void GetOutObjectFromList(GameObject obj){
 		listaObj.Remove(obj);
 	}
+
 	private void GenerateSpawn(GameObject _obj,float ptoFijoSalida,float r1,float r2,bool fijoY,float rot){
 		if(fijoY){
 			//up down, varia x 
@@ -150,7 +132,7 @@ public class SpawnManager : MonoBehaviour {
 
 		return objA;
 	}
-	public List<GameObject> getListaNaves{
+	public List<GameObject> getListPlanes{
 		get{
 			return listaObj;
 		}
