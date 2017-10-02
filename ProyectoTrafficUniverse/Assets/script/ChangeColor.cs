@@ -3,44 +3,28 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour {
 	private SpriteRenderer spr;
-	private PathInputs eventMouse;
-	public Color cactive;
-	public Color cPersuit;
-	//public Color cIdle;
-	private Color currentColor;
-	private Color colorInitial;
-
+	public Color colorFirstClick;
+	public Color colorSecondClick;
+	private Color myColor;
 	void Awake () {
 		spr=GetComponent<SpriteRenderer>();		
-		eventMouse=GetComponent<PathInputs>();
-		currentColor=spr.color;
-		cactive.a=1;//hay q cambiar el alpha porq sn "desaparece"
-		cPersuit.a=1;
-	//	cIdle.a=1;
-		colorInitial=spr.color;
+		colorFirstClick.a=1;//hay q cambiar el alpha porq sn "desaparece"
+		colorSecondClick.a=1;
+		myColor=spr.color;
 	}
-	void Update () {
-//		if(eventMouse.getClick&&currentColor!=cactive){
-//			//si hiciste click y tu color es distinto al elegido
-//			ColorActive();
-//			print("cambio d color");
-//		}
+	public void ColorFirstClick(){
+		//color cuando lo activas
+		spr.color=colorFirstClick;
 
 	}
-	public void ColorActive(){
-		//color cuando lo activas
-		spr.color=cactive;
-		currentColor=spr.color;
+	public void ColorSecondClick(){
+		spr.color=colorSecondClick;
 	}
-	public void ColorPersuit(){
-		//color cuando se mueve
-		spr.color=cPersuit;
-		currentColor=spr.color;
+	public void MyColor(){
+		// se activa tu color
+		spr.color=myColor;
+
 	}
-	public void ColorIdle(){
-		//color predeterminado sin q hagas nada
-		spr.color=colorInitial;
-		currentColor=spr.color;
-	}
+	
 
 }

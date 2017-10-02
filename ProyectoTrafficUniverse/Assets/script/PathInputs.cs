@@ -30,7 +30,7 @@ public class PathInputs : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void OnMouseDown(){
-		colorObj.ColorActive();
+		colorObj.ColorFirstClick();
 		if(path.listNodes.Count>0){
 		Vector2 vecFinal=movePath.getCurrentVector;//vector q viene de movePath , osea es el vector en el q estaba hasta q hizo el click
 		move.getFinalVec=vecFinal;
@@ -38,22 +38,27 @@ public class PathInputs : MonoBehaviour {
 		Delete();
 		contador++;
 		if(!clickObj){
+			//***********primer click*******************
 			//print("clickevento");
 			clickObj=true;
+			colorObj.ColorFirstClick();
 		}
 		if(!activatePath&&contador>1){
 			//print("activate path");
 			activatePath=true;
+			colorObj.ColorSecondClick();
 		}
 
 		movePath.setIndex=0;
 	}
 	void OnMouseUp(){
 		if(activatePath){
+			//*****************usuario suelta boton para dibujar el path**********************
 			//print("reset paths inputs");
 			activatePath=false;
 			clickObj=false;
 			contador=0;
+			colorObj.MyColor();
 		}
 
 	}
@@ -89,7 +94,7 @@ public class PathInputs : MonoBehaviour {
 		//print("borrando "+path.listNodes.Count);
 		//over=false;
 		if(path.listNodes.Count>0){
-			colorObj.ColorIdle();
+			
 		}
 	
 		pathGraphic.Delete_ngraphics();

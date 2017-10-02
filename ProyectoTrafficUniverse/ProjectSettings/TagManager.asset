@@ -17,6 +17,9 @@ TagManager:
   - naveB
   - naveC
   - nave
+  - planetA
+  - planetB
+  - planetC
   layers:
   - Default
   - TransparentFX

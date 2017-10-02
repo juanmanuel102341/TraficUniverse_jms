@@ -33,7 +33,7 @@ GameObject:
   - component: {fileID: 114426898829304568}
   m_Layer: 0
   m_Name: NaveC
-  m_TagString: nave
+  m_TagString: naveC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ Transform:
   m_GameObject: {fileID: 1475047646499280}
   m_LocalRotation: {x: 0, y: 0, z: -0.7077985, w: 0.7064144}
   m_LocalPosition: {x: -12.5, y: -8.083, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.4658155, z: 2.5}
+  m_LocalScale: {x: 2.78, y: 2.78, z: 2.78}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33416f7bb7bd374fbbc925dcba126b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cactive: {r: 0.39655173, g: 1, b: 0.6006593, a: 0}
-  cPersuit: {r: 1, g: 0, b: 0, a: 0}
+  colorFirstClick: {r: 0, g: 0, b: 0, a: 0}
+  colorSecondClick: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114219914520283862
 MonoBehaviour:
   m_ObjectHideFlags: 1
