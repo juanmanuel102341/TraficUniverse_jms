@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour {
 	private void OnReplay(){
 		print("replay new");
 		if(buttonLoose.activeSelf){
-			print("button loose desacctiva");
+		//	print("button loose desacctiva");
 			buttonLoose.SetActive(false);
 			guiLoose.SetActive(false);
 		}else{
-			print("button win deactive");
+		//	print("button win deactive");
 			buttonWin.SetActive(false);
 			guiWin.SetActive(false);
 		}

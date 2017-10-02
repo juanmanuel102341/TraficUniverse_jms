@@ -33,7 +33,7 @@ public class MovePath : MonoBehaviour {
 	}
 	public void ChangeIndexPath(){
 //		print("nodo desde move path  "+pathInputs.path.listNodos[index]);
-		print("index "+index);
+//		print("index "+index);
 		if(Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position)<=0){
 			if(index<move.getPathInputs.path.listNodes.Count-1){
 			index++;			
@@ -53,14 +53,14 @@ public class MovePath : MonoBehaviour {
 		if(move.getPathInputs.path.listNodes.Count>1){
 			//si hay 2 entras
 			aux=move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-1].posicion-move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-2].posicion;
-			print("vec final "+aux);
+			//print("vec final "+aux);
 			return aux;
 		}else{
 			Vector2 aux2;
 			aux2.x=transform.position.x;//busco posicion x e y
 			aux2.y=transform.position.y;
 			aux=move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-1].posicion-aux2;
-			print("vec final path "+aux);
+			//print("vec final path "+aux);
 			return aux;
 		}
 	}

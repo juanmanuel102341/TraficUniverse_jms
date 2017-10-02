@@ -10,12 +10,12 @@ public class ScreenValues : MonoBehaviour {
 		//camara tiene q estar poscionada en (0,0)!!!
 		cameraGame=GetComponent<Camera>();
 		//cameraGame.ScreenToWorldPoint(
-		print ("camera "+cameraGame.orthographicSize);
+//		print ("camera "+cameraGame.orthographicSize);
 		heightScene=cameraGame.orthographicSize;//alto de la camara 
 		widthScene=cameraGame.aspect*cameraGame.orthographicSize;//ancho del tama;o d la camara multiplicado por la razon del ancho divido height(en mi caso 16/9)
 
-		print("height "+heightScene);
-		print("width "+widthScene);
+		//print("height "+heightScene);
+	//	print("width "+widthScene);
 
 	
 	}

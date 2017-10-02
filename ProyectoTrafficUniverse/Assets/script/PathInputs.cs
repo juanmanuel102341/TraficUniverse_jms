@@ -38,11 +38,11 @@ public class PathInputs : MonoBehaviour {
 		Delete();
 		contador++;
 		if(!clickObj){
-			print("clickevento");
+			//print("clickevento");
 			clickObj=true;
 		}
 		if(!activatePath&&contador>1){
-			print("activate path");
+			//print("activate path");
 			activatePath=true;
 		}
 
@@ -50,7 +50,7 @@ public class PathInputs : MonoBehaviour {
 	}
 	void OnMouseUp(){
 		if(activatePath){
-			print("reset paths inputs");
+			//print("reset paths inputs");
 			activatePath=false;
 			clickObj=false;
 			contador=0;
@@ -65,7 +65,7 @@ public class PathInputs : MonoBehaviour {
 	}
 	void OnMouseExit(){
 		over=false;
-		print("mouse fuera");
+		//print("mouse fuera");
 	}
 	private Vector2 GetPositionMouse(){
 		//	print("CLICKmOUSE");
@@ -86,7 +86,7 @@ public class PathInputs : MonoBehaviour {
 		}
 	}
 	public void Delete(){
-		print("borrando "+path.listNodes.Count);
+		//print("borrando "+path.listNodes.Count);
 		//over=false;
 		if(path.listNodes.Count>0){
 			colorObj.ColorIdle();

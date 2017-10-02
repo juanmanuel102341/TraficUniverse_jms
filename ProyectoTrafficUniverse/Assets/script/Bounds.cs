@@ -64,13 +64,13 @@ public class Bounds : MonoBehaviour {
 	public float setWidth{
 		set{
 			widthObj=value;
-			print("width b "+widthObj);
+		//	print("width b "+widthObj);
 		}
 	}
 	public float setHeight{
 		set{
 			heightObj=value;
-			print("height b"+heightObj);
+		//	print("height b"+heightObj);
 		}
 	}
 }

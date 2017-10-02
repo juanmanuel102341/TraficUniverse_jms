@@ -16,7 +16,7 @@ public class PathGraphic : MonoBehaviour {
 	}
 	public void Delete_ngraphics(){
 		for(int i=0;i<listGraphicsPaths.Count;i++){
-			print("destruccion ");
+		//	print("destruccion ");
 			Destroy(listGraphicsPaths[i]);
 		}
 //		Debug.Log("borrando nodos "+listGraphicsPaths.Count);

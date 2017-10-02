@@ -5,18 +5,19 @@ public class Detect : MonoBehaviour {
 
 	private PathInputs  pathInputs;
 	private  SpawnManager spawnManager;
-
+	private string myTag;
 	//private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
 		spawnManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
 		pathInputs=GetComponent<PathInputs>();
+		myTag=gameObject.tag;
 	}
 	
 
 	void OnTriggerEnter2D(Collider2D col){
 		print("aterrizando 2d");
-		if(col.tag=="planetaTarget"){
-			print("nave A aterrizaje");
+		if(CheckLanding(col.tag)){
+			
 			TakeOutPlane();
 			GameManager.aterrizajes++;//aumento contador aterrizajes
 
@@ -31,6 +32,39 @@ public class Detect : MonoBehaviour {
 		spawnManager.GetOutObjectFromList(this.gameObject);//te saco d la lista
 		gameObject.GetComponent<Delete>().DeleteMe(); //te borro y tb paths
 	}
+	private bool CheckLanding(string planetTag){
+		switch(planetTag){
+		case"planetA":
+			if(myTag=="naveA"){
+				print("planeta a correcto aterrizando!");
+				return true;
+			}else{
+				print("planeta incorrecto!");
+				return false;
+			}		
+			break;
+		case "planetB":
+			if(myTag=="naveB"){
+				print("planeta b correct");
+				return true;
+			}else{
+				print("planet incorrect");
+				return false;
+			}
+			break;
+		case "planetC":
+			if(myTag=="naveC"){
+				print("planet c correct");
+				return true;
+			}else{
+				print("planet incorrect");
+				return false;
+			}
+			break;
+		}
+		return false;
+	}
+
 
 
 }

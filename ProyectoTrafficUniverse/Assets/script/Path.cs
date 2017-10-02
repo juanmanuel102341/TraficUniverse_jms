@@ -19,10 +19,10 @@ public class Path  {
 			Node node;
 			node=new Node(input);
 			listNodes.Add(node);
-				Debug.Log("creacion nodo "+node.posicion);
+				//Debug.Log("creacion nodo "+node.posicion);
 				return true;
 			}else{
-				Debug.Log("nodo n cumple condicion ");
+				//Debug.Log("nodo n cumple condicion ");
 				return false;
 			}
 		}else{
@@ -31,7 +31,7 @@ public class Path  {
 			Node node;
 			node=new Node(input);
 			listNodes.Add(node);
-			Debug.Log("promer node "+node.posicion);
+			//Debug.Log("promer node "+node.posicion);
 			return true;
 		}
 	
@@ -48,9 +48,9 @@ public class Path  {
 
 	public void Delete(){
 		if(listNodes.Count>0){
-			Debug.Log("borrando nodos "+listNodes.Count);
+		//	Debug.Log("borrando nodos "+listNodes.Count);
 			listNodes.RemoveRange(0,listNodes.Count);
-			Debug.Log("nodos "+listNodes.Count);
+		//	Debug.Log("nodos "+listNodes.Count);
 		}
 
 	

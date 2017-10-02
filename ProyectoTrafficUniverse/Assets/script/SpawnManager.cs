@@ -19,12 +19,7 @@ public class SpawnManager : MonoBehaviour {
 	}
 	void Update () {
 		time+=Time.deltaTime;	
-		if(listaObj.Count>0){
-			for(int i=0;i<listaObj.Count;i++){
-				Debug.Log("objeto cantidad pathNodes"+")"+i+" "+listaObj[i].GetComponent<PathInputs>().path.listNodes.Count);
-				Debug.Log("objeto cantidad pathGraphic"+")"+i+" "+listaObj[i].GetComponent<PathGraphic>().getListGraphic.Count);
-			}
-		}
+
 
 		if(time>frecuencia){
 			float widthObj;

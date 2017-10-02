@@ -42,7 +42,7 @@ public class Move:MonoBehaviour {
 			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
 
 			//******************despues de quedarme sin nodos**********************************
-			print("final vector");
+	//		print("final vector");
 					if(!movePath.enabled){
 					movePath.enabled=false;
 					}
@@ -77,7 +77,7 @@ public class Move:MonoBehaviour {
 	}
 	public void Direction(){
 		if(bounds.limiteActive){
-			print("limite idle");
+	//		print("limite idle");
 			bounds.limiteActive=false;
 			transform.up=-transform.up;//cambio vector por el sentido contrario
 		}
