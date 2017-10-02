@@ -50,9 +50,9 @@ public class Path  {
 		if(listNodes.Count>0){
 		//	Debug.Log("borrando nodos "+listNodes.Count);
 			listNodes.RemoveRange(0,listNodes.Count);
-		//	Debug.Log("nodos "+listNodes.Count);
+	
 		}
-
+		Debug.Log("nodos codigo "+listNodes.Count);
 	
 	}
 

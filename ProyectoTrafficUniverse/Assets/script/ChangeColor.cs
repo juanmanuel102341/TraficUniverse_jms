@@ -9,7 +9,7 @@ public class ChangeColor : MonoBehaviour {
 	void Awake () {
 		spr=GetComponent<SpriteRenderer>();		
 		colorFirstClick.a=1;//hay q cambiar el alpha porq sn "desaparece"
-		colorSecondClick.a=1;
+		colorSecondClick.a=1;//idem
 		myColor=spr.color;
 	}
 	public void ColorFirstClick(){

@@ -15,7 +15,7 @@ public class PathInputs : MonoBehaviour {
 	private bool over=false;
 	private MovePath movePath;
 	private Move move;
-	public float distanceNodes;
+	public float distanceNodes;//distancia o frecuancia d calculo
 	void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		path=new Path(distanceNodes);
@@ -44,6 +44,7 @@ public class PathInputs : MonoBehaviour {
 			colorObj.ColorFirstClick();
 		}
 		if(!activatePath&&contador>1){
+		//**************segundo click******************
 			//print("activate path");
 			activatePath=true;
 			colorObj.ColorSecondClick();
@@ -83,20 +84,13 @@ public class PathInputs : MonoBehaviour {
 	public void GetInputMouse(){
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
-			if(path.SetNewNode(auxInput))//genero un nuevo nodo parte codigo
-			{//si se inserta un nodo se crea el respectivo grafico
-					pathGraphic.SpawnGraphicPath(auxInput);
-			
-			}
+			path.SetNewNode(auxInput);//parte codigo
+			pathGraphic.SpawnGraphicPath(auxInput);//parte grafica
+
 		}
 	}
 	public void Delete(){
-		//print("borrando "+path.listNodes.Count);
-		//over=false;
-		if(path.listNodes.Count>0){
 			
-		}
-	
 		pathGraphic.Delete_ngraphics();
 		path.Delete();
 	}
