@@ -15,20 +15,20 @@ public class Detect : MonoBehaviour {
 	
 
 	void OnTriggerEnter2D(Collider2D col){
-		print("aterrizando 2d");
+//		print("aterrizando 2d");
 		if(CheckLanding(col.tag)){
 			
 			TakeOutPlane();
 			GameManager.aterrizajes++;//aumento contador aterrizajes
 
-		}else if(col.gameObject.tag=="nave") {
+		}else if(col.gameObject.tag=="naveA"||col.gameObject.tag=="naveB"||col.gameObject.tag=="naveC") {
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
 			GameManager.aviones++;
 		}
 	}
 	private void TakeOutPlane(){
-		//pathInputs.Delete();//te borro los paths si tenes
+
 		spawnManager.GetOutObjectFromList(this.gameObject);//te saco d la lista
 		gameObject.GetComponent<Delete>().DeleteMe(); //te borro y tb paths
 	}

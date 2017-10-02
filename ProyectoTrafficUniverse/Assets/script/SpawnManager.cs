@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour {
 			float heightObj;
 			GameObject obj;
 			int n=GetRandomSpawns(1,5);
-
+		
 			switch(n){
 			case 1://**left
 				
@@ -113,6 +113,7 @@ public class SpawnManager : MonoBehaviour {
 	}
 	private GameObject GetObjetRandom(){
 		int r=GetRandomSpawns(1,4);
+		//r=3;
 		switch (r){
 		case 1:
 			return objA;

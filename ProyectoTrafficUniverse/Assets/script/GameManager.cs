@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
-	public static  int vidas=1;
+	public int vidas;
 	public static int aviones=0;
+	public int targetPlanes;
 	public GameObject guiLoose;
 	public GameObject guiWin;
-	public int targetPlanes;
-	public GameObject target;
+
+	public GameObject[] aPlanets=new GameObject[3];
 	private SpawnManager spawnManager;
 	private int initialVidas;
 	private int initialTarget;
@@ -16,10 +17,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject buttonWin;
 	public GameObject buttonLoose;
 
-
-
 	void Awake () {
 		initialVidas=vidas;
+		guiGame.transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas=initialVidas;
 		initialTarget=targetPlanes;
 		spawnManager=GetComponent<SpawnManager>();
 	}
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
 		if(aviones==2){
 			print("puf aviones muertos");
 			vidas--;
+			guiGame.transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas
 			aviones=0;
 		}
 		Conditions();
@@ -59,7 +60,10 @@ public class GameManager : MonoBehaviour {
 		
 		}
 		guiGame.SetActive(false);//apago gui
-		target.SetActive(false);//apago planeta
+		for(int i=0;i<aPlanets.Length;i++){
+			aPlanets[i].SetActive(false);//apago planeta	
+		}
+
 		spawnManager.enabled=false;;//apago generacion de naves
 		}
 	private void OnReplay(){
@@ -73,12 +77,15 @@ public class GameManager : MonoBehaviour {
 			buttonWin.SetActive(false);
 			guiWin.SetActive(false);
 		}
-	
-		target.SetActive(true);//prendo planeta
+		for(int i=0;i<aPlanets.Length;i++){
+			aPlanets[i].SetActive(true);//prendo planeta
+		}
+
 		spawnManager.enabled=true;;//prendo generacion de naves
 		targetPlanes=initialTarget;//reseteo aviones
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
-		vidas=initialVidas;//reseteo vidas
+		vidas=initialVidas;
+		guiGame.transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
 	}
 	private void SpawnVictoriaGui(){

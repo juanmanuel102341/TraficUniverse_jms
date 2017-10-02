@@ -7,6 +7,7 @@ public class Gui : MonoBehaviour {
 
 	public Text target;
 	private string id;
+	private int vidas=0;
 	void Awake () {
 		id=this.gameObject.tag;
 	}
@@ -16,7 +17,7 @@ public class Gui : MonoBehaviour {
 		switch(id){
 
 		case "guiVidas":
-			target.text=GameManager.vidas.ToString();	
+			target.text=vidas.ToString();	
 			break;
 		case "guiAterrizajes":
 
@@ -24,7 +25,11 @@ public class Gui : MonoBehaviour {
 			break;
 
 		}
-
-
 	}
+	public int setVidas{
+		set{
+			vidas=value;
+		}
+	}
+
 }
