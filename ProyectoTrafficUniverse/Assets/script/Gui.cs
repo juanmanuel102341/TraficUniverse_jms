@@ -8,10 +8,14 @@ public class Gui : MonoBehaviour {
 	public Text target;
 	private string id;
 	private int vidas=0;
+
 	void Awake () {
 		id=this.gameObject.tag;
-	}
 	
+	}
+	void Start(){
+		
+	}
 
 	void Update () {
 		switch(id){

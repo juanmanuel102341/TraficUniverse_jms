@@ -1,6 +1,4 @@
-﻿
-using UnityEngine;
-
+﻿using UnityEngine;
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
 	public int vidas;
@@ -12,15 +10,16 @@ public class GameManager : MonoBehaviour {
 	public GameObject[] aPlanets=new GameObject[3];
 	private SpawnManager spawnManager;
 	private int initialVidas;
-	private int initialTarget;
+//	private int initialTarget;
 	public GameObject guiGame;
 	public GameObject buttonWin;
 	public GameObject buttonLoose;
 
 	void Awake () {
 		initialVidas=vidas;
-		guiGame.transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas=initialVidas;
-		initialTarget=targetPlanes;
+		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
+
+		guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
 	}
 	void Start(){
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour {
 		if(aviones==2){
 			print("puf aviones muertos");
 			vidas--;
-			guiGame.transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas
+			guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas
 			aviones=0;
 		}
 		Conditions();
@@ -82,10 +81,10 @@ public class GameManager : MonoBehaviour {
 		}
 
 		spawnManager.enabled=true;;//prendo generacion de naves
-		targetPlanes=initialTarget;//reseteo aviones
+		//targetPlanes=initialTarget;//reseteo aviones
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;
-		guiGame.transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
+		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
 	}
 	private void SpawnVictoriaGui(){
