@@ -1,22 +1,12 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
 public class Gui : MonoBehaviour {
-	//public Text aterrizesGui;
-
 	public Text target;
 	private string id;
 	private int vidas=0;
-
 	void Awake () {
 		id=this.gameObject.tag;
-	
 	}
-	void Start(){
-		
-	}
-
 	void Update () {
 		switch(id){
 
@@ -24,11 +14,9 @@ public class Gui : MonoBehaviour {
 			target.text=vidas.ToString();	
 			break;
 		case "guiAterrizajes":
-
 			target.text=GameManager.aterrizajes.ToString();
 			break;
-
-		}
+			}
 	}
 	public int setVidas{
 		set{

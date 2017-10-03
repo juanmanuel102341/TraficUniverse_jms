@@ -6,19 +6,15 @@ public class GameManager : MonoBehaviour {
 	public int targetPlanes;
 	public GameObject guiLoose;
 	public GameObject guiWin;
-
 	public GameObject[] aPlanets=new GameObject[3];
 	private SpawnManager spawnManager;
 	private int initialVidas;
-//	private int initialTarget;
 	public GameObject guiGame;
 	public GameObject buttonWin;
 	public GameObject buttonLoose;
-
 	void Awake () {
 		initialVidas=vidas;
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
-
 		guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
 	}
@@ -26,7 +22,6 @@ public class GameManager : MonoBehaviour {
 		Replay.activateReplay+=OnReplay;	
 	}
 	
-
 	void Update () {
 		if(aviones==2){
 			print("puf aviones muertos");
@@ -79,16 +74,11 @@ public class GameManager : MonoBehaviour {
 		for(int i=0;i<aPlanets.Length;i++){
 			aPlanets[i].SetActive(true);//prendo planeta
 		}
-
 		spawnManager.enabled=true;;//prendo generacion de naves
-		//targetPlanes=initialTarget;//reseteo aviones
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
-	}
-	private void SpawnVictoriaGui(){
-		
 	}
 		
 }

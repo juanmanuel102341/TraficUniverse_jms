@@ -1,7 +1,5 @@
 ﻿
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 public class Move:MonoBehaviour {
 	protected Rigidbody2D rb;
 	public float velocity;
@@ -10,7 +8,6 @@ public class Move:MonoBehaviour {
 	MoveWhithoutPath moveWhithoutPath;
 	private PathInputs pathInputs;
 	private Bounds bounds;
-
 	private Vector2 finalVec;
 	private int direction=1;
 	void Awake () {
@@ -23,10 +20,8 @@ public class Move:MonoBehaviour {
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
 		movePath.enabled=false;
 		moveWhithoutPath.enabled=false;
-
-	}
+		}
 	void Update () {
-
 		if(pathInputs.path.listNodes.Count>0){
 			//path activo
 			//****************momento path*****************************
@@ -59,8 +54,7 @@ public class Move:MonoBehaviour {
 	private void Move_Idle(){
 		Direction();
 		transform.Translate(moveFirst.MoveIdle()*direction* velocity*Time.deltaTime);
-
-	}
+		}
 
 	public Vector2 getFinalVec{
 		get{

@@ -1,9 +1,7 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class SpawnManager : MonoBehaviour {
-	
 	public float frecuencia;
 	public GameObject objA;
 	public GameObject objB;
@@ -19,59 +17,46 @@ public class SpawnManager : MonoBehaviour {
 	}
 	void Update () {
 		time+=Time.deltaTime;	
-
-
 		if(time>frecuencia){
 			float widthObj;
 			float heightObj;
 			GameObject obj;
 			int n=GetRandomSpawns(1,5);
-		
 			switch(n){
 			case 1://**left
-				
 				obj=GetObjetRandom();
-			
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
-
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,-screenData.getWidthScene+widthObj,-screenData.getHeightScene+widthObj,screenData.getHeightScene-heightObj,false,270);
-			
 				break;
 			case 2:
 				//down
 				obj=GetObjetRandom();
-
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0);
-			
 				break;
 			case 3:
 				//**right
 				obj=GetObjetRandom();
-
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,screenData.getWidthScene-widthObj,-screenData.getHeightScene+heightObj,screenData.getHeightScene-heightObj,false,90);
-		
 				break;
 			case 4:
 				//up
 				obj=GetObjetRandom();
-
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,screenData.getHeightScene-heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,180);
-		
 				break;
 				}
 			time=0;
