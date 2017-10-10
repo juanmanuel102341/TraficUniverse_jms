@@ -314,9 +314,9 @@ GameObject:
   - component: {fileID: 172645797}
   - component: {fileID: 172645796}
   - component: {fileID: 172645795}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TargetA
-  m_TagString: planetA
+  m_TagString: planetC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,11 +350,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.63832724
 --- !u!212 &172645797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -384,10 +384,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0.7647059, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cfe51bfdf0851fb4ab68f9e098c93b36, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &172645798
@@ -397,11 +397,75 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 172645794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.7, y: 10, z: 0}
-  m_LocalScale: {x: 36.147186, y: 36.14724, z: 36.14724}
+  m_LocalPosition: {x: -18.3, y: 10.9, z: 0}
+  m_LocalScale: {x: 4.0623536, y: 4.062355, z: 3.8166492}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &302536257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 302536259}
+  - component: {fileID: 302536258}
+  m_Layer: 9
+  m_Name: universeFondo
+  m_TagString: planetC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &302536258
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 302536257}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1061888609
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b7c64244f7284d9468ef28506989b262, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!4 &302536259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 302536257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: 0.4, z: 0}
+  m_LocalScale: {x: 5.056151, y: 5.710408, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304115631
 GameObject:
@@ -431,8 +495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbfc4da18d62a8498fbd78aa50b097a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 2
-  targetPlanes: 10
+  vidas: 5
+  targetPlanes: 4
   guiLoose: {fileID: 1628756306}
   guiWin: {fileID: 2036596190}
   aPlanets:
@@ -1357,11 +1421,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.10000002
+  m_Radius: 0.6358647
 --- !u!212 &1353998977
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1391,10 +1455,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.05490196, g: 0, b: 0.95686275, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 907932b8c07fc514ab3d3b0ae7c08dee, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &1353998978
@@ -1405,7 +1469,7 @@ Transform:
   m_GameObject: {fileID: 1353998974}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 17, y: 10.2, z: 0}
-  m_LocalScale: {x: 36, y: 36, z: 36}
+  m_LocalScale: {x: 4.2874928, y: 4.2874956, z: 1.6554037}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1599,11 +1663,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.10000002
+  m_Radius: 0.6571659
 --- !u!212 &1487650076
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1633,10 +1697,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c23639fee20d08e43a6a88974203c023, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &1487650077
@@ -1646,8 +1710,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1487650073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -10.1, z: 0}
-  m_LocalScale: {x: 36, y: 36, z: 36}
+  m_LocalPosition: {x: -0.2, y: -13.7, z: 0}
+  m_LocalScale: {x: 4.524686, y: 4.5246854, z: 1.7469828}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1869,7 +1933,7 @@ Camera:
   far clip plane: 1000
   field of view: 8.2
   orthographic: 1
-  orthographic size: 30.6
+  orthographic size: 42.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

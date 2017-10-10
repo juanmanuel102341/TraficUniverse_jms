@@ -31,6 +31,8 @@ GameObject:
   - component: {fileID: 114753824822015572}
   - component: {fileID: 114634734531372358}
   - component: {fileID: 114917199751601860}
+  - component: {fileID: 61011116603206934}
+  - component: {fileID: 61049329128605824}
   m_Layer: 0
   m_Name: NaveB
   m_TagString: naveB
@@ -45,8 +47,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1475047646499280}
   m_LocalRotation: {x: 0, y: 0, z: -0.7077985, w: 0.7064144}
-  m_LocalPosition: {x: -23.041185, y: -25.090025, z: 0}
-  m_LocalScale: {x: 2.3, y: 2.6, z: 2.7}
+  m_LocalPosition: {x: -14.089389, y: -14.37886, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 2.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -71,6 +73,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &61011116603206934
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.73785734, y: 0.10537115}
+  serializedVersion: 2
+  m_Size: {x: 0.5843021, y: 1.0967146}
+--- !u!61 &61049329128605824
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.73770577, y: 0.105490096}
+  serializedVersion: 2
+  m_Size: {x: 0.58457136, y: 1.1907288}
 --- !u!61 &61456368829755324
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -82,9 +112,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0.0031472733, y: 0.11985121}
+  m_Offset: {x: 0.0031386218, y: -0.057636164}
   serializedVersion: 2
-  m_Size: {x: 0.8814957, y: 0.76026726}
+  m_Size: {x: 0.8814957, y: 1.91983}
 --- !u!114 &114101461203757142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,9 +250,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c6c11f090870b904b9b818dcbf4512f3, type: 3}
-  m_Color: {r: 0.05622843, g: 0, b: 0.9558824, a: 1}
+  m_Sprite: {fileID: 21300000, guid: eee10b5e762b98e4c9a4b637d3c72f28, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

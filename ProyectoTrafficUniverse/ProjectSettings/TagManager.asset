@@ -30,8 +30,8 @@ TagManager:
   - 
   - 
   - spawnPointA
-  - 
-  - 
+  - back
+  - currentGame
   - 
   - 
   - 
@@ -56,4 +56,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: back
+    uniqueID: 1061888609
+    locked: 0
+  - name: current
+    uniqueID: 4109398113
     locked: 0
