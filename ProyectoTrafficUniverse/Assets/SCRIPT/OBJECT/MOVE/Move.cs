@@ -4,10 +4,10 @@ public class Move:MonoBehaviour {
 	protected Rigidbody2D rb;
 	public float velocity;
 	MoveFirst moveFirst;
-	MovePath movePath;
+	private MovePath movePath;
 	MoveWhithoutPath moveWhithoutPath;
-	private PathInputs pathInputs;
-	private Bounds bounds;
+	protected PathInputs pathInputs;
+	protected Bounds bounds;
 	private Vector2 finalVec;
 	private int direction=1;
 	void Awake () {
@@ -16,16 +16,16 @@ public class Move:MonoBehaviour {
 		bounds=GetComponent<Bounds>();
 		pathInputs=GetComponent<PathInputs>();
 		moveFirst=new MoveFirst();
-		movePath=GetComponent<MovePath>();
+		movePath=new MovePath();
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
-		movePath.enabled=false;
+		//movePath.enabled=false;
 		moveWhithoutPath.enabled=false;
 		}
 	void Update () {
 		if(pathInputs.path.listNodes.Count>0){
 			//path activo
 			//****************momento path*****************************
-			if(!movePath.enabled){
+			if(!movePath.){
 				movePath.enabled=true;
 			}
 			if(moveWhithoutPath.enabled){
