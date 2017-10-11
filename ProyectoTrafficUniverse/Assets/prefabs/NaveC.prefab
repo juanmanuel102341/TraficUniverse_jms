@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212546909787966930}
   - component: {fileID: 50611604963727402}
   - component: {fileID: 61456368829755324}
-  - component: {fileID: 114501664967458842}
   - component: {fileID: 114219914520283862}
   - component: {fileID: 114384036698974346}
   - component: {fileID: 114983464266292078}
@@ -31,6 +30,7 @@ GameObject:
   - component: {fileID: 114753824822015572}
   - component: {fileID: 114884316770222948}
   - component: {fileID: 114426898829304568}
+  - component: {fileID: 114640362482720898}
   m_Layer: 0
   m_Name: NaveC
   m_TagString: naveC
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79a6cff940becf4db9cd69c2020f885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114501664967458842
+--- !u!114 &114640362482720898
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
