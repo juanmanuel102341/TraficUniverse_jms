@@ -28,9 +28,9 @@ GameObject:
   - component: {fileID: 114101461203757142}
   - component: {fileID: 114346529784997412}
   - component: {fileID: 114753824822015572}
-  - component: {fileID: 114884316770222948}
   - component: {fileID: 114426898829304568}
   - component: {fileID: 114640362482720898}
+  - component: {fileID: 114842698253078528}
   m_Layer: 0
   m_Name: NaveC
   m_TagString: naveC
@@ -168,7 +168,7 @@ MonoBehaviour:
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
   frecuencia: 1.2
---- !u!114 &114884316770222948
+--- !u!114 &114842698253078528
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475047646499280}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 253122fb9cc89bd489ce5ce29dc74a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 81fb6276168fe9a488711dbf31540ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114983464266292078

@@ -10,6 +10,9 @@ public class SpawnManager : MonoBehaviour {
 	private List<GameObject>listaObj=new List<GameObject>();
 	private ScreenValues screenData;
 	void Awake () {
+		print("obj a "+objA);
+		print("obj b "+objB);
+		print("obj c "+objC);
 		time=frecuencia;
 		}
 	void Start(){
