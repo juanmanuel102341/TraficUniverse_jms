@@ -6,7 +6,7 @@ public class PathGraphic : MonoBehaviour {
 
 	public GameObject graphicPath;//parte grafica del path
 	private List<GameObject>listGraphicsPaths=new List<GameObject>();
-	public float frecuencia=0.9f;//frecuancia de como se "ve el path"
+	public float frecuencia;//frecuancia de como se "ve el path"
 	void Start(){
 	//	Path.activate+=SpawnGraphicPath;
 	}
@@ -53,8 +53,8 @@ public class PathGraphic : MonoBehaviour {
 		auxPos.x= listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.x;
 		auxPos.y=listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.y;
 		float d=Vector2.Distance(auxPos,_input);
-		if(d>frecuencia){
-
+		if(d>frecuencia||frecuencia==0){
+			//es igual a 0 para q how to play 
 			return true;
 		}
 		return false;
