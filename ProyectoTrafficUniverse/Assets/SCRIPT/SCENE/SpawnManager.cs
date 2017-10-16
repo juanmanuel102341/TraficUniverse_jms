@@ -3,16 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 public class SpawnManager : MonoBehaviour {
 	public float frecuencia;
-	public GameObject objA;
-	public GameObject objB;
-	public GameObject objC;
+	public GameObject[] objs;
 	private float time;
 	private List<GameObject>listaObj=new List<GameObject>();
 	private ScreenValues screenData;
 	void Awake () {
-		print("obj a "+objA);
-		print("obj b "+objB);
-		print("obj c "+objC);
+//		print("obj a "+objA);
+//		print("obj b "+objB);
+//		print("obj c "+objC);
 		time=frecuencia;
 		}
 	void Start(){
@@ -23,38 +21,41 @@ public class SpawnManager : MonoBehaviour {
 		if(time>frecuencia){
 			float widthObj;
 			float heightObj;
+
 			GameObject obj;
-			int n=GetRandomSpawns(1,5);
+
+			int n=Random.Range(0,4);//random entre los 4 costados dela screen
 			switch(n){
-			case 1://**left
-				obj=GetObjetRandom();
+			case 0://**left
+				print("red spawn");
+				obj=GetObjetRandom(0,objs.Length);
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,-screenData.getWidthScene+widthObj,-screenData.getHeightScene+widthObj,screenData.getHeightScene-heightObj,false,270);
 				break;
-			case 2:
+			case 1:
 				//down
-				obj=GetObjetRandom();
+				obj=GetObjetRandom(0,objs.Length);
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0);
 				break;
-			case 3:
+			case 2:
 				//**right
-				obj=GetObjetRandom();
+				obj=GetObjetRandom(0,objs.Length);
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 				obj.GetComponent<Bounds>().setHeight=heightObj;
 				GenerateSpawn(obj,screenData.getWidthScene-widthObj,-screenData.getHeightScene+heightObj,screenData.getHeightScene-heightObj,false,90);
 				break;
-			case 4:
+			case 3:
 				//up
-				obj=GetObjetRandom();
+				obj=GetObjetRandom(0,objs.Length);
 				widthObj=obj.GetComponent<SpriteRenderer>().bounds.extents.x;//ancho del objeto dividido 2
 				heightObj=obj.GetComponent<SpriteRenderer>().bounds.extents.y;//alto div2
 				obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
@@ -65,10 +66,6 @@ public class SpawnManager : MonoBehaviour {
 			time=0;
 		}
 	}
-	private int  GetRandomSpawns(int v1,int v2Exclusive){
-		return Random.Range(v1,v2Exclusive);  
-	}
-
 	public List<GameObject> getValuesList{
 		get{
 			return listaObj;
@@ -99,22 +96,22 @@ public class SpawnManager : MonoBehaviour {
 		}
 			
 	}
-	private GameObject GetObjetRandom(){
-		int r=GetRandomSpawns(1,4);
+	private GameObject GetObjetRandom(int v1,int v2){
+		int r=Random.Range(v1,v2);
 		//r=3;
 		switch (r){
+		case 0:
+			return objs[r];
+
 		case 1:
-			return objA;
-//			break;
+			return  objs[r];
+
 		case 2:
-			return objB;
-//			break;
-		case 3:
-			return objC;
-//			break;
+			return objs[r];
+
 		}
 
-		return objA;
+		return  objs[r];
 	}
 	public List<GameObject> getListPlanes{
 		get{
