@@ -15,11 +15,11 @@ public class PathGenerator  {
 
 		distance=GetDistance();
 		total=_totalNodes;
-		Debug.Log("posPlayer "+posPlayer);
-		Debug.Log("posTarget "+posTarget);
-		Debug.Log("distanceNodes "+distanceNodes);
-		Debug.Log("distance "+distance);
-		Debug.Log("total "+total);
+//		Debug.Log("posPlayer "+posPlayer);
+//		Debug.Log("posTarget "+posTarget);
+//		Debug.Log("distanceNodes "+distanceNodes);
+//		Debug.Log("distance "+distance);
+//		Debug.Log("total "+total);
 		path=new Path(0.0f);//parametro 0, para q la condicion de distanciadentro de la clase path n entre en vigor
 		Calc();
 	}
@@ -39,13 +39,13 @@ public class PathGenerator  {
 		Vector2 posInitial=posPlayer;
 		float mx=CalcMagnitudX();
 		float my=CalcMagnitudY();
-		Debug.Log("mag x "+mx);
-		Debug.Log("mag y "+my);
+//		Debug.Log("mag x "+mx);
+//		Debug.Log("mag y "+my);
 		for(int i=0;i<total;i++){
 			posInitial.x+=mx;
 			posInitial.y+=my;
 			path.SetNewNode(posInitial);//creo un nodo ala posicion inicial d player mas la magnitud respectiva en x como en y
-			Debug.Log("nodo "+posInitial);
+//			Debug.Log("nodo "+posInitial);
 		}
 //		for(int i=0;i<total;i++){
 //			Debug.Log("path desde pg"+path.listNodes[i].posicion);
