@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 	public int targetPlanes;
 	public GameObject guiLoose;
 	public GameObject guiWin;
-	public GameObject[] aPlanets=new GameObject[3];
+	public GameObject[] aPlanets;
 	private SpawnManager spawnManager;
 	private int initialVidas;
 	public GameObject guiGame;
