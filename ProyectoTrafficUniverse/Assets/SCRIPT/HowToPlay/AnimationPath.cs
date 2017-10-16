@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimationPath : MonoBehaviour {
 	private PathGraphic path;
-
+	public int totalNodes;
 	private MoveHowToPlay move;
 	public float time_anim;
 	private float time;

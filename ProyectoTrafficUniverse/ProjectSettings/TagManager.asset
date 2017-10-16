@@ -20,6 +20,9 @@ TagManager:
   - planetA
   - planetB
   - planetC
+  - targetRed
+  - targetBlue
+  - targetGreen
   layers:
   - Default
   - TransparentFX

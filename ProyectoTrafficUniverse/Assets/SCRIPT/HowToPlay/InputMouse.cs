@@ -2,16 +2,20 @@
 using UnityEngine;
 
 public class InputMouse : MonoBehaviour {
-	public GameObject nodeMovement;
+	private AnimationPath animationPath;
+	private MoveHowToPlay moveHowTplay ;
 	public GameObject pointer;
-	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+		animationPath=GetComponent<AnimationPath>();
+		moveHowTplay=GetComponent<MoveHowToPlay>();
+		animationPath.enabled=false;
+		moveHowTplay.enabled=false;
 	}
 	void OnTriggerEnter2D(Collider2D col) {
 		print("empieza parte nodal");
-		Destroy(pointer);
-		nodeMovement.SetActive(true);
+		pointer.GetComponent<ManageComponents>().Deactive();//desactivo movvimiento, collider y canal alfa del mouses
+		animationPath.enabled=true;
+		moveHowTplay.enabled=true;
 	}
 
 }
