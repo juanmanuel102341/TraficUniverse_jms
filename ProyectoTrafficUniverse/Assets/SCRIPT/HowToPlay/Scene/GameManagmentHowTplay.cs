@@ -34,6 +34,14 @@ public class GameManagmentHowTplay : MonoBehaviour {
 
 			print("contador "+countPlanets);
 			break;
+		case "targetGreen":
+			print("desde game managment target green");
+
+			FinishScene();
+
+			print("contador "+countPlanets);
+			break;
+		
 		}
 	}
 	private void FinishScene(){
