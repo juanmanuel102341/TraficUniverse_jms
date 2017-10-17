@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour {
 	public GameObject guiGame;
 	public GameObject buttonWin;
 	public GameObject buttonLoose;
+	public GameObject nextGui;
+	public GameObject buttonNext;
 	void Awake () {
+
 		initialVidas=vidas;
+		ResetValues();
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
 		guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
@@ -38,13 +42,17 @@ public class GameManager : MonoBehaviour {
 			Reset();
 			buttonLoose.SetActive(true);
 			guiLoose.SetActive(true);
-		
+			nextGui.SetActive(true);
+			buttonNext.SetActive(true);	
 		}else if(aterrizajes>=targetPlanes){
 			print("victory");
 			Reset();
 			buttonWin.SetActive(true);
 			guiWin.SetActive(true);
+			nextGui.SetActive(true);
+			buttonNext.SetActive(true);	
 		}
+
 	}
 	private void Reset(){
 		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
@@ -74,11 +82,16 @@ public class GameManager : MonoBehaviour {
 		for(int i=0;i<aPlanets.Length;i++){
 			aPlanets[i].SetActive(true);//prendo planeta
 		}
+		nextGui.SetActive(false);
 		spawnManager.enabled=true;;//prendo generacion de naves
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
+	}
+	public void ResetValues(){
+		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
+		vidas=initialVidas;
 	}
 		
 }

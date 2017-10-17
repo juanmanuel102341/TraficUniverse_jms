@@ -23,6 +23,7 @@ TagManager:
   - targetRed
   - targetBlue
   - targetGreen
+  - next
   layers:
   - Default
   - TransparentFX

@@ -8,4 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0.unity
   - enabled: 1
-    path: Assets/1.unity
+    path: Assets/HowToPlay.unity
+  - enabled: 1
+    path: Assets/L1.unity
+  - enabled: 1
+    path: Assets/HowToPlay 2.unity
+  - enabled: 1
+    path: Assets/L2.unity
+  - enabled: 1
+    path: Assets/HowToPlay 3.unity
+  - enabled: 1
+    path: Assets/L3.unity
