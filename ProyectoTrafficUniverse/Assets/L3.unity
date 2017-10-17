@@ -593,12 +593,12 @@ Prefab:
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: targetPlanes
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: vidas
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
@@ -631,7 +631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4522759150876206, guid: c23f528f182b6ce47886a8aad5dc507b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -95
+      value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 4522759150876206, guid: c23f528f182b6ce47886a8aad5dc507b, type: 2}
       propertyPath: m_LocalPosition.z
