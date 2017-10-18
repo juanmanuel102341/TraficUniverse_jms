@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class AlertColision : MonoBehaviour {
 	private string id;
-	// Use this for initialization
+	public GameObject sprite;
+
+
+
 	void Awake () {
 		id=gameObject.tag;
 	}
@@ -12,7 +15,18 @@ public class AlertColision : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		if(col.gameObject.tag=="colisionArea"&&id=="colisionArea"){
 		print("area");
+		sprite.SetActive(true);
+		
 		}
 		
 	}
+	void OnTriggerExit2D(Collider2D col){
+		print("exit");
+		sprite.SetActive(false);
+	
+	}
+	void OnTriggerStay2D(Collider2D col){
+		print("stay");
+	}
+
 }
