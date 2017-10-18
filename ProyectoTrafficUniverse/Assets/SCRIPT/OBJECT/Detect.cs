@@ -11,14 +11,18 @@ public class Detect : MonoBehaviour {
 		myTag=gameObject.tag;
 	}
 	void OnTriggerEnter2D(Collider2D col){
+		if(col.tag!="colisionArea"){
 //		print("aterrizando 2d");
-		if(CheckLanding(col.tag)){
+		if(CheckLanding(col.tag)&&col.tag!="colsionArea"){
+			print("paneta");
 			TakeOutPlane();
 			GameManager.aterrizajes++;//aumento contador aterrizajes
 		}else if(col.gameObject.tag=="naveA"||col.gameObject.tag=="naveB"||col.gameObject.tag=="naveC") {
+			print("nave");
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
 			GameManager.aviones++;
+		}
 		}
 	}
 	private void TakeOutPlane(){

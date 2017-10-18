@@ -30,7 +30,7 @@ public class MovePath : MonoBehaviour {
 		if(Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position)<=0){
 			if(index<move.getPathInputs.path.listNodes.Count-1){
 				index++;			
-				print("cambio indice");
+				//print("cambio indice");
 			}else if(index==move.getPathInputs.path.listNodes.Count-1){
 				//borro nodos
 				move.getFinalVec=CalcFinal();//guardamo data del ultimo vector y lo setiemos
@@ -49,11 +49,15 @@ public class MovePath : MonoBehaviour {
 			//print("vec final "+aux);
 			return aux;
 		}else{
+			print("vec final menos d 1 ");
 			Vector2 aux2;
 			aux2.x=transform.position.x;//busco posicion x e y
 			aux2.y=transform.position.y;
-			aux=move.getPathInputs.path.listNodes[move.getPathInputs.path.listNodes.Count-1].posicion-aux2;
-			//print("vec final path "+aux);
+
+			aux=aux2-move.getPathInputs.path.listNodes[0].posicion;
+			print("pos player "+aux2);
+			print("vec path "+move.getPathInputs.path.listNodes[0].posicion);
+			print("pos player "+aux);
 			return aux;
 		}
 	}

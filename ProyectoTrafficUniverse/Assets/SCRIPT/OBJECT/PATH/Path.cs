@@ -53,7 +53,7 @@ public class Path  {
 			listNodes.RemoveRange(0,listNodes.Count);
 	
 		}
-		Debug.Log("nodos codigo "+listNodes.Count);
+//		Debug.Log("nodos codigo "+listNodes.Count);
 	
 	}
 
