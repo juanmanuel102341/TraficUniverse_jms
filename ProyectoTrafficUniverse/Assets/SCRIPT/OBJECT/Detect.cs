@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 public class Detect : MonoBehaviour {
 
-	private PathInputs  pathInputs;
+	private GameObject objParent;
 	private  SpawnManager spawnManager;
 	private string myTag;
 	//private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
 		spawnManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
-		pathInputs=GetComponent<PathInputs>();
+		objParent=transform.parent.parent.gameObject;	
 		myTag=gameObject.tag;
+		print(objParent.name);
 	}
 	void OnTriggerEnter2D(Collider2D col){
-		if(col.tag!="colisionArea"){
+		print("contacto collider nave");
 //		print("aterrizando 2d");
-		if(CheckLanding(col.tag)&&col.tag!="colsionArea"){
+		if(CheckLanding(col.tag)){
 			print("paneta");
 			TakeOutPlane();
 			GameManager.aterrizajes++;//aumento contador aterrizajes
@@ -24,10 +25,10 @@ public class Detect : MonoBehaviour {
 			GameManager.aviones++;
 		}
 		}
-	}
+
 	private void TakeOutPlane(){
 		spawnManager.GetOutObjectFromList(this.gameObject);//te saco d la lista
-		gameObject.GetComponent<Delete>().DeleteMe(); //te borro y tb paths
+		objParent.GetComponent<Delete>().DeleteMe();
 	}
 	private bool CheckLanding(string planetTag){
 		switch(planetTag){
@@ -53,6 +54,7 @@ public class Detect : MonoBehaviour {
 		}
 		return false;
 	}
+
 
 
 

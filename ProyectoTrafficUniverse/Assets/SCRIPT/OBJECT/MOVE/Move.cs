@@ -10,6 +10,7 @@ public class Move:MonoBehaviour {
 	private Bounds bounds;
 	private Vector2 finalVec;
 	private int direction=1;
+
 	void Awake () {
 		rb=GetComponent<Rigidbody2D>();
 		//print("rb move "+rb);
@@ -49,7 +50,8 @@ public class Move:MonoBehaviour {
 			//******************momento inicial sin nodos**************************
 					//			print("idle");
 					Move_Idle();
-					}
+					
+				}
 		}
 	private void Move_Idle(){
 		Direction();
