@@ -4,12 +4,13 @@ public class Move:MonoBehaviour {
 	protected Rigidbody2D rb;
 	public float velocity;
 	MoveFirst moveFirst;
-	MovePath movePath;
-	MoveWhithoutPath moveWhithoutPath;
-	private PathInputs pathInputs;
-	private Bounds bounds;
+	private MovePath movePath;
+//	MoveWhithoutPath moveWhithoutPath;
+	protected PathInputs pathInputs;
+	protected Bounds bounds;
 	private Vector2 finalVec;
 	private int direction=1;
+	private bool activate=false;
 
 	void Awake () {
 		rb=GetComponent<Rigidbody2D>();
@@ -17,36 +18,25 @@ public class Move:MonoBehaviour {
 		bounds=GetComponent<Bounds>();
 		pathInputs=GetComponent<PathInputs>();
 		moveFirst=new MoveFirst();
-		movePath=GetComponent<MovePath>();
-		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
-		movePath.enabled=false;
-		moveWhithoutPath.enabled=false;
+
+		movePath=new MovePath();
+		//no se como diferenciar la lista d nodos de path inputs de la q tengo en move path, para n andar pasando nose frame a frame innceserios
+//		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
+	
+//		moveWhithoutPath.enabled=false;
 		}
 	void Update () {
 		if(pathInputs.path.listNodes.Count>0){
 			//path activo
 			//****************momento path*****************************
-			if(!movePath.enabled){
-				movePath.enabled=true;
+			if(activate==false){
+				activate=SetInputsMovePath();
+		
 			}
-			if(moveWhithoutPath.enabled){
-				//si volves de movewhithout path, osea si generaste un path anteriormente y ya los recorrsite
-				moveWhithoutPath.setBooleanDirection=false;
-				moveWhithoutPath.enabled=false;
-			}
-		}else if (movePath.enabled||moveWhithoutPath.enabled){
-			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
-
-			//******************despues de quedarme sin nodos**********************************
-	//		print("final vector");
-					if(!movePath.enabled){
-					movePath.enabled=false;
-					}
-					if(moveWhithoutPath.enabled==false){
-						moveWhithoutPath.enabled=true;
-					}
-					
-			}else{
+			movePath.posPlayer=transform.position;
+			transform.localPosition=Vector2.MoveTowards(transform.position,movePath.GetVecDirection(),1);
+			print(" movePath.direction"+movePath.GetVecDirection() );
+		}else{
 			//******************momento inicial sin nodos**************************
 					//			print("idle");
 					Move_Idle();
@@ -79,5 +69,15 @@ public class Move:MonoBehaviour {
 		}
 
 	
+	}
+	private bool SetInputsMovePath(){
+		//metodo q le pasa la lista de nodos y la posicion del player a la clase move path
+		for(int i=0;i<pathInputs.path.listNodes.Count;i++){
+			//	print("nodo "+pathInputs.path.listNodes[i].posicion);
+			//	listVec.Add(pathInputs.path.listNodes[i].posicion);
+			movePath.list_Vec.Add(pathInputs.path.listNodes[i].posicion);
+		}
+		return true;
+
 	}
 }
