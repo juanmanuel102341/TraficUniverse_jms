@@ -48,18 +48,13 @@ public class AlertColision : MonoBehaviour {
 		sprite.SetActive(false);
 		objColision.SetActive(false);
 	}
-	public int setEuler{
-		set{
-			MyeulerZ=value;
-		}
 
-	}
-	public int getEuler{
-		get{
-			return MyeulerZ;
-		}
-	}
-//	public float setHeightShip{
+//	public int getEuler{
+//		get{
+//			return MyeulerZ;
+//		}
+//	}
+////	public float setHeightShip{
 //		set{
 //			myHeight=value;
 //			print("altura obj "+myHeight);
