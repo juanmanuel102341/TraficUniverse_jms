@@ -25,6 +25,7 @@ TagManager:
   - targetGreen
   - next
   - colisionArea
+  - id
   layers:
   - Default
   - TransparentFX

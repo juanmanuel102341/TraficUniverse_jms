@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour {
 //		print("obj b "+objB);
 //		print("obj c "+objC);
 		time=frecuencia;
+	
 		}
 	void Start(){
 		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
@@ -27,7 +28,7 @@ public class SpawnManager : MonoBehaviour {
 			GameObject aux;
 			Transform auxT;
 			int n=Random.Range(0,4);//random entre los 4 costados dela screen
-			n=3;
+		
 			switch(n){
 		
 			case 0://**left
@@ -113,7 +114,7 @@ public class SpawnManager : MonoBehaviour {
 			GameObject obj=auxObjFY.transform.GetChild(1).gameObject;
 			obj.SetActive(true);
 			obj.GetComponent<SetPositionWorld>().Apply((int)rot);
-		//	obj.SetActive(false);
+			obj.SetActive(false);
 			print("uelrrrrrrr "+obj.name+" "+rot);
 			auxObjFY.transform.Rotate(new Vector3(0,0,rot));
 
@@ -128,7 +129,7 @@ public class SpawnManager : MonoBehaviour {
 			GameObject obj=auxObjFX.transform.GetChild(1).gameObject;
 			obj.SetActive(true);
 			obj.GetComponent<SetPositionWorld>().Apply((int)rot);
-			//obj.SetActive(false);
+			obj.SetActive(false);
 			print("uelrrrrrrr "+obj.name+" "+rot);
 			auxObjFX.transform.Rotate(new Vector3(0,0,rot));
 			listaObj.Add(auxObjFX);

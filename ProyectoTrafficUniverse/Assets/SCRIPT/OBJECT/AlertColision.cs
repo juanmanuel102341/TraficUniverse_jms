@@ -20,9 +20,8 @@ public class AlertColision : MonoBehaviour {
 	void Awake () {
 		id=gameObject.tag;
 		objColision.SetActive(false);
-		sprite.SetActive(true);
 
-	
+		sprite.SetActive(false);
 		//transfSprite=sprite.GetComponent<Transform>();
 	//	myVec=transfSprite.up;
 		print("n "+MyeulerZ);
