@@ -138,7 +138,7 @@ public class SpawnManager : MonoBehaviour {
 	}
 	private GameObject GetObjetRandom(int v1,int v2){
 		int r=Random.Range(v1,v2);
-		//r=3;
+		//r=1;
 		switch (r){
 		case 0:
 			return objs[r];
