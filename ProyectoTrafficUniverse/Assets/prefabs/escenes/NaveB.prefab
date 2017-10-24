@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1181498919556538
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 114384019541840334}
   m_Layer: 0
   m_Name: NaveB
-  m_TagString: naveB
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,13 +81,14 @@ GameObject:
   - component: {fileID: 61194070167252284}
   - component: {fileID: 61947908905596094}
   - component: {fileID: 114191400336667548}
+  - component: {fileID: 114582042366352840}
   m_Layer: 0
   m_Name: ColisionObject
-  m_TagString: naveA
+  m_TagString: shipBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1808151432879718
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,9 +99,10 @@ GameObject:
   - component: {fileID: 4788185549745258}
   - component: {fileID: 58792978013222268}
   - component: {fileID: 114749526721729080}
+  - component: {fileID: 114265268513022228}
   m_Layer: 0
   m_Name: AlertObject (1)
-  m_TagString: colisionArea
+  m_TagString: colisionBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1475047646499280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.995309, y: -9.886946, z: 0}
+  m_LocalPosition: {x: 25.31231, y: -10.053391, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 2.7}
   m_Children:
   - {fileID: 4788185549745258}
@@ -302,6 +304,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 1.7
+--- !u!114 &114265268513022228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808151432879718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114384019541840334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,6 +346,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e010647faf45394479ca4e01fea3d514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114582042366352840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1628299290984536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114749526721729080

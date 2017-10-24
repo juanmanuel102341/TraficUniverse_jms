@@ -13,7 +13,7 @@ public class Bounds : MonoBehaviour {
 
 	void Update () {
 		if(AxisXMin()||AxisYMin()||AxisXMax()||AxisYMax()){
-			print("limite activo");
+			//print("limite activo");
 			limite=true;		
 		}else{
 			limite=false;

@@ -3,23 +3,23 @@ public class Detect : MonoBehaviour {
 
 	private GameObject objParent;
 	private  SpawnManager spawnManager;
-	private string myTag;
+	private CheckTargetColision checkTarget;
 	//private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
 		spawnManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
 		objParent=transform.parent.parent.gameObject;	
-		myTag=gameObject.tag;
+		checkTarget=GetComponent<CheckTargetColision>();
 		print(objParent.name);
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		print("contacto collider nave");
 //		print("aterrizando 2d");
-		if(CheckLanding(col.tag)){
+		if(checkTarget.CheckMyTarget(col.tag)){
 			print("paneta");
 			TakeOutPlane();
 			GameManager.aterrizajes++;//aumento contador aterrizajes
-		}else if(col.gameObject.tag=="naveA"||col.gameObject.tag=="naveB"||col.gameObject.tag=="naveC") {
-			print("nave");
+		}else if(col.gameObject.tag=="shipRed"||col.gameObject.tag=="shipBlue"||col.gameObject.tag=="shipGreen") {
+			print("choque d naves");
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
 			GameManager.aviones++;
@@ -27,32 +27,9 @@ public class Detect : MonoBehaviour {
 		}
 
 	private void TakeOutPlane(){
-		spawnManager.GetOutObjectFromList(this.gameObject);//te saco d la lista
+		print("objParent "+objParent.name);
+		spawnManager.GetOutObjectFromList(objParent);//objeto padre del padre
 		objParent.GetComponent<Delete>().DeleteMe();
-	}
-	private bool CheckLanding(string planetTag){
-		switch(planetTag){
-		case"planetA":
-			if(myTag=="naveA"){
-				print("planeta a correcto aterrizando!");
-				return true;
-			}
-			return false;
-		case "planetB":
-			if(myTag=="naveB"){
-				print("planeta b correct");
-				return true;
-			}
-			return false;
-		case "planetC":
-			if(myTag=="naveC"){
-				print("planet c correct");
-				return true;
-			}
-			return false;
-
-		}
-		return false;
 	}
 
 

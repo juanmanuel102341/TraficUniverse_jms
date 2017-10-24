@@ -21,13 +21,14 @@ GameObject:
   - component: {fileID: 4973099002836858}
   - component: {fileID: 61786678802719540}
   - component: {fileID: 114344198405608446}
+  - component: {fileID: 114884755118882966}
   m_Layer: 0
   m_Name: ColisionObject
-  m_TagString: naveA
+  m_TagString: shipRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1191826784560866
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ GameObject:
   - component: {fileID: 114482851321736392}
   m_Layer: 0
   m_Name: NaveA 1
-  m_TagString: naveA
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,9 +80,10 @@ GameObject:
   - component: {fileID: 4017600443688038}
   - component: {fileID: 58334464472434944}
   - component: {fileID: 114770240108976964}
+  - component: {fileID: 114351164928693828}
   m_Layer: 0
   m_Name: AlertObject
-  m_TagString: colisionArea
+  m_TagString: colisionRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1587765395317168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.579813, y: -4.1048408, z: 0}
+  m_LocalPosition: {x: -23.883904, y: -6.1970186, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 2.5}
   m_Children:
   - {fileID: 4017600443688038}
@@ -281,6 +283,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90a0bec317c92d419a7767bae232414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114351164928693828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659912093047362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114482851321736392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,6 +342,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceNodes: 1.2
   id: {fileID: 1191826784560866}
+--- !u!114 &114884755118882966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169849973307658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114918075110044950
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -26,6 +26,12 @@ TagManager:
   - next
   - colisionArea
   - id
+  - colisionRed
+  - colisionBlue
+  - colisionGreen
+  - shipRed
+  - shipBlue
+  - shipGreen
   layers:
   - Default
   - TransparentFX
