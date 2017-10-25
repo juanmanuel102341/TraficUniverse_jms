@@ -4,7 +4,7 @@ public class Move:MonoBehaviour {
 	protected Rigidbody2D rb;
 	public float velocity;
 	MoveFirst moveFirst;
-	MovePath movePath;
+	MovePath2 movePath2;
 	MoveWhithoutPath moveWhithoutPath;
 	private PathInputs pathInputs;
 	private Bounds bounds;
@@ -17,30 +17,30 @@ public class Move:MonoBehaviour {
 		bounds=GetComponent<Bounds>();
 		pathInputs=GetComponent<PathInputs>();
 		moveFirst=new MoveFirst();
-		movePath=GetComponent<MovePath>();
+		movePath2=GetComponent<MovePath2>();
 		moveWhithoutPath=GetComponent<MoveWhithoutPath>();
-		movePath.enabled=false;
+		movePath2.enabled=false;
 		moveWhithoutPath.enabled=false;
 		}
 	void Update () {
 		if(pathInputs.path.listNodes.Count>0){
 			//path activo
 			//****************momento path*****************************
-			if(!movePath.enabled){
-				movePath.enabled=true;
+			if(!movePath2.enabled){
+				movePath2.enabled=true;
 			}
 			if(moveWhithoutPath.enabled){
 				//si volves de movewhithout path, osea si generaste un path anteriormente y ya los recorrsite
 				moveWhithoutPath.setBooleanDirection=false;
 				moveWhithoutPath.enabled=false;
 			}
-		}else if (movePath.enabled||moveWhithoutPath.enabled){
+		}else if (movePath2.enabled||moveWhithoutPath.enabled){
 			//vas a entrar si venis d move path, antes no ya q en el momemnto inicial movePath y moveWhithout path son falsos
 
 			//******************despues de quedarme sin nodos**********************************
 	//		print("final vector");
-					if(!movePath.enabled){
-					movePath.enabled=false;
+					if(!movePath2.enabled){
+					movePath2.enabled=false;
 					}
 					if(moveWhithoutPath.enabled==false){
 						moveWhithoutPath.enabled=true;
@@ -77,7 +77,6 @@ public class Move:MonoBehaviour {
 			bounds.limiteActive=false;
 			transform.up=-transform.up;//cambio vector por el sentido contrario
 		}
-
-	
 	}
+
 }

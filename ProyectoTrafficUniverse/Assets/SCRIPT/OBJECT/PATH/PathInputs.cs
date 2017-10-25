@@ -55,7 +55,7 @@ public class PathInputs : MonoBehaviour {
 			//colorObj.ColorSecondClick();
 		}
 
-		movePath.setIndex=0;
+//		movePath.setIndex=0;
 	}
 	void OnMouseUp(){
 		if(activatePath){
