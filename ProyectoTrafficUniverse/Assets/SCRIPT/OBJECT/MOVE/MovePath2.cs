@@ -48,16 +48,19 @@ public class MovePath2 : MonoBehaviour {
 		}else{
 			print("final path");	
 			if(move.getPathInputs.path.listNodes.Count>0||bounds.limiteActive){
-				print("entrando borrando nodos ");
-				GetComponent<Delete>().DeleteNodes();
-				index=0;
-				firstMove=false;
-				enabled=false;
-				bounds.limiteActive=false;
+				ResetListNodes();
 				}
 			}
 
 		Move_01();
+	}
+	public void ResetListNodes(){
+		print("entrando borrando nodos ");
+		GetComponent<Delete>().DeleteNodes();
+		index=0;
+		firstMove=false;
+		enabled=false;
+		bounds.limiteActive=false;
 	}
 	private  bool ReachPathPosition(){
 

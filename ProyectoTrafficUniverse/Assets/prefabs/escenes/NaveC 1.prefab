@@ -92,14 +92,13 @@ GameObject:
   - component: {fileID: 4289229021745572}
   - component: {fileID: 212588665249003600}
   - component: {fileID: 50188213841692966}
-  - component: {fileID: 114550570073272316}
   - component: {fileID: 114539387230994782}
   - component: {fileID: 114407433543983806}
   - component: {fileID: 114223960452751828}
   - component: {fileID: 114797346407183472}
   - component: {fileID: 114098338998780420}
-  - component: {fileID: 114472539603886592}
   - component: {fileID: 114969560103066588}
+  - component: {fileID: 114068917231306086}
   m_Layer: 0
   m_Name: NaveC 1
   m_TagString: Untagged
@@ -263,6 +262,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114068917231306086
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803064828252600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d190462d6d99a4c9787e3232eee8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114098338998780420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,17 +334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 2.3
---- !u!114 &114472539603886592
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1803064828252600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e010647faf45394479ca4e01fea3d514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114539387230994782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -348,19 +347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceNodes: 1.2
   id: {fileID: 1438001912898574}
---- !u!114 &114550570073272316
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1803064828252600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e33416f7bb7bd374fbbc925dcba126b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorFirstClick: {r: 0.41034484, g: 1, b: 0.60978705, a: 0}
-  colorSecondClick: {r: 1, g: 0.75, b: 0, a: 0}
 --- !u!114 &114797346407183472
 MonoBehaviour:
   m_ObjectHideFlags: 1

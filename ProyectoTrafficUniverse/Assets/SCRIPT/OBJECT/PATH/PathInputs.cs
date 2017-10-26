@@ -10,19 +10,19 @@ public class PathInputs : MonoBehaviour {
 	private int contador=0;
 	private Camera cameraGame;
 	public Path path;
-	private ChangeColor colorObj;
+
 	private PathGraphic pathGraphic;
 	private bool over=false;
-	private MovePath movePath;
+	private MovePath2 movePath;
 	private Move move;
 	public float distanceNodes;//distancia o frecuancia d calculo
 	public GameObject id;
 	void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		path=new Path(distanceNodes);
-		colorObj=GetComponent<ChangeColor>();
+
 		pathGraphic=GetComponent<PathGraphic>();
-		movePath=GetComponent<MovePath>();
+		movePath=GetComponent<MovePath2>();
 		move=GetComponent<Move>();	
 		id.SetActive(false);
 	}
@@ -36,17 +36,13 @@ public class PathInputs : MonoBehaviour {
 	void OnMouseDown(){
 		//colorObj.ColorFirstClick();
 		id.SetActive(true);
-		if(path.listNodes.Count>0){
-		Vector2 vecFinal=movePath.getCurrentVector;//vector q viene de movePath , osea es el vector en el q estaba hasta q hizo el click
-		move.getFinalVec=vecFinal;
-		}
 		Delete();
 		contador++;
 		if(!clickObj){
 			//***********primer click*******************
 			//print("clickevento");
 			clickObj=true;
-			//colorObj.ColorFirstClick();
+			movePath.ResetListNodes();
 		}
 		if(!activatePath&&contador>1){
 		//**************segundo click******************
@@ -64,7 +60,7 @@ public class PathInputs : MonoBehaviour {
 			activatePath=false;
 			clickObj=false;
 			contador=0;
-			colorObj.MyColor();
+		
 		}
 
 	}
