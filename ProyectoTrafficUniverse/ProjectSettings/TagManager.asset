@@ -32,6 +32,8 @@ TagManager:
   - shipRed
   - shipBlue
   - shipGreen
+  - pause
+  - pauseReplay
   layers:
   - Default
   - TransparentFX

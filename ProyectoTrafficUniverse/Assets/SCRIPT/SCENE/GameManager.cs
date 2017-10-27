@@ -14,16 +14,18 @@ public class GameManager : MonoBehaviour {
 	public GameObject buttonLoose;
 	public GameObject nextGui;
 	public GameObject buttonNext;
+
 	void Awake () {
 
 		initialVidas=vidas;
-		ResetValues();
+
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
 		guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
 	}
 	void Start(){
 		Replay.activateReplay+=OnReplay;	
+
 	}
 	
 	void Update () {
@@ -68,30 +70,39 @@ public class GameManager : MonoBehaviour {
 
 		spawnManager.enabled=false;;//apago generacion de naves
 		}
-	private void OnReplay(){
-		print("replay new");
-		if(buttonLoose.activeSelf){
-			print("button loose desacctiva");
-			buttonLoose.SetActive(false);
-			guiLoose.SetActive(false);
-		}else{
-		print("button win deactive");
-			buttonWin.SetActive(false);
-			guiWin.SetActive(false);
+	private void OnReplay(string id){
+
+		print("my id gm "+id);
+		if(id=="pauseReplay"){
+			//****************************pause*************************
+			print("replay pause gm");
+			Reset();
+			GameObject.FindGameObjectWithTag("pause").SetActive(false);
+			Time.timeScale=1;
+		}else{//**************************momento win/loose********************
+			print("win loose gm");
+			if(buttonLoose.activeSelf){
+				print("button loose desacctiva");
+				buttonLoose.SetActive(false);
+				guiLoose.SetActive(false);
+			}else{
+				print("button win deactive");
+				buttonWin.SetActive(false);
+				guiWin.SetActive(false);
+			}
+			nextGui.SetActive(false);
 		}
+
 		for(int i=0;i<aPlanets.Length;i++){
 			aPlanets[i].SetActive(true);//prendo planeta
 		}
-		nextGui.SetActive(false);
+
 		spawnManager.enabled=true;;//prendo generacion de naves
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
 	}
-	public void ResetValues(){
-		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
-		vidas=initialVidas;
-	}
+
 		
 }

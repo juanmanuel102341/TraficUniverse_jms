@@ -22,31 +22,31 @@ public class MovePath2 : MonoBehaviour {
 		//print("cantidad nodes "+move.getPathInputs.path.listNodes.Count);
 	
 		if(!FinalPath()&&!bounds.limiteActive){
-			print("target "+move.getPathInputs.path.listNodes[index].posicion);
-			print("player "+transform.position);
-			print("distance "+Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position));
+//			print("target "+move.getPathInputs.path.listNodes[index].posicion);
+//			print("player "+transform.position);
+//			print("distance "+Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position));
 		if(index==0&&firstMove==false){
 			currentVector=VecDirection();
-			print("get my first vector ");
+//			print("get my first vector ");
 			//ChangeAxisPathMetric();	
 			transform.up=currentVector;
 
 			firstMove=true;
 		}
 		if(ReachPathPosition()){
-			print("destiono cambio indice");
+//			print("destiono cambio indice");
 			index++;
 			//ChangeAxisPathMetric();	
 			currentVector=VecDirection();
 			transform.up=currentVector;
 
 
-			print("vector actual "+currentVector);
-			print("index "+index);
+//			print("vector actual "+currentVector);
+//			print("index "+index);
 		}
 
 		}else{
-			print("final path");	
+//			print("final path");	
 			if(move.getPathInputs.path.listNodes.Count>0||bounds.limiteActive){
 				ResetListNodes();
 				}
@@ -55,7 +55,7 @@ public class MovePath2 : MonoBehaviour {
 		Move_01();
 	}
 	public void ResetListNodes(){
-		print("entrando borrando nodos ");
+//		print("entrando borrando nodos ");
 		GetComponent<Delete>().DeleteNodes();
 		index=0;
 		firstMove=false;
@@ -77,7 +77,7 @@ public class MovePath2 : MonoBehaviour {
 	}
 	private void ChangeAxisPathMetric(){
 		move.getPathInputs.path.listNodes[index].posicion=VecDirection();
-		print("new target axis "+move.getPathInputs.path.listNodes[index].posicion.y );
+	//	print("new target axis "+move.getPathInputs.path.listNodes[index].posicion.y );
 	}
 
 	private void Move_01(){
