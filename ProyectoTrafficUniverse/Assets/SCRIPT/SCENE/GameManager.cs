@@ -10,10 +10,7 @@ public class GameManager : MonoBehaviour {
 	private SpawnManager spawnManager;
 	private int initialVidas;
 	public GameObject guiGame;
-	public GameObject buttonWin;
-	public GameObject buttonLoose;
-	public GameObject nextGui;
-	public GameObject buttonNext;
+	public RunGame runGame;
 
 	void Awake () {
 
@@ -22,10 +19,11 @@ public class GameManager : MonoBehaviour {
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
 		guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
+		
 	}
 	void Start(){
 		Replay.activateReplay+=OnReplay;	
-
+		runGame.ApplyNext+=Reset;
 	}
 	
 	void Update () {
@@ -42,21 +40,22 @@ public class GameManager : MonoBehaviour {
 			print("loose");
 
 			Reset();
-			buttonLoose.SetActive(true);
+
 			guiLoose.SetActive(true);
-			nextGui.SetActive(true);
-			buttonNext.SetActive(true);	
+
+
 		}else if(aterrizajes>=targetPlanes){
 			print("victory");
 			Reset();
-			buttonWin.SetActive(true);
+		
 			guiWin.SetActive(true);
-			nextGui.SetActive(true);
-			buttonNext.SetActive(true);	
+		
+		
 		}
 
 	}
 	private void Reset(){
+		print("reset game ");
 		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
 			GameObject aux=spawnManager.getListPlanes[i];
 			spawnManager.GetOutObjectFromList(aux);
@@ -81,16 +80,14 @@ public class GameManager : MonoBehaviour {
 			Time.timeScale=1;
 		}else{//**************************momento win/loose********************
 			print("win loose gm");
-			if(buttonLoose.activeSelf){
+			if(guiLoose.activeSelf){
 				print("button loose desacctiva");
-				buttonLoose.SetActive(false);
 				guiLoose.SetActive(false);
+
 			}else{
 				print("button win deactive");
-				buttonWin.SetActive(false);
 				guiWin.SetActive(false);
 			}
-			nextGui.SetActive(false);
 		}
 
 		for(int i=0;i<aPlanets.Length;i++){
