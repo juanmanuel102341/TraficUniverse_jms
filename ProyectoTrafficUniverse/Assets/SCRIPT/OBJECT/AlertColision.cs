@@ -26,7 +26,7 @@ public class AlertColision : MonoBehaviour {
 			print("prendo collider para un posible aterrizaje");
 			objColision.SetActive(true);
 		}
-		
+			
 	}
 
 	void OnTriggerExit2D(Collider2D col){

@@ -6,26 +6,26 @@ public class CheckTargetColision : MonoBehaviour {
 	void Awake () {
 		
 		myTag=gameObject.tag;
-		print("myTag "+myTag);
+//		print("myTag "+myTag);
 	}
 	
 	public bool CheckMyTarget(string targetTag){
 		switch(targetTag){
 		case"targetRed":
 			if(myTag=="shipRed"||myTag=="colisionRed"){
-				print("planeta red");
+			//	print("planeta red");
 				return true;
 			}
 			return false;
 		case "targetBlue":
 			if(myTag=="shipBlue"||myTag=="colisionBlue"){
-				print("planeta blue");
+			//	print("planeta blue");
 				return true;
 			}
 			return false;
 		case "targetGreen":
 			if(myTag=="shipGreen"||myTag=="colisionGreen"){
-				print("planet green");
+			//	print("planet green");
 				return true;
 			}
 			return false;

@@ -47,8 +47,8 @@ public class PathGraphic : MonoBehaviour {
 		
 		//la idea d este metodo es tener una frecuancia de dibujado separado de la frecuencia "via codigo"
 		Vector2 auxPos;
-		auxPos.x= listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.x;
-		auxPos.y=listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.y;
+		auxPos.x= listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.x;//ultimo elemento de la lista d nodos en x
+		auxPos.y=listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.y;//ultimo elemento de la lista d nodos en y
 		float d=Vector2.Distance(auxPos,_input);
 		if(d>frecuencia||frecuencia==0){
 			//es igual a 0 para q how to play 

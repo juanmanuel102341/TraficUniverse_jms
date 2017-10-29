@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
-//using System.Collections;
-//using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 public class PathInputs : MonoBehaviour {
 
 	//pasa data del mousse al path
@@ -10,26 +10,34 @@ public class PathInputs : MonoBehaviour {
 	private int contador=0;
 	private Camera cameraGame;
 	public Path path;
-
+	
 	private PathGraphic pathGraphic;
 	private bool over=false;
-	private MovePath2 movePath;
-	private Move move;
+//	private MovePath2 movePath;
+//	private Move move;
 	public float distanceNodes;//distancia o frecuancia d calculo
 	public GameObject id;
-	void Awake () {
+	protected Vector2 playerPos;
+
+	protected List<Vector2>listNodesVec=new List<Vector2>();
+	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		path=new Path(distanceNodes);
 
+	
 		pathGraphic=GetComponent<PathGraphic>();
-		movePath=GetComponent<MovePath2>();
-		move=GetComponent<Move>();	
+//		movePath=GetComponent<MovePath2>();
+//		move=GetComponent<Move>();	
 		id.SetActive(false);
+		print("clase path inputs");
 	}
 
 
-	void Update () {
+	protected void Update () {
 //		print("cantidad d nodos"+path.listNodos.Count);
+
+		path.Update();
+	
 		GetInputMouse();
 	}
 	// Update is called once per frame
@@ -42,7 +50,7 @@ public class PathInputs : MonoBehaviour {
 			//***********primer click*******************
 			//print("clickevento");
 			clickObj=true;
-			movePath.ResetListNodes();
+//			movePath.ResetListNodes();
 		}
 		if(!activatePath&&contador>1){
 		//**************segundo click******************
@@ -86,15 +94,20 @@ public class PathInputs : MonoBehaviour {
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
 			path.SetNewNode(auxInput);//parte codigo
+		
 			pathGraphic.SpawnGraphicPath(auxInput);//parte grafica
-
+		
 		}
 	}
 	public void Delete(){
-			
+		print("dekete path nputs");	
 		pathGraphic.Delete_ngraphics();
 		path.Delete();
 	}
+//	protected void MethodPapa(){
+//		pathGraphic.Delete_ngraphics();
+//		print("metodo papa inputs");
+//	}
 
 
 }

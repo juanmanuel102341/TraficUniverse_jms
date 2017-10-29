@@ -27,7 +27,7 @@ public class MoveHowToPlay : MonoBehaviour {
 		ChangeNode();
 	}
 	void ChangeNode(){
-		if(Vector2.Distance(transform.position,path.listNodes[index].posicion)<=0){
+		if(Vector2.Distance(transform.position,path.listNodes[index])<=0){
 			if(index<path.listNodes.Count-1)
 			index++;
 			if(index==path.listNodes.Count-1){
@@ -43,7 +43,7 @@ public class MoveHowToPlay : MonoBehaviour {
 		}
 	}
 	private void MyMove(){
-		transform.position=Vector2.MoveTowards(transform.position,path.listNodes[index].posicion,velocity*Time.deltaTime);
+		transform.position=Vector2.MoveTowards(transform.position,path.listNodes[index],velocity*Time.deltaTime);
 	}
 //	private void Reset(){
 //		activeMove=false;

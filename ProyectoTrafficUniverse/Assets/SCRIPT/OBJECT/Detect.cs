@@ -9,7 +9,7 @@ public class Detect : MonoBehaviour {
 		spawnManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
 		objParent=transform.parent.parent.gameObject;	
 		checkTarget=GetComponent<CheckTargetColision>();
-		print(objParent.name);
+//		print(objParent.name);
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		print("contacto collider nave");

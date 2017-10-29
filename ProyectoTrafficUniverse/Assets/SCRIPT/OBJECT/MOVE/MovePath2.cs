@@ -64,7 +64,7 @@ public class MovePath2 : MonoBehaviour {
 	}
 	private  bool ReachPathPosition(){
 
-		if(Vector2.Distance(move.getPathInputs.path.listNodes[index].posicion,transform.position)<=0.1f){
+		if(Vector2.Distance(move.getPathInputs.path.listNodes[index],transform.position)<=0.1f){
 			return true;
 		}
 		return false;
@@ -76,7 +76,7 @@ public class MovePath2 : MonoBehaviour {
 		return false;
 	}
 	private void ChangeAxisPathMetric(){
-		move.getPathInputs.path.listNodes[index].posicion=VecDirection();
+		move.getPathInputs.path.listNodes[index]=VecDirection();
 	//	print("new target axis "+move.getPathInputs.path.listNodes[index].posicion.y );
 	}
 
@@ -91,7 +91,7 @@ public class MovePath2 : MonoBehaviour {
 		Vector2 r;
 		posPlayer.x=transform.position.x;
 		posPlayer.y=transform.position.y;
-		target=move.getPathInputs.path.listNodes[index].posicion;
+		target=move.getPathInputs.path.listNodes[index];
 		r=target-posPlayer;
 
 		//		print("posplayer "+posPlayer);
