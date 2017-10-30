@@ -7,6 +7,7 @@ public class RunGame : MonoBehaviour {
 	public GameObject objNext;
 	public delegate void NextLevelApply();
 	public event NextLevelApply ApplyNext;
+	//public DataLevel data;
 	void Awake(){
 		num++;
 		print(SceneManager.sceneCount);
@@ -14,11 +15,16 @@ public class RunGame : MonoBehaviour {
 
 	}
 		public void LoadEscene(){
-		ApplyNext();
-		objNext.SetActive(false);
-		DataLevel.numLevel++;
+//		print("scene "+SceneManager.)
+		if(SceneManager.sceneCount!=1)
+		{print("next ");
+			ApplyNext();
+		}
 
-		SceneManager.LoadScene(DataLevel.numLevel);
+			objNext.SetActive(false);
+		//DataLevel.numLevel++;
+
+		SceneManager.LoadScene(SceneManager.sceneCount);
 		//DataLevel.numLevel++;
 		//		SceneManager.LoadScene(DataLevel.numLevel);
 		//		DataLevel.numLevel++;

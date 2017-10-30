@@ -6,6 +6,7 @@ public class DataLevel : MonoBehaviour {
 	void Awake () {
 		GameObject.DontDestroyOnLoad(this.gameObject);
 		numLevel++;
+		print("num level "+numLevel);
 	}
 
 }
