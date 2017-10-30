@@ -26,6 +26,7 @@ public class MoveShip : Path {
 				if(ReachPathPosition()&&!finalNode2){
 					
 			DeleteMyElementList();
+			if(myListNodes.Count>0)
 			myVector=CalcVectorUp();
 			
 			if(myListNodes.Count==1){
@@ -73,6 +74,7 @@ public class MoveShip : Path {
 		return false;
 	}
 	public void DeleteMyList(){
+		
 		myListNodes.RemoveRange(0,myListNodes.Count);
 
 	}
