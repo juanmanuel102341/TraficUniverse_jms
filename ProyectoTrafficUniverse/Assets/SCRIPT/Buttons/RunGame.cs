@@ -2,29 +2,29 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class RunGame : MonoBehaviour {
-	private int num=0;
+
 	//private DataLevel obj;
-	public GameObject objNext;
-	public delegate void NextLevelApply();
-	public event NextLevelApply ApplyNext;
-	//public DataLevel data;
+	//public GameObject objNext;
+//	public delegate void NextLevelApply();
+//	public event NextLevelApply ApplyNext;
+	private int builIndex=0;
+	private  
 	void Awake(){
-		num++;
-		print(SceneManager.sceneCount);
-	//	print(SceneManager.sceneCountInBuildSettings);
+		Scene scene=SceneManager.GetActiveScene();
+
+		print("name scene "+scene.name);
+		
+		builIndex=SceneUtility.GetBuildIndexByScenePath(scene.name);
+		print("build index "+builIndex);
 
 	}
 		public void LoadEscene(){
 //		print("scene "+SceneManager.)
-		if(SceneManager.sceneCount!=1)
-		{print("next ");
-			ApplyNext();
-		}
 
-			objNext.SetActive(false);
+		//	objNext.SetActive(false);
 		//DataLevel.numLevel++;
 
-		SceneManager.LoadScene(SceneManager.sceneCount);
+		SceneManager.LoadScene(builIndex+1);
 		//DataLevel.numLevel++;
 		//		SceneManager.LoadScene(DataLevel.numLevel);
 		//		DataLevel.numLevel++;

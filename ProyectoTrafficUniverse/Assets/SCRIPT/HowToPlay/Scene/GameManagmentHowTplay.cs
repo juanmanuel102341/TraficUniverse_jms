@@ -8,14 +8,17 @@ public class GameManagmentHowTplay : MonoBehaviour {
 	public GameObject [] player;//x si hay mas d uno posteriormente
 	public GameObject puntero;
 	public GameObject guiButton;
+	public static int totalPlanets=0;
 	void Awake(){
 		guiButton.SetActive(false);
+		totalPlanets=targetsPlanets.Length;
 	}
 	void Start () {
 		for(int i=0;i<targetsPlanets.Length;i++){
 			targetsPlanets[i].GetComponent<MyEvent>().finish+=TargetActive;
 			print("data planeta "+i+") "+targetsPlanets[i].GetComponent<Transform>().position);
 		}
+
 	}
 	public void TargetActive(string _id){
 		switch(_id){

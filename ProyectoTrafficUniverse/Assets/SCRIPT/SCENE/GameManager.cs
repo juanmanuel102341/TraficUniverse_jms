@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
 	}
 	void Start(){
 		Replay.activateReplay+=OnReplay;	
-		runGame.ApplyNext+=Reset;
+//		runGame.ApplyNext+=Reset;
 	}
 	
 	void Update () {
