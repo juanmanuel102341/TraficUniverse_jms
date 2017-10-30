@@ -590,7 +590,12 @@ Prefab:
         type: 2}
       propertyPath: runGame
       value: 
-      objectReference: {fileID: 1915347889}
+      objectReference: {fileID: 0}
+    - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
+        type: 2}
+      propertyPath: nextLevel
+      value: 
+      objectReference: {fileID: 1641026318}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b38f61de90ff8d43b5957d69ca95f66, type: 2}
   m_IsPrefabParent: 0
@@ -905,9 +910,36 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114096882561069916, guid: 867c1f6da344a35429788d014a4ff604,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1641026318}
+    - target: {fileID: 114096882561069916, guid: 867c1f6da344a35429788d014a4ff604,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplingNext
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114520339026098024, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1641026317 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1675721536781110, guid: 867c1f6da344a35429788d014a4ff604,
+    type: 2}
+  m_PrefabInternal: {fileID: 1641026316}
+--- !u!114 &1641026318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1641026317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01330708cde3404abd4cd5b229a6f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676209349 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1064644549556958, guid: 020eada750fdf524398f5f24ed78ccac,
@@ -933,9 +965,3 @@ GameObject:
   m_PrefabParentObject: {fileID: 1233117964600258, guid: c23f528f182b6ce47886a8aad5dc507b,
     type: 2}
   m_PrefabInternal: {fileID: 978828928}
---- !u!114 &1915347889 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114520339026098024, guid: 867c1f6da344a35429788d014a4ff604,
-    type: 2}
-  m_PrefabInternal: {fileID: 1641026316}
-  m_Script: {fileID: 11500000, guid: dbe33d4d1e2e4a64fab2d8340b68fa93, type: 3}

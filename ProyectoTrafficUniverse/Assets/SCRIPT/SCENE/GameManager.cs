@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 	private SpawnManager spawnManager;
 	private int initialVidas;
 	public GameObject guiGame;
-	public RunGame runGame;
+	public NextLevel nextLevel;
 
 	void Awake () {
 
@@ -23,7 +23,9 @@ public class GameManager : MonoBehaviour {
 	}
 	void Start(){
 		Replay.activateReplay+=OnReplay;	
-//		runGame.ApplyNext+=Reset;
+		nextLevel.activateReset+=SettingOffGuiFinal;
+
+		nextLevel.activateReset+=ResetValuesScene;
 	}
 	
 	void Update () {
@@ -68,7 +70,8 @@ public class GameManager : MonoBehaviour {
 		}
 
 		spawnManager.enabled=false;;//apago generacion de naves
-		}
+
+	}
 	private void OnReplay(string id){
 
 		print("my id gm "+id);
@@ -79,22 +82,28 @@ public class GameManager : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("pause").SetActive(false);
 			Time.timeScale=1;
 		}else{//**************************momento win/loose********************
-			print("win loose gm");
-			if(guiLoose.activeSelf){
-				print("button loose desacctiva");
-				guiLoose.SetActive(false);
-
-			}else{
-				print("button win deactive");
-				guiWin.SetActive(false);
-			}
+			SettingOffGuiFinal();
 		}
 
 		for(int i=0;i<aPlanets.Length;i++){
 			aPlanets[i].SetActive(true);//prendo planeta
 		}
 
-		spawnManager.enabled=true;;//prendo generacion de naves
+		ResetValuesScene();
+	}
+	private void SettingOffGuiFinal(){
+		print("win loose gm");
+		if(guiLoose.activeSelf){
+			print("button loose desacctiva");
+			guiLoose.SetActive(false);
+
+		}else{
+			print("button win deactive");
+			guiWin.SetActive(false);
+		}
+	}
+	private void ResetValuesScene(){
+		spawnManager.enabled=true;//prendo generacion de naves
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		vidas=initialVidas;
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad

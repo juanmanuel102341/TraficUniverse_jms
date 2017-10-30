@@ -23,6 +23,7 @@ public class MoveShip : Path {
 		
 		if(!limit_active){
 			if(myListNodes.Count>0){
+				print("list nodes desde my move "+listNodes.Count);
 				if(ReachPathPosition()&&!finalNode2){
 					
 			DeleteMyElementList();
