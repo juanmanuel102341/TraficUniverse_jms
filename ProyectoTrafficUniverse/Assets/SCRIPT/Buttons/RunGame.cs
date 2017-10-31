@@ -16,6 +16,7 @@ public class RunGame : MonoBehaviour {
 		
 		builIndex=SceneUtility.GetBuildIndexByScenePath(scene.name);
 		print("build index "+builIndex);
+		builIndex++;
 
 	}
 		public void LoadEscene(){
@@ -24,7 +25,7 @@ public class RunGame : MonoBehaviour {
 		//	objNext.SetActive(false);
 		//DataLevel.numLevel++;
 
-		SceneManager.LoadScene(builIndex+1);
+		SceneManager.LoadScene(builIndex);
 		//DataLevel.numLevel++;
 		//		SceneManager.LoadScene(DataLevel.numLevel);
 		//		DataLevel.numLevel++;

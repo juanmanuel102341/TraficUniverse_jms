@@ -25,12 +25,11 @@ public class MoveShip : Path {
 			if(myListNodes.Count>0){
 //				print("list nodes desde my move "+listNodes.Count);
 				if(ReachPathPosition()&&!finalNode2){
-					
-			DeleteMyElementList();
+			DeleteMyElementList();//borro nodo q ya no necesito
 			if(myListNodes.Count>0)
 			myVector=CalcVectorUp();
 			
-			if(myListNodes.Count==1){
+			if(myListNodes.Count==1){//
 			finalNode2=true;
 			
 			}
@@ -42,8 +41,6 @@ public class MoveShip : Path {
 //					Debug.Log("final path");
 				//DeleteMyElementList();
 						DeleteMyList();
-				
-					
 						finalNode2=false;
 					}
 			}

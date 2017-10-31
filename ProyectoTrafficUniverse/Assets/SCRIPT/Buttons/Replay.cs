@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-
+using UnityEngine.Events;
 public class Replay : MonoBehaviour {
 	public delegate void ReplayGame(string id);
-	public static event ReplayGame activateReplay;
+	public event ReplayGame activateReplay;
 
 	public void ReplayMethod(){
 		print("replay ");

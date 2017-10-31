@@ -94,7 +94,6 @@ public class PathInputs : MonoBehaviour {
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
 			path.SetNewNode(auxInput);//parte codigo
-		
 			pathGraphic.SpawnGraphicPath(auxInput);//parte grafica
 		
 		}

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	private int initialVidas;
 	public GameObject guiGame;
 	public NextLevel nextLevel;
+	public Replay replay;
 
 	void Awake () {
 
@@ -22,7 +23,16 @@ public class GameManager : MonoBehaviour {
 		
 	}
 	void Start(){
-		Replay.activateReplay+=OnReplay;	
+		EventsGame();
+	}
+//	void OnDestroy(){
+//		replay.activateReplay-=OnReplay;
+//	
+//	}
+		
+
+	void EventsGame(){
+		replay.activateReplay+=OnReplay;	
 		nextLevel.activateReset+=SettingOffGuiFinal;
 
 		nextLevel.activateReset+=ResetValuesScene;
@@ -108,6 +118,8 @@ public class GameManager : MonoBehaviour {
 		vidas=initialVidas;
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
+//		EventsGame();
+	//	OnDestroy();
 	}
 
 		

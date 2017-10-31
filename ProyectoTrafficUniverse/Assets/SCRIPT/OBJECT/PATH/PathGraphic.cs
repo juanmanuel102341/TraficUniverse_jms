@@ -44,7 +44,6 @@ public class PathGraphic : MonoBehaviour {
 		}
 	}
 	private bool CheckDistance(Vector2 _input){
-		
 		//la idea d este metodo es tener una frecuancia de dibujado separado de la frecuencia "via codigo"
 		Vector2 auxPos;
 		auxPos.x= listGraphicsPaths[listGraphicsPaths.Count-1].transform.position.x;//ultimo elemento de la lista d nodos en x
