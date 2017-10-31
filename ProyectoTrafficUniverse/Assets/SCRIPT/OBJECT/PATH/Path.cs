@@ -68,7 +68,7 @@ public class Path:PathInputs  {
 	}
 
 	public void Delete(){
-		Debug.Log("borrando path");
+//		Debug.Log("borrando path");
 		if(listNodes.Count>0){
 		//	Debug.Log("borrando nodos "+listNodes.Count);
 			listNodes.RemoveRange(0,listNodes.Count);

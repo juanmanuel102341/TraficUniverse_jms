@@ -23,7 +23,7 @@ public class MoveShip : Path {
 		
 		if(!limit_active){
 			if(myListNodes.Count>0){
-				print("list nodes desde my move "+listNodes.Count);
+//				print("list nodes desde my move "+listNodes.Count);
 				if(ReachPathPosition()&&!finalNode2){
 					
 			DeleteMyElementList();
@@ -34,12 +34,12 @@ public class MoveShip : Path {
 			finalNode2=true;
 			
 			}
-			Debug.Log("contadorNodesReach "+myListNodes.Count);
+//			Debug.Log("contadorNodesReach "+myListNodes.Count);
 					//Debug.Log("changing my vector "+myVector);
 			
 			}else if(finalNode2){
 					//legaste al final
-					Debug.Log("final path");
+//					Debug.Log("final path");
 				//DeleteMyElementList();
 						DeleteMyList();
 				
