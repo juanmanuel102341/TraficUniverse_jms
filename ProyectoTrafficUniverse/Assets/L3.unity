@@ -266,7 +266,7 @@ Prefab:
     - target: {fileID: 20485502382105112, guid: 0090d695142d3ab459662283355a950b,
         type: 2}
       propertyPath: orthographic size
-      value: 70.893585
+      value: 40.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0090d695142d3ab459662283355a950b, type: 2}
@@ -480,7 +480,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1803064828252600, guid: d76b4ee3ea8fc6c49b2f97e015162269, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1803064828252600, guid: d76b4ee3ea8fc6c49b2f97e015162269, type: 2}
       propertyPath: m_Name
@@ -777,7 +777,7 @@ Prefab:
     - target: {fileID: 114322229019323248, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}

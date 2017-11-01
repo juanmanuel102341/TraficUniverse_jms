@@ -7,13 +7,18 @@ public class Path:PathInputs  {
 	public List<Vector2>listNodes=new List<Vector2>();
 	public MoveShip moveShip;
 	private float distanceNodes;
-
+	public AngleConstrain angleConstrain;
+	private int count;
+	private int acum;
 	public Path(){
 		
 	}
 	public Path (float _distanceNodes){
 		distanceNodes=_distanceNodes;
 		moveShip=new MoveShip();
+		angleConstrain=new AngleConstrain();
+		count=0;
+		acum=3;
 	}
 	public void Update(){
 		moveShip.Update();
@@ -25,10 +30,23 @@ public class Path:PathInputs  {
 			if(DistanceBetween(input)){
 			//mas d uno
 			Node node;
+			
 			node=new Node(input);
-		
+					
 			moveShip.myListNodes.Add(node.posicion);		
 			listNodes.Add(node.posicion);
+
+				Debug.Log("entrando cantidad nodes "+listNodes.Count);
+				if(listNodes.Count>=acum){
+					
+					Debug.Log("contador "+count);
+					float n=angleConstrain.GettinAngleConstrain(listNodes[count],listNodes[count+1],listNodes[count+2]);						
+					count++;	
+					acum++;
+					if(n>45){
+						Debug.Log("constrain activa!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11 "+n);
+					}
+				}
 		//		Debug.Log("cant nodes "+	moveShip.myListNodes.Count);
 				//	moveShip.Update();
 				//Debug.Log("creacion nodo "+node.posicion);
@@ -77,7 +95,8 @@ public class Path:PathInputs  {
 //		MethodPapa();
 		moveShip.DeleteMyList();
 //		Debug.Log("nodos codigo "+listNodes.Count);
-	
+		acum=3;
+		count=0;
 	}
 
 }

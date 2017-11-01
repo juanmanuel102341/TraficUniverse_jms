@@ -81,11 +81,11 @@ public class SpawnManager : MonoBehaviour {
 			
 			
 				if(i+1==total){
-						print("limite naves 1 cond");
+						//print("limite naves 1 cond");
 						ResetValues();
 					}
 				}else{
-					print("limite naves 2 cond");
+				//	print("limite naves 2 cond");
 					ResetValues();
 				}
 			}
@@ -93,10 +93,10 @@ public class SpawnManager : MonoBehaviour {
 		}
 	}
 	private void ResetValues(){
-		print("ultima tanda");
+		//print("ultima tanda");
 		time=0;
 		frecuencia=TimeLerp(rangeTime[0],rangeTime[1]);
-		print("nueva frecuancia "+frecuencia);
+//		print("nueva frecuancia "+frecuencia);
 	}
 	public List<GameObject> getValuesList{
 		get{

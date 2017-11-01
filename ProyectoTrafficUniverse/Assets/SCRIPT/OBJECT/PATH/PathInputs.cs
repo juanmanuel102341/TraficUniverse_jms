@@ -19,6 +19,7 @@ public class PathInputs : MonoBehaviour {
 	public GameObject id;
 	protected Vector2 playerPos;
 
+
 	protected List<Vector2>listNodesVec=new List<Vector2>();
 	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -29,7 +30,7 @@ public class PathInputs : MonoBehaviour {
 //		movePath=GetComponent<MovePath2>();
 //		move=GetComponent<Move>();	
 		id.SetActive(false);
-		print("clase path inputs");
+//		print("clase path inputs");
 	}
 
 
@@ -99,7 +100,7 @@ public class PathInputs : MonoBehaviour {
 		}
 	}
 	public void Delete(){
-		print("dekete path nputs");	
+	//	print("dekete path nputs");	
 		pathGraphic.Delete_ngraphics();
 		path.Delete();
 	}
