@@ -18,5 +18,11 @@ public class AngleConstrain  {
 		Debug.Log("final angle "+angle); 
 		return angle;
 	}
+	public Vector2 GettinVectorConstrain(float magnitud, float constrain){
+		Vector2 vec;
+		vec.x=magnitud*Mathf.Cos(Mathf.Deg2Rad*constrain);
+		vec.y=magnitud*Mathf.Sin(Mathf.Deg2Rad*constrain);
+		return vec;
+	}
 
 }

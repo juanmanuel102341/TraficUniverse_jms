@@ -10,6 +10,10 @@ public class Path:PathInputs  {
 	public AngleConstrain angleConstrain;
 	private int count;
 	private int acum;
+	private Vector2 pointFrontierUp;
+	private Vector2 pointFrontierDown;
+
+
 	public Path(){
 		
 	}
@@ -41,11 +45,45 @@ public class Path:PathInputs  {
 					
 					Debug.Log("contador "+count);
 					float n=angleConstrain.GettinAngleConstrain(listNodes[count],listNodes[count+1],listNodes[count+2]);						
+					Vector2 aux=angleConstrain.GettinVectorConstrain(distanceNodes,45);
+					aux+=listNodes[count+1];
+					Debug.Log("point constrain 1"+aux);
+					Vector2 aux2 =angleConstrain.GettinVectorConstrain(-distanceNodes,45);
+				aux2+=listNodes[count+1];
+					Debug.Log("point constrain 2"+aux2);
+					GameObject obj=GameObject.CreatePrimitive(PrimitiveType.Sphere);
+					Transform objTransform=obj.GetComponent<Transform>();
+					objTransform.position=aux;
+					objTransform.localScale=new Vector3(0.2f,0.2f,0.2f);
+					obj.GetComponent<MeshRenderer>().material.color=Color.green;
+					GameObject obj2=GameObject.CreatePrimitive(PrimitiveType.Sphere);
+					Transform tf=obj2.GetComponent<Transform>();
+					tf.position=aux2;
+					tf.localScale=new Vector3(0.2f,0.2f,0.2f);
+					obj2.GetComponent<MeshRenderer>().material.color=Color.red;
+				
+
+					if(n>90){
+//						GameObject obj3=GameObject.CreatePrimitive(PrimitiveType.Sphere);
+//						Transform objTransform3=obj3.GetComponent<Transform>();
+//						objTransform3.position=listNodes[count+2];
+//						objTransform3.localScale=new Vector3(0.2f,0.2f,0.2f);
+//						obj3.GetComponent<MeshRenderer>().material.color=Color.white;
+						//	listNodes[count+2]=	
+						Debug.Log("constrain activa!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11 "+n);
+						if(listNodes[count+2].y<aux2.y){
+							Debug.Log("pos a guardar "+aux2);
+							listNodes[count+2]=aux2;
+						}else{
+							Debug.Log("pos a guardar "+aux);
+							listNodes[count+2]=aux;
+						}	
+					}
+
 					count++;	
 					acum++;
-					if(n>45){
-						Debug.Log("constrain activa!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11 "+n);
-					}
+
+
 				}
 		//		Debug.Log("cant nodes "+	moveShip.myListNodes.Count);
 				//	moveShip.Update();

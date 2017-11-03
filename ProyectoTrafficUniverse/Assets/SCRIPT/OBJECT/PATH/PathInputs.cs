@@ -10,7 +10,7 @@ public class PathInputs : MonoBehaviour {
 	private int contador=0;
 	private Camera cameraGame;
 	public Path path;
-	
+
 	private PathGraphic pathGraphic;
 	private bool over=false;
 //	private MovePath2 movePath;
