@@ -40,17 +40,17 @@ public class Path:PathInputs  {
 			moveShip.myListNodes.Add(node.posicion);		
 			listNodes.Add(node.posicion);
 
-				Debug.Log("entrando cantidad nodes "+listNodes.Count);
+			//	Debug.Log("entrando cantidad nodes "+listNodes.Count);
 				if(listNodes.Count>=acum){
 					
-					Debug.Log("contador "+count);
+			//		Debug.Log("contador "+count);
 					float n=angleConstrain.GettinAngleConstrain(listNodes[count],listNodes[count+1],listNodes[count+2]);						
 					Vector2 aux=angleConstrain.GettinVectorConstrain(distanceNodes,45);
 					aux+=listNodes[count+1];
-					Debug.Log("point constrain 1"+aux);
+			//		Debug.Log("point constrain 1"+aux);
 					Vector2 aux2 =angleConstrain.GettinVectorConstrain(-distanceNodes,45);
 				aux2+=listNodes[count+1];
-					Debug.Log("point constrain 2"+aux2);
+			//		Debug.Log("point constrain 2"+aux2);
 					GameObject obj=GameObject.CreatePrimitive(PrimitiveType.Sphere);
 					Transform objTransform=obj.GetComponent<Transform>();
 					objTransform.position=aux;
@@ -70,12 +70,12 @@ public class Path:PathInputs  {
 //						objTransform3.localScale=new Vector3(0.2f,0.2f,0.2f);
 //						obj3.GetComponent<MeshRenderer>().material.color=Color.white;
 						//	listNodes[count+2]=	
-						Debug.Log("constrain activa!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11 "+n);
+			//			Debug.Log("constrain activa!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11 "+n);
 						if(listNodes[count+2].y<aux2.y){
 							Debug.Log("pos a guardar "+aux2);
 							listNodes[count+2]=aux2;
 						}else{
-							Debug.Log("pos a guardar "+aux);
+			//				Debug.Log("pos a guardar "+aux);
 							listNodes[count+2]=aux;
 						}	
 					}
