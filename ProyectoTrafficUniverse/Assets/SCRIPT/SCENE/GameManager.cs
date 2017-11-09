@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 
 	void Awake () {
 
+	
 		initialVidas=vidas;
 
 		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
@@ -54,7 +55,9 @@ public class GameManager : MonoBehaviour {
 			Reset();
 
 			guiLoose.SetActive(true);
-
+			replay=guiLoose.transform.GetChild(2).GetComponent<Replay>();
+			replay.activateReplay+=OnReplay;	
+			Debug.Log("replay "+replay.tag);
 
 		}else if(aterrizajes>=targetPlanes){
 			print("victory");
