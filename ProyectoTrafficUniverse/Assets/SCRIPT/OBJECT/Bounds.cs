@@ -12,9 +12,10 @@ public class Bounds : MonoBehaviour {
 	}
 
 	void Update () {
+//		Debug.Log("UP "+transform.up);
 		if(AxisXMin()||AxisYMin()||AxisXMax()||AxisYMax()){
 			//print("limite activo");
-			limite=true;		
+		limite=true;
 		}else{
 			limite=false;
 		}
@@ -22,12 +23,8 @@ public class Bounds : MonoBehaviour {
 	private bool AxisXMin(){
 		if(transform.position.x-widthObj<-screenData.getWidthScene){
 			
-
+			Debug.Log("limite izq "+transform.position.x);
 			transform.position=new Vector2(-screenData.getWidthScene+widthObj,transform.position.y);
-//			print("w "+widthObj);
-//			print("scene max "+widthScene);
-//			print("lim x min "+l);
-//			print("pos x "+transform.position.x);
 			return true;
 		}
 		return false;
@@ -35,6 +32,7 @@ public class Bounds : MonoBehaviour {
 	private bool AxisXMax(){
 		if(transform.position.x+widthObj>screenData.getWidthScene){
 			transform.position=new Vector2 (screenData.getWidthScene-widthObj,transform.position.y);//posiciono el objeto en el punto maximo menos el ancho para q n traiga prblemas cuando le cambie d direccion
+			//Debug.Log("limite x max");
 			return true;
 		}
 		return false;
@@ -42,6 +40,7 @@ public class Bounds : MonoBehaviour {
 	private bool AxisYMin(){
 		if(transform.position.y-heightObj<-screenData.getHeightScene){
 			transform.position=new Vector2 (transform.position.x,-screenData.getHeightScene+heightObj);
+			//Debug.Log("limite inferior");
 			return true;
 		}
 		return false;
@@ -49,6 +48,7 @@ public class Bounds : MonoBehaviour {
 	private bool AxisYMax(){
 		if(transform.position.y+heightObj>screenData.getHeightScene){
 			transform.position=new Vector2 (transform.position.x,screenData.getHeightScene-heightObj);
+	//Debug.Log("limite superior "+transform.position);
 			return true;
 		}
 		return false;	

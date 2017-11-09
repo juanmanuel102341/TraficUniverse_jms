@@ -139,6 +139,7 @@ public class Path:PathInputs  {
 		acum=3;
 		count=0;
 		countNodes=0;
+
 	}
 	public void DeleteMyElementlist(){
 		listNodes.Remove(listNodes[0]);

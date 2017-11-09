@@ -18,17 +18,11 @@ public class PathInputs : MonoBehaviour {
 	public float distanceNodes;//distancia o frecuancia d calculo
 	public GameObject id;
 	protected Vector2 playerPos;
-
-
 	protected List<Vector2>listNodesVec=new List<Vector2>();
 	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		path=new Path(distanceNodes);
-
-	
 		pathGraphic=GetComponent<PathGraphic>();
-//		movePath=GetComponent<MovePath2>();
-//		move=GetComponent<Move>();	
 		id.SetActive(false);
 //		print("clase path inputs");
 	}
@@ -36,16 +30,13 @@ public class PathInputs : MonoBehaviour {
 
 	protected void Update () {
 //		print("cantidad d nodos"+path.listNodos.Count);
-
 		path.Update();
-	
 		GetInputMouse();
 	}
 	// Update is called once per frame
 	void OnMouseDown(){
-		//colorObj.ColorFirstClick();
 		id.SetActive(true);
-		Delete();
+		DeletesAllPaths();
 		contador++;
 		if(!clickObj){
 			//***********primer click*******************
@@ -99,15 +90,10 @@ public class PathInputs : MonoBehaviour {
 		
 		}
 	}
-	public void Delete(){
-	//	print("dekete path nputs");	
+	public void DeletesAllPaths(){
+	print("dekete path nputs");	
 		pathGraphic.Delete_ngraphics();
 		path.Delete();
 	}
-//	protected void MethodPapa(){
-//		pathGraphic.Delete_ngraphics();
-//		print("metodo papa inputs");
-//	}
-
 
 }
