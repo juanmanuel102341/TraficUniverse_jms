@@ -130,6 +130,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1498190711886406, guid: b02be7ad713fe9546a3a3a03251795e9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243827814102004, guid: b02be7ad713fe9546a3a3a03251795e9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b02be7ad713fe9546a3a3a03251795e9, type: 2}
   m_IsPrefabParent: 0
@@ -368,6 +376,10 @@ Prefab:
       propertyPath: bounds
       value: 
       objectReference: {fileID: 1512667465}
+    - target: {fileID: 1757473692648486, guid: 73ce9a3509e164342bafb81c88893420, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73ce9a3509e164342bafb81c88893420, type: 2}
   m_IsPrefabParent: 0
@@ -564,9 +576,19 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1569114346539714, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
+      propertyPath: m_TagString
+      value: repayLoose
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1211394638 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114304301651051000, guid: b02be7ad713fe9546a3a3a03251795e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 160758273}
+  m_Script: {fileID: 11500000, guid: 4e5e963d842823b47aa9cc17a637d2e3, type: 3}
 --- !u!1 &1262951999 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1498190711886406, guid: b02be7ad713fe9546a3a3a03251795e9,
@@ -756,7 +778,7 @@ Prefab:
     - target: {fileID: 114322229019323248, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1358870793527522, guid: 7b38f61de90ff8d43b5957d69ca95f66, type: 2}
       propertyPath: m_IsActive
@@ -831,7 +853,7 @@ Prefab:
         type: 2}
       propertyPath: replay
       value: 
-      objectReference: {fileID: 1809641356}
+      objectReference: {fileID: 1211394638}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b38f61de90ff8d43b5957d69ca95f66, type: 2}
   m_IsPrefabParent: 0
@@ -897,12 +919,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1809641356 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114972496878818230, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1129548462}
-  m_Script: {fileID: 11500000, guid: 4e5e963d842823b47aa9cc17a637d2e3, type: 3}
 --- !u!1 &1869771336
 GameObject:
   m_ObjectHideFlags: 0

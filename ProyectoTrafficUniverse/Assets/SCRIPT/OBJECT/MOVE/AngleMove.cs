@@ -6,7 +6,7 @@ public class AngleMove {
 		
 	}
 
-	public Vector2 AngleBetween2(Vector2 vecNode, Vector2 vecPlayer){
+	public Vector2 VectorUp(Vector2 vecNode, Vector2 vecPlayer){
 
 		Vector2 mod=vecNode-vecPlayer;
 

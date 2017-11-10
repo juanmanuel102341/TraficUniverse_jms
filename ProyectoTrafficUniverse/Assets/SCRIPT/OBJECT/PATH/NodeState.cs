@@ -30,13 +30,11 @@ public class NodeState {
 				//Debug.Log("llego")
 				myPath.DeleteMyElementlist();
 				//Debug.Log("cantidiad nodes "+myPath.countNodes);
-
 				final=true;
-			
 			}
 		}
 	}
-//
+
 	private bool Reach(){
 		if(Vector2.Distance(myPath.listNodes[0],playerPos)<=0.1f){
 			Debug.Log("nodo llego cambio ");

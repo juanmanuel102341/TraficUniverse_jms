@@ -35,6 +35,7 @@ TagManager:
   - pause
   - pauseReplay
   - skip
+  - repayLoose
   layers:
   - Default
   - TransparentFX
