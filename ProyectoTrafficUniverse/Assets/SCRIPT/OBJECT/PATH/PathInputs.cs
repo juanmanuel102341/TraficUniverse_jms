@@ -4,33 +4,32 @@ using System.Collections;
 using System.Collections.Generic;
 public class PathInputs : MonoBehaviour {
 
-	//pasa data del mousse al path
 	private bool activatePath=false;
 	private bool clickObj=false;
 	private int contador=0;
 	private Camera cameraGame;
 	public Path path;
-
 	private PathGraphic pathGraphic;
 	private bool over=false;
-//	private MovePath2 movePath;
-//	private Move move;
 	public float distanceNodes;//distancia o frecuancia d calculo
 	public GameObject id;
 	protected Vector2 playerPos;
 	protected List<Vector2>listNodesVec=new List<Vector2>();
+	private AngleConstrain angleConstrain;
 	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-		path=new Path(distanceNodes);
+
 		pathGraphic=GetComponent<PathGraphic>();
+		path=new Path(distanceNodes,pathGraphic);
 		id.SetActive(false);
+		angleConstrain=new AngleConstrain();
 //		print("clase path inputs");
 	}
 
 
 	protected void Update () {
 //		print("cantidad d nodos"+path.listNodos.Count);
-		path.Update();
+
 		GetInputMouse();
 	}
 	// Update is called once per frame
@@ -86,7 +85,7 @@ public class PathInputs : MonoBehaviour {
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
 			path.SetNewNode(auxInput);//parte codigo
-			pathGraphic.SpawnGraphicPath(auxInput);//parte grafica
+	//		pathGraphic.SpawnGraphicPath(auxInput);//parte grafica
 		
 		}
 	}

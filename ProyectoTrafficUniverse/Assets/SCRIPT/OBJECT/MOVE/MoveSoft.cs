@@ -83,7 +83,7 @@ public class MoveSoft : MonoBehaviour {
 		Vector2 n=Vector2.Lerp(lerpMin,lerpMax,timeLerp);
 		Debug.Log("lerp "+n);
 
-		timeLerp+=Time.deltaTime;
+		timeLerp+=Time.deltaTime*2;
 		transform.up=new Vector2 (n.x,n.y);
 	}
 
