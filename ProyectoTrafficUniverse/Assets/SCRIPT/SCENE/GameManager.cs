@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour {
 	public GameObject guiGame;
 	public NextLevel nextLevel;
 	public Replay replay;
-
+	private GameObject [] aAsteroides;
 	void Awake () {
-
+		aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
 	
 		initialVidas=vidas;
 
@@ -71,11 +71,11 @@ public class GameManager : MonoBehaviour {
 	}
 	private void Reset(){
 		print("reset game ");
-		GameObject [] aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
+
 		if(aAsteroides!=null){
 			print("borrando asteroides "+aAsteroides.Length );
 			for(int i=0;i<aAsteroides.Length;i++){
-				Destroy(aAsteroides[i]);
+				aAsteroides[i].SetActive(false);
 			}
 			print("borrando asteroides despues"+aAsteroides.Length );
 		}
@@ -109,7 +109,9 @@ public class GameManager : MonoBehaviour {
 		for(int i=0;i<aPlanets.Length;i++){
 			aPlanets[i].SetActive(true);//prendo planeta
 		}
-
+		for(int i=0;i<aAsteroides.Length;i++){
+			aAsteroides[i].SetActive(true);//prendo asteroides
+		}
 		ResetValuesScene();
 	}
 	private void SettingOffGuiFinal(){

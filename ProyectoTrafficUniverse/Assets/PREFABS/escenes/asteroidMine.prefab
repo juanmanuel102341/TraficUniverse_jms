@@ -9,73 +9,43 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1128596230540578}
+  m_RootGameObject: {fileID: 1498117325354262}
   m_IsPrefabParent: 1
---- !u!1 &1128596230540578
+--- !u!1 &1498117325354262
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4525150450720708}
-  - component: {fileID: 212646179660705048}
-  - component: {fileID: 58133589990312492}
-  - component: {fileID: 114665375457513450}
+  - component: {fileID: 4510913712376642}
+  - component: {fileID: 212132758847659898}
   m_Layer: 0
-  m_Name: asteroid
+  m_Name: asteroidMine
   m_TagString: asteroide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4525150450720708
+--- !u!4 &4510913712376642
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1128596230540578}
+  m_GameObject: {fileID: 1498117325354262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.1, y: -2.5771499, z: 0}
-  m_LocalScale: {x: 2.0595574, y: 2.0595586, z: 2.0595586}
+  m_LocalPosition: {x: -62.5662, y: -31.38161, z: 0}
+  m_LocalScale: {x: 3.1346147, y: 3.134615, z: 3.134615}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58133589990312492
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1128596230540578}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.0689121
---- !u!114 &114665375457513450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1128596230540578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3bf856ab499794c9d56646e5b649c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpAngular:
-  - 6
-  - 14
---- !u!212 &212646179660705048
+--- !u!212 &212132758847659898
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1128596230540578}
+  m_GameObject: {fileID: 1498117325354262}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -101,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 52f23dc0e8a8c8e4dbd453b580ad2ce9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64c7db52760f5b54ab2464af2ad81272, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

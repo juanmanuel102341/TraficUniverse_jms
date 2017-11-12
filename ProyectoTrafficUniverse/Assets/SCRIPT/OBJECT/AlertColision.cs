@@ -22,7 +22,8 @@ public class AlertColision : MonoBehaviour {
 
 		}
 		if(checkTarget.CheckMyTarget(col.tag)){
-			sprite.SetActive(true);
+			if(col.tag=="asteroide")
+			sprite.SetActive(true);//activo carte de sprite attention
 			//print("prendo collider para un posible aterrizaje");
 			objColision.SetActive(true);
 		}
@@ -31,7 +32,9 @@ public class AlertColision : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D col){
 		print("exit");
+		if(sprite.gameObject.activeSelf)
 		sprite.SetActive(false);
+
 		objColision.SetActive(false);
 	}
 
