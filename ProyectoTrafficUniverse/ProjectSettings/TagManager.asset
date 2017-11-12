@@ -36,6 +36,8 @@ TagManager:
   - pauseReplay
   - skip
   - repayLoose
+  - asteroide
+  - plane
   layers:
   - Default
   - TransparentFX

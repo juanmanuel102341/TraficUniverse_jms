@@ -5,12 +5,8 @@ using UnityEngine;
 public class Path:PathInputs  {
 
 	public List<Vector2>listNodes=new List<Vector2>();
-	//public MoveShip moveShip;
+	private AngleConstrain angleConstrain;
 	private float my_distanceNodes;
-	private int count;
-	private int acum;
-	private Vector2 pointFrontierUp;
-	private Vector2 pointFrontierDown;
 	public int countNodes=0;
 	public bool first=false;
 	private PathGraphic pathGraphic;
@@ -19,9 +15,10 @@ public class Path:PathInputs  {
 	}
 	public Path (float _distanceNodes,PathGraphic _graficPath){
 		my_distanceNodes=_distanceNodes;
+		//Debug.Log("distance nodes "+my_distanceNodes);
 		pathGraphic=_graficPath;
-	//	moveShip=new MoveShip();
-		count=0;
+		//angleConstrain=new AngleConstrain(this,my_distanceNodes,0);
+
 
 	}
 
@@ -30,16 +27,17 @@ public class Path:PathInputs  {
 		if(listNodes.Count!=0){
 			if(DistanceBetween(input)){
 			//mas d uno
-				countNodes++;
+		
+			//	Vector2 auxInput=angleConstrain.InitializeCalcConstrain(input);
 				Node node;
-			
+
 				node=new Node(input);
 				listNodes.Add(node.posicion);
-			//	Debug.Log("entrando cantidad nodes "+listNodes.Count);
+				countNodes++;
 				if(pathGraphic!=null)
 					pathGraphic.SpawnGraphicPath(node.posicion);
-
-				Debug.Log("click") ;
+							
+			//	print("click") ;
 				return true;
 			}else{
 				//Debug.Log("nodo n cumple condicion ");
@@ -52,11 +50,13 @@ public class Path:PathInputs  {
 			node=new Node(input);
 			if(pathGraphic!=null)
 			pathGraphic.SpawnGraphicPath(node.posicion);
-			
-			Debug.Log("click") ;
+			//Debug.Log("click") ;
 			listNodes.Add(node.posicion);
 			countNodes++;
 			first=true;
+			//angleConstrain.activeConstrain=false;
+		//	for(int i=0;i<listNodes.Count;i++)
+		//		print("lista "+listNodes[i]);
 			return true;
 		}
 	
@@ -79,13 +79,13 @@ public class Path:PathInputs  {
 		}
 		if(pathGraphic!=null)
 		pathGraphic.Delete_ngraphics();
-
 		countNodes=0;
-
+//		angleConstrain.setCounting=0;
 	}
 	public void DeleteMyElementlist(){
 		listNodes.Remove(listNodes[0]);
 		countNodes--;
+//	angleConstrain.setCounting--;
 
 		pathGraphic.DeleteFirstElementGraphic();
 //		Debug.Log("borrando node "+listNodes.Count);

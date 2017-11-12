@@ -71,6 +71,14 @@ public class GameManager : MonoBehaviour {
 	}
 	private void Reset(){
 		print("reset game ");
+		GameObject [] aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
+		if(aAsteroides!=null){
+			print("borrando asteroides "+aAsteroides.Length );
+			for(int i=0;i<aAsteroides.Length;i++){
+				Destroy(aAsteroides[i]);
+			}
+			print("borrando asteroides despues"+aAsteroides.Length );
+		}
 		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
 			GameObject aux=spawnManager.getListPlanes[i];
 			spawnManager.GetOutObjectFromList(aux);

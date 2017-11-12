@@ -13,11 +13,20 @@ public class Detect : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		print("contacto collider nave");
-//		print("aterrizando 2d");
+
 		if(checkTarget.CheckMyTarget(col.tag)){
-			print("paneta");
 			TakeOutPlane();
-			GameManager.aterrizajes++;//aumento contador aterrizajes
+			if(col.tag=="asteroide")
+			{	
+				print("colision asteroide muerte nave");
+				GameManager.aviones=2;//aumento Contador de aviones a 2 , en game manager esta lacondicion q pregunta si hay 2 aviones sao una viDA
+				Destroy(col.gameObject);
+			}else{
+			//		print("aterrizando 2d");
+				print("paneta");
+				GameManager.aterrizajes++;//aumento contador aterrizajes
+			}
+
 		}else if(col.gameObject.tag=="shipRed"||col.gameObject.tag=="shipBlue"||col.gameObject.tag=="shipGreen") {
 			print("choque d naves");
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)

@@ -54,7 +54,7 @@ public class MoveSoft : MonoBehaviour {
 				transform.Translate(Vector2.up*velocity*Time.deltaTime,Space.Self);//no tocar space.self!!!!!!!!!!!
 		}
 		}else{
-			Debug.Log("borrando paths ");
+			//Debug.Log("borrando paths ");
 			pathInputs.DeletesAllPaths();
 			transform.up=transform.up*-1;
 			bounds.limiteActive=false;
@@ -67,8 +67,8 @@ public class MoveSoft : MonoBehaviour {
 			targetVector=angle.VectorUp(pathInputs.path.listNodes[0],transform.position);
 			lerpMax=targetVector;
 			timeLerp=0;
-			Debug.Log("lerpMin "+lerpMin);
-			Debug.Log("lerMax "+lerpMax);
+		//	Debug.Log("lerpMin "+lerpMin);
+		//	Debug.Log("lerMax "+lerpMax);
 			initializeLerp=true;
 
 
@@ -81,7 +81,7 @@ public class MoveSoft : MonoBehaviour {
 
 		//Debug.Log("target "+lerpMax);
 		Vector2 n=Vector2.Lerp(lerpMin,lerpMax,timeLerp);
-		Debug.Log("lerp "+n);
+//		Debug.Log("lerp "+n);
 
 		timeLerp+=Time.deltaTime*2;
 		transform.up=new Vector2 (n.x,n.y);

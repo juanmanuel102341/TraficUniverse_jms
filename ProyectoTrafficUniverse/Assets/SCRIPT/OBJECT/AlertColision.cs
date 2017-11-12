@@ -22,8 +22,8 @@ public class AlertColision : MonoBehaviour {
 
 		}
 		if(checkTarget.CheckMyTarget(col.tag)){
-		
-			print("prendo collider para un posible aterrizaje");
+			sprite.SetActive(true);
+			//print("prendo collider para un posible aterrizaje");
 			objColision.SetActive(true);
 		}
 			

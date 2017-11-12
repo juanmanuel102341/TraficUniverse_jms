@@ -15,14 +15,14 @@ public class PathInputs : MonoBehaviour {
 	public GameObject id;
 	protected Vector2 playerPos;
 	protected List<Vector2>listNodesVec=new List<Vector2>();
-	private AngleConstrain angleConstrain;
+//	public float constrainAngle;
 	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
 		pathGraphic=GetComponent<PathGraphic>();
 		path=new Path(distanceNodes,pathGraphic);
 		id.SetActive(false);
-		angleConstrain=new AngleConstrain();
+
 //		print("clase path inputs");
 	}
 
@@ -85,9 +85,7 @@ public class PathInputs : MonoBehaviour {
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
 			path.SetNewNode(auxInput);//parte codigo
-	//		pathGraphic.SpawnGraphicPath(auxInput);//parte grafica
-		
-		}
+			}
 	}
 	public void DeletesAllPaths(){
 	print("dekete path nputs");	

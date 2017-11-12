@@ -6,7 +6,7 @@ public class PathGraphic : MonoBehaviour {
 
 	public GameObject graphicPath;//parte grafica del path
 	private List<GameObject>listGraphicsPaths=new List<GameObject>();
-	public float frecuencia;//frecuancia de como se "ve el path"
+
 
 	public void SpawnGraphicPath(Vector2 pos){
 		GameObject obj=Instantiate(graphicPath,pos,transform.rotation);
