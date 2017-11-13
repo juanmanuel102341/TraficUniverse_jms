@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 84ea87e61cf29bb4f9bdddbf726b1bd0
+timeCreated: 1510531556
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Yellow_02_0
+    21300002: Yellow_02_1
+    21300004: Yellow_02_2
+    21300006: Yellow_02_3
+    21300008: Yellow_02_4
+    21300010: Yellow_02_5
+    21300012: Yellow_02_6
+    21300014: Yellow_02_7
+    21300016: Yellow_02_8
+    21300018: Yellow_02_9
+    21300020: Yellow_02_10
+    21300022: Yellow_02_11
+    21300024: Yellow_02_12
+    21300026: Yellow_02_13
+    21300028: Yellow_02_14
+    21300030: Yellow_02_15
+    21300032: Yellow_02_16
+    21300034: Yellow_02_17
+    21300036: Yellow_02_18
+    21300038: Yellow_02_19
+    21300040: Yellow_02_20
+    21300042: Yellow_02_21
+    21300044: Yellow_02_22
+    21300046: Yellow_02_23
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Yellow_02_0
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 3359
+        width: 676
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_1
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 3360
+        width: 666
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_2
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 3322
+        width: 641
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_3
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 3308
+        width: 614
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_4
+      rect:
+        serializedVersion: 2
+        x: 3239
+        y: 3274
+        width: 588
+        height: 511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_5
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2614
+        width: 559
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_6
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 2587
+        width: 516
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_7
+      rect:
+        serializedVersion: 2
+        x: 1829
+        y: 2600
+        width: 486
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_8
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 2588
+        width: 486
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_9
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 2579
+        width: 488
+        height: 549
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1917
+        width: 486
+        height: 542
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_11
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 1944
+        width: 486
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_12
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 1963
+        width: 489
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_13
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 2032
+        width: 486
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_14
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 2027
+        width: 488
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 1182
+        width: 663
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_16
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 1176
+        width: 659
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_17
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 1184
+        width: 646
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_18
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 1184
+        width: 629
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_19
+      rect:
+        serializedVersion: 2
+        x: 3290
+        y: 1168
+        width: 599
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_20
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 521
+        width: 573
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_21
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 552
+        width: 546
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_22
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 605
+        width: 515
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yellow_02_23
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 581
+        width: 502
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

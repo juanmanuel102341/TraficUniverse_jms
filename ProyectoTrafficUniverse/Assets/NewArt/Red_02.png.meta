@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: 61d92af32c4fb1845b3fd4dffa720f90
+timeCreated: 1510527635
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Red_02_0
+    21300002: Red_02_1
+    21300004: Red_02_2
+    21300006: Red_02_3
+    21300008: Red_02_4
+    21300010: Red_02_5
+    21300012: Red_02_6
+    21300014: Red_02_7
+    21300016: Red_02_8
+    21300018: Red_02_9
+    21300020: Red_02_10
+    21300022: Red_02_11
+    21300024: Red_02_12
+    21300026: Red_02_13
+    21300028: Red_02_14
+    21300030: Red_02_15
+    21300032: Red_02_16
+    21300034: Red_02_17
+    21300036: Red_02_18
+    21300038: Red_02_19
+    21300040: Red_02_20
+    21300042: Red_02_21
+    21300044: Red_02_22
+    21300046: Red_02_23
+    21300048: Red_02_24
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Red_02_0
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 3365
+        width: 679
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_1
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 3371
+        width: 661
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_2
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 3334
+        width: 644
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_3
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 3324
+        width: 625
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_4
+      rect:
+        serializedVersion: 2
+        x: 3229
+        y: 3290
+        width: 598
+        height: 502
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 2632
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_6
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 2617
+        width: 564
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_7
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 2590
+        width: 530
+        height: 547
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_8
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 2600
+        width: 489
+        height: 553
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_9
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 2584
+        width: 489
+        height: 552
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_10
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 2586
+        width: 488
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1916
+        width: 486
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_12
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1930
+        width: 489
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_13
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1965
+        width: 488
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_14
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 2006
+        width: 486
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_15
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 2022
+        width: 486
+        height: 453
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1187
+        width: 663
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_17
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1175
+        width: 660
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_18
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 1191
+        width: 660
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_19
+      rect:
+        serializedVersion: 2
+        x: 2529
+        y: 1197
+        width: 632
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_20
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 1168
+        width: 613
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 527
+        width: 582
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_22
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 553
+        width: 565
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_23
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 608
+        width: 534
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Red_02_24
+      rect:
+        serializedVersion: 2
+        x: 2632
+        y: 583
+        width: 513
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

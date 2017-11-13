@@ -173,7 +173,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -150, y: 50}
-  m_SizeDelta: {x: 150, y: 90}
+  m_SizeDelta: {x: 85, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &387280634
 GameObject:
@@ -225,8 +225,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cfe51bfdf0851fb4ab68f9e098c93b36, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1d170f5a997d9f045a4fadcee91d6812, type: 3}
+  m_Color: {r: 0.8588235, g: 0.022, b: 0.1137255, a: 0.93}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &387280636
@@ -236,8 +236,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387280634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.77, y: -18.65, z: 0}
-  m_LocalScale: {x: 1.596761, y: 1.5967607, z: 1.5967607}
+  m_LocalPosition: {x: 78.77, y: -18.04, z: 0}
+  m_LocalScale: {x: 3.573455, y: 3.5734537, z: 3.5734537}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -759,7 +759,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69fbd5a238ec60d42879b1c916c0bfaa, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 61d92af32c4fb1845b3fd4dffa720f90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -770,8 +770,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385699185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 69.41, y: -24.81, z: 0}
-  m_LocalScale: {x: 0.65923107, y: 0.6592311, z: 0.6592311}
+  m_LocalPosition: {x: 68.67, y: -24.81, z: 0}
+  m_LocalScale: {x: 0.37076473, y: 0.37076473, z: 0.37076473}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -805,11 +805,11 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 2.55, y: 2.1799998}
+  m_Size: {x: 5.64, y: 5.19}
 --- !u!114 &1385699191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +835,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: 362ab82c1a635de4787393b4b7e84104,
     type: 2}
-  frecuencia: 0
 --- !u!114 &1385699193
 MonoBehaviour:
   m_ObjectHideFlags: 0

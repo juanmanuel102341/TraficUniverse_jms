@@ -19,11 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4742977212662982}
-  - component: {fileID: 61080932353826578}
-  - component: {fileID: 61611125562268748}
-  - component: {fileID: 61457579292736032}
   - component: {fileID: 114387507258421572}
   - component: {fileID: 114872659689040052}
+  - component: {fileID: 61650814394170338}
   m_Layer: 0
   m_Name: ColisionObject
   m_TagString: shipGreen
@@ -99,7 +97,7 @@ GameObject:
   - component: {fileID: 114141924618400276}
   m_Layer: 0
   m_Name: NaveC 1
-  m_TagString: Untagged
+  m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 1438001912898574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.13, z: 0}
-  m_LocalScale: {x: 1.1289065, y: 1.3051426, z: 1}
+  m_LocalScale: {x: 2.953226, y: 3.41426, z: 2.6160052}
   m_Children: []
   m_Father: {fileID: 4289229021745572}
   m_RootOrder: 2
@@ -124,8 +122,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803064828252600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.571237, y: 5.5, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 3.0647454}
+  m_LocalPosition: {x: -47.63768, y: -21.128727, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 3.0647454}
   m_Children:
   - {fileID: 4541827124584550}
   - {fileID: 4586684415334128}
@@ -154,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1681607524539100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.92, y: 1.47, z: 0}
+  m_LocalPosition: {x: -3.71, y: 1.47, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children: []
   m_Father: {fileID: 4289229021745572}
@@ -206,8 +204,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.0240402
---- !u!61 &61080932353826578
+  m_Radius: 6.394203
+--- !u!61 &61650814394170338
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -218,37 +216,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.092489354, y: -0.099611655}
+  m_Offset: {x: -0.26124817, y: -0.62988603}
   serializedVersion: 2
-  m_Size: {x: 0.8150474, y: 2.097159}
---- !u!61 &61457579292736032
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267507999699188}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -0.87, y: 0.29155758}
-  serializedVersion: 2
-  m_Size: {x: 0.71433, y: 1.4928735}
---- !u!61 &61611125562268748
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267507999699188}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0.69377106, y: 0.29155758}
-  serializedVersion: 2
-  m_Size: {x: 0.71433, y: 1.4928735}
+  m_Size: {x: 5.020136, y: 4.0497594}
 --- !u!114 &114053998244770064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 5
-  total: 4
+  totalLerp: 0
 --- !u!114 &114348056402496868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -338,7 +308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
-  frecuencia: 1.2
 --- !u!114 &114872659689040052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -405,8 +374,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e60cc48ba794bc241b073272b30ea57d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300012, guid: 84ea87e61cf29bb4f9bdddbf726b1bd0, type: 3}
+  m_Color: {r: 1.0346392, g: 1.0220588, b: 1.0370891, a: 0.784}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212607221896602776
@@ -440,8 +409,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9e9119fd928ac545bc9e1cd1d2ec71a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 900598cfccf87a24f98895646cd48ff0, type: 3}
+  m_Color: {r: 0.9632353, g: 0.93685865, b: 0.0070826192, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212811251330691828
