@@ -84,6 +84,7 @@ public class PathInputs : MonoBehaviour {
 	public void GetInputMouse(){
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
+			print("click");
 			path.SetNewNode(auxInput);//parte codigo
 			}
 	}

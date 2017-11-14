@@ -50,7 +50,7 @@ TagManager:
   - spawnPointA
   - back
   - currentGame
-  - 
+  - frontCurrent
   - 
   - 
   - 
@@ -80,4 +80,7 @@ TagManager:
     locked: 0
   - name: current
     uniqueID: 4109398113
+    locked: 0
+  - name: front
+    uniqueID: 4199455475
     locked: 0

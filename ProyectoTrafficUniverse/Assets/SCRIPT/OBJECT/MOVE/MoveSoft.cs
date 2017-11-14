@@ -23,6 +23,7 @@ public class MoveSoft : MonoBehaviour {
 	private Vector2 lerpMax;
 	private bool initializeLerp=false;
 
+
 	float timeLerp=0;
 	void Awake () {
 		pathInputs=GetComponent<PathInputs>();
@@ -31,6 +32,7 @@ public class MoveSoft : MonoBehaviour {
 		playerPos=transform.position;
 		bounds=GetComponent<Bounds>();
 		targetVector=transform.up;
+		lerpMax=transform.up;
 	}
 	void Start(){
 		nodeState=new NodeState(pathInputs.path,this);
@@ -63,20 +65,22 @@ public class MoveSoft : MonoBehaviour {
 	}
 	private void setAngle(){
 		if(nodeState.getFinal){
-			lerpMin=transform.up;
+			
+			lerpMin=lerpMax;
+			Vector2 aux;
+			aux=targetVector;
 			targetVector=angle.VectorUp(pathInputs.path.listNodes[0],transform.position);
 			lerpMax=targetVector;
 			timeLerp=0;
 		//	Debug.Log("lerpMin "+lerpMin);
 		//	Debug.Log("lerMax "+lerpMax);
-			initializeLerp=true;
-
-
+			float a=Vector2.Angle(aux,targetVector);
 			nodeState.getFinal=false;
 		
 	
 		}
 		}
+
 	private void RotateMe(){
 
 		//Debug.Log("target "+lerpMax);
@@ -85,7 +89,8 @@ public class MoveSoft : MonoBehaviour {
 
 		timeLerp+=Time.deltaTime*2;
 		transform.up=new Vector2 (n.x,n.y);
-	}
+
+		}
 
 	public Vector2 getPlayerPos{
 		get{

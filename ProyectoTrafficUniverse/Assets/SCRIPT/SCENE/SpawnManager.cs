@@ -36,7 +36,7 @@ public class SpawnManager : MonoBehaviour {
 					float heightObj;
 					GameObject obj;
 					int n=Random.Range(0,4);//random entre los 4 costados dela screen
-					//n=0;
+					//n=3;
 					switch(n){
 				
 					case 0://**left
@@ -114,13 +114,14 @@ public class SpawnManager : MonoBehaviour {
 			spawnfY.x=Random.Range(r1,r2);
 			spawnfY.y=ptoFijoSalida;
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
-			GameObject obj=auxObjFY.transform.GetChild(1).gameObject;
-			obj.SetActive(true);
-			obj.GetComponent<SetPositionWorld>().Apply((int)rot);
-			obj.SetActive(false);
+			auxObjFY.transform.Rotate(0,0,rot);
+			//GameObject obj=auxObjFY.transform.GetChild(1).gameObject;
+			//obj.SetActive(true);
+			//obj.GetComponent<SetPositionWorld>().Apply((int)rot);
+			//obj.SetActive(false);
 			//print("uelrrrrrrr "+obj.name+" "+rot);
-			auxObjFY.transform.Rotate(new Vector3(0,0,rot));
-
+			//auxObjFY.transform.Rotate(new Vector3(0,0,rot));
+			print("uelrrrrrrr "+auxObjFY.transform.eulerAngles);
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -129,12 +130,13 @@ public class SpawnManager : MonoBehaviour {
 			spawnFX.x=ptoFijoSalida;
 			spawnFX.y=Random.Range(r1,r2);
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
-			GameObject obj=auxObjFX.transform.GetChild(1).gameObject;
-			obj.SetActive(true);
-			obj.GetComponent<SetPositionWorld>().Apply((int)rot);
-			obj.SetActive(false);
-			//print("uelrrrrrrr "+obj.name+" "+rot);
-			auxObjFX.transform.Rotate(new Vector3(0,0,rot));
+			auxObjFX.transform.Rotate(0,0,rot);
+			//GameObject obj=auxObjFX.transform.GetChild(1).gameObject;
+			//obj.SetActive(true);
+			//obj.GetComponent<SetPositionWorld>().Apply((int)rot);
+			//obj.SetActive(false);
+			print("uelrrrrrrr "+auxObjFX.transform.eulerAngles);
+			//auxObjFX.transform.Rotate(new Vector3(0,0,rot));
 			listaObj.Add(auxObjFX);
 		}
 			

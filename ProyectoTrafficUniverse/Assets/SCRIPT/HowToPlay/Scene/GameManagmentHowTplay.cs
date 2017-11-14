@@ -54,6 +54,7 @@ public class GameManagmentHowTplay : MonoBehaviour {
 			print("escena fin");
 			DeleteObjects();
 			guiButton.SetActive(true);
+
 		}else{
 			print("pasando al siguiente target");
 			puntero.GetComponent<ManageComponents>().Active();//activo componentes del mouse
