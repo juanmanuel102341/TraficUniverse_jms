@@ -67,6 +67,9 @@ public class GameManager : MonoBehaviour {
 		
 		
 		}
+		if(Input.GetKeyDown(KeyCode.K)){
+			aterrizajes=targetPlanes;
+		}
 
 	}
 	private void Reset(){

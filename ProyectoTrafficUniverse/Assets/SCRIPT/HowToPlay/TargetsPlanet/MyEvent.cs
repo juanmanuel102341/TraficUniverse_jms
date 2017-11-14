@@ -14,6 +14,11 @@ public class MyEvent : MonoBehaviour {
 
 	}
 	void OnTriggerEnter2D(Collider2D col) {
+		if(col.tag=="plane"){
+			print("borrando avion");
+			SpriteRenderer spr=col.gameObject.GetComponent<SpriteRenderer>();
+			spr.enabled=false;
+		}
 		print("triguer rojo");
 		counting++;
 		print("counting "+counting );
