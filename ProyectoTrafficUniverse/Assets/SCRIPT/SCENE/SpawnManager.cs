@@ -28,6 +28,8 @@ public class SpawnManager : MonoBehaviour {
 		}
 		if(time>frecuencia&&!SpawnLimitActive()){
 			int total=QuantityEnemys(rangeQuantity[0],rangeQuantity[1]);
+			//total=2;
+			int aux=0;
 			print("total "+total);
 			for(int i=0;i<total;i++){
 				if(!SpawnLimitActive()){
@@ -36,7 +38,26 @@ public class SpawnManager : MonoBehaviour {
 					float heightObj;
 					GameObject obj;
 					int n=Random.Range(0,4);//random entre los 4 costados dela screen
+					if(i>=1){
+						print("anterior "+aux);
+						print("actual "+n);
+						if(aux==n){
+							print("iguales cambiando costado");
+							if(n!=3){
+								n++;
+								print("sumo uno");
+							}else{
+								n--;
+								print("resto 1");
+							}
+						}
+					}else{
+						aux=n;			
+					}
+			
+
 					//n=3;
+				
 					switch(n){
 				
 					case 0://**left
