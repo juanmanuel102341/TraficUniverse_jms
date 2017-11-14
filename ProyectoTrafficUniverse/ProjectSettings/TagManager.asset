@@ -38,6 +38,7 @@ TagManager:
   - repayLoose
   - asteroide
   - plane
+  - pointer
   layers:
   - Default
   - TransparentFX

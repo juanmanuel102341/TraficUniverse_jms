@@ -8,6 +8,7 @@ public class GameManagmentHowTplay : MonoBehaviour {
 	public GameObject [] player;//x si hay mas d uno posteriormente
 	public GameObject puntero;
 	public GameObject guiButton;
+	public GameObject mouse;
 	public static int totalPlanets=0;
 	void Awake(){
 		guiButton.SetActive(false);
@@ -52,20 +53,27 @@ public class GameManagmentHowTplay : MonoBehaviour {
 		print("tp "+targetsPlanets.Length);
 		if(countPlanets>=targetsPlanets.Length-1){
 			print("escena fin");
+			//mouse.GetComponent<Mouse>().setValues();
 			DeleteObjects();
 			guiButton.SetActive(true);
 
 		}else{
 			print("pasando al siguiente target");
-			puntero.GetComponent<ManageComponents>().Active();//activo componentes del mouse
-			puntero.GetComponent<MovePointer>().target=player[countPlanets+1].GetComponent<Transform>();//le paso info de target al puntero para q se mueva
+			mouse.GetComponent<Mouse>().setValues();
+			mouse.SetActive(false);//seteo posicion relativas del mouse y eventos y paso d jugador
+			//puntero.GetComponent<ManageComponents>().Active();//activo componentes del mouse
+			puntero.GetComponent<MovePointer>().setMyTarget=player[countPlanets+1].GetComponent<Transform>().position;//le paso info de target al puntero para q se mueva
+			puntero.GetComponent<MovePointer>().setMyAnimationPath();
 			print("puntero next  "+player[countPlanets+1].GetComponent<Transform>().position);
+	
+		//	puntero.GetComponent<MovePointer>().setMyInitialTarget();
 			countPlanets++;
 		}
 	}
 	private void DeleteObjects(){
 		//nodos//planeta//player//puntero
 		print("eliminacion objetos");
+		mouse.GetComponent<DeleteMe>().MyDelete();
 		for(int i=0;i<player.Length;i++){
 			player[i].GetComponent<PathGraphic>().Delete_ngraphics();//elmino nodos
 			player[i].GetComponent<DeleteMe>().MyDelete();//elimino player
@@ -73,7 +81,9 @@ public class GameManagmentHowTplay : MonoBehaviour {
 		for(int i=0;i<targetsPlanets.Length;i++){
 			targetsPlanets[i].GetComponent<DeleteMe>().MyDelete();//elimino planetas 
 		}
+
 		puntero.GetComponent<DeleteMe>().MyDelete();//elimino puntero
+		
 	}
 
 }
