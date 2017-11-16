@@ -11,9 +11,9 @@ public class SpawnManager : MonoBehaviour {
 	private List<GameObject>listaObj=new List<GameObject>();
 	private ScreenValues screenData;
 	private bool resetTime=false;//booleano q utilizo para cuando llega al limite d naves y n tenga q 
-
+	private DetectsId detectsIdEvent;
 	void Awake () {
-
+		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
 	//	frecuencia=TimeLerp(rangeTime[0],rangeTime[1]);
 		frecuencia=2;//tiro frecuencia yo para q el usuario n tenga q esperar tanto
@@ -136,13 +136,7 @@ public class SpawnManager : MonoBehaviour {
 			spawnfY.y=ptoFijoSalida;
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
 			auxObjFY.transform.Rotate(0,0,rot);
-			//GameObject obj=auxObjFY.transform.GetChild(1).gameObject;
-			//obj.SetActive(true);
-			//obj.GetComponent<SetPositionWorld>().Apply((int)rot);
-			//obj.SetActive(false);
-			//print("uelrrrrrrr "+obj.name+" "+rot);
-			//auxObjFY.transform.Rotate(new Vector3(0,0,rot));
-			print("uelrrrrrrr "+auxObjFY.transform.eulerAngles);
+			detectsIdEvent.EventStart(auxObjFY);
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -152,12 +146,7 @@ public class SpawnManager : MonoBehaviour {
 			spawnFX.y=Random.Range(r1,r2);
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
 			auxObjFX.transform.Rotate(0,0,rot);
-			//GameObject obj=auxObjFX.transform.GetChild(1).gameObject;
-			//obj.SetActive(true);
-			//obj.GetComponent<SetPositionWorld>().Apply((int)rot);
-			//obj.SetActive(false);
-			print("uelrrrrrrr "+auxObjFX.transform.eulerAngles);
-			//auxObjFX.transform.Rotate(new Vector3(0,0,rot));
+			detectsIdEvent.EventStart(auxObjFX);
 			listaObj.Add(auxObjFX);
 		}
 			
@@ -188,7 +177,7 @@ public class SpawnManager : MonoBehaviour {
 	private bool SpawnLimitActive(){
 	
 		if(listaObj.Count>=totalEnemysLimit){
-			print("limite spawn activo");
+//			print("limite spawn activo");
 			return true;
 		}
 		return false;

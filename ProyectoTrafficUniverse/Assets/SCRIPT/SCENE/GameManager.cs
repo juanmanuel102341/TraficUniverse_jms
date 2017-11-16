@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	public NextLevel nextLevel;
 	public Replay replay;
 	private GameObject [] aAsteroides;
+	public static bool myClickId=false;
 	void Awake () {
 		aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
 	

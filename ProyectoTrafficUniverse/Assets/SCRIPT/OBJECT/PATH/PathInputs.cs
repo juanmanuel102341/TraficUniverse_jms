@@ -15,7 +15,9 @@ public class PathInputs : MonoBehaviour {
 	public GameObject id;
 	protected Vector2 playerPos;
 	protected List<Vector2>listNodesVec=new List<Vector2>();
-//	public float constrainAngle;
+	public delegate void OnClickMe(GameObject obj);//evento q se disprara en detetcs id para prender circulito de identificacion a
+	public event OnClickMe ClickMe;
+
 	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
@@ -28,15 +30,15 @@ public class PathInputs : MonoBehaviour {
 
 
 	protected void Update () {
-//		print("cantidad d nodos"+path.listNodos.Count);
-
 		GetInputMouse();
 	}
 	// Update is called once per frame
 	void OnMouseDown(){
-		id.SetActive(true);
-		DeletesAllPaths();
 		contador++;
+	
+		DeletesAllPaths();
+		ClickMe(this.gameObject);
+		//print("click 1: "+countEvent);
 		if(!clickObj){
 			//***********primer click*******************
 			//print("clickevento");
@@ -66,8 +68,6 @@ public class PathInputs : MonoBehaviour {
 	void OnMouseOver(){
 		//si el jugador clickea encima "xra q n se genere ningun path" para eso este booleano
 		over=true;
-	
-	
 	}
 	void OnMouseExit(){
 		over=false;
@@ -84,12 +84,12 @@ public class PathInputs : MonoBehaviour {
 	public void GetInputMouse(){
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
-			print("click");
+//			print("click");
 			path.SetNewNode(auxInput);//parte codigo
 			}
 	}
 	public void DeletesAllPaths(){
-	print("dekete path nputs");	
+//	print("dekete path nputs");	
 		pathGraphic.Delete_ngraphics();
 		path.Delete();
 	}
