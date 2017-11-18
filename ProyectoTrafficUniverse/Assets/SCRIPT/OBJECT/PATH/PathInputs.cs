@@ -37,7 +37,7 @@ public class PathInputs : MonoBehaviour {
 		contador++;
 	
 		DeletesAllPaths();
-		ClickMe(this.gameObject);
+		//ClickMe(this.gameObject);
 		//print("click 1: "+countEvent);
 		if(!clickObj){
 			//***********primer click*******************

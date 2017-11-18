@@ -7,7 +7,7 @@ public class DetectsId : MonoBehaviour {
 	private GameObject currentActive=null;
 	public void EventStart(GameObject obj){
 
-		obj.GetComponent<PathInputs>().ClickMe+=OnClickMe;
+	//	obj.GetComponent<PathInputs>().ClickMe+=OnClickMe;
 
 
 	}

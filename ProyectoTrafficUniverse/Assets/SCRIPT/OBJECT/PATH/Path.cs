@@ -17,7 +17,7 @@ public class Path:PathInputs  {
 		my_distanceNodes=_distanceNodes;
 		//Debug.Log("distance nodes "+my_distanceNodes);
 		pathGraphic=_graficPath;
-		//angleConstrain=new AngleConstrain(this,my_distanceNodes,0);
+		angleConstrain=new AngleConstrain(this,my_distanceNodes,90);
 
 
 	}
@@ -28,7 +28,9 @@ public class Path:PathInputs  {
 			if(DistanceBetween(input)){
 			//mas d uno
 		
-			//	Vector2 auxInput=angleConstrain.InitializeCalcConstrain(input);
+				input=angleConstrain.InitializeCalcConstrain(input);
+
+
 				Node node;
 
 				node=new Node(input);
@@ -80,12 +82,12 @@ public class Path:PathInputs  {
 		if(pathGraphic!=null)
 		pathGraphic.Delete_ngraphics();
 		countNodes=0;
-//		angleConstrain.setCounting=0;
+	angleConstrain.setCounting=0;
 	}
 	public void DeleteMyElementlist(){
 		listNodes.Remove(listNodes[0]);
 		countNodes--;
-//	angleConstrain.setCounting--;
+	angleConstrain.setCounting--;
 
 		pathGraphic.DeleteFirstElementGraphic();
 //		Debug.Log("borrando node "+listNodes.Count);
