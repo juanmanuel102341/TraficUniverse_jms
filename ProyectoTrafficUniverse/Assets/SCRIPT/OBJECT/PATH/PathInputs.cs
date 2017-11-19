@@ -9,6 +9,8 @@ public class PathInputs : MonoBehaviour {
 	private int contador=0;
 	private Camera cameraGame;
 	public Path path;
+	public float myConstrainAngle;
+	public float myAmplitudAngle;
 	private PathGraphic pathGraphic;
 	private bool over=false;
 	public float distanceNodes;//distancia o frecuancia d calculo
@@ -23,7 +25,7 @@ public class PathInputs : MonoBehaviour {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
 		pathGraphic=GetComponent<PathGraphic>();
-		path=new Path(distanceNodes,pathGraphic);
+		path=new Path(distanceNodes,pathGraphic,myConstrainAngle,myAmplitudAngle);
 		id.SetActive(false);
 
 //		print("clase path inputs");

@@ -419,6 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
+  myConstrainAngle: 90
+  myAmplitudAngle: 30
   distanceNodes: 1.2
   id: {fileID: 1802458340483258}
 --- !u!212 &212335616455440536

@@ -13,11 +13,11 @@ public class Path:PathInputs  {
 	public Path(){
 
 	}
-	public Path (float _distanceNodes,PathGraphic _graficPath){
+	public Path (float _distanceNodes,PathGraphic _graficPath,float _myConstrain,float _amplitudAngle){
 		my_distanceNodes=_distanceNodes;
 		//Debug.Log("distance nodes "+my_distanceNodes);
 		pathGraphic=_graficPath;
-		angleConstrain=new AngleConstrain(this,my_distanceNodes,90);
+		angleConstrain=new AngleConstrain(this,my_distanceNodes,_myConstrain,_amplitudAngle);
 
 
 	}
