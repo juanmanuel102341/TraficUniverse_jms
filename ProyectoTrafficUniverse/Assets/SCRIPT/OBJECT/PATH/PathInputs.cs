@@ -18,6 +18,7 @@ public class PathInputs : MonoBehaviour {
 	public delegate void OnClickMe(GameObject obj);//evento q se disprara en detetcs id para prender circulito de identificacion a
 	public event OnClickMe ClickMe;
 
+
 	protected void Awake () {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
@@ -37,7 +38,8 @@ public class PathInputs : MonoBehaviour {
 		contador++;
 	
 		DeletesAllPaths();
-		//ClickMe(this.gameObject);
+		ClickMe(this.gameObject);
+	
 		//print("click 1: "+countEvent);
 		if(!clickObj){
 			//***********primer click*******************

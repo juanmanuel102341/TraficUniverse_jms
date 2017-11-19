@@ -19,7 +19,7 @@ public class AngleConstrain  {
 		myReferencePath=path;
 		myMagnitudPath=magnitudPath;
 		myConstrainAngle=constrainAngle;
-		Debug.Log("constrain "+myConstrainAngle);
+		//Debug.Log("constrain "+myConstrainAngle);
 	}
 
 	private Vector2 CalcVector(Vector2 n1, Vector2 n2){
@@ -44,8 +44,8 @@ public class AngleConstrain  {
 		
 				
 			if(angle>myConstrainAngle){
-				Debug.Log("constrain active!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!! "+angle);
-				Debug.Log("node "+nodePotencial);
+			//	Debug.Log("constrain active!!!!!!!!!!!!1!!!!!!!!!!!!!!!!!! "+angle);
+				//Debug.Log("node "+nodePotencial);
 				Vector2 auxZero=CalcVectorZero(myVectorNode,myReferencePath.listNodes[count+1]);
 
 				GameObject obj2=GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -53,28 +53,47 @@ public class AngleConstrain  {
 				obj2.GetComponent<Transform>().position=new Vector3 (auxZero.x,auxZero.y,0);
 				obj2.GetComponent<Transform>().localScale=new Vector3(0.2f,0.2f,0.2f);
 				obj2.GetComponent<Transform>().GetComponent<MeshRenderer>().material.color=Color.red;
-
+				//Debug.Log("pos 0 "+auxZero);
 				Vector2 posUp=CalcVector90_sup(myReferencePath.listNodes[count+1],nodePotencial,auxZero);
-				//Debug.Log("pos 90 grados sup "+pos);	
+		//	Debug.Log("pos 90 grados sup "+posUp);	
 				GameObject obj3=GameObject.CreatePrimitive(PrimitiveType.Sphere);
 				obj3.GetComponent<Transform>().position=new Vector3 (posUp.x,posUp.y,0);
 				obj3.GetComponent<Transform>().localScale=new Vector3(0.2f,0.2f,0.2f);
 				obj3.GetComponent<Transform>().GetComponent<MeshRenderer>().material.color=Color.green;
 				Vector2 posDown=CalcVector90_inf(myReferencePath.listNodes[count+1],auxZero);
-				//Debug.Log("pos 90 grados down "+posDown);
+			//	Debug.Log("pos 90 grados down "+posDown);
 				GameObject obj4=GameObject.CreatePrimitive(PrimitiveType.Sphere);
 				obj4.GetComponent<Transform>().position=new Vector3 (posDown.x,posDown.y,0);
 				obj4.GetComponent<Transform>().localScale=new Vector3(0.2f,0.2f,0.2f);
 				obj4.GetComponent<Transform>().GetComponent<MeshRenderer>().material.color=Color.blue;
-			
+		
+//				Vector2 auxD=CalcVectorConstrainDown(posDown,auxZero);
+//				Debug.Log("vec total "+auxD);
+//				Vector2 auxdR=CalcConstrain(auxD,40);
+//				Debug.Log("res "+auxdR);
+//				//CalcVectorConstrainUp(posUp,auxZero);
+//				Vector2 r=posDown;
+//				r.y-=auxdR.y;
+//				Debug.Log("vec res de veras "+r);
+	//	float magDownY=auxZero.y-posDown.y;
+//				magDownY=Mathf.Abs(magDownY);
+//				float magUpY=auxZero.y-posUp.y;
+//				magUpY=Mathf.Abs(magUpY);
+//				Debug.Log("pos down acum "+magDownY);
+//				Debug.Log("pos up acum "+magUpY);
 				float disPosUp=Vector2.Distance(nodePotencial,posUp);
-				Debug.Log("dispos up "+disPosUp);
+			//	Debug.Log("dispos up "+disPosUp);
 				float disPosDown=Vector2.Distance(nodePotencial,posDown);
-				Debug.Log("disp down "+disPosDown);
+			//	Debug.Log("disp down "+disPosDown);
 				if(disPosUp<disPosDown){
+				
 					myVectorConstrain=posUp;
+					float a=Vector2.Angle(auxZero,posUp);
+					//Debug.Log("anlge up"+a);
 				}else{
 					myVectorConstrain=posDown;
+					float a=Vector2.Angle(auxZero,posDown);
+			//		Debug.Log("angle d "+a);
 				}
 				count++;
 				//activeConstrain=true;
@@ -83,7 +102,7 @@ public class AngleConstrain  {
 
 			count++;
 			return myVectorConstrain; 
-			Debug.Log("angulo"+angle);
+			//Debug.Log("angulo"+angle);
 //			if(DetectConstrains(angle)){
 //				activeConstrain=true;
 //			
@@ -137,38 +156,7 @@ public class AngleConstrain  {
 //			return myVectorConstrain;
 //		}
 //	}
-//	private Vector2 MyPosConstrain(Vector2 vecZero,float angle){
-//		Vector2 aux;
-//	//	float difAngle=angle-myConstrainAngle;//saco el angulo de diferencia
-//		//float sub=0;
-//
-//	
-////		Vector2 vec=vecZero*Vector2.d;
-////	
-////		if(posAfter.x>posPot.x){
-////			Debug.Log("nodo pot menor )");
-////			aux.x=posPot.x;
-////			aux.y=posAfter.y;
-////		//	direccion=1;//establezco direccion segun la posicion relativa del nodo anterior y potencial
-////	//		sub=myMagnitudPath*Mathf.Sin(difAngle);
-////	//		aux.y+=sub;
-////		}else{
-////			
-////			//pos after esta adelante del nodo
-////			aux.x=posAfter.x;
-////			aux.y=posPot.y;
-////			Debug.Log("nodo pot mayor ) "+aux.x);
-////
-////			//igual y que el nodo potencial
-////		//	direccion=1;
-////	//		sub=myMagnitudPath*Mathf.Cos(difAngle);
-////	//		aux.x+=sub;
-////		}
-//		//saco componeente x a tarves del angulo su seno y el modulo 
-////se lo sumoo/resto segun la direccion 
-//	
-////		return aux;
-//	}
+
 	private Vector2 CalcVector90_sup(Vector2 nodeAfter, Vector2 nodePot,Vector2 z){
 		Vector2 aux;
 		aux.x=z.x;
@@ -189,8 +177,58 @@ public class AngleConstrain  {
 		Vector2 aux;
 		aux=_posAfter;
 		aux+=vecNode;
-		Debug.Log("pos 0 grados "+aux);
+	//	Debug.Log("pos 0 grados "+aux);
 		return aux;
 	}
+
+	private Vector2 CalcVectorConstrainUp(Vector2 limitUp,Vector2 zero){
+		Vector2 aux;
+		aux=limitUp-zero;
+		return aux;
+	}
+	private Vector2 CalcVectorConstrainDown(Vector2 limitDown,Vector2 zero){
+		Vector2 aux;
+		aux=limitDown-zero;
+		return aux;
+	}
+
+	private Vector2 CalcConstrain(Vector2 total,float n){
+		//total me da limit up/down cuanto seria 
+		Vector2 res=n*total/100;
+		//Debug.Log("res "+res);
+		return res;
+	}
+//	private Vector2 CalcVectorAngleUp(Vector2 vecNode, float _angle,Vector2 posAft,Vector2 z){
+//		Vector2 aux=posAft;
+//		float m=Vector2.Distance(posAft,z);
+//		//Debug.Log("magnitud angle"+ m);
+//		float angleToRadian=Mathf.Deg2Rad*30;
+//
+//		Vector2 aux2;
+//		aux2.y =m*Mathf.Sin(angleToRadian);
+//		aux2.x=m*Mathf.Cos(angleToRadian);
+//
+//	Debug.Log("aux 2 vec up "+aux2);
+//	//	z.y+=aux2;
+//		//Debug.Log("comp zero nuevo "+z);
+//		aux+=aux2;
+//			return aux;
+//	}
+//	private Vector2 CalcVectorAngleDown(Vector2 vecNode, float _angle,Vector2 posAft,Vector2 z){
+//		Vector2 aux=posAft;
+//		float m=Vector2.Distance(posAft,z);
+//		//Debug.Log("magnitud angle"+ m);
+//		float angleToRadian=Mathf.Deg2Rad*30;
+//
+//		Vector2 aux2;
+//		aux2.y=m*Mathf.Sin(angleToRadian);
+//		aux2.x=m*Mathf.Cos(angleToRadian);
+//		//Debug.Log("aux 2 angle "+aux2);
+//		//z.y-=aux2;
+//		aux-=aux2;
+//		//Debug.Log("comp zero nuevo dwon "+z);
+//		return aux;
+//	}
+
 
 }

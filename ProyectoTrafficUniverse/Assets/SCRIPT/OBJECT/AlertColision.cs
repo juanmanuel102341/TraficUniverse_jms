@@ -6,6 +6,8 @@ public class AlertColision : MonoBehaviour {
 	public GameObject sprite;
 	public GameObject objColision;
 	private CheckTargetColision checkTarget;
+	public delegate void ColisionInminent();
+	public event ColisionInminent onAlertColsion;
 	void Awake () {
 		id=gameObject.tag;
 		objColision.SetActive(false);
@@ -19,13 +21,14 @@ public class AlertColision : MonoBehaviour {
 			print("area colsion activa");
 			objColision.SetActive(true);
 			sprite.SetActive(true);
-
+			onAlertColsion();
 		}
 		if(checkTarget.CheckMyTarget(col.tag)){
 			if(col.tag=="asteroide")
 			sprite.SetActive(true);//activo carte de sprite attention
 			//print("prendo collider para un posible aterrizaje");
 			objColision.SetActive(true);
+			onAlertColsion();
 		}
 			
 	}

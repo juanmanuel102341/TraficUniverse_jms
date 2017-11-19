@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour {
 	private ScreenValues screenData;
 	private bool resetTime=false;//booleano q utilizo para cuando llega al limite d naves y n tenga q 
 	private DetectsId detectsIdEvent;
+	public SoundManager soundManager;
 	void Awake () {
 		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
@@ -137,6 +138,7 @@ public class SpawnManager : MonoBehaviour {
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
 			auxObjFY.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFY);
+			soundManager.Events(auxObjFY);
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -147,6 +149,7 @@ public class SpawnManager : MonoBehaviour {
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
 			auxObjFX.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFX);
+			soundManager.Events(auxObjFX);
 			listaObj.Add(auxObjFX);
 		}
 			
