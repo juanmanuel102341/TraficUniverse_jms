@@ -47,9 +47,9 @@ public class AngleConstrain  {
 			//	Debug.Log("vec prim "+auxVecPrim);
 
 			float ang=Vector2.Angle(myVectorPotencial,myVectorNode);
-			Debug.Log("node anterior "+myReferencePath.listNodes[count+1]);
-			Debug.Log("node pot "+nodePotencial);
-			Debug.Log("angulo"+ang);
+		//	Debug.Log("node anterior "+myReferencePath.listNodes[count+1]);
+			//Debug.Log("node pot "+nodePotencial);
+			//Debug.Log("angulo"+ang);
 			float modP=Vector2.Distance(myReferencePath.listNodes[count+1],nodePotencial);
 			//	Debug.Log("modulo "+modP);
 
@@ -72,8 +72,8 @@ public class AngleConstrain  {
 				auxResUp.y+=modP*Mathf.Sin(myAmplitudeAngle*Mathf.Deg2Rad);
 				auxResDown.y+=modP*Mathf.Sin(-myAmplitudeAngle*Mathf.Deg2Rad);
 			}
-			Debug.Log("aux up "+auxResUp);
-			Debug.Log("aux dwon "+auxResDown);
+		//	Debug.Log("aux up "+auxResUp);
+		//	Debug.Log("aux dwon "+auxResDown);
 
 //			GameObject obj2=GameObject.CreatePrimitive(PrimitiveType.Sphere);
 //			obj2.GetComponent<Transform>().position=new Vector3 (auxResUp.x,auxResUp.y,0);
@@ -86,7 +86,7 @@ public class AngleConstrain  {
 //			obj3.GetComponent<Transform>().GetComponent<MeshRenderer>().material.color=Color.cyan;
 
 			if(ang>myConstrainAngle){
-				Debug.Log("constrain mayor !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+ang);
+			//	Debug.Log("constrain mayor !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+ang);
 			
 
 
@@ -95,11 +95,11 @@ public class AngleConstrain  {
 				float disPosDown=Vector2.Distance(nodePotencial,auxResDown);
 			//	Debug.Log("disp down "+disPosDown);
 				if(disPosUp<disPosDown){
-					Debug.Log("constrain up active "+auxResUp);
+				//	Debug.Log("constrain up active "+auxResUp);
 					myVectorConstrain=auxResUp;
 
 				}else{
-					Debug.Log("constrain down active "+auxResDown);
+				//	Debug.Log("constrain down active "+auxResDown);
 					myVectorConstrain=auxResDown;
 			
 				}
