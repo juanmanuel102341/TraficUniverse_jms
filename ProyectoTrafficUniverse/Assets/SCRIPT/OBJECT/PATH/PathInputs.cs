@@ -39,20 +39,20 @@ public class PathInputs : MonoBehaviour {
 	
 		DeletesAllPaths();
 		ClickMe(this.gameObject);
-	
+		activatePath=true;
 		//print("click 1: "+countEvent);
-		if(!clickObj){
-			//***********primer click*******************
-			//print("clickevento");
-			clickObj=true;
-//			movePath.ResetListNodes();
-		}
-		if(!activatePath&&contador>1){
-		//**************segundo click******************
-			//print("activate path");
-			activatePath=true;
-			//colorObj.ColorSecondClick();
-		}
+//		if(!clickObj){
+//			//***********primer click*******************
+//			//print("clickevento");
+//			clickObj=true;
+////			movePath.ResetListNodes();
+//		}
+////		if(!activatePath&&contador>1){
+//		//**************segundo click******************
+//			//print("activate path");
+//			activatePath=true;
+//			//colorObj.ColorSecondClick();
+//		}
 
 //		movePath.setIndex=0;
 	}
@@ -85,7 +85,7 @@ public class PathInputs : MonoBehaviour {
 	}
 	public void GetInputMouse(){
 		Vector2 auxInput=GetPositionMouse();
-		if(Input.GetMouseButton(0)&&clickObj&&activatePath&&!over){
+		if(Input.GetMouseButton(0)&&activatePath&&!over){
 //			print("click");
 			path.SetNewNode(auxInput);//parte codigo
 			}
