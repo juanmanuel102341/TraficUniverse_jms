@@ -18,27 +18,16 @@ public class Gui : MonoBehaviour {
 		GameManager.OnGuiOut+=SwichLifesOff;
 		GameManager.OnResetLife+=SwichLifesOn;
 		print("game lifes "+GameManager.lifesGame);
-		for(int i=0;i<GameManager.lifesGame;i++)
-			SwichLifesOn(i);
+
+			SwichLifesOn();
 
 
 	}
 
-	private void SwichLifesOn(int n){
-
-		switch(n){
-
-		case 1:
-			lifes[0].SetActive(true);
-			break;
-		case 2:
-			lifes[1].SetActive(true);
-			break;
-		case 3:
-			lifes[2].SetActive(true);
-			break;
-		}
-
+	private void SwichLifesOn(){
+		for(int i=0;i<GameManager.lifesGame;i++){
+			lifes[i].SetActive(true);
+		}	
 	}
 	private void SwichLifesOff(int n){
 		print("saco vida");

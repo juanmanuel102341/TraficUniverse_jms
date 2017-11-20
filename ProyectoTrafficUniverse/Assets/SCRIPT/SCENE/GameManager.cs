@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour {
 	private GameObject [] aAsteroides;
 	public static bool myClickId=false;
 	public delegate void SetGuiLife(int numVidaOut);
+	public delegate void SetResetLife();
 	public static event SetGuiLife OnGuiOut;
-	public static event SetGuiLife OnResetLife;
+	public static event SetResetLife OnResetLife;
+
 	public delegate void SetTargetGui();
 	public static event SetTargetGui ResetTargetGui;
 	void Awake () {
@@ -144,7 +146,7 @@ public class GameManager : MonoBehaviour {
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		ResetTargetGui();
 		lifes=initialVidas;
-		OnResetLife(lifes);
+		OnResetLife();
 		//	guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=lifes;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
 //		EventsGame();

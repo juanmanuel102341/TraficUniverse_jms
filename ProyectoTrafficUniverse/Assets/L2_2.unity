@@ -1985,13 +1985,12 @@ RectTransform:
 --- !u!114 &1257049928
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114183480240253800, guid: b02be7ad713fe9546a3a3a03251795e9,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1257049926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122962f271d132745841cf29de05f709, type: 3}
+  m_Script: {fileID: 11500000, guid: 71fcdd51079f1a2488f1856cb457a14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1257049929
@@ -2036,7 +2035,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1257049928}
-        m_MethodName: MyQuit
+        m_MethodName: OnMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
