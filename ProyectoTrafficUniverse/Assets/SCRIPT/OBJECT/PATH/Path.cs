@@ -25,12 +25,11 @@ public class Path:PathInputs  {
 	
 	public bool SetNewNode(Vector2 input){
 		if(listNodes.Count!=0){
+			
 			if(DistanceBetween(input)){
 			//mas d uno
-		
-				input=angleConstrain.InitializeCalcConstrain(input);
-
-
+				bool activeConstrain=angleConstrain.InitializeCalcConstrain(input);
+				if(!activeConstrain){
 				Node node;
 
 				node=new Node(input);
@@ -44,6 +43,9 @@ public class Path:PathInputs  {
 			}else{
 				//Debug.Log("nodo n cumple condicion ");
 				return false;
+			}
+			}else{
+				return false;	
 			}
 		}else{
 			
@@ -61,7 +63,7 @@ public class Path:PathInputs  {
 		//		print("lista "+listNodes[i]);
 			return true;
 		}
-	
+		
 	}
 	private bool DistanceBetween(Vector2 _input){
 		float d=Vector2.Distance(listNodes[listNodes.Count-1],_input);//distancia entre el nodo q hay y el input del mouse
