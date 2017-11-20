@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour {
 	private bool resetTime=false;//booleano q utilizo para cuando llega al limite d naves y n tenga q 
 	private DetectsId detectsIdEvent;
 	public SoundManager soundManager;
+	public GuiTarget guiTarget;
 	void Awake () {
 		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
@@ -139,6 +140,7 @@ public class SpawnManager : MonoBehaviour {
 			auxObjFY.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFY);
 			soundManager.Events(auxObjFY);
+			guiTarget.EventsMe(auxObjFY);
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -150,6 +152,7 @@ public class SpawnManager : MonoBehaviour {
 			auxObjFX.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFX);
 			soundManager.Events(auxObjFX);
+			guiTarget.EventsMe(auxObjFX);
 			listaObj.Add(auxObjFX);
 		}
 			

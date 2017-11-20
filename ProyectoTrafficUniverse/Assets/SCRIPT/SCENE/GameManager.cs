@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
-	public int vidas;
+	public static int lifesGame=0;
+	public static int targetGame;
+	public int lifes;
 	public static int aviones=0;
 	public int targetPlanes;
 	public GameObject guiLoose;
@@ -14,13 +16,19 @@ public class GameManager : MonoBehaviour {
 	public Replay replay;
 	private GameObject [] aAsteroides;
 	public static bool myClickId=false;
+	public delegate void SetGuiLife(int numVidaOut);
+	public static event SetGuiLife OnGuiOut;
+	public static event SetGuiLife OnResetLife;
+	public delegate void SetTargetGui();
+	public static event SetTargetGui ResetTargetGui;
 	void Awake () {
 		aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
 	
-		initialVidas=vidas;
+		initialVidas=lifes;
 
-		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas;
-		guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
+		lifesGame=lifes;
+		targetGame=targetPlanes;
+	//	guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
 		
 	}
@@ -36,21 +44,22 @@ public class GameManager : MonoBehaviour {
 	void EventsGame(){
 		replay.activateReplay+=OnReplay;	
 		nextLevel.activateReset+=SettingOffGuiFinal;
-
+	
 		nextLevel.activateReset+=ResetValuesScene;
 	}
 	
 	void Update () {
 		if(aviones==2){
 			print("puf aviones muertos");
-			vidas--;
-			guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//actualizo vidas
+			OnGuiOut(lifes);
+			lifes--;
+//			guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=lifes;//actualizo vidas
 			aviones=0;
 		}
 		Conditions();
 	}
 	private void Conditions(){
-		if(vidas<=0){
+		if(lifes<=0){
 			print("loose");
 
 			Reset();
@@ -131,12 +140,16 @@ public class GameManager : MonoBehaviour {
 	}
 	private void ResetValuesScene(){
 		spawnManager.enabled=true;//prendo generacion de naves
+
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
-		vidas=initialVidas;
-		guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=vidas;//reseteo vida mediante propiedad
+		ResetTargetGui();
+		lifes=initialVidas;
+		OnResetLife(lifes);
+		//	guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=lifes;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
 //		EventsGame();
 	//	OnDestroy();
+
 	}
 
 		
