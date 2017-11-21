@@ -8,14 +8,14 @@ public class NextLevel : MonoBehaviour {
 	void Awake(){
 		Scene scene=SceneManager.GetActiveScene();
 
-		print("name scene "+scene.name);
+		//print("name scene "+scene.name);
 
 		indexValue=SceneUtility.GetBuildIndexByScenePath(scene.name);
 		indexValue++;
-		print("build index "+indexValue);
+		//print("build index "+indexValue);
 		if(indexValue>=SceneManager.sceneCountInBuildSettings){
 			indexValue=0;
-			print("reset all");
+		//	print("reset all");
 		}
 	}
 	public void ApplingNext(){

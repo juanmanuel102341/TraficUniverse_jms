@@ -2,44 +2,39 @@
 using UnityEngine.UI;
 public class Gui : MonoBehaviour {
 	
-
+	public static int myLife;
 	public GameObject [] lifes=new GameObject[3];
-	private int initialLife;
 	void Awake () {
 		
 
-		for(int i=0;i<3;i++){
-			SwichLifesOff(i);//las apago asi estan a tono con la data del game manager, claro no puede tener mas d 3 vidas
-		}
-
+		//DontDestroyOnLoad(gameObject);
 	}
-	void Start(){
-		
-		GameManager.OnGuiOut+=SwichLifesOff;
-		GameManager.OnResetLife+=SwichLifesOn;
-		print("game lifes "+GameManager.lifesGame);
+//	void Start(){
+//		
+//
+//		print("game lifes "+GameManager.lifesGame);
+//
+//	}
 
-			SwichLifesOn();
-
-
-	}
-
-	private void SwichLifesOn(){
-		for(int i=0;i<GameManager.lifesGame;i++){
+	public void SwichLifesOn(int n){
+		for(int i=0;i<n;i++){
 			lifes[i].SetActive(true);
 		}	
 	}
-	private void SwichLifesOff(int n){
-		print("saco vida");
+	public void SwichLifesOff(int n){
+	//	print("saco vida");
 		switch(n){
 
 		case 1:
+			if(lifes[0].activeSelf)
 			lifes[0].SetActive(false);
 			break;
 		case 2:
+			if(lifes[1].activeSelf)
 			lifes[1].SetActive(false);
 			break;
 		case 3:
+			if(lifes[2].activeSelf)
 			lifes[2].SetActive(false);
 			break;
 		}

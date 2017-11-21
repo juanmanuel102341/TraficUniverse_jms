@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
-	public static int lifesGame=0;
+//	public static int lifesGame=0;
 	public static int targetGame;
 	public int lifes;
 	public static int aviones=0;
@@ -16,20 +17,43 @@ public class GameManager : MonoBehaviour {
 	public Replay replay;
 	private GameObject [] aAsteroides;
 	public static bool myClickId=false;
-	public delegate void SetGuiLife(int numVidaOut);
-	public delegate void SetResetLife();
-	public static event SetGuiLife OnGuiOut;
-	public static event SetResetLife OnResetLife;
-
+	private Gui guiLife;
 	public delegate void SetTargetGui();
 	public static event SetTargetGui ResetTargetGui;
-	void Awake () {
-		aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
-	
-		initialVidas=lifes;
+	public delegate void RestartOnPause();
+	public static event RestartOnPause onRestartOnPause;
+	public static event RestartOnPause OffFinalEscene;
+	private Pause pause;
+	public GameObject fastTime;
 
-		lifesGame=lifes;
+	void Awake () {
+		pause=GetComponent<Pause>();
+		guiLife=guiGame.GetComponent<Transform>().GetChild(1).gameObject.GetComponent<Gui>();
+		print("nombre objeto vida "+guiLife.gameObject.tag);
+		aAsteroides=GameObject.FindGameObjectsWithTag("asteroide");
+		Scene scene=SceneManager.GetActiveScene();
+		int numScene=SceneUtility.GetBuildIndexByScenePath(scene.name);
+		print("escena numero "+numScene);
+		if(numScene==2){
+			
+		initialVidas=lifes;
+			Gui.myLife=lifes;
+			print("setiand vida initial "+lifes);
+	//		guiLife.SwichLifesOn(lifes);
+		}else{
+			
+			lifes=Gui.myLife;
+			initialVidas=Gui.myLife;
+			ResettingLifes();
+			aterrizajes=0;
+		}
+	//	guiLife.SwichLifesOn(lifes);
+		if(!guiLife.gameObject.activeSelf){
+			guiLife.gameObject.SetActive(true);
+		}
+	//	guiLife.SwichLifesOn(lifes);
 		targetGame=targetPlanes;
+
 	//	guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 		spawnManager=GetComponent<SpawnManager>();
 		
@@ -43,7 +67,8 @@ public class GameManager : MonoBehaviour {
 //	}
 		
 
-	void EventsGame(){
+	void EventsGame(){	
+
 		replay.activateReplay+=OnReplay;	
 		nextLevel.activateReset+=SettingOffGuiFinal;
 	
@@ -53,31 +78,39 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(aviones==2){
 			print("puf aviones muertos");
-			OnGuiOut(lifes);
+			guiLife.SwichLifesOff(lifes);
 			lifes--;
+			Gui.myLife--;
 //			guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=lifes;//actualizo vidas
 			aviones=0;
 		}
 		Conditions();
 	}
+
 	private void Conditions(){
 		if(lifes<=0){
-			print("loose");
-
+		//	print("loose");
+			OffFinalEscene();//apago musica principal
 			Reset();
 
 			guiLoose.SetActive(true);
+
 			replay=guiLoose.transform.GetChild(2).GetComponent<Replay>();
 			replay.activateReplay+=OnReplay;	
-			Debug.Log("replay "+replay.tag);
+			print("replay "+replay.gameObject.name);
+		//	Debug.Log("replay "+replay.tag);
 
 		}else if(aterrizajes>=targetPlanes){
-			print("victory");
+//			print("victory");
+			OffFinalEscene();//apago musica principal
 			Reset();
-		
+
 			guiWin.SetActive(true);
-		
-		
+			replay=guiWin.transform.GetChild(2).GetComponent<Replay>();
+			replay.activateReplay+=OnReplay;	
+			print("replay "+replay.gameObject.name);
+		//para q no me tire error porque el replay del principio hace referencia al replay de pausa
+
 		}
 		if(Input.GetKeyDown(KeyCode.K)){
 			aterrizajes=targetPlanes;
@@ -85,14 +118,14 @@ public class GameManager : MonoBehaviour {
 
 	}
 	private void Reset(){
-		print("reset game ");
+	//	print("reset game ");
 
 		if(aAsteroides!=null){
-			print("borrando asteroides "+aAsteroides.Length );
+//			print("borrando asteroides "+aAsteroides.Length );
 			for(int i=0;i<aAsteroides.Length;i++){
 				aAsteroides[i].SetActive(false);
 			}
-			print("borrando asteroides despues"+aAsteroides.Length );
+			//print("borrando asteroides despues"+aAsteroides.Length );
 		}
 		for(int i=0;i<spawnManager.getListPlanes.Count;i++){
 			GameObject aux=spawnManager.getListPlanes[i];
@@ -106,17 +139,20 @@ public class GameManager : MonoBehaviour {
 		}
 
 		spawnManager.enabled=false;;//apago generacion de naves
+		fastTime.SetActive(false);//apago timer del juego
 
 	}
 	private void OnReplay(string id){
 
-		print("my id gm "+id);
+		//print("my id gm "+id);
 		if(id=="pauseReplay"){
 			//****************************pause*************************
 			print("replay pause gm");
+			onRestartOnPause();
 			Reset();
 			GameObject.FindGameObjectWithTag("pause").SetActive(false);
 			Time.timeScale=1;
+			//para q vuelva la musica
 		}else{//**************************momento win/loose********************
 			SettingOffGuiFinal();
 		}
@@ -127,16 +163,17 @@ public class GameManager : MonoBehaviour {
 		for(int i=0;i<aAsteroides.Length;i++){
 			aAsteroides[i].SetActive(true);//prendo asteroides
 		}
+
 		ResetValuesScene();
 	}
 	private void SettingOffGuiFinal(){
-		print("win loose gm");
+	//	print("win loose gm");
 		if(guiLoose.activeSelf){
-			print("button loose desacctiva");
+		//	print("button loose desacctiva");
 			guiLoose.SetActive(false);
 
 		}else{
-			print("button win deactive");
+		//	print("button win deactive");
 			guiWin.SetActive(false);
 		}
 	}
@@ -146,12 +183,26 @@ public class GameManager : MonoBehaviour {
 		aterrizajes=0;//reseteo aterrizajes para no volver a ganar
 		ResetTargetGui();
 		lifes=initialVidas;
-		OnResetLife();
+		guiLife.SwichLifesOn(initialVidas);
+		onRestartOnPause();//para q vuelva  sonar musica
+		//OnResetLife();
 		//	guiGame.transform.FindChild("Vidas").transform.FindChild("NumVidas").GetComponent<Gui>().setVidas=lifes;//reseteo vida mediante propiedad
 		guiGame.SetActive(true);//prendo gui del juego
+		fastTime.SetActive(true);
+//		fastTime.GetComponent<FastTime>().OnResetMe();
 //		EventsGame();
 	//	OnDestroy();
 
+	}
+	private void ResettingLifes(){
+		print("vida de antes "+initialVidas);
+		int n=3-lifes;//cuanto le tengo q sacar d vidas
+		int aux=3;
+		for(int i=0;i<n;i++){
+			print("index life "+i);
+			guiLife.SwichLifesOff(aux);
+			aux--;
+		}	
 	}
 
 		

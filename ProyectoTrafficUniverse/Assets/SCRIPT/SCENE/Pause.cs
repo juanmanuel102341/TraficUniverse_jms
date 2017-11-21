@@ -4,6 +4,9 @@ using UnityEngine;
 public class Pause : MonoBehaviour {
 	public GameObject pause;
 	// Use this for initialization
+	public delegate void PauseActive();
+	public static event PauseActive onPauseActive;
+	public static event PauseActive offPause;
 	void Start () {
 		
 	}
@@ -16,11 +19,13 @@ public class Pause : MonoBehaviour {
 			if(!pause.activeSelf){
 			Time.timeScale=0.0f;
 			pause.SetActive(true);
+			onPauseActive();
 			}else{
 			print("despause");
 			pause.SetActive(false);
 			Time.timeScale=1.0f;
-			
+				offPause();
+
 			}
 		}
 	

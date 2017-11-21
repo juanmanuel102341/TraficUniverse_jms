@@ -19,7 +19,7 @@ public class SpawnManager : MonoBehaviour {
 		time=frecuencia;
 	//	frecuencia=TimeLerp(rangeTime[0],rangeTime[1]);
 		frecuencia=2;//tiro frecuencia yo para q el usuario n tenga q esperar tanto
-		print("freuenncia "+frecuencia);
+//		print("freuenncia "+frecuencia);
 		}
 	void Start(){
 		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();

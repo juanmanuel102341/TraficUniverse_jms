@@ -23,7 +23,7 @@ public class Detect : MonoBehaviour {
 			{	
 			//	print("colision asteroide muerte nave");
 				GameManager.aviones=2;//aumento Contador de aviones a 2 , en game manager esta lacondicion q pregunta si hay 2 aviones sao una viDA
-				col.gameObject.SetActive(false);//apago no elmino para q despues en replay teenr acceso
+				//col.gameObject.SetActive(false);//apago no elmino para q despues en replay teenr acceso
 				OnContactPlane();
 			}else{
 			//		print("aterrizando 2d");

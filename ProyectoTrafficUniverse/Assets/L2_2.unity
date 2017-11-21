@@ -1456,6 +1456,11 @@ Prefab:
       propertyPath: detectsId
       value: 
       objectReference: {fileID: 1402952702}
+    - target: {fileID: 82109053480424796, guid: fadb1609370d88d419767dabde91dc11,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9041f3ac718e7c44ba50f438b7300ec4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fadb1609370d88d419767dabde91dc11, type: 2}
   m_IsPrefabParent: 0
@@ -1501,6 +1506,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1003644092 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1848902270381682, guid: 848e22ac861a0764aba04e981b131a1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1003644091}
 --- !u!1 &1053006504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,6 +1951,11 @@ Prefab:
       propertyPath: guiTarget
       value: 
       objectReference: {fileID: 287840522}
+    - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
+        type: 2}
+      propertyPath: fastTime
+      value: 
+      objectReference: {fileID: 1003644092}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b38f61de90ff8d43b5957d69ca95f66, type: 2}
   m_IsPrefabParent: 0

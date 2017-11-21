@@ -38,6 +38,8 @@ TagManager:
   - repayLoose
   - asteroide
   - plane
+  - life
+  - myReplay
   layers:
   - Default
   - TransparentFX
