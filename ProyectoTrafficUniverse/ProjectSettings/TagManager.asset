@@ -28,6 +28,7 @@ TagManager:
   - myReplay
   - planetA
   - planetB
+  - pointer
   layers:
   - Default
   - TransparentFX

@@ -248,7 +248,6 @@ Transform:
   m_Father: {fileID: 1096081304}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!212 &148840667
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1330,106 +1329,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91c0c3a7ae6ee0f4ebd9dabb6d8c027e, type: 2}
   m_IsPrefabParent: 0
-<<<<<<< HEAD
 --- !u!1 &1669395444 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1276647821666598, guid: f5a2e5be4256ec34ba8634db5de223c9,
     type: 2}
   m_PrefabInternal: {fileID: 2132526141}
-=======
---- !u!1 &1385699185 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1859167128712888, guid: 727d5785a3c4a5e4ebd0eb22f99f1d19,
-    type: 2}
-  m_PrefabInternal: {fileID: 1069659250}
---- !u!4 &1385699188 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4213595730938766, guid: 727d5785a3c4a5e4ebd0eb22f99f1d19,
-    type: 2}
-  m_PrefabInternal: {fileID: 1069659250}
---- !u!1001 &1528875345
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2029364180}
-    m_Modifications:
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 10.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -5.7850704
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4459920343296404, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114956042425363298, guid: fcde1e732a391e9408464b8d9ab9e527,
-        type: 2}
-      propertyPath: pointer
-      value: 
-      objectReference: {fileID: 1698584881}
-    - target: {fileID: 114218014235953072, guid: fcde1e732a391e9408464b8d9ab9e527,
-        type: 2}
-      propertyPath: dataShips
-      value: 
-      objectReference: {fileID: 2029364181}
-    - target: {fileID: 114218014235953072, guid: fcde1e732a391e9408464b8d9ab9e527,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 234787609}
-    - target: {fileID: 114398460319781188, guid: fcde1e732a391e9408464b8d9ab9e527,
-        type: 2}
-      propertyPath: dataDad
-      value: 
-      objectReference: {fileID: 2029364181}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: fcde1e732a391e9408464b8d9ab9e527, type: 2}
-  m_IsPrefabParent: 0
---- !u!224 &1605307849
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 224733672291239724, guid: 66072ea947753ab47b597d498ae6b681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 637818747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1373282910}
-  m_Father: {fileID: 1847571284}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -86, y: 50}
-  m_SizeDelta: {x: 85, y: 85}
-  m_Pivot: {x: 0.5, y: 0.5}
->>>>>>> Dev
 --- !u!1 &1698584881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,11 +1414,7 @@ Transform:
   m_LocalScale: {x: 0.6286846, y: 0.62868434, z: 0.62868434}
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 6
-=======
-  m_RootOrder: 7
->>>>>>> Dev
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1698584885
 BoxCollider2D:
@@ -1541,7 +1441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eea75b14cae0d34ca184d86ab9a6731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   transInitialTarget: {fileID: 1712623186}
   velocity: 8
   animations:
@@ -1549,10 +1448,6 @@ MonoBehaviour:
   - {fileID: 707983698}
   - {fileID: 1750952793}
   transfInitials: []
-=======
-  target: {fileID: 1385699188}
-  velocity: 6
->>>>>>> Dev
 --- !u!114 &1698584887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1874,11 +1769,7 @@ RectTransform:
   - {fileID: 1160283403}
   - {fileID: 1605307849}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 7
-=======
-  m_RootOrder: 8
->>>>>>> Dev
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2001,7 +1892,6 @@ Transform:
   - {fileID: 1991967087}
   - {fileID: 1046007570}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2044836623 stripped
@@ -2097,21 +1987,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5a2e5be4256ec34ba8634db5de223c9, type: 2}
   m_IsPrefabParent: 0
-=======
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2029364181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2029364179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b7ce4776394a34e849d80f775d9afe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: 4
-  totalNodes: 16
-  timeAnim: 0.09
->>>>>>> Dev

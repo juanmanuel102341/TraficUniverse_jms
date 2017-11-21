@@ -819,11 +819,6 @@ Prefab:
       propertyPath: m_TagString
       value: pointer
       objectReference: {fileID: 0}
-    - target: {fileID: 212969580289486290, guid: 91c0c3a7ae6ee0f4ebd9dabb6d8c027e,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91c0c3a7ae6ee0f4ebd9dabb6d8c027e, type: 2}
   m_IsPrefabParent: 0
@@ -1496,11 +1491,6 @@ Prefab:
         type: 2}
       propertyPath: appearSD
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212051138107590230, guid: f5a2e5be4256ec34ba8634db5de223c9,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5a2e5be4256ec34ba8634db5de223c9, type: 2}
