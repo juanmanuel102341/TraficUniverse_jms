@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour {
 			//****************************pause*************************
 			print("replay pause gm");
 			onRestartOnPause();
+
 			Reset();
 			GameObject.FindGameObjectWithTag("pause").SetActive(false);
 			Time.timeScale=1;
