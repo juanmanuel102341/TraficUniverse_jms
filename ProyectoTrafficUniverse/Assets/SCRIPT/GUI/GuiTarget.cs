@@ -8,7 +8,7 @@ public class GuiTarget : MonoBehaviour {
 
 	void Start(){
 		SetTargetInitial();
-		GameManager.ResetTargetGui+=Reset;
+
 	}
 	public void EventsMe(GameObject obj){
 		Detect detect=obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).GetComponent<Detect>();//hijo del hijo

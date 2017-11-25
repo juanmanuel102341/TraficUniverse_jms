@@ -12,8 +12,7 @@ public class SoundBack : MonoBehaviour {
 		Pause.onPauseActive+=StopMe;
 		Pause.offPause+=PlayMe;
 		EventResume.onResume+=PlayMe;
-		GameManager.onRestartOnPause+=PlayMe;
-		GameManager.OffFinalEscene+=StopMe;
+	
 	}
 	public void StopMe(){
 		if(myAudio!=null)

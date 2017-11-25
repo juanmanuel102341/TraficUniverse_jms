@@ -22,7 +22,7 @@ public class Detect : MonoBehaviour {
 			if(col.tag=="asteroide")
 			{	
 			//	print("colision asteroide muerte nave");
-				GameManager.aviones=2;//aumento Contador de aviones a 2 , en game manager esta lacondicion q pregunta si hay 2 aviones sao una viDA
+				//GameManager.aviones=2;//aumento Contador de aviones a 2 , en game manager esta lacondicion q pregunta si hay 2 aviones sao una viDA
 				//col.gameObject.SetActive(false);//apago no elmino para q despues en replay teenr acceso
 				OnContactPlane();
 			}else{
@@ -37,7 +37,9 @@ public class Detect : MonoBehaviour {
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
 			GameManager.aviones++;
+			if(GameManager.aviones==2)
 			OnContactPlane();
+			
 		}
 		}
 

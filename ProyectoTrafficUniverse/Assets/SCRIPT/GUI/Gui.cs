@@ -2,28 +2,33 @@
 using UnityEngine.UI;
 public class Gui : MonoBehaviour {
 	
-	public static int myLife;
+
 	public GameObject [] lifes=new GameObject[3];
 	void Awake () {
 		
 
 		//DontDestroyOnLoad(gameObject);
 	}
-//	void Start(){
-//		
-//
-//		print("game lifes "+GameManager.lifesGame);
-//
-//	}
+	void Start(){
+		
+		//SwichLifesOff();
+		SwichLifesOn();
 
-	public void SwichLifesOn(int n){
-		for(int i=0;i<n;i++){
+
+	}
+	public void Events(GameObject obj){
+		Detect detect=obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).GetComponent<Detect>();//hijo del hijo
+		detect.OnContactPlane+=SwichLifesOff;
+	}
+
+	public void SwichLifesOn(){
+		for(int i=0;i<GameManager.lifesGame;i++){
 			lifes[i].SetActive(true);
 		}	
 	}
-	public void SwichLifesOff(int n){
+	public void SwichLifesOff(){
 	//	print("saco vida");
-		switch(n){
+		switch(GameManager.lifesGame){
 
 		case 1:
 			if(lifes[0].activeSelf)
@@ -34,11 +39,15 @@ public class Gui : MonoBehaviour {
 			lifes[1].SetActive(false);
 			break;
 		case 3:
+			print("1er contacto "+GameManager.lifesGame);
 			if(lifes[2].activeSelf)
 			lifes[2].SetActive(false);
 			break;
 		}
 
+		GameManager.lifesGame--;
+		GameManager.aviones=0;
+		print("despues contacti"+GameManager.lifesGame);
 	}
 
 

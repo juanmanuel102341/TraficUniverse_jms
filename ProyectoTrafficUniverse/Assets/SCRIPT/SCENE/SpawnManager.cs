@@ -14,13 +14,16 @@ public class SpawnManager : MonoBehaviour {
 	private DetectsId detectsIdEvent;
 	public SoundManager soundManager;
 	public GuiTarget guiTarget;
+	public Gui guiLifes;
+	private GameManager gameManager;
 	void Awake () {
 		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
 	//	frecuencia=TimeLerp(rangeTime[0],rangeTime[1]);
 		frecuencia=2;//tiro frecuencia yo para q el usuario n tenga q esperar tanto
 //		print("freuenncia "+frecuencia);
-		}
+		gameManager=GetComponent<GameManager>();
+	}
 	void Start(){
 		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
 	}
@@ -141,6 +144,8 @@ public class SpawnManager : MonoBehaviour {
 			detectsIdEvent.EventStart(auxObjFY);
 			soundManager.Events(auxObjFY);
 			guiTarget.EventsMe(auxObjFY);
+			guiLifes.Events(auxObjFY);
+			gameManager.Events(auxObjFY);
 			listaObj.Add(auxObjFY);
 		
 		}else{
@@ -153,6 +158,8 @@ public class SpawnManager : MonoBehaviour {
 			detectsIdEvent.EventStart(auxObjFX);
 			soundManager.Events(auxObjFX);
 			guiTarget.EventsMe(auxObjFX);
+			guiLifes.Events(auxObjFX);
+			gameManager.Events(auxObjFX);
 			listaObj.Add(auxObjFX);
 		}
 			
