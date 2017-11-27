@@ -25,7 +25,7 @@ public class PathInputs : MonoBehaviour {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
 		pathGraphic=GetComponent<PathGraphic>();
-		path=new Path(distanceNodes,pathGraphic,myConstrainAngle,myAmplitudAngle);
+		path=new Path(distanceNodes,pathGraphic,myConstrainAngle);
 		id.SetActive(false);
 
 //		print("clase path inputs");
@@ -42,21 +42,7 @@ public class PathInputs : MonoBehaviour {
 		DeletesAllPaths();
 		ClickMe(this.gameObject);
 		activatePath=true;
-		//print("click 1: "+countEvent);
-//		if(!clickObj){
-//			//***********primer click*******************
-//			//print("clickevento");
-//			clickObj=true;
-////			movePath.ResetListNodes();
-//		}
-////		if(!activatePath&&contador>1){
-//		//**************segundo click******************
-//			//print("activate path");
-//			activatePath=true;
-//			//colorObj.ColorSecondClick();
-//		}
 
-//		movePath.setIndex=0;
 	}
 	void OnMouseUp(){
 		if(activatePath){

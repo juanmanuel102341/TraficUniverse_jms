@@ -3,25 +3,18 @@ using UnityEngine;
 
 public class AngleConstrain  {
 	Path myReferencePath;
-	private float myMagnitudPath;
+
 	private float myConstrainAngle;
 	private int count=0;
-	private bool activeConstrain=false;
-	private bool deactiveConstrain=false;
-
-	private Vector2 myCurrentVectorConstrain;
-	private float myAmplitudeAngle;
 	private float myAngle;
 	private Vector2 myVectorPotencial;
 	private Vector2 myVectorNode;
-	//public delegate bool MyConstrainActive();
-	//public event MyConstrainActive ActiveConstrain;
-	public AngleConstrain(Path path, float magnitudPath, float constrainAngle,float _myAmplitudAngle){
+	public AngleConstrain(Path path, float constrainAngle){
 		myReferencePath=path;
-		myMagnitudPath=magnitudPath;
+
 		myConstrainAngle=constrainAngle;
-		myAmplitudeAngle=_myAmplitudAngle;
-		Debug.Log("constrain "+myConstrainAngle);
+
+		//Debug.Log("constrain "+myConstrainAngle);
 	}
 
 	private Vector2 CalcVector(Vector2 n1, Vector2 n2){

@@ -10,14 +10,15 @@ public class Path:PathInputs  {
 	public int countNodes=0;
 	public bool first=false;
 	private PathGraphic pathGraphic;
+	private bool constrainActive=false;
 	public Path(){
 
 	}
-	public Path (float _distanceNodes,PathGraphic _graficPath,float _myConstrain,float _amplitudAngle){
+	public Path (float _distanceNodes,PathGraphic _graficPath,float _myConstrain){
 		my_distanceNodes=_distanceNodes;
 		//Debug.Log("distance nodes "+my_distanceNodes);
 		pathGraphic=_graficPath;
-		angleConstrain=new AngleConstrain(this,my_distanceNodes,_myConstrain,_amplitudAngle);
+		angleConstrain=new AngleConstrain(this,_myConstrain);
 
 
 	}
@@ -28,8 +29,10 @@ public class Path:PathInputs  {
 			
 			if(DistanceBetween(input)){
 			//mas d uno
-				bool activeConstrain=angleConstrain.InitializeCalcConstrain(input);
-				if(!activeConstrain){
+				if(!constrainActive)
+				constrainActive=angleConstrain.InitializeCalcConstrain(input);
+
+				if(!constrainActive){
 				Node node;
 
 				node=new Node(input);
@@ -58,6 +61,7 @@ public class Path:PathInputs  {
 			listNodes.Add(node.posicion);
 			countNodes++;
 			first=true;
+			constrainActive=false;
 			//angleConstrain.activeConstrain=false;
 		//	for(int i=0;i<listNodes.Count;i++)
 		//		print("lista "+listNodes[i]);
