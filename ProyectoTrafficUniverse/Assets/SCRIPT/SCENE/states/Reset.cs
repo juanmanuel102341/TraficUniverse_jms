@@ -14,10 +14,17 @@ public class Reset : MonoBehaviour {
 	public Replay replay;
 	public GameObject guiFinal;
 	public SoundBack soundBack;
+	private GameManager gameManager;
+
 	void Awake () {
 		aAsteroids=GameObject.FindGameObjectsWithTag("asteroide");
-
-
+		gameManager=spawnManager.transform.gameObject.GetComponent<GameManager>();
+		print("game manaher "+gameManager);
+		if(tag=="pause"){
+		this.enabled=false;	
+		}else{
+		this.enabled=true;
+		}
 	}
 	void Start(){
 		Off();
@@ -40,6 +47,7 @@ public class Reset : MonoBehaviour {
 		Scripts(true);
 		guiFinal.SetActive(false);
 		soundBack.PlayMe();
+
 	}
 	
 	void Planets(bool _active){
@@ -52,18 +60,19 @@ public class Reset : MonoBehaviour {
 			aAsteroids[i].SetActive(_active);
 		}	
 	}
-	void MyGui(bool _active){
-//		if(Gui.myLife>0){
-//		//paso d level
-//		
-//		}else{
-//			
-//		}
-//		gui.transform.GetChild(2).gameObject.GetComponent<FastTime>().OnResetMe();
-		GameManager.aterrizajes=0;
-		GameManager.lifesGame=3;
-		gui.SetActive(_active);
 
+	void MyGui(bool _active){
+
+		GameManager.aterrizajes=0;
+		if(DataDontDestroy.myLife<=0){
+			//perdio asi q vuelve a tener las vidas del principio
+			DataDontDestroy.myLife=DataDontDestroy.initialVidas;
+			print("vidas desde reset "+DataDontDestroy.initialVidas);
+
+		}
+			
+		gui.SetActive(_active);
+		gui.transform.GetChild(1).gameObject.GetComponent<Gui>().SwichLifesOn();
 	
 	}
 

@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4346458281846210}
+  - component: {fileID: 114814168498393696}
   m_Layer: 0
   m_Name: GuiLoose 1
   m_TagString: Untagged
@@ -37,7 +38,7 @@ GameObject:
   - component: {fileID: 222350027236433360}
   - component: {fileID: 114840464318305406}
   - component: {fileID: 114238110169230742}
-  - component: {fileID: 114185395017465090}
+  - component: {fileID: 114165849210928800}
   m_Layer: 5
   m_Name: ButtoQuit
   m_TagString: Untagged
@@ -59,7 +60,7 @@ GameObject:
   - component: {fileID: 114972496878818230}
   m_Layer: 5
   m_Name: ButtonRestart
-  m_TagString: Untagged
+  m_TagString: repayLoose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +98,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114185395017465090
+--- !u!114 &114165849210928800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135301108427254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122962f271d132745841cf29de05f709, type: 3}
+  m_Script: {fileID: 11500000, guid: 71fcdd51079f1a2488f1856cb457a14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114238110169230742
@@ -148,8 +149,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114185395017465090}
-        m_MethodName: MyQuit
+      - m_Target: {fileID: 114165849210928800}
+        m_MethodName: OnMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -268,6 +269,26 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114814168498393696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030134482173746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88e02cd08ecf9c4997b4fe9f38785d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aPlanets:
+  - {fileID: 0}
+  gui: {fileID: 0}
+  spawnManager: {fileID: 0}
+  detetId: {fileID: 0}
+  pause: {fileID: 0}
+  replay: {fileID: 114972496878818230}
+  guiFinal: {fileID: 1030134482173746}
+  soundBack: {fileID: 0}
 --- !u!114 &114840464318305406
 MonoBehaviour:
   m_ObjectHideFlags: 1
