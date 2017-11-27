@@ -13,31 +13,33 @@ public class Reset : MonoBehaviour {
 	public Pause pause;
 	public Replay replay;
 	public GameObject guiFinal;
-
+	public SoundBack soundBack;
 	void Awake () {
 		aAsteroids=GameObject.FindGameObjectsWithTag("asteroide");
-		Off();
+
 
 	}
 	void Start(){
+		Off();
 		replay.activateReplay+=On;
 	}
-	private void Off(){
+	public void Off(){
 		Planes();
 		Planets(false);
 		Asteroids(false);
 		MyGui(false);
-
+		soundBack.StopMe();
 		Scripts(false);
 
 	}
-	private void On(){
+	public void On(){
 		
 		Planets(true);
 		Asteroids(true);
 		MyGui(true);
 		Scripts(true);
 		guiFinal.SetActive(false);
+		soundBack.PlayMe();
 	}
 	
 	void Planets(bool _active){
@@ -59,6 +61,7 @@ public class Reset : MonoBehaviour {
 //		}
 //		gui.transform.GetChild(2).gameObject.GetComponent<FastTime>().OnResetMe();
 		GameManager.aterrizajes=0;
+		GameManager.lifesGame=3;
 		gui.SetActive(_active);
 
 	
@@ -81,8 +84,5 @@ public class Reset : MonoBehaviour {
 		spawnManager.getListPlanes.RemoveRange(0,spawnManager.getListPlanes.Count);
 		print("cantidad d aviones "+spawnManager.getListPlanes.Count);
 	}
-//	// Update is called once per frame
-//	void Update () {
-//		
-//	}
+
 }

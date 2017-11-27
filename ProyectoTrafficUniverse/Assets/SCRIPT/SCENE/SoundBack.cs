@@ -4,13 +4,14 @@ using UnityEngine;
 public class SoundBack : MonoBehaviour {
 
 	private AudioSource myAudio;
+
 	void Awake () {
 		myAudio=GetComponent<AudioSource>();
 		myAudio.playOnAwake=true;
 		}
 	void Start(){
-		Pause.onPauseActive+=StopMe;
-		Pause.offPause+=PlayMe;
+		Pause.pauseOff+=StopMe;
+		Pause.PauseOn+=PlayMe;
 		EventResume.onResume+=PlayMe;
 	
 	}

@@ -438,6 +438,7 @@ MonoBehaviour:
   pause: {fileID: 971217221}
   replay: {fileID: 598013335}
   guiFinal: {fileID: 472471170}
+  soundBack: {fileID: 1207949498}
 --- !u!114 &518875104 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114979122510449832, guid: fadb1609370d88d419767dabde91dc11,
@@ -679,6 +680,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: {fileID: 1262951999}
+  reset: {fileID: 1262952001}
+  replay: {fileID: 1211394638}
 --- !u!114 &971217222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,6 +758,18 @@ Prefab:
     - target: {fileID: 1767163112579570, guid: 8be1f2e900cad0f47a3084bc56f3435a, type: 2}
       propertyPath: m_TagString
       value: life
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095640807304788, guid: 8be1f2e900cad0f47a3084bc56f3435a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559816140867590, guid: 8be1f2e900cad0f47a3084bc56f3435a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520855526451264, guid: 8be1f2e900cad0f47a3084bc56f3435a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8be1f2e900cad0f47a3084bc56f3435a, type: 2}
@@ -844,6 +859,12 @@ Prefab:
     - {fileID: 114185395017465090, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1207949498 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114691736409492662, guid: fadb1609370d88d419767dabde91dc11,
+    type: 2}
+  m_PrefabInternal: {fileID: 1422133238}
+  m_Script: {fileID: 11500000, guid: 6dc472b7b50bc894b8f07f379ab86fb8, type: 3}
 --- !u!114 &1211394638 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114304301651051000, guid: b02be7ad713fe9546a3a3a03251795e9,
@@ -860,6 +881,26 @@ Transform:
   m_PrefabParentObject: {fileID: 4399054199167654, guid: b02be7ad713fe9546a3a3a03251795e9,
     type: 2}
   m_PrefabInternal: {fileID: 160758273}
+--- !u!114 &1262952001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1262951999}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f88e02cd08ecf9c4997b4fe9f38785d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aPlanets:
+  - {fileID: 1995317947}
+  gui: {fileID: 715307115}
+  spawnManager: {fileID: 971217223}
+  detetId: {fileID: 971217222}
+  pause: {fileID: 971217221}
+  replay: {fileID: 1211394638}
+  guiFinal: {fileID: 1262951999}
+  soundBack: {fileID: 1207949498}
 --- !u!1 &1277489886 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1135301108427254, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
@@ -1250,7 +1291,7 @@ Prefab:
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: lifes
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
@@ -1362,6 +1403,7 @@ MonoBehaviour:
   pause: {fileID: 971217221}
   replay: {fileID: 146209376}
   guiFinal: {fileID: 1769533994}
+  soundBack: {fileID: 1207949498}
 --- !u!1001 &1804751611
 Prefab:
   m_ObjectHideFlags: 0

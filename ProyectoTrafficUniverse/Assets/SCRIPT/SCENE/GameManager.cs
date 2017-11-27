@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 	public int targetPlanes;
 	public GameObject guiLoose;
 	public GameObject guiWin;
+
 	private int initialVidas;
 	void Awake () {
 		Scene scene=SceneManager.GetActiveScene();
@@ -39,21 +40,20 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	private void Conditions(){
+	public void Conditions(){
 		if(lifesGame<=0){
 		guiLoose.SetActive(true);
+	//	guiLoose.GetComponent<Reset>().Off();//apago cosas del juego
 
 		}else if(aterrizajes>=targetPlanes){
 //			print("victory");
 		guiWin.SetActive(true);
-
+		//guiWin.GetComponent<Reset>().Off();//apago cosas
 	
 
 		}
 
-		if(Input.GetKeyDown(KeyCode.K)){
-			aterrizajes=targetPlanes;
-		}
+
 
 
 	}
