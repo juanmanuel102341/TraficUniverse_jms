@@ -6,11 +6,14 @@ public class Timer {
 	private float target;
 	private bool finish=false;
 	private bool start=false;
-	public Timer(float timeLimit,  MoveSoft sc){
+	public delegate void Finish();
+	public event Finish finishing;
+	public Timer(float timeLimit){
 		finish=false;
 		start=false;
 //		sc.onUpdate+=MyUpdate;
 		target=timeLimit;
+
 	}
 
 	public void MyUpdate () {
@@ -18,7 +21,7 @@ public class Timer {
 		if(!finish&&start){
 		time+=Time.deltaTime;		
 		calc();
-	//	Debug.Log("time "+time);
+//	Debug.Log("time "+time);
 		}
 
 	}
@@ -26,6 +29,7 @@ public class Timer {
 		if(time>target){
 			finish=true;
 			start=false;
+			finishing();
 			time=0.0f;
 	//		Debug.Log("finish time");
 		}
@@ -42,6 +46,11 @@ public class Timer {
 		set{
 			start=value;
 
+		}
+	}
+	public float setTargetTime{
+		set{
+			target=value;
 		}
 	}
 		
