@@ -70,10 +70,11 @@ public class Reset : MonoBehaviour {
 			print("vidas desde reset "+DataDontDestroy.initialVidas);
 
 		}
-			
+
+
 		gui.SetActive(_active);
 		gui.transform.GetChild(1).gameObject.GetComponent<Gui>().SwichLifesOn();
-	
+		gui.transform.GetChild(0).gameObject.GetComponent<GuiTarget>().Reset();	
 	}
 
 	void Scripts(bool _active){

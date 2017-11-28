@@ -21,7 +21,7 @@ public class GuiTarget : MonoBehaviour {
 	private void SetTargetInitial(){
 		numTarget.text=GameManager.targetGame.ToString();
 	}
-	private void Reset(){
+	public void Reset(){
 		OnActualizeMe();
 
 	}
