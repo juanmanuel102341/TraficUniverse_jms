@@ -144,11 +144,6 @@ Prefab:
       propertyPath: m_Name
       value: asteroid (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
   m_IsPrefabParent: 0
@@ -319,11 +314,6 @@ Prefab:
     - target: {fileID: 1128596230540578, guid: 1b704049f9784434ea0be7737a072116, type: 2}
       propertyPath: m_Name
       value: asteroid (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
@@ -571,11 +561,6 @@ Prefab:
       propertyPath: m_Name
       value: asteroid (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 212164512982704094, guid: a41a840b6c61bc04f9f823aceabfce91,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
   m_IsPrefabParent: 0
@@ -621,11 +606,6 @@ Prefab:
     - target: {fileID: 1337228344805298, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
       propertyPath: m_Name
       value: asteroid (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212164512982704094, guid: a41a840b6c61bc04f9f823aceabfce91,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
@@ -673,11 +653,6 @@ Prefab:
       propertyPath: m_Name
       value: asteroid (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
   m_IsPrefabParent: 0
@@ -723,11 +698,6 @@ Prefab:
     - target: {fileID: 1337228344805298, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
       propertyPath: m_Name
       value: asteroid (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212164512982704094, guid: a41a840b6c61bc04f9f823aceabfce91,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
@@ -817,11 +787,6 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.93
       objectReference: {fileID: 0}
-    - target: {fileID: 212049691724273916, guid: b10c959e7104f6a45986e4f0b10aa9c3,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b10c959e7104f6a45986e4f0b10aa9c3, type: 2}
   m_IsPrefabParent: 0
@@ -867,11 +832,6 @@ Prefab:
     - target: {fileID: 1128596230540578, guid: 1b704049f9784434ea0be7737a072116, type: 2}
       propertyPath: m_Name
       value: asteroid (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
@@ -921,11 +881,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 212164512982704094, guid: a41a840b6c61bc04f9f823aceabfce91,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
   m_IsPrefabParent: 0
@@ -971,11 +926,6 @@ Prefab:
     - target: {fileID: 1128596230540578, guid: 1b704049f9784434ea0be7737a072116, type: 2}
       propertyPath: m_Name
       value: asteroid (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
@@ -1678,11 +1628,6 @@ Prefab:
       propertyPath: m_Color.a
       value: 0.93
       objectReference: {fileID: 0}
-    - target: {fileID: 212049691724273916, guid: b10c959e7104f6a45986e4f0b10aa9c3,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b10c959e7104f6a45986e4f0b10aa9c3, type: 2}
   m_IsPrefabParent: 0
@@ -1770,11 +1715,6 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: e4c7c2b306cc8684e9a62ff6e3fa4520,
         type: 3}
-    - target: {fileID: 212000467337064840, guid: 020eada750fdf524398f5f24ed78ccac,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 020eada750fdf524398f5f24ed78ccac, type: 2}
   m_IsPrefabParent: 0
@@ -2172,11 +2112,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
   m_IsPrefabParent: 0
@@ -2222,11 +2157,6 @@ Prefab:
     - target: {fileID: 1337228344805298, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
       propertyPath: m_Name
       value: asteroid (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212164512982704094, guid: a41a840b6c61bc04f9f823aceabfce91,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a41a840b6c61bc04f9f823aceabfce91, type: 2}
@@ -2403,11 +2333,6 @@ Prefab:
     - target: {fileID: 1128596230540578, guid: 1b704049f9784434ea0be7737a072116, type: 2}
       propertyPath: m_Name
       value: asteroid (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212646179660705048, guid: 1b704049f9784434ea0be7737a072116,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -1918285117
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}

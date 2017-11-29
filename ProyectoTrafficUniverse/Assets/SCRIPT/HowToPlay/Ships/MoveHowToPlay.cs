@@ -33,7 +33,11 @@ public class MoveHowToPlay : MonoBehaviour {
 			if(index==path.listNodes.Count-1){
 				//************llega a destino*****************
 		//	print("destino final red ");
-		
+			
+			//myListNodes.RemoveRange(0,myListNodes.Count);			
+			//nodeMovement.DeleteNodesData();//eliminamos nodos de posicion de how
+			//nodeMovement.DeleteNodesGraphic();//elimino parte grafica de nodos
+			
 			//Destroy(this.gameObject);//destruyo objeto
 			}	
 		}
@@ -41,7 +45,6 @@ public class MoveHowToPlay : MonoBehaviour {
 	private void MyMove(){
 		transform.position=Vector2.MoveTowards(transform.position,path.listNodes[index],velocity*Time.deltaTime);
 	}
-
 //	private void Reset(){
 //		activeMove=false;
 //		transform.position=initialPos;

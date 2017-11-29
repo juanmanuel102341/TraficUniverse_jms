@@ -4,32 +4,43 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - plane
-  - id
-  - colisionRed
-  - shipRed
+  - naveA
+  - planetaTarget
+  - spawnA
   - guiAterrizajes
-  - colisionBlue
-  - shipBlue
-  - colisionGreen
-  - shipGreen
-  - skip
-  - targetBlue
-  - targetRed
-  - pointer
-  - next
-  - pause
-  - pauseReplay
-  - asteroide
-  - life
-  - repayLoose
-  - planetC
+  - guiVidas
+  - gameManager
   - gameManager_tag
-  - myReplay
-  - timeGame
+  - spawnLeft
+  - spawnRight
+  - spawnDown
+  - naveB
+  - naveC
+  - nave
   - planetA
   - planetB
-  - pointer
+  - planetC
+  - targetRed
+  - targetBlue
+  - targetGreen
+  - next
+  - colisionArea
+  - id
+  - colisionRed
+  - colisionBlue
+  - colisionGreen
+  - shipRed
+  - shipBlue
+  - shipGreen
+  - pause
+  - pauseReplay
+  - skip
+  - repayLoose
+  - asteroide
+  - plane
+  - life
+  - myReplay
+  - timeGame
   layers:
   - Default
   - TransparentFX
@@ -39,10 +50,10 @@ TagManager:
   - UI
   - 
   - 
+  - spawnPointA
+  - back
   - currentGame
-  - 
-  - 
-  - 
+  - frontCurrent
   - 
   - 
   - 
@@ -67,9 +78,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: current
-    uniqueID: 2376682179
+  - name: back
+    uniqueID: 1061888609
     locked: 0
-  - name: New Layer
-    uniqueID: 1901304261
+  - name: current
+    uniqueID: 4109398113
+    locked: 0
+  - name: front
+    uniqueID: 4199455475
     locked: 0

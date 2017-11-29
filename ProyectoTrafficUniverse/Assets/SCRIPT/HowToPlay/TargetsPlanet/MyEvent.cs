@@ -9,7 +9,6 @@ public class MyEvent : MonoBehaviour {
 	public delegate void Finish2();
 	public event Finish2 finishing2;
 	public static int counting=0;
-
 	void Awake () {
 		id=tag;
 
@@ -17,9 +16,8 @@ public class MyEvent : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.tag=="plane"){
 			print("borrando avion");
-			SpriteRenderer spr=col.gameObject.GetComponent<SpriteRenderer>();//desactivo render del sprite de la nave 
+			SpriteRenderer spr=col.gameObject.GetComponent<SpriteRenderer>();
 			spr.enabled=false;
-
 		}
 		print("triguer rojo");
 		counting++;
