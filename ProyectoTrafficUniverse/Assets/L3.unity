@@ -1415,53 +1415,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4393668401014922, guid: 8be1f2e900cad0f47a3084bc56f3435a,
     type: 2}
   m_PrefabInternal: {fileID: 2025767177}
---- !u!1001 &1385554069
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1382166263}
-    m_Modifications:
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -386.50076
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 294
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4758120871664440, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 848e22ac861a0764aba04e981b131a1a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &1385554071 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1848902270381682, guid: 848e22ac861a0764aba04e981b131a1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1385554069}
 --- !u!1001 &1403679084
 Prefab:
   m_ObjectHideFlags: 0
@@ -1658,7 +1611,7 @@ Prefab:
         type: 2}
       propertyPath: fastTime
       value: 
-      objectReference: {fileID: 1385554071}
+      objectReference: {fileID: 0}
     - target: {fileID: 114322229019323248, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: guiLifes
