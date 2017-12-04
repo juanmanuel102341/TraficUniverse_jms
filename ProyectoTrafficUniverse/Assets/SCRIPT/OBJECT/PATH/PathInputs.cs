@@ -14,6 +14,7 @@ public class PathInputs : MonoBehaviour {
 	private PathGraphic pathGraphic;
 	private bool over=false;
 	public float distanceNodes;//distancia o frecuancia d calculo
+	public float distanceNodesGraphic;
 	public GameObject id;
 	protected Vector2 playerPos;
 	protected List<Vector2>listNodesVec=new List<Vector2>();
@@ -25,7 +26,7 @@ public class PathInputs : MonoBehaviour {
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
 		pathGraphic=GetComponent<PathGraphic>();
-		path=new Path(distanceNodes,pathGraphic,myConstrainAngle);
+		path=new Path(distanceNodes,pathGraphic,myConstrainAngle,distanceNodesGraphic);
 		id.SetActive(false);
 
 //		print("clase path inputs");
@@ -74,7 +75,7 @@ public class PathInputs : MonoBehaviour {
 	public void GetInputMouse(){
 		Vector2 auxInput=GetPositionMouse();
 		if(Input.GetMouseButton(0)&&activatePath&&!over){
-//			print("click");
+			//print("click "+auxInput);
 			path.SetNewNode(auxInput);//parte codigo
 			}
 	}
