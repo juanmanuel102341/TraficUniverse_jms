@@ -92,12 +92,11 @@ public class Path:PathInputs  {
 
 
 	private void SetNodes(Vector2 _input){
-		//me quede aca la idea seria calcular un angulo entre un punt y otro y move la magnitud deseada en x por ese angulo para q salgan igual
-		float d=0;
 		Vector2 vec;
-		if(Apply(_input)){
-			if(listNodes.Count>1){
-		
+		if(listNodes.Count>1){
+
+			if(Apply(_input)&&!constrainActive){
+			
 				float px;
 				float py;
 				float hip;
@@ -108,42 +107,33 @@ public class Path:PathInputs  {
 				hip=Vector2.Distance(_input,listNodes[listNodes.Count-1]);
 				px=vecR.x/hip;
 				py=vecR.y/hip;
-
-				print("node pot "+_input);
-				print("node list "+listNodes[listNodes.Count-1]);
-				print("hipot "+hip);
-				print("vec input "+vecR);
-				print("propx "+px);
-				print("proy "+py);
-				if(_input.x>listNodes[listNodes.Count-1].x){
-				myVec.x=listNodes[listNodes.Count-1].x+magnitud*px*magnitud;
-				}else{
-					myVec.x=listNodes[listNodes.Count-1].x-magnitud*px*magnitud;				
+							if(_input.x>listNodes[listNodes.Count-1].x){
+							myVec.x=listNodes[listNodes.Count-1].x+magnitud*px*magnitud;
+							}else{
+								myVec.x=listNodes[listNodes.Count-1].x-magnitud*px*magnitud;				
+							}
+							if(_input.y>listNodes[listNodes.Count-1].y){
+							myVec.y=listNodes[listNodes.Count-1].y+magnitud*py*magnitud;
+							}else{
+								myVec.y=listNodes[listNodes.Count-1].y-magnitud*py*magnitud;
+							}
+							print("my vec "+myVec);
+				SetList(myVec);
+				constrainActive=angleConstrain.InitializeCalcConstrain(_input);
+					}
+			}else {
+					first=true;
+					constrainActive=false;
+					SetList(_input);
 				}
-				if(_input.y>listNodes[listNodes.Count-1].y){
-				myVec.y=listNodes[listNodes.Count-1].y+magnitud*py*magnitud;
-				}else{
-					myVec.y=listNodes[listNodes.Count-1].y-magnitud*py*magnitud;
-				}
-				print("my vec "+myVec);
-				_input=myVec;
-			}
-
-		
-			Node node;
-			node=new Node(_input);
-			listNodes.Add(node.posicion);
-			pathGraphic.SpawnGraphicPath(node.posicion);
-		
-			countNodes++;
-		if(d==0)
-		first=true;
-		
-
-		d=0;
-
 		}
-		}
+	private void SetList(Vector2 _vec){
+		Node node;
+		node=new Node(_vec);
+		listNodes.Add(node.posicion);
+		pathGraphic.SpawnGraphicPath(node.posicion);
+		countNodes++;
+	}
 	private bool Apply(Vector2 _input){
 	//	print("distnce "+d);
 		if(listNodes.Count>1){
@@ -156,15 +146,6 @@ public class Path:PathInputs  {
 					return false;
 		}
 		return true;
-	}
-	private bool DistanceBetween(Vector2 _input){
-		float d=Vector2.Distance(listNodes[listNodes.Count-1],_input);//distancia entre el nodo q hay y el input del mouse
-		if(d>my_distanceNodes){
-			//la igualo a 0 asi n se complica el codigo en how to play, ya q la cantidad d nodos lo establezco con otra condicion no por distancia entre elloss
-			print("verdadero "+_input +"cumple condicion con respecto "+listNodes[listNodes.Count-1]+"distancia "+d);
-			return true;
-		}
-		return false;
 	}
 
 	public void Delete(){
@@ -187,5 +168,10 @@ public class Path:PathInputs  {
 		pathGraphic.DeleteFirstElementGraphic();
 //		Debug.Log("borrando node "+listNodes.Count);
 	}
+//	public bool SettingConstrain{
+//		set{
+//			constrainActive=value;
+//		}
+//	}
 
 }
