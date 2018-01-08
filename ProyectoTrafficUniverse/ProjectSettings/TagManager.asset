@@ -41,6 +41,7 @@ TagManager:
   - life
   - myReplay
   - timeGame
+  - lastNode
   layers:
   - Default
   - TransparentFX

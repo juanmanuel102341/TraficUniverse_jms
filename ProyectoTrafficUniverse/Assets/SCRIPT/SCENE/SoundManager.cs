@@ -23,32 +23,32 @@ public class SoundManager : MonoBehaviour {
 		AlertColision alert =obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<AlertColision>();
 		Detect detect=obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).GetComponent<Detect>();//hijo del hijo
 
-		print("OBJ "+alert);
-		print("detect "+detect);
+//		print("OBJ "+alert);
+//		print("detect "+detect);
 		alert.onAlertColsion+=OnContactPlanes;
 		detect.OnContactPlane+=OnContactDestroy;
 		detect.OnContactTarget+=OnContactLanding;
 	}
 	
 	private void OnContactPlanes(){
-		print("aviones colision");
+//		print("aviones colision");
 		audioSourde.clip=attention;
 		audioSourde.Play();
 	}
 	private void OnClickMe(){
-		print("click me");
+//		print("click me");
 		audioSourde.clip=clickMe;
 		audioSourde.Play();
 	}
 	private void OnContactDestroy(){
-		print("destroy sound!!!!!!!!!!!!!!!!!!!");	
+		//print("destroy sound!!!!!!!!!!!!!!!!!!!");	
 		audioSourde.clip=explosion;
 		if(!audioSourde.isPlaying)
 		audioSourde.Play();
 
 	}
 	private void OnContactLanding(){
-		print("landing");
+		//print("landing");
 		audioSourde.clip=landing;
 		if(!audioSourde.isPlaying)
 			audioSourde.Play();

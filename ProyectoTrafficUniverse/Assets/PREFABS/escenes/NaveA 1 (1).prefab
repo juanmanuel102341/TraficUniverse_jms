@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 114012560989570402}
   - component: {fileID: 114393218629465930}
   - component: {fileID: 114608130660132114}
+  - component: {fileID: 114776999384507284}
+  - component: {fileID: 114209019665699638}
   m_Layer: 0
   m_Name: NaveA 1 (1)
   m_TagString: plane
@@ -324,6 +326,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fb6276168fe9a488711dbf31540ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114209019665699638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757473692648486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb1ba635de1d643af2ccab84922a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114249820887579698
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -348,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
+  lastNode: {fileID: 1234492673985332, guid: d05d12d0a7a302244ae9217db9484e5b, type: 2}
 --- !u!114 &114393218629465930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,10 +433,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: {fileID: 0}
-  myConstrainAngle: 90
-  myAmplitudAngle: 10
-  distanceNodes: 1.2
+  myConstrainAngle: 120
   id: {fileID: 1802458340483258}
+--- !u!114 &114776999384507284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757473692648486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468af6c39192d34cbf0efa0bed4bfff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212335616455440536
 SpriteRenderer:
   m_ObjectHideFlags: 1

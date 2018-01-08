@@ -23,19 +23,24 @@ public class MoveSoft : MonoBehaviour {
 	private Vector2 lerpMax;
 	private bool initializeLerp=false;
 
-
 	float timeLerp=0;
+
+
 	void Awake () {
 		pathInputs=GetComponent<PathInputs>();
+
+
 		angle=new AngleMove();
 		//timer=new Timer(time,this);
 		playerPos=transform.position;
 		bounds=GetComponent<Bounds>();
 		targetVector=transform.up;
 		lerpMax=transform.up;
+	
 	}
 	void Start(){
 		nodeState=new NodeState(pathInputs.path,this);
+
 	}
 	void Update () {
 		onUpdate();
@@ -57,7 +62,7 @@ public class MoveSoft : MonoBehaviour {
 		}
 		}else{
 			//Debug.Log("borrando paths ");
-			pathInputs.DeletesAllPaths();
+			pathInputs.path.Delete();
 			transform.up=transform.up*-1;
 			bounds.limiteActive=false;
 
@@ -98,4 +103,17 @@ public class MoveSoft : MonoBehaviour {
 		}
 	}
 
+	public PathInputs setNewPath{
+		get{
+			return pathInputs;
+		}
+		set{
+			pathInputs=value;
+			SettingPath(pathInputs);
+		}
+	}
+	void SettingPath(PathInputs _pathInputs){
+		nodeState.ResetMyPath=_pathInputs.path;
+	}
+		
 }

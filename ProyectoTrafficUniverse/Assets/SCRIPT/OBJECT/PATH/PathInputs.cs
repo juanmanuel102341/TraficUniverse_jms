@@ -10,49 +10,84 @@ public class PathInputs : MonoBehaviour {
 	private Camera cameraGame;
 	public Path path;
 	public float myConstrainAngle;
-	public float myAmplitudAngle;
+
 	private PathGraphic pathGraphic;
 	private bool over=false;
-	public float distanceNodes;//distancia o frecuancia d calculo
-	public float distanceNodesGraphic;
 	public GameObject id;
 	protected Vector2 playerPos;
 	protected List<Vector2>listNodesVec=new List<Vector2>();
 	public delegate void OnClickMe(GameObject obj);//evento q se disprara en detetcs id para prender circulito de identificacion a
 	public event OnClickMe ClickMe;
-
-
+	private PositionMouse posMouse;
+	private DeleteAllPaths deleteAll;
+	private MyPath myPrincipalPath;
+	//private int numberPathId;
 	protected void Awake () {
+		//me quede en poner en unna lista los diversos paths q se va creand por el click del usuario, para despues borrarlos mas facil
+
+
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+		deleteAll=GetComponent<DeleteAllPaths>();
 
+	//	print("my last node "+tag+lastNode);
 		pathGraphic=GetComponent<PathGraphic>();
-		path=new Path(distanceNodes,pathGraphic,myConstrainAngle,distanceNodesGraphic);
+
+
 		id.SetActive(false);
-
+		posMouse=GetComponent<PositionMouse>();
 //		print("clase path inputs");
+		if(pathGraphic.gameObject.tag=="plane"){
+			myPrincipalPath=new MyPath();
+			//pathGraphic.lastNode.GetComponent<PathInputs>().getMyPrinciplePath=myPrincipalPath;
+			print("desde plane my principal path "+myPrincipalPath);
+		}
+
+//		if(pathGraphic.gameObject.tag=="lastNode"){
+//			print("desde last node my principal path "+	getMyPrinciplePath);
+//			if(myPrincipalPath==null){
+//				print("myprincipal desde last node null");
+//			}else{
+//				print("existencia princiapl desde last node");
+//			}
+//		}
+
 	}
-
-
+	void Start(){
+		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath);
+	}
 	protected void Update () {
 		GetInputMouse();
 	}
 	// Update is called once per frame
 	void OnMouseDown(){
+		print("click path inputs "+tag);
 		contador++;
-	
-		DeletesAllPaths();
-		ClickMe(this.gameObject);
-		activatePath=true;
+		if(path.listNodes.Count>0){
+			print("borrando desdea act path");
+			//path.Delete();
+			myPrincipalPath.RemovePaths();
+		}
+//		if(activatePath){
+//			activatePath=false;
+//		}
+//
 
+		if(tag!="lastNode"){
+		ClickMe(this.gameObject);
+		}
+
+		activatePath=true;
 	}
-	void OnMouseUp(){
+	public void OnMouseUp(){
+		//activatePath=false;
 		if(activatePath){
 			//*****************usuario suelta boton para dibujar el path**********************
 			//print("reset paths inputs");
 			activatePath=false;
 			clickObj=false;
 			contador=0;
-		
+			//print("soltando mouse papa");
+			path.OnMouseUp();
 		}
 
 	}
@@ -62,27 +97,32 @@ public class PathInputs : MonoBehaviour {
 	}
 	void OnMouseExit(){
 		over=false;
+
 		//print("mouse fuera");
 	}
-	private Vector2 GetPositionMouse(){
-		//	print("CLICKmOUSE");
-		Vector2 aux;
-		aux=Input.mousePosition;
-		aux=cameraGame.ScreenToWorldPoint(aux);
-		return aux;
-
-	}
 	public void GetInputMouse(){
-		Vector2 auxInput=GetPositionMouse();
+		Vector2 auxInput=posMouse.Calc();
 		if(Input.GetMouseButton(0)&&activatePath&&!over){
 			//print("click "+auxInput);
 			path.SetNewNode(auxInput);//parte codigo
 			}
 	}
-	public void DeletesAllPaths(){
-//	print("dekete path nputs");	
-		pathGraphic.Delete_ngraphics();
-		path.Delete();
+
+	public PositionMouse getPosMouse{
+		get{
+			return posMouse;	
+		}
 	}
+	public MyPath getMyPrinciplePath{
+		get{
+			return myPrincipalPath;
+		}
+		set{
+			myPrincipalPath=value;
+		}
+	}
+
+
+
 
 }

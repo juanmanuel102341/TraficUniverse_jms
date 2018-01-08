@@ -8,13 +8,11 @@ public class DetectsId : MonoBehaviour {
 	private GameObject currentActive=null;
 	public void EventStart(GameObject obj){
 		obj.GetComponent<PathInputs>().ClickMe+=OnClickMe;
-
-
 	}
 	private void OnClickMe(GameObject obj){
 		if(currentActive==null){
 			currentActive=obj;
-			currentActive.transform.GetChild(3).gameObject.SetActive(true);//actio objeto id, identificacion
+			currentActive.transform.GetChild(3).gameObject.SetActive(true);//activo objeto id, identificacion
 			print("click primera vez");
 			OnclickSound();
 		}else{

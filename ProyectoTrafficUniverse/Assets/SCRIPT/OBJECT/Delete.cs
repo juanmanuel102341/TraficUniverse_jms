@@ -10,7 +10,7 @@ public class Delete : MonoBehaviour {
 	}
 	public void DeleteNodes(){
 		PathInputs pathInputs=GetComponent<PathInputs>();
-		pathInputs.DeletesAllPaths();
+		pathInputs.path.Delete();
 			
 	}
 

@@ -18,7 +18,7 @@ public class AlertColision : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		if(col.gameObject.tag=="colisionRed"||col.gameObject.tag=="colisionBlue"||col.gameObject.tag=="colisionGreen"){
-			print("area colsion activa");
+//			print("area colsion activa");
 			objColision.SetActive(true);
 			sprite.SetActive(true);
 			onAlertColsion();
@@ -34,7 +34,7 @@ public class AlertColision : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D col){
-		print("exit");
+//		print("exit");
 		if(sprite.gameObject.activeSelf)
 		sprite.SetActive(false);
 

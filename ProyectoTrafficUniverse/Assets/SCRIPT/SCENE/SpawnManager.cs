@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour {
 			int total=QuantityEnemys(rangeQuantity[0],rangeQuantity[1]);
 			//total=2;
 			int aux=0;
-			print("total "+total);
+//			print("total "+total);
 			for(int i=0;i<total;i++){
 				if(!SpawnLimitActive()){
 					//condicion para q nme agregue otra nave si paso el limite
@@ -44,16 +44,16 @@ public class SpawnManager : MonoBehaviour {
 					GameObject obj;
 					int n=Random.Range(0,4);//random entre los 4 costados dela screen
 					if(i>=1){
-						print("anterior "+aux);
-						print("actual "+n);
+						//print("anterior "+aux);
+						//print("actual "+n);
 						if(aux==n){
-							print("iguales cambiando costado");
+						//	print("iguales cambiando costado");
 							if(n!=3){
 								n++;
-								print("sumo uno");
+						//		print("sumo uno");
 							}else{
 								n--;
-								print("resto 1");
+						//		print("resto 1");
 							}
 						}
 					}else{

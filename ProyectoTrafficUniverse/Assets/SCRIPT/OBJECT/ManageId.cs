@@ -35,14 +35,14 @@ public class ManageId : MonoBehaviour {
 		if(aux!=null){
 			if(current==null){
 				current=aux;
-				print("1er id activo "+current.name);
+//				print("1er id activo "+current.name);
 			}
 			if(aux!=current){
 				last=current;
 				last.SetActive(false);
 				current=aux;
 				current.SetActive(true);
-				print("click en otro "+current.name);
+			//s	print("click en otro "+current.name);
 			}
 		
 		}

@@ -10,17 +10,17 @@ public class GameManager : MonoBehaviour {
 	public GameObject guiLoose;
 	public GameObject guiWin;
 
-
+	//public static int idNumber=0;
 	void Awake () {
 		Scene scene=SceneManager.GetActiveScene();
 		int numScene=SceneUtility.GetBuildIndexByScenePath(scene.name);
-		print("escena numero "+numScene);
+//		print("escena numero "+numScene);
 		if(numScene==2){
 
 			DataDontDestroy.initialVidas=lifes;
 		
 			DataDontDestroy.myLife=lifes;
-			print("escena inicial vidas "+DataDontDestroy.myLife);
+//			print("escena inicial vidas "+DataDontDestroy.myLife);
 		}else{
 	//		lifes=DataDontDestroy.myLife;
 	//		print("esccena no inicial vidas "+DataDontDestroy.myLife);
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
 	}
 	public void Events(GameObject obj){
 		Detect detect=obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).GetComponent<Detect>();//hijo del hijo
-		print("evento gameObject manager");
+	//	print("evento gameObject manager");
 		detect.OnContactPlane+=Conditions;
 		detect.OnContactTarget+=Conditions;
 	}
