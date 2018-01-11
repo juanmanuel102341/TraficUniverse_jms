@@ -45,6 +45,7 @@ public class Detect : MonoBehaviour {
 
 	private void TakeOutPlane(){
 		//print("objParent "+objParent.name);
+		objParent.GetComponent<PathInputs>().getMyPrinciplePath.DeleteAllNodes();
 		spawnManager.GetOutObjectFromList(objParent);//objeto padre del padre
 		objParent.GetComponent<Delete>().DeleteMe();
 	}
