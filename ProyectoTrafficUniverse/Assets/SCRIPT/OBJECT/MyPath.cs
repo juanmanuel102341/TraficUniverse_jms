@@ -3,49 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MyPath {
-	private List<GameObject>listGraphics=new List<GameObject>();
+	public List<GameObject>listGraphics=new List<GameObject>();
 	private List<Vector2>listVectors=new List<Vector2>();
 
-	private List<Path>listPaths=new List<Path>();
-	void Start () {
+
+	public MyPath(){
 		
 	}
-	public void InsertPathGrapchicList(List<GameObject> l){
-		for(int i=0;i<l.Count;i++){
-			listGraphics.Add(l[i]);
-		}
-		Debug.Log("numero elementos "+listGraphics.Count);
-	}
-	public void InsertPath(Path p){
-		listPaths.Add(p);
-	}
-	public void InsertPathVectorsList(List<Vector2> l){
-		for(int i=0;i<l.Count;i++){
-			listVectors.Add(l[i]);
 
-		}
-//		listVectors.Add(l);
-		Debug.Log("numero vectores elem "+listVectors.Count);
-	}
-	public void RemovePathGrapicList(){
-		for(int i=0;i<listGraphics.Count;i++){
-			GameObject aux=listGraphics[i];
-//			aux.GetComponent<PathGraphic>().Delete_ngraphics();
+	public void InsertVector(Vector2 v){
+		listVectors.Add(v);
 
-		}
 	}
-	public void DeleteMyElementGraphic(GameObject obj){
+	public void InsertGraphics(GameObject obj){
+		listGraphics.Add(obj);
+	}
+	//ublic void InsertListGraphic(List<game
+	public void DeleteLastNode(){
+		DeleteNodeGraphic(listGraphics.Count-1);
+
+	}
+	public void DeleteFirstNode(){
+		DeleteNodeGraphic(0);
+		listVectors.Remove(listVectors[0]);
+	}
+	public void DeleteAllNodes(){
 		
-		listGraphics.Remove(obj);
+		for(int i=0;i<listVectors.Count;i++){
+			DeleteNodeGraphic(0);
+		}
+		listVectors.RemoveRange(0,listVectors.Count);
 	}
-	public List<GameObject>getListGraphic{
+	private void DeleteNodeGraphic(int index){
+		GameObject obj=listGraphics[index];
+		listGraphics.Remove(listGraphics[index]);
+		obj.GetComponent<DeleteMe>().MyDelete();
+	}
+	public List<Vector2> getListVectors{
 		get{
-			return listGraphics;
-		}
-	}
-	public void RemovePaths(){
-		for(int i=0;i<listPaths.Count;i++){
-			listPaths[i].Delete();
+			return listVectors;
 		}
 	}
 }

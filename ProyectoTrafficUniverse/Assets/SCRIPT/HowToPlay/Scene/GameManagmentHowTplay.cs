@@ -67,7 +67,7 @@ public class GameManagmentHowTplay : MonoBehaviour {
 		//nodos//planeta//player//puntero
 		print("eliminacion objetos");
 		for(int i=0;i<player.Length;i++){
-			player[i].GetComponent<PathGraphic>().Delete_ngraphics();//elmino nodos
+//			player[i].GetComponent<PathGraphic>().Delete_ngraphics();//elmino nodos
 			player[i].GetComponent<DeleteMe>().MyDelete();//elimino player
 			}
 		for(int i=0;i<targetsPlanets.Length;i++){

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114010087442804210}
   - component: {fileID: 114111160048788486}
   - component: {fileID: 114073693909358964}
-  - component: {fileID: 114054701885867160}
+  - component: {fileID: 114279948560197862}
   m_Layer: 0
   m_Name: 'LastNode '
   m_TagString: lastNode
@@ -73,17 +73,6 @@ MonoBehaviour:
   path: {fileID: 0}
   myConstrainAngle: 120
   id: {fileID: 1802458340483258, guid: 73ce9a3509e164342bafb81c88893420, type: 2}
---- !u!114 &114054701885867160
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234492673985332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afbb1ba635de1d643af2ccab84922a04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114073693909358964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,6 +98,17 @@ MonoBehaviour:
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
   lastNode: {fileID: 1234492673985332}
+--- !u!114 &114279948560197862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234492673985332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64841552a3894440939542abd9e79b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212522490053206190
 SpriteRenderer:
   m_ObjectHideFlags: 1

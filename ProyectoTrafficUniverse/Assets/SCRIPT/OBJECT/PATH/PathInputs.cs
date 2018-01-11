@@ -36,7 +36,7 @@ public class PathInputs : MonoBehaviour {
 		id.SetActive(false);
 		posMouse=GetComponent<PositionMouse>();
 //		print("clase path inputs");
-		if(pathGraphic.gameObject.tag=="plane"){
+		if(tag=="plane"){
 			myPrincipalPath=new MyPath();
 			//pathGraphic.lastNode.GetComponent<PathInputs>().getMyPrinciplePath=myPrincipalPath;
 			print("desde plane my principal path "+myPrincipalPath);
@@ -62,10 +62,17 @@ public class PathInputs : MonoBehaviour {
 	void OnMouseDown(){
 		print("click path inputs "+tag);
 		contador++;
-		if(path.listNodes.Count>0){
+		if(myPrincipalPath.getListVectors.Count>0&&tag=="plane"){
 			print("borrando desdea act path");
 			//path.Delete();
-			myPrincipalPath.RemovePaths();
+			print("cantidad d nodes "+myPrincipalPath.getListVectors.Count);
+			print("cant graphics "+myPrincipalPath.listGraphics.Count);
+
+			myPrincipalPath.DeleteAllNodes();
+			print("cantidad d nodes despues "+myPrincipalPath.getListVectors.Count);
+			print("cant graphics despues"+myPrincipalPath.listGraphics.Count);
+
+
 		}
 //		if(activatePath){
 //			activatePath=false;

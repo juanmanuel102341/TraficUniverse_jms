@@ -24,7 +24,7 @@ public class MoveSoft : MonoBehaviour {
 	private bool initializeLerp=false;
 
 	float timeLerp=0;
-
+	private MyPath myPpath;
 
 	void Awake () {
 		pathInputs=GetComponent<PathInputs>();
@@ -39,11 +39,11 @@ public class MoveSoft : MonoBehaviour {
 	
 	}
 	void Start(){
-		nodeState=new NodeState(pathInputs.path,this);
-
+		nodeState=new NodeState(this,pathInputs.getMyPrinciplePath);
+		myPpath=pathInputs.getMyPrinciplePath;
 	}
 	void Update () {
-		onUpdate();
+
 		Move2();
 		playerPos=transform.position;
 
@@ -51,40 +51,44 @@ public class MoveSoft : MonoBehaviour {
 
 		private void Move2(){
 		if(!bounds.limiteActive){
-		if(pathInputs.path.listNodes.Count>0){
-				setAngle();	
-				RotateMe();
-		transform.position=Vector2.MoveTowards(transform.position,pathInputs.path.listNodes[0],velocity*Time.deltaTime);
+			if(myPpath.getListVectors.Count>0){
+			//	setAngle();	
+			//	RotateMe();
+				transform.position=Vector2.MoveTowards(transform.position,myPpath.getListVectors[0],velocity*Time.deltaTime);
 		//	Debug.Log("entrando tp");
 
-			}else{initializeLerp=false;
+				onUpdate();//pregunta si llego al node
+			}else{
+				initializeLerp=false;
 				transform.Translate(Vector2.up*velocity*Time.deltaTime,Space.Self);//no tocar space.self!!!!!!!!!!!
 		}
 		}else{
 			//Debug.Log("borrando paths ");
-			pathInputs.path.Delete();
+			if(myPpath.getListVectors.Count>0)
+			myPpath.DeleteAllNodes();
+
 			transform.up=transform.up*-1;
 			bounds.limiteActive=false;
 
 		}
 	}
-	private void setAngle(){
-		if(nodeState.getFinal){
-			
-			lerpMin=lerpMax;
-			Vector2 aux;
-			aux=targetVector;
-			targetVector=angle.VectorUp(pathInputs.path.listNodes[0],transform.position);
-			lerpMax=targetVector;
-			timeLerp=0;
-		//	Debug.Log("lerpMin "+lerpMin);
-		//	Debug.Log("lerMax "+lerpMax);
-			float a=Vector2.Angle(aux,targetVector);
-			nodeState.getFinal=false;
-		
-	
-		}
-		}
+	//private void setAngle(){
+//		if(nodeState.getFinal){
+//			
+//			lerpMin=lerpMax;
+//			Vector2 aux;
+//			aux=targetVector;
+//			targetVector=angle.VectorUp(pathInputs.path.listNodes[0],transform.position);
+//			lerpMax=targetVector;
+//			timeLerp=0;
+//		//	Debug.Log("lerpMin "+lerpMin);
+//		//	Debug.Log("lerMax "+lerpMax);
+//			float a=Vector2.Angle(aux,targetVector);
+//			nodeState.getFinal=false;
+//		
+//	
+//		}
+//		}
 
 	private void RotateMe(){
 
@@ -103,17 +107,7 @@ public class MoveSoft : MonoBehaviour {
 		}
 	}
 
-	public PathInputs setNewPath{
-		get{
-			return pathInputs;
-		}
-		set{
-			pathInputs=value;
-			SettingPath(pathInputs);
-		}
-	}
-	void SettingPath(PathInputs _pathInputs){
-		nodeState.ResetMyPath=_pathInputs.path;
-	}
+
+
 		
 }

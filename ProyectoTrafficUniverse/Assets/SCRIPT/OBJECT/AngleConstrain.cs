@@ -2,14 +2,14 @@
 using UnityEngine;
 
 public class AngleConstrain  {
-	Path myReferencePath;
+	MyPath myReferencePath;
 
 	private float myConstrainAngle;
-	private int count=0;
+
 	private float myAngle;
 	private Vector2 myVectorPotencial;
 	private Vector2 myVectorNode;
-	public AngleConstrain(Path path, float constrainAngle){
+	public AngleConstrain(MyPath path, float constrainAngle){
 		myReferencePath=path;
 
 		myConstrainAngle=constrainAngle;
@@ -25,15 +25,15 @@ public class AngleConstrain  {
 	//	Debug.Log("my ref "+ myReferencePath.countNodes);
 		//Vector2 auxPot=nodePotencial;
 		Vector2 myVectorConstrain=nodePotencial;
-		if(myReferencePath.countNodes>=2){
-			myVectorNode=CalcVector(myReferencePath.listNodes[count],myReferencePath.listNodes[count+1]);
-			myVectorPotencial=CalcVector(myReferencePath.listNodes[count+1],nodePotencial);
+		if(myReferencePath.getListVectors.Count>=2){
+			myVectorNode=CalcVector(myReferencePath.getListVectors[myReferencePath.getListVectors.Count-2],myReferencePath.getListVectors[myReferencePath.getListVectors.Count-1]);
+			myVectorPotencial=CalcVector(myReferencePath.getListVectors[myReferencePath.getListVectors.Count-1],nodePotencial);
 
 			float ang=Vector2.Angle(myVectorPotencial,myVectorNode);
 			if(ang>myConstrainAngle){
 				return true;		
 			}else{
-				count++;
+				
 				return false;
 			}
 
@@ -43,14 +43,7 @@ public class AngleConstrain  {
 		return false;
 	}
 
-	public int setCounting{
-		set{
-			count=value;
-		}
-		get{
-			return count;
-		}
-	}
+
 
 
 

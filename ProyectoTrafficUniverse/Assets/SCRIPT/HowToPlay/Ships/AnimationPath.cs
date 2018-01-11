@@ -19,14 +19,14 @@ public class AnimationPath : MonoBehaviour {
 	}
 	void Update () {
 		time+=Time.deltaTime;
-		if(time>time_anim&&index<move.path.listNodes.Count){
-			path.SpawnGraphicPath(move.path.listNodes[index]);		
-			time=0;
-			index++;
-		}else if (index>=move.path.listNodes.Count){
-//			print("initialice move");
-			finish();
-		}
+//		if(time>time_anim&&index<move.path.listNodes.Count){
+//			path.SpawnGraphicPath(move.path.listNodes[index]);		
+//			time=0;
+//			index++;
+//		}else if (index>=move.path.listNodes.Count){
+////			print("initialice move");
+//			finish();
+//		}
 			
 		}
 

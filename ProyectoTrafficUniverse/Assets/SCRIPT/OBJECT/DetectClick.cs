@@ -20,18 +20,18 @@ public class DetectClick : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		print("click last node "+path.countNodes);
+
 		active=true;
 	}
 
-	void OnMouseUp(){
-		if(path.listNodes.Count>0){
-		this.enabled=false;
-		box.enabled=false;
-		}
-		path.OnMouseUp();
-		active=false;
-	}
+//	void OnMouseUp(){
+//		if(path.listNodes.Count>0){
+//		this.enabled=false;
+//		box.enabled=false;
+//		}
+//		path.OnMouseUp();
+//		active=false;
+//	}
 	public Path SetPath{
 		set{
 			path=value;
@@ -52,8 +52,8 @@ public class DetectClick : MonoBehaviour {
 	}
 	public void DeleteMe(){
 		Destroy(this.gameObject);
-		path.countNodes--;
-		path.angleConstrain.setCounting--;
+//		path.countNodes--;
+		//path.angleConstrain.setCounting--;
 	}
 
 }

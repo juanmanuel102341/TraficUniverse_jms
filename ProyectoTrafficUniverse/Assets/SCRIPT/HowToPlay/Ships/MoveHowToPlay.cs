@@ -23,33 +23,23 @@ public class MoveHowToPlay : MonoBehaviour {
 
 	void OnComplete(){
 //		print("desde how moveeee");
-		MyMove();
-		ChangeNode();
+	//	MyMove();
+//		ChangeNode();
 	}
-	void ChangeNode(){
-		if(Vector2.Distance(transform.position,path.listNodes[index])<=0){
-			if(index<path.listNodes.Count-1)
-			index++;
-			if(index==path.listNodes.Count-1){
-				//************llega a destino*****************
-		//	print("destino final red ");
-			
-			//myListNodes.RemoveRange(0,myListNodes.Count);			
-			//nodeMovement.DeleteNodesData();//eliminamos nodos de posicion de how
-			//nodeMovement.DeleteNodesGraphic();//elimino parte grafica de nodos
-			
-			//Destroy(this.gameObject);//destruyo objeto
-			}	
-		}
-	}
-	private void MyMove(){
-		transform.position=Vector2.MoveTowards(transform.position,path.listNodes[index],velocity*Time.deltaTime);
-	}
-//	private void Reset(){
-//		activeMove=false;
-//		transform.position=initialPos;
-//		index=0;
+//	void ChangeNode(){
+//		if(Vector2.Distance(transform.position,path.listNodes[index])<=0){
+//			if(index<path.listNodes.Count-1)
+//			index++;
+//			if(index==path.listNodes.Count-1){
+//				//************llega a destino*****************
+//	
+//			}	
+//		}
 //	}
+//	private void MyMove(){
+//		transform.position=Vector2.MoveTowards(transform.position,path.listNodes[index],velocity*Time.deltaTime);
+//	}
+
 
 
 
