@@ -60,17 +60,17 @@ public class PathInputs : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void OnMouseDown(){
-		print("click path inputs "+tag);
+		//print("click path inputs "+tag);
 		contador++;
 		if(myPrincipalPath.getListVectors.Count>0&&tag=="plane"){
-			print("borrando desdea act path");
+			//print("borrando desdea act path");
 			//path.Delete();
-			print("cantidad d nodes "+myPrincipalPath.getListVectors.Count);
-			print("cant graphics "+myPrincipalPath.listGraphics.Count);
+			//print("cantidad d nodes "+myPrincipalPath.getListVectors.Count);
+		//	print("cant graphics "+myPrincipalPath.listGraphics.Count);
 
 			myPrincipalPath.DeleteAllNodes();
-			print("cantidad d nodes despues "+myPrincipalPath.getListVectors.Count);
-			print("cant graphics despues"+myPrincipalPath.listGraphics.Count);
+		//	print("cantidad d nodes despues "+myPrincipalPath.getListVectors.Count);
+		//	print("cant graphics despues"+myPrincipalPath.listGraphics.Count);
 
 
 		}

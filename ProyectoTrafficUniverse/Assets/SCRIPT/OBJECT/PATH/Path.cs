@@ -15,6 +15,7 @@ public class Path:PathInputs  {
 	private float magnitud=1.7f;
 	private MoveSoft moveSoft;
 	private MyPath myPrincipalPath;
+
 	public Path(){
 
 	}
@@ -87,27 +88,10 @@ public class Path:PathInputs  {
 		return true;
 	}
 
-
-
-//	public void DeleteMyElementlist(){
-////		print("borrando node");
-//		listNodes.Remove(listNodes[0]);
-//		countNodes--;
-//		angleConstrain.setCounting--;
-//		pathGraphic.DeleteFirstElementGraphic();
-//		Debug.Log("borrando node "+listNodes.Count);
-//		Debug.Log("cantidad nodes!!!! "+countNodes);
-//	}
-//	public void ResetValuesList(){
-//	
-//		countNodes=0;
-//		angleConstrain.setCounting=0;
-//		listNodes.RemoveRange(0,listNodes.Count);
-//
-//	}
 	public void OnMouseUp(){
 	//	print("hijo boton up");
 		if(myPrincipalPath.getListVectors.Count>0){
+			 
 			myPrincipalPath.DeleteLastNode();
 			GameObject lastNode=pathGraphic.SpawnGraphicLastNode(myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1],myPrincipalPath);//genero el ultimo node y despues [athGraphic le paso la lista de objetos graficos
 			myPrincipalPath.InsertGraphics(lastNode);
