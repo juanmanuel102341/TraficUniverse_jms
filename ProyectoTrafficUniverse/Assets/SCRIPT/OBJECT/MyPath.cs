@@ -20,15 +20,19 @@ public class MyPath {
 		if(lastNode!=null&&obj.tag=="lastNode"){
 			//Debug.Log("cantidad nodes angtes lg"+listGraphics.Count);
 		//	listGraphics.RemoveRange(indexLast,1);
-			//Debug.Log("entrando ultimo node");
-		//	lastNode.GetComponent<DeleteMe>().MyDelete();
-			DeleteNodeGraphic(indexLast);
-			listVectors.Remove(listVectors[indexLast]);
+			Debug.Log("suplantando node");
+			listGraphics.Remove(lastNode);
+			listVectors.RemoveRange(indexLast,1);
+			lastNode.GetComponent<DeleteMe>().MyDelete();
+
+			//DeleteNodeGraphic(indexLast);
+		//	listVectors.Remove(listVectors[indexLast]);
 		//	Debug.Log("cantidad nodes graficos despue "+listGraphics.Count);
 		//	Debug.Log("cantidad nodes vectores antes "+listVectors.Count);
 		//	listVectors.RemoveRange(indexLast,1);
 		//	Debug.Log("cantidad nodes vectores despues "+listVectors.Count);
-
+	//		Debug.Log("index node last "+indexLast);
+		//	Debug.Log("cantidad de nodes "+listGraphics.Count);
 		}
 		if(obj.tag=="lastNode"){
 			
@@ -47,14 +51,17 @@ public class MyPath {
 
 		DeleteNodeGraphic(0);
 
-		if(listVectors!=null)
+
 		listVectors.Remove(listVectors[0]);
 	}
 	public void DeleteAllNodes(){
 		
-		for(int i=0;i<listVectors.Count;i++){
-			DeleteNodeGraphic(0);
+		for(int i=0;i<listGraphics.Count;i++){
+			GameObject obj=listGraphics[i];
+			obj.GetComponent<DeleteMe>().MyDelete();
+	
 		}
+		listGraphics.RemoveRange(0,listGraphics.Count);
 		listVectors.RemoveRange(0,listVectors.Count);
 	}
 	private void DeleteNodeGraphic(int index){
@@ -63,7 +70,7 @@ public class MyPath {
 		if(obj==null){
 			Debug.Log("Warning@ objeto nulo");
 		}
-			Debug.Log("cant nodes antes borrar "+listGraphics.Count);
+//			Debug.Log("cant nodes antes borrar "+listGraphics.Count);
 		listGraphics.Remove(listGraphics[index]);
 		obj.GetComponent<DeleteMe>().MyDelete();
 	

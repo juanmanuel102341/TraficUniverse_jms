@@ -22,21 +22,21 @@ public class NodeState {
 		playerPos=myMoveSoft.getPlayerPos;
 	
 			if(Reach()){
-				Debug.Log("llego");
+			//	Debug.Log("llego");
 				//	Debug.Log("cant nodes "+myPath.countNodes);
 		//	Debug.Log("node ultimo "+myPrincipPath.getListVectors[myPrincipPath.getListVectors.Count-1]);
 	//		Debug.Log("node 1ro "+myPrincipPath.getListVectors[0]);
 				myPrincipPath.DeleteFirstNode();
 				//Debug.Log("cantidiad nodes "+myPath.countNodes);
-			Debug.Log("cant list nodes restantes "+myPrincipPath.getListVectors.Count);
-			Debug.Log("cant list nodes restantes "+myPrincipPath.listGraphics.Count);
+//			Debug.Log("cant list nodes restantes "+myPrincipPath.getListVectors.Count);
+			//Debug.Log("cant list nodes restantes "+myPrincipPath.listGraphics.Count);
 		}
 
 	}
 
 	private bool Reach(){
 		if(Vector2.Distance(myPrincipPath.getListVectors[0],playerPos)<=0.1f){
-			Debug.Log("nodo llego cambio "+myPrincipPath.getListVectors[0]);
+		//	Debug.Log("nodo llego cambio "+myPrincipPath.getListVectors[0]);
 			return true;
 		}
 		return false;
