@@ -5,10 +5,12 @@ using UnityEngine;
 public class MyPath {
 	public List<GameObject>listGraphics=new List<GameObject>();
 	private List<Vector2>listVectors=new List<Vector2>();
+	private List<GameObject>listLastNodeOld=new List<GameObject>();//parte grafica de los ultimo nodes q ya fueron desehechados por la creacion de otro nuevo en el mismo path
 	private GameObject lastNode=null;
 	private int indexLast=0;
-	public MyPath(){
-		
+	private PathGraphic pathGraphic;
+	public MyPath(PathGraphic _pathGraphic){
+		pathGraphic=_pathGraphic;
 	}
 
 	public void InsertVector(Vector2 v){
@@ -18,12 +20,16 @@ public class MyPath {
 	public void InsertGraphics(GameObject obj){
 		listGraphics.Add(obj);
 		if(lastNode!=null&&obj.tag=="lastNode"){
-			//Debug.Log("cantidad nodes angtes lg"+listGraphics.Count);
-		//	listGraphics.RemoveRange(indexLast,1);
+
 			Debug.Log("suplantando node");
-			listGraphics.Remove(lastNode);
-			listVectors.RemoveRange(indexLast,1);
-			lastNode.GetComponent<DeleteMe>().MyDelete();
+			Vector2 auxPos=lastNode.GetComponent<Transform>().position;
+			Debug.Log("pos last  node "+auxPos);
+
+
+		    lastNode.GetComponent<DeleteMe>().MyDelete();
+			//listVectors.RemoveRange(indexLast,1);
+			GameObject objGrafic=pathGraphic.SpawnGraphicPath(auxPos);
+			listGraphics[indexLast]=objGrafic;
 
 			//DeleteNodeGraphic(indexLast);
 		//	listVectors.Remove(listVectors[indexLast]);
@@ -48,7 +54,7 @@ public class MyPath {
 
 	}
 	public void DeleteFirstNode(){
-
+		if(listGraphics.Count>0)
 		DeleteNodeGraphic(0);
 
 

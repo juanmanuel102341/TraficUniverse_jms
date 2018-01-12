@@ -37,7 +37,7 @@ public class PathInputs : MonoBehaviour {
 		posMouse=GetComponent<PositionMouse>();
 //		print("clase path inputs");
 		if(tag=="plane"){
-			myPrincipalPath=new MyPath();
+			myPrincipalPath=new MyPath(pathGraphic);
 			//pathGraphic.lastNode.GetComponent<PathInputs>().getMyPrinciplePath=myPrincipalPath;
 			print("desde plane my principal path "+myPrincipalPath);
 		}
