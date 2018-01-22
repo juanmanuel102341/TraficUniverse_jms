@@ -21,6 +21,7 @@ public class PathInputs : MonoBehaviour {
 	private PositionMouse posMouse;
 	private DeleteAllPaths deleteAll;
 	private MyPath myPrincipalPath;
+
 	//private int numberPathId;
 	protected void Awake () {
 		//me quede en poner en unna lista los diversos paths q se va creand por el click del usuario, para despues borrarlos mas facil

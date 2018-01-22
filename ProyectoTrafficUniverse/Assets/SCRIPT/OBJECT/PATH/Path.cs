@@ -93,7 +93,17 @@ public class Path:PathInputs  {
 		if(myPrincipalPath.getListVectors.Count>0){
 			 
 			myPrincipalPath.DeleteLastNode();
+
+
+
+
 			GameObject lastNode=pathGraphic.SpawnGraphicLastNode(myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1],myPrincipalPath);//genero el ultimo node y despues [athGraphic le paso la lista de objetos graficos
+			if(myPrincipalPath.setlastNode!=null){
+				print("setiando ultimo path anterior pos"+myPrincipalPath.setlastNode.GetComponent<Transform>().position);
+				
+				myPrincipalPath.setlastNode.GetComponent<ReplaceMe>().Replace();
+			}
+			myPrincipalPath.setlastNode=lastNode;
 			myPrincipalPath.InsertGraphics(lastNode);
 			//print("ultimo nodo "+listNodes[listNodes.Count-1]);
 		}

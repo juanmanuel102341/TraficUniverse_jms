@@ -19,42 +19,14 @@ public class MyPath {
 	}
 	public void InsertGraphics(GameObject obj){
 		listGraphics.Add(obj);
-		if(lastNode!=null&&obj.tag=="lastNode"){
-
-			Debug.Log("suplantando node");
-			Vector2 auxPos=lastNode.GetComponent<Transform>().position;
-			Debug.Log("pos last  node "+auxPos);
-
-
-		    lastNode.GetComponent<DeleteMe>().MyDelete();
-			//listVectors.RemoveRange(indexLast,1);
-			GameObject objGrafic=pathGraphic.SpawnGraphicPath(auxPos);
-			listGraphics[indexLast]=objGrafic;
-
-			//DeleteNodeGraphic(indexLast);
-		//	listVectors.Remove(listVectors[indexLast]);
-		//	Debug.Log("cantidad nodes graficos despue "+listGraphics.Count);
-		//	Debug.Log("cantidad nodes vectores antes "+listVectors.Count);
-		//	listVectors.RemoveRange(indexLast,1);
-		//	Debug.Log("cantidad nodes vectores despues "+listVectors.Count);
-	//		Debug.Log("index node last "+indexLast);
-		//	Debug.Log("cantidad de nodes "+listGraphics.Count);
-		}
-		if(obj.tag=="lastNode"){
-			
-			lastNode=obj;
-			indexLast=listGraphics.Count-1;
-			Debug.Log("guardando node ultimo "+lastNode.GetComponent<Transform>().position);
 		}
 
-	}
-	//ublic void InsertListGraphic(List<game
 	public void DeleteLastNode(){
 		DeleteNodeGraphic(listGraphics.Count-1);
 
 	}
 	public void DeleteFirstNode(){
-		if(listGraphics.Count>0)
+		if(listGraphics!=null)
 		DeleteNodeGraphic(0);
 
 
@@ -64,6 +36,7 @@ public class MyPath {
 		
 		for(int i=0;i<listGraphics.Count;i++){
 			GameObject obj=listGraphics[i];
+			if(obj!=null)
 			obj.GetComponent<DeleteMe>().MyDelete();
 	
 		}
@@ -73,11 +46,9 @@ public class MyPath {
 	private void DeleteNodeGraphic(int index){
 		
 		GameObject obj=listGraphics[index];
-		if(obj==null){
-			Debug.Log("Warning@ objeto nulo");
-		}
-//			Debug.Log("cant nodes antes borrar "+listGraphics.Count);
-		listGraphics.Remove(listGraphics[index]);
+
+		listGraphics.RemoveAt(index);
+		if(obj!=null)
 		obj.GetComponent<DeleteMe>().MyDelete();
 	
 
@@ -87,4 +58,13 @@ public class MyPath {
 			return listVectors;
 		}
 	}
+	public GameObject setlastNode{
+		set{
+			lastNode=value;
+		}
+		get{
+			return lastNode;
+		}
+	}
+
 }
