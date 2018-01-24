@@ -98,6 +98,7 @@ public class Path:PathInputs  {
 			myPrincipalPath.setlastNode=lastNode;
 			myPrincipalPath.InsertGraphics(lastNode);
 			//print("ultimo nodo "+listNodes[listNodes.Count-1]);
+		
 		}
 	}
 

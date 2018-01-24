@@ -51,7 +51,9 @@ public class MoveSoft : MonoBehaviour {
 
 		private void Move2(){
 		if(!bounds.limiteActive){
+			
 			if(myPpath.getListVectors.Count>0){
+
 				setAngle();	
 				RotateMe();
 				transform.position=Vector2.MoveTowards(transform.position,myPpath.getListVectors[0],velocity*Time.deltaTime);
@@ -62,6 +64,7 @@ public class MoveSoft : MonoBehaviour {
 				if(!nodeState.getFinal){
 					nodeState.getFinal=true;
 				}
+
 				initializeLerp=false;
 				transform.Translate(Vector2.up*velocity*Time.deltaTime,Space.Self);//no tocar space.self!!!!!!!!!!!
 		}
@@ -84,7 +87,7 @@ public class MoveSoft : MonoBehaviour {
 			targetVector=angle.VectorUp(myPpath.getListVectors[0],transform.position);
 			lerpMax=targetVector;
 			timeLerp=0;
-			print("target "+targetVector);
+		//	print("target "+targetVector);
 		//	Debug.Log("lerpMin "+lerpMin);
 		//	Debug.Log("lerMax "+lerpMax);
 		//float a=Vector2.Angle(aux,targetVector);
@@ -104,7 +107,7 @@ public class MoveSoft : MonoBehaviour {
 
 		timeLerp+=Time.deltaTime;
 		transform.up=new Vector2 (n.x,n.y);
-		print("timelerp "+timeLerp);
+		//print("timelerp "+timeLerp);
 	
 		}
 

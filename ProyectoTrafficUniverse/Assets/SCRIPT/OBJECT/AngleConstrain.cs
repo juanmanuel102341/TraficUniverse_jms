@@ -30,7 +30,7 @@ public class AngleConstrain  {
 			myVectorPotencial=CalcVector(myReferencePath.getListVectors[myReferencePath.getListVectors.Count-1],nodePotencial);
 
 			float ang=Vector2.Angle(myVectorPotencial,myVectorNode);
-			Debug.Log("angulo "+ang);
+			//Debug.Log("angulo "+ang);
 			if(ang>myConstrainAngle){
 				return true;		
 			}else{

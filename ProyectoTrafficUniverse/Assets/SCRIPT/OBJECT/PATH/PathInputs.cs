@@ -99,18 +99,11 @@ public class PathInputs : MonoBehaviour {
 		}
 
 	}
-	void OnMouseOver(){
-		//si el jugador clickea encima "xra q n se genere ningun path" para eso este booleano
-		over=true;
-	}
-	void OnMouseExit(){
-		over=false;
 
-		//print("mouse fuera");
-	}
+
 	public void GetInputMouse(){
 		Vector2 auxInput=posMouse.Calc();
-		if(Input.GetMouseButton(0)&&activatePath&&!over){
+		if(Input.GetMouseButton(0)&&activatePath){
 			//print("click "+auxInput);
 			path.SetNewNode(auxInput);//parte codigo
 			}
