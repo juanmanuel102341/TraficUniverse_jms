@@ -23,7 +23,7 @@ public class MoveSoft : MonoBehaviour {
 	private Vector2 lerpMax;
 	private bool initializeLerp=false;
 
-	float timeLerp=0;
+	float timeLerp=10.0f;
 	private MyPath myPpath;
 
 	void Awake () {
@@ -52,13 +52,16 @@ public class MoveSoft : MonoBehaviour {
 		private void Move2(){
 		if(!bounds.limiteActive){
 			if(myPpath.getListVectors.Count>0){
-			//	setAngle();	
-			//	RotateMe();
+				setAngle();	
+				RotateMe();
 				transform.position=Vector2.MoveTowards(transform.position,myPpath.getListVectors[0],velocity*Time.deltaTime);
 		//	Debug.Log("entrando tp");
 
 				onUpdate();//pregunta si llego al node
 			}else{
+				if(!nodeState.getFinal){
+					nodeState.getFinal=true;
+				}
 				initializeLerp=false;
 				transform.Translate(Vector2.up*velocity*Time.deltaTime,Space.Self);//no tocar space.self!!!!!!!!!!!
 		}
@@ -72,33 +75,37 @@ public class MoveSoft : MonoBehaviour {
 
 		}
 	}
-	//private void setAngle(){
-//		if(nodeState.getFinal){
-//			
-//			lerpMin=lerpMax;
-//			Vector2 aux;
-//			aux=targetVector;
-//			targetVector=angle.VectorUp(pathInputs.path.listNodes[0],transform.position);
-//			lerpMax=targetVector;
-//			timeLerp=0;
-//		//	Debug.Log("lerpMin "+lerpMin);
-//		//	Debug.Log("lerMax "+lerpMax);
-//			float a=Vector2.Angle(aux,targetVector);
-//			nodeState.getFinal=false;
-//		
-//	
-//		}
-//		}
+	private void setAngle(){
+		if(nodeState.getFinal){
+			
+			lerpMin=lerpMax;
+			Vector2 aux;
+			aux=targetVector;
+			targetVector=angle.VectorUp(myPpath.getListVectors[0],transform.position);
+			lerpMax=targetVector;
+			timeLerp=0;
+			print("target "+targetVector);
+		//	Debug.Log("lerpMin "+lerpMin);
+		//	Debug.Log("lerMax "+lerpMax);
+		//float a=Vector2.Angle(aux,targetVector);
+		
+
+			nodeState.getFinal=false;
+		
+	
+		}
+		}
 
 	private void RotateMe(){
-
+		
 		//Debug.Log("target "+lerpMax);
 		Vector2 n=Vector2.Lerp(lerpMin,lerpMax,timeLerp);
-//		Debug.Log("lerp "+n);
+		//Debug.Log("lerp "+n);
 
-		timeLerp+=Time.deltaTime*2;
+		timeLerp+=Time.deltaTime;
 		transform.up=new Vector2 (n.x,n.y);
-
+		print("timelerp "+timeLerp);
+	
 		}
 
 	public Vector2 getPlayerPos{

@@ -9,8 +9,10 @@ public class MyPath {
 	private GameObject lastNode=null;
 	private int indexLast=0;
 	private PathGraphic pathGraphic;
+	private MoveSoft moveSoft;
 	public MyPath(PathGraphic _pathGraphic){
 		pathGraphic=_pathGraphic;
+
 	}
 
 	public void InsertVector(Vector2 v){

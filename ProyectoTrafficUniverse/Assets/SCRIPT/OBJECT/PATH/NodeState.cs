@@ -7,7 +7,7 @@ public class NodeState {
 	MyPath myPrincipPath;
 	MoveSoft myMoveSoft;
 	private Vector2 playerPos; 
-	private bool final=false;
+	private bool final=true;
 	public bool first=false;
 
 	public NodeState(MoveSoft moveSoft,MyPath _myPathPrincip){
@@ -22,6 +22,7 @@ public class NodeState {
 		playerPos=myMoveSoft.getPlayerPos;
 	
 			if(Reach()){
+			final=true;
 			//	Debug.Log("llego");
 				//	Debug.Log("cant nodes "+myPath.countNodes);
 		//	Debug.Log("node ultimo "+myPrincipPath.getListVectors[myPrincipPath.getListVectors.Count-1]);
@@ -48,14 +49,14 @@ public class NodeState {
 //		}
 //		return false;
 //	}
-//	public bool getFinal{
-//		get{
-//			return final;
-//		}
-//		set{
-//			final=value;
-//		}
-//	}
+	public bool getFinal{
+		get{
+			return final;
+		}
+		set{
+			final=value;
+		}
+	}
 //	public Path ResetMyPath{
 //		set{
 //			myPath=value;

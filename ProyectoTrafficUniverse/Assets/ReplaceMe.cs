@@ -10,6 +10,10 @@ public class ReplaceMe : MonoBehaviour {
 		pathInputs=GetComponent<PathInputs>();	
 		circle=GetComponent<CircleCollider2D>();
 		spr=GetComponent<SpriteRenderer>();
+	
+		pathInputs.enabled=true;//los inicializo en true por si se me desactivan posteriomente(me ha pasado)
+		circle.enabled=true;
+		this.enabled=true;
 	}
 	void Start(){
 
