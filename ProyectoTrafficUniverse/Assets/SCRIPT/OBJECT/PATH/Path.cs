@@ -43,14 +43,14 @@ public class Path:PathInputs  {
 				px=vecR.x/hip;//proporcion en x con respecto a la distancia
 				py=vecR.y/hip;// en y con respect a distancia
 				if(input.x>myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].x){
-					myVec.x=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].x+magnitud*px;//pregunto si el input esta a la derecha del utlimo node sino esta a la ixquierda para poder sumar o restar
+					myVec.x=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].x+magnitud*px*magnitud;//pregunto si el input esta a la derecha del utlimo node sino esta a la ixquierda para poder sumar o restar
 				}else{
-					myVec.x=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].x-magnitud*px;				
+					myVec.x=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].x-magnitud*px*magnitud;//multiplico x magnitud 2 veces porque sn el puntero y el path quedan un poco desfasados				
 				}
 				if(input.y>myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].y){
-					myVec.y=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].y+magnitud*py;
+					myVec.y=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].y+magnitud*py*magnitud;
 				}else{
-					myVec.y=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].y-magnitud*py;
+					myVec.y=myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1].y-magnitud*py*magnitud;
 				}
 				//	print("my vec "+myVec);
 				SetList(myVec);

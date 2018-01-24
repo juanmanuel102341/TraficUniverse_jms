@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 114917199751601860}
   - component: {fileID: 114384019541840334}
   - component: {fileID: 114358127709141930}
+  - component: {fileID: 114025985627215058}
   m_Layer: 0
   m_Name: NaveB
   m_TagString: plane
@@ -297,6 +298,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114025985627215058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468af6c39192d34cbf0efa0bed4bfff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114079394640461074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
+  lastNode: {fileID: 1234492673985332, guid: d05d12d0a7a302244ae9217db9484e5b, type: 2}
 --- !u!114 &114917199751601860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -420,8 +433,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   myConstrainAngle: 90
-  myAmplitudAngle: 30
-  distanceNodes: 1.2
   id: {fileID: 1181498919556538}
 --- !u!212 &212024016033955804
 SpriteRenderer:

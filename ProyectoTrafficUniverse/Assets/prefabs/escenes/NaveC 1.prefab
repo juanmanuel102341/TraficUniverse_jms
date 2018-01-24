@@ -372,8 +372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: {fileID: 0}
   myConstrainAngle: 90
-  myAmplitudAngle: 30
-  distanceNodes: 1.2
   id: {fileID: 1438001912898574}
 --- !u!114 &114797346407183472
 MonoBehaviour:
@@ -388,6 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
     type: 2}
+  lastNode: {fileID: 1234492673985332, guid: d05d12d0a7a302244ae9217db9484e5b, type: 2}
 --- !u!114 &114872659689040052
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 114393218629465930}
   - component: {fileID: 114608130660132114}
   - component: {fileID: 114776999384507284}
-  - component: {fileID: 114209019665699638}
   m_Layer: 0
   m_Name: NaveA 1 (1)
   m_TagString: plane
@@ -324,17 +323,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81fb6276168fe9a488711dbf31540ab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114209019665699638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1757473692648486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afbb1ba635de1d643af2ccab84922a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114249820887579698

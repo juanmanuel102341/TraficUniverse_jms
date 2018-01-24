@@ -85,11 +85,12 @@ public class Reset : MonoBehaviour {
 	void Planes(){
 		print("cantidad d aviones antes "+spawnManager.getListPlanes.Count);
 		int n=spawnManager.getListPlanes.Count;
+
 		for(int i=0;i<n;i++){
 			GameObject aux=spawnManager.getListPlanes[i];
-			//spawnManager.GetOutObjectFromList(aux);
-			aux.GetComponent<Delete>().DeleteMe();//destruyo nave y nodos
+			aux.GetComponent<Delete>().DeleteMe();//destruyo nave y nodes
 		}
+
 	
 		spawnManager.getListPlanes.RemoveRange(0,spawnManager.getListPlanes.Count);
 		print("cantidad d aviones "+spawnManager.getListPlanes.Count);
