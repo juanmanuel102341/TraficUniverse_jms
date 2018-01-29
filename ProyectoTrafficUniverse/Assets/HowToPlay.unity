@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67274ad10dff2344979d2a3e75d8773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointer: {fileID: 1698584881}
 --- !u!58 &387280638
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -751,6 +752,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1720952308775430, guid: 91c0c3a7ae6ee0f4ebd9dabb6d8c027e, type: 2}
+      propertyPath: m_TagString
+      value: pointer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91c0c3a7ae6ee0f4ebd9dabb6d8c027e, type: 2}
   m_IsPrefabParent: 0
@@ -773,7 +778,7 @@ GameObject:
   - component: {fileID: 1385699195}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -784,14 +789,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385699185}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc98255d653f81549b4d31169160a586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dataShips: {fileID: 1385699195}
   target: {fileID: 387280636}
-  path: {fileID: 0}
 --- !u!212 &1385699187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -834,7 +838,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385699185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.67, y: -24.81, z: 0}
+  m_LocalPosition: {x: 68.67, y: -25.14, z: 0}
   m_LocalScale: {x: 0.37076473, y: 0.37076473, z: 0.37076473}
   m_Children: []
   m_Father: {fileID: 0}
@@ -899,13 +903,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphicPath: {fileID: 1672675589620984, guid: 362ab82c1a635de4787393b4b7e84104,
     type: 2}
+  lastNode: {fileID: 1234492673985332, guid: d05d12d0a7a302244ae9217db9484e5b, type: 2}
 --- !u!114 &1385699193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385699185}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a6a7d6b6125264095cbf47561838ea, type: 3}
   m_Name: 
@@ -1136,9 +1141,10 @@ GameObject:
   - component: {fileID: 1698584882}
   - component: {fileID: 1698584886}
   - component: {fileID: 1698584887}
+  - component: {fileID: 1698584888}
   m_Layer: 0
   m_Name: Pointer
-  m_TagString: Untagged
+  m_TagString: pointer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1156,6 +1162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1385699188}
   velocity: 4
+  animationPath: {fileID: 1385699193}
 --- !u!212 &1698584883
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1242,6 +1249,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c64841552a3894440939542abd9e79b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1698584888
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698584881}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1847571280
 GameObject:
   m_ObjectHideFlags: 0

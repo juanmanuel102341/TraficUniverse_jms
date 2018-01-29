@@ -12,18 +12,18 @@ public class Path:PathInputs  {
 	public PathGraphic pathGraphic;
 	private GameObject mylastNode;
 	private bool constrainActive=false;
-	private float magnitud=1.7f;
+	private float magnitud;
 	private MoveSoft moveSoft;
 	private MyPath myPrincipalPath;
 
 	public Path(){
 
 	}
-	public Path (PathGraphic _graficPath,float _myConstrain,MyPath _myPath){
+	public Path (PathGraphic _graficPath,float _myConstrain,MyPath _myPath, float distanceNodes){
 		pathGraphic=_graficPath;
 		myPrincipalPath=_myPath;
 		angleConstrain=new AngleConstrain(myPrincipalPath,_myConstrain);
-	
+		magnitud=distanceNodes;
 		}
 
 	public void SetNewNode(Vector2 input){

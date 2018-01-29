@@ -9,13 +9,14 @@ public class InputMouse : MonoBehaviour {
 		animationPath=GetComponent<AnimationPath>();
 		moveHowTplay=GetComponent<MoveHowToPlay>();
 		animationPath.enabled=false;
-		moveHowTplay.enabled=false;
+		moveHowTplay.enabled=true;
 	}
 	void OnTriggerEnter2D(Collider2D col) {
 		print("empieza parte nodal");
-		pointer.GetComponent<ManageComponents>().Deactive();//desactivo movvimiento, collider y canal alfa del mouses
+		//pointer.GetComponent<ManageComponents>().Deactive();//desactivo movvimiento, collider y canal alfa del mouses
 		animationPath.enabled=true;
-		moveHowTplay.enabled=true;
+	//	moveHowTplay.enabled=true;
+	
 	}
 
 }

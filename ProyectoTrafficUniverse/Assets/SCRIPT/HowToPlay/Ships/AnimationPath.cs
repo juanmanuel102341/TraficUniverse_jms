@@ -10,6 +10,8 @@ public class AnimationPath : MonoBehaviour {
 	private float time;
 	private int index=0;
 	public delegate void Finish();
+	public delegate void FinishNode(Vector2 target);
+	public event FinishNode onFinishNode;
 	public event Finish finish;
 	public DataShips dataDad;
 	void Awake () {
@@ -19,14 +21,23 @@ public class AnimationPath : MonoBehaviour {
 	}
 	void Update () {
 		time+=Time.deltaTime;
-//		if(time>time_anim&&index<move.path.listNodes.Count){
-//			path.SpawnGraphicPath(move.path.listNodes[index]);		
-//			time=0;
-//			index++;
-//		}else if (index>=move.path.listNodes.Count){
-////			print("initialice move");
-//			finish();
-//		}
+		if(time>time_anim&&index<move.getPathGenerator.myPath.getListGraphic.Count){
+			//path.SpawnGraphicPath(move.path.listNodes[index]);		
+		
+			time=0;
+			if(move.getPathGenerator.myPath.getListVectors.Count>0){
+				print("entrando animation path  cant d nodes "+move.getPathGenerator.myPath.getListVectors.Count);
+				print("node actual "+move.getPathGenerator.myPath.getListVectors[index]);
+				move.getPathGenerator.myPath.getListGraphic[index].GetComponent<ViewSprite>().SetOnMySprite();//prendo un nodo
+			onFinishNode(move.getPathGenerator.myPath.getListVectors[index]);//le paso la posicion al puntero del mouse del primer node d la lista
+			
+			}
+				index++;
+
+		}else if (index>=move.getPathGenerator.myPath.getListGraphic.Count){
+//			print("initialice move");
+			finish();
+		}
 			
 		}
 

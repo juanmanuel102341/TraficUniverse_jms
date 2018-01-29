@@ -42,6 +42,7 @@ TagManager:
   - myReplay
   - timeGame
   - lastNode
+  - pointer
   layers:
   - Default
   - TransparentFX

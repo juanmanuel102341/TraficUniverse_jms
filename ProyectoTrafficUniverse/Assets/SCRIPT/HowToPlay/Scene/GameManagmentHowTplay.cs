@@ -58,8 +58,13 @@ public class GameManagmentHowTplay : MonoBehaviour {
 		}else{
 			print("pasando al siguiente target");
 			puntero.GetComponent<ManageComponents>().Active();//activo componentes del mouse
-			puntero.GetComponent<MovePointer>().target=player[countPlanets+1].GetComponent<Transform>();//le paso info de target al puntero para q se mueva
+			MovePointer pmouse=puntero.GetComponent<MovePointer>();
+			pmouse.SetDestiny(player[countPlanets+1].GetComponent<Transform>().position);//le paso info de target al puntero para q se mueva
+			pmouse.SetEventAnimation(player[countPlanets+1].GetComponent<AnimationPath>());//seteo evento de animation;
+			print("player "+player[countPlanets+1].name);
+			//print(" destiny p[layer "+player[countPlanets+1].GetComponent<)
 			print("puntero next  "+player[countPlanets+1].GetComponent<Transform>().position);
+	//		print("destno player "+player[countPlanets+1].)
 			countPlanets++;
 		}
 	}
@@ -67,7 +72,7 @@ public class GameManagmentHowTplay : MonoBehaviour {
 		//nodos//planeta//player//puntero
 		print("eliminacion objetos");
 		for(int i=0;i<player.Length;i++){
-//			player[i].GetComponent<PathGraphic>().Delete_ngraphics();//elmino nodos
+			player[i].GetComponent<MoveHowToPlay>().getPathGenerator.myPath.DeleteAllNodes();//elmino nodos
 			player[i].GetComponent<DeleteMe>().MyDelete();//elimino player
 			}
 		for(int i=0;i<targetsPlanets.Length;i++){

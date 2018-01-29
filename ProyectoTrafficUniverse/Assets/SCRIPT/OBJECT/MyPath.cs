@@ -60,6 +60,11 @@ public class MyPath {
 			return listVectors;
 		}
 	}
+	public List<GameObject> getListGraphic{
+		get{
+			return listGraphics;
+		}
+	}
 	public GameObject setlastNode{
 		set{
 			lastNode=value;

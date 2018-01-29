@@ -54,7 +54,7 @@ public class PathInputs : MonoBehaviour {
 
 	}
 	void Start(){
-		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath);
+		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath,1.7f);
 	}
 	protected void Update () {
 		GetInputMouse();

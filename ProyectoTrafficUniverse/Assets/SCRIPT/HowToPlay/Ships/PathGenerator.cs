@@ -3,24 +3,26 @@ using UnityEngine;
 
 public class PathGenerator  {
 	public Path path;
+	public MyPath myPath;
 	private float distance=0;
 	private int total=0;
 	private float distanceNodes;//distancia entre los nodos
 	private Vector2 posPlayer;
 	private Vector2 posTarget;
-
-	public PathGenerator(Vector2 _posPlayer, Vector2 _posTarget,int _totalNodes){
+	private PathGraphic pathGraphic;
+	public PathGenerator(Vector2 _posPlayer, Vector2 _posTarget,int _totalNodes,PathGraphic _pathGraphic){
 		posPlayer=_posPlayer;
 		posTarget=_posTarget;
-
 		distance=GetDistance();
 		total=_totalNodes;
+		pathGraphic=_pathGraphic;
 //		Debug.Log("posPlayer "+posPlayer);
 //		Debug.Log("posTarget "+posTarget);
 //		Debug.Log("distanceNodes "+distanceNodes);
 //		Debug.Log("distance "+distance);
 //		Debug.Log("total "+total);
-		path=new Path(null,0,null);//parametro 0, para q la condicion de distanciadentro de la clase path n entre en vigor
+		myPath=new MyPath(null);
+		path=new Path(pathGraphic,0,myPath,0.9f);//parametro 0, para q la condicion de distanciadentro de la clase path n entre en vigor
 		Calc();
 	}
 	float GetDistance(){
