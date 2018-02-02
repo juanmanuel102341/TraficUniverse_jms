@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: a4e70b58d97e123419de38d17d3713cd
-timeCreated: 1509125709
+guid: 3802e70b001c75d4aaaf71ae68af75c1
+timeCreated: 1517586392
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sheetMenuInicio_0
-    21300002: sheetMenuInicio_1
-    21300004: sheetMenuInicio_2
-    21300006: sheetMenuInicio_3
-    21300008: sheetMenuInicio_4
-    21300010: sheetMenuInicio_5
-    21300012: sheetMenuInicio_6
-    21300014: sheetMenuInicio_13
-    21300016: sheetMenuInicio_14
-    21300018: sheetMenuInicio_15
-    21300020: sheetMenuInicio_17
-    21300022: sheetMenuInicio_18
-    21300024: sheetMenuInicio_23
-    21300026: sheetMenuInicio_24
-    21300028: sheetMenuInicio_25
-    21300030: sheetMenuInicio_30
+    21300000: numersLevels_press_0
+    21300002: numersLevels_press_1
+    21300004: numersLevels_press_2
+    21300006: numersLevels_press_3
+    21300008: numersLevels_press_4
+    21300010: numersLevels_press_5
+    21300012: numersLevels_press_6
+    21300014: numersLevels_press_7
+    21300016: numersLevels_press_8
+    21300018: numersLevels_press_9
+    21300020: numersLevels_press_10
+    21300022: numersLevels_press_11
+    21300024: numersLevels_press_12
+    21300026: numersLevels_press_13
+    21300028: numersLevels_press_15
+    21300030: numersLevels_press_16
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -86,202 +86,202 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sheetMenuInicio_0
+      name: numersLevels_press_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 310
-        width: 122
-        height: 120
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_1
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 313
-        width: 120
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 7, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_2
-      rect:
-        serializedVersion: 2
-        x: 306
-        y: 315
-        width: 111
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_3
-      rect:
-        serializedVersion: 2
-        x: 451
-        y: 305
+        y: 302
         width: 123
         height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sheetMenuInicio_4
+      name: numersLevels_press_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 302
+        width: 123
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 311
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 302
+        width: 124
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_4
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 302
+        width: 123
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_5
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 302
+        width: 122
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 123
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 158
+        width: 123
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_8
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 159
+        width: 124
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_9
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 159
+        width: 123
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_10
       rect:
         serializedVersion: 2
         x: 601
-        y: 308
-        width: 122
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_5
-      rect:
-        serializedVersion: 2
-        x: 605
-        y: 413
-        width: 5
-        height: 5
+        y: 160
+        width: 123
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sheetMenuInicio_6
+      name: numersLevels_press_11
       rect:
         serializedVersion: 2
-        x: 4
-        y: 307
-        width: 14
-        height: 11
+        x: 0
+        y: 15
+        width: 123
+        height: 129
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sheetMenuInicio_13
+      name: numersLevels_press_12
       rect:
         serializedVersion: 2
-        x: 5
-        y: 170
-        width: 111
-        height: 114
+        x: 150
+        y: 16
+        width: 123
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sheetMenuInicio_14
+      name: numersLevels_press_13
       rect:
         serializedVersion: 2
-        x: 156
-        y: 170
-        width: 111
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_15
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 170
-        width: 116
-        height: 117
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_17
-      rect:
-        serializedVersion: 2
-        x: 459
-        y: 171
-        width: 108
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_18
-      rect:
-        serializedVersion: 2
-        x: 607
-        y: 170
-        width: 108
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_23
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 27
-        width: 108
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_24
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 28
-        width: 108
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: sheetMenuInicio_25
-      rect:
-        serializedVersion: 2
-        x: 310
+        x: 301
         y: 26
-        width: 108
-        height: 116
+        width: 123
+        height: 118
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: sheetMenuInicio_30
+      name: numersLevels_press_15
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 19
+        width: 114
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: numersLevels_press_16
       rect:
         serializedVersion: 2
         x: 754

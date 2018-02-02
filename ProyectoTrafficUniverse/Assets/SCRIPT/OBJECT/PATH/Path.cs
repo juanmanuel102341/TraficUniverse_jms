@@ -15,6 +15,9 @@ public class Path:PathInputs  {
 	private float magnitud;
 	private MoveSoft moveSoft;
 	private MyPath myPrincipalPath;
+	private Vector2 playerPos;
+	private float magnitudTotal;
+
 
 	public Path(){
 
@@ -24,7 +27,9 @@ public class Path:PathInputs  {
 		myPrincipalPath=_myPath;
 		angleConstrain=new AngleConstrain(myPrincipalPath,_myConstrain);
 		magnitud=distanceNodes;
-		}
+		magnitudTotal=pathGraphic.getMagnitudLine+magnitud;
+		print("magn total "+magnitudTotal);
+	}
 
 	public void SetNewNode(Vector2 input){
 		Vector2 vec;
@@ -54,7 +59,7 @@ public class Path:PathInputs  {
 				}
 				//	print("my vec "+myVec);
 				SetList(myVec);
-			
+
 			}
 		}else {
 			first=true;
@@ -64,26 +69,56 @@ public class Path:PathInputs  {
 
 	}
 
+	private void Insert(Vector2 input){
+		//Vector2 vec;
+	
+	}
+	private void Check(Vector2 v1,Vector2 v2){
+		float d=Vector2.Distance(v1,v2);
+		print("distance "+d);
+		if(d>magnitud){
+			SetNewNode(v2);
+			print("entrando");
+		}
+	}
 	private void SetList(Vector2 _vec){
 		//lista vectores
+		//Vector2 p1=new Vector2(0,0);
+		//Vector2 p2;
 		Node node;
 		node=new Node(_vec);
+		Vector2 vec1;
+		Vector2 vec2;
+		float angle;
+
+		if(myPrincipalPath.getListVectors.Count!=0){
+			Vector2 aux1= myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1];//ultimo node
+			vec1=node.posicion-aux1;//vector diferencia entre posicion nodo potencial - nodo anterior o ultio
+
+		}else{
+			
+			vec1=node.posicion-playerPos;
+		}
 		myPrincipalPath.InsertVector(node.posicion);
-		GameObject obj=pathGraphic.SpawnGraphicPath(node.posicion);
+		GameObject obj=pathGraphic.SpawnGraphicPath(node.posicion,vec1);
+	
 		myPrincipalPath.InsertGraphics(obj);
 
 	}
 
 	private bool Apply(Vector2 _input){
-	//	print("distnce "+d);
+		//	print("distnce "+d);
 		Vector2 vec;
 		float n;
 		n=Vector2.Distance(_input,myPrincipalPath.getListVectors[myPrincipalPath.getListVectors.Count-1]);
 		if(n>magnitud){
-		return true;
+			return true;
 		}
 		return false;
 		}
+
+
+
 
 	public void OnMouseUp(){
 	//	print("hijo boton up");
@@ -100,6 +135,11 @@ public class Path:PathInputs  {
 			//print("ultimo nodo "+listNodes[listNodes.Count-1]);
 		
 		}
+	}
+	public void UpdatePlayerPos(Vector2 pos){
+	//	print("player pos "+pos);
+		playerPos=pos;
+
 	}
 
 }

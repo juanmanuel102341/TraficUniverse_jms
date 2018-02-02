@@ -12,15 +12,16 @@ public class PathInputs : MonoBehaviour {
 	public float myConstrainAngle;
 
 	private PathGraphic pathGraphic;
-	private bool over=false;
+
 	public GameObject id;
 	protected Vector2 playerPos;
-	protected List<Vector2>listNodesVec=new List<Vector2>();
+
 	public delegate void OnClickMe(GameObject obj);//evento q se disprara en detetcs id para prender circulito de identificacion a
 	public event OnClickMe ClickMe;
 	private PositionMouse posMouse;
 	private DeleteAllPaths deleteAll;
 	private MyPath myPrincipalPath;
+
 
 	//private int numberPathId;
 	protected void Awake () {
@@ -54,11 +55,13 @@ public class PathInputs : MonoBehaviour {
 
 	}
 	void Start(){
-		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath,1.7f);
+		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath,1.5f);
 	}
 	protected void Update () {
 		GetInputMouse();
+		path.UpdatePlayerPos(transform.position);
 	}
+
 	// Update is called once per frame
 	void OnMouseDown(){
 		//print("click path inputs "+tag);

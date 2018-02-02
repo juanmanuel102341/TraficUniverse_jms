@@ -40,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234492673985332}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.23323, y: -15.077606, z: 0}
-  m_LocalScale: {x: 6.5, y: 6.5, z: 2.5}
+  m_LocalPosition: {x: 48.452225, y: -22.59724, z: 0}
+  m_LocalScale: {x: 1.3067703, y: 1.3067703, z: 0.502604}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,11 +55,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.10000002
+  m_Radius: 0.5
 --- !u!114 &114010087442804210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5507815e211608e4fb2aee3cdf9a46d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphicPath: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8,
+  graphicPath: {fileID: 1648713528612712, guid: 803cc2b50a2c1924e9710477b299259a,
     type: 2}
   lastNode: {fileID: 1234492673985332}
 --- !u!114 &114279948560197862
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12cbd32f4f8236049b62d6fb8c718a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  node: {fileID: 1672675589620984, guid: af6f0f2ca1d12f64f95fd9f4012d42a8, type: 2}
+  node: {fileID: 1648713528612712, guid: 803cc2b50a2c1924e9710477b299259a, type: 2}
 --- !u!212 &212522490053206190
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2f854a5cbc36ed542bdc7ad5adbffad1, type: 3}
   m_Color: {r: 0, g: 0.99264705, b: 0.5788763, a: 1}
   m_FlipX: 0
   m_FlipY: 0

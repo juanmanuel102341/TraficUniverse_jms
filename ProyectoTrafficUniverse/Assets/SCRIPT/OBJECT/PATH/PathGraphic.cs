@@ -8,12 +8,18 @@ public class PathGraphic : MonoBehaviour {
 
 	public GameObject lastNode;
 
-
+	private float widthLine;
+	private float heighLine;
 	void Awake(){
-		
+		widthLine=graphicPath.GetComponent<Transform>().localScale.x;
+	
+		print("widh line "+widthLine);
+	
+			
 	}
-	public GameObject SpawnGraphicPath(Vector2 pos){
+	public GameObject SpawnGraphicPath(Vector2 pos,Vector2 v){
 		GameObject obj=Instantiate(graphicPath,pos,transform.rotation);
+		obj.GetComponent<Transform>().up=v;
 		return obj;
 
 	}
@@ -27,6 +33,11 @@ public class PathGraphic : MonoBehaviour {
 	}
 
 
+	public float getMagnitudLine{
+		get{
+			return widthLine;
+		}
+	}
 
 
 
