@@ -6,16 +6,20 @@ public class Pause : MonoBehaviour {
 	public Reset reset;
 	public Replay replay;
 	public delegate void EventPause();
-	public static event EventPause PauseOn;
-	public static event EventPause pauseOff;
+	public event EventPause PauseOn;
+	public event EventPause pauseOff;
 	private GameManager gm;
+	public EventResume eventResume;
 	void Awake(){
 		gm=GetComponent<GameManager>();
+		//eventResume=GameObject.FindGameObjectWithTag("pause").GetComponent<Transform>().GetChild(1).GetComponent<EventResume>();
+		print("event resume "+eventResume);
+
 	}
 	void Start () {
-		EventResume.onResume+=ResumeGame;
+		eventResume.onResume+=ResumeGame;
 		replay.activateReplay+=OnReplay;
-	
+
 	}
 	
 	// Update is called once per frame

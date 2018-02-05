@@ -44,15 +44,6 @@ public class PathInputs : MonoBehaviour {
 			print("desde plane my principal path "+myPrincipalPath);
 		}
 
-//		if(pathGraphic.gameObject.tag=="lastNode"){
-//			print("desde last node my principal path "+	getMyPrinciplePath);
-//			if(myPrincipalPath==null){
-//				print("myprincipal desde last node null");
-//			}else{
-//				print("existencia princiapl desde last node");
-//			}
-//		}
-
 	}
 	void Start(){
 		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath,1.5f);
@@ -67,21 +58,10 @@ public class PathInputs : MonoBehaviour {
 		//print("click path inputs "+tag);
 		contador++;
 		if(myPrincipalPath.getListVectors.Count>0&&tag=="plane"){
-			//print("borrando desdea act path");
-			//path.Delete();
-			//print("cantidad d nodes "+myPrincipalPath.getListVectors.Count);
-		//	print("cant graphics "+myPrincipalPath.listGraphics.Count);
 
 			myPrincipalPath.DeleteAllNodes();
-		//	print("cantidad d nodes despues "+myPrincipalPath.getListVectors.Count);
-		//	print("cant graphics despues"+myPrincipalPath.listGraphics.Count);
+			}
 
-
-		}
-//		if(activatePath){
-//			activatePath=false;
-//		}
-//
 
 		if(tag!="lastNode"){
 		ClickMe(this.gameObject);

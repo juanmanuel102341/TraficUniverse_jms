@@ -43,6 +43,10 @@ TagManager:
   - timeGame
   - lastNode
   - pointer
+  - node
+  - groupNodes
+  - targets
+  - managerHow
   layers:
   - Default
   - TransparentFX

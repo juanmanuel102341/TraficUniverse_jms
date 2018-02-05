@@ -1117,12 +1117,22 @@ Prefab:
         type: 2}
       propertyPath: detectsId
       value: 
-      objectReference: {fileID: 1402952702}
+      objectReference: {fileID: 1402952700}
     - target: {fileID: 82109053480424796, guid: fadb1609370d88d419767dabde91dc11,
         type: 2}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 9041f3ac718e7c44ba50f438b7300ec4, type: 3}
+    - target: {fileID: 114691736409492662, guid: fadb1609370d88d419767dabde91dc11,
+        type: 2}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 1402952701}
+    - target: {fileID: 114691736409492662, guid: fadb1609370d88d419767dabde91dc11,
+        type: 2}
+      propertyPath: eventResume
+      value: 
+      objectReference: {fileID: 1723711291}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fadb1609370d88d419767dabde91dc11, type: 2}
   m_IsPrefabParent: 0
@@ -1441,7 +1451,8 @@ Prefab:
       propertyPath: guiLifes
       value: 
       objectReference: {fileID: 222669421}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114188653072740708, guid: 7b38f61de90ff8d43b5957d69ca95f66, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7b38f61de90ff8d43b5957d69ca95f66, type: 2}
   m_IsPrefabParent: 0
 --- !u!114 &1195857522 stripped
@@ -1722,17 +1733,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1358870793527522, guid: 7b38f61de90ff8d43b5957d69ca95f66,
     type: 2}
   m_PrefabInternal: {fileID: 1195857521}
---- !u!114 &1402952700
+--- !u!114 &1402952700 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1402952699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d9769c81499fd4da22456f3efd5cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_PrefabParentObject: {fileID: 114108090028910762, guid: 7b38f61de90ff8d43b5957d69ca95f66,
+    type: 2}
+  m_PrefabInternal: {fileID: 1195857521}
+  m_Script: {fileID: 11500000, guid: 5ab0c4ac0875b604faf3f4607797ea33, type: 3}
 --- !u!114 &1402952701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,17 +1753,7 @@ MonoBehaviour:
   pause: {fileID: 1922237216}
   reset: {fileID: 1922237217}
   replay: {fileID: 1922237215}
---- !u!114 &1402952702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1402952699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab0c4ac0875b604faf3f4607797ea33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  eventResume: {fileID: 1723711291}
 --- !u!1001 &1451659537
 Prefab:
   m_ObjectHideFlags: 0
@@ -1849,7 +1845,7 @@ Prefab:
         type: 2}
       propertyPath: detetId
       value: 
-      objectReference: {fileID: 1402952702}
+      objectReference: {fileID: 1402952700}
     - target: {fileID: 114814168498393696, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
         type: 2}
       propertyPath: pause
@@ -1963,7 +1959,7 @@ Prefab:
         type: 2}
       propertyPath: detetId
       value: 
-      objectReference: {fileID: 1402952702}
+      objectReference: {fileID: 1402952700}
     - target: {fileID: 114403294272533414, guid: 867c1f6da344a35429788d014a4ff604,
         type: 2}
       propertyPath: pause
@@ -2064,6 +2060,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b704049f9784434ea0be7737a072116, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1723711291 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114316042303283502, guid: 11aeadb82f0899145907922cf6849a6c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1922237213}
+  m_Script: {fileID: 11500000, guid: 1edfabad341ceed4ead8ae10bf01d300, type: 3}
 --- !u!1001 &1776199466
 Prefab:
   m_ObjectHideFlags: 0
@@ -2188,7 +2190,7 @@ Prefab:
         type: 2}
       propertyPath: detetId
       value: 
-      objectReference: {fileID: 1402952702}
+      objectReference: {fileID: 1402952700}
     - target: {fileID: 114651086288494532, guid: 11aeadb82f0899145907922cf6849a6c,
         type: 2}
       propertyPath: pause

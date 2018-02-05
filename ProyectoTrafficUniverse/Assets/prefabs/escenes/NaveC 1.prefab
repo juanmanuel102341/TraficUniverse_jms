@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 114098338998780420}
   - component: {fileID: 114969560103066588}
   - component: {fileID: 114141924618400276}
+  - component: {fileID: 114326335571613532}
   m_Layer: 0
   m_Name: NaveC 1
   m_TagString: plane
@@ -332,6 +333,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 6.5
   totalLerp: 6
+--- !u!114 &114326335571613532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803064828252600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468af6c39192d34cbf0efa0bed4bfff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114348056402496868
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -22,10 +22,9 @@ public class DetectsId : MonoBehaviour {
 			currentActive=obj;
 			currentActive.transform .GetChild(3).gameObject.SetActive(true);//prendo nueva id
 			print("prendo nuevva del obj "+currentActive.name);
-				OnclickSound();
+			OnclickSound();
 			}
 			}
-	
 	}
 
 }

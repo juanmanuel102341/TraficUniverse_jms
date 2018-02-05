@@ -6,7 +6,7 @@ public class DeactiveEvent : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
-		myEvent.finishing2+=DeactiveMe;	
+//		myEvent.finishing2+=DeactiveMe;	
 	}
 
 	public void DeactiveMe(){

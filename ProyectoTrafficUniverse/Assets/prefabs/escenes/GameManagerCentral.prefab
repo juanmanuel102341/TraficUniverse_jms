@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4436754163011040}
   - component: {fileID: 114020259025387822}
   - component: {fileID: 114322229019323248}
+  - component: {fileID: 114188653072740708}
+  - component: {fileID: 114516787218638772}
+  - component: {fileID: 114108090028910762}
   m_Layer: 0
   m_Name: GameManagerCentral
   m_TagString: gameManager_tag
@@ -52,17 +55,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbfc4da18d62a8498fbd78aa50b097a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidas: 5
-  targetPlanes: 4
+  lifes: 3
+  targetPlanes: 10
   guiLoose: {fileID: 0}
   guiWin: {fileID: 0}
-  aPlanets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  guiGame: {fileID: 0}
-  buttonWin: {fileID: 0}
-  buttonLoose: {fileID: 0}
+--- !u!114 &114108090028910762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358870793527522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab0c4ac0875b604faf3f4607797ea33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114188653072740708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358870793527522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc3b9312b2433f4ba86c3b840fece63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: {fileID: 0}
+  reset: {fileID: 0}
+  replay: {fileID: 0}
+  eventResume: {fileID: 0}
 --- !u!114 &114322229019323248
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,7 +96,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21409f3357c07fc45a9f2c5f5842c5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frecuencia: 4.2
-  objA: {fileID: 1666489747368688, guid: 6556e8c104f6404458e2324fcb9cebc9, type: 2}
-  objB: {fileID: 1475047646499280, guid: ac279d549b75c5f499123ab961a59cab, type: 2}
-  objC: {fileID: 1475047646499280, guid: 96d2dd121de25b6468c4cb052946b211, type: 2}
+  rangeTime:
+  - 4
+  - 6
+  objs:
+  - {fileID: 1757473692648486, guid: 73ce9a3509e164342bafb81c88893420, type: 2}
+  totalEnemysLimit: 6
+  rangeQuantity: 0100000003000000
+  soundManager: {fileID: 0}
+  guiTarget: {fileID: 0}
+  guiLifes: {fileID: 0}
+--- !u!114 &114516787218638772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358870793527522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d9769c81499fd4da22456f3efd5cf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
