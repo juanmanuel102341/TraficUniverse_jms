@@ -78,9 +78,9 @@ public class Reset : MonoBehaviour {
 	}
 
 	void Scripts(bool _active){
-		//spawnManager.enabled=_active;
-	//	detetId.enabled=_active;
-	//	pause.enabled=_active;
+		spawnManager.enabled=_active;
+		detetId.enabled=_active;
+		pause.enabled=_active;
 	}
 	void Planes(){
 		print("cantidad d aviones antes "+spawnManager.getListPlanes.Count);
