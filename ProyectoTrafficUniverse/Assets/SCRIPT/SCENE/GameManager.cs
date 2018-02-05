@@ -42,11 +42,12 @@ public class GameManager : MonoBehaviour {
 	}
 	public void Conditions(){
 		if(DataDontDestroy.myLife<=0){
+			print("PERDI ");
 		guiLoose.SetActive(true);
 	//	guiLoose.GetComponent<Reset>().Off();//apago cosas del juego
 		//	gameOver=true;
 		}else if(aterrizajes>=targetPlanes){
-//			print("victory");
+			print("victory");
 		guiWin.SetActive(true);
 		//guiWin.GetComponent<Reset>().Off();//apago cosas
 	
@@ -55,14 +56,6 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-//	public bool getGameOver{
-//		get{
-//			return gameOver;	
-//		}
-//		set{
-//			gameOver=value;
-//		}
-//	}
 
 
 
