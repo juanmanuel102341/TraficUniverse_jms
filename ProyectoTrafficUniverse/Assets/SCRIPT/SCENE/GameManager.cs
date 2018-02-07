@@ -9,13 +9,15 @@ public class GameManager : MonoBehaviour {
 	public int targetPlanes;
 	public GameObject guiLoose;
 	public GameObject guiWin;
-
+	private string sceneName;
 	//public static int idNumber=0;
 	void Awake () {
 		Scene scene=SceneManager.GetActiveScene();
-		int numScene=SceneUtility.GetBuildIndexByScenePath(scene.name);
+		sceneName=scene.name;
+
+		int numScene=SceneUtility.GetBuildIndexByScenePath(sceneName);
 //		print("escena numero "+numScene);
-		if(numScene==2){
+		if(numScene==3){
 
 			DataDontDestroy.initialVidas=lifes;
 		
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
 		}
 	
-	//
+		print("vidas desde gm "+DataDontDestroy.initialVidas);
 		targetGame=targetPlanes;
 
 	//	guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
@@ -48,7 +50,11 @@ public class GameManager : MonoBehaviour {
 		//	gameOver=true;
 		}else if(aterrizajes>=targetPlanes){
 			print("victory");
-		guiWin.SetActive(true);
+			guiWin.SetActive(true);
+			print("level limpio");
+			DataDontDestroy.currentLevelPass++;
+			PlayerPrefs.SetInt("current_level",DataDontDestroy.currentLevelPass);
+			print("level pass "+DataDontDestroy.currentLevelPass);
 		//guiWin.GetComponent<Reset>().Off();//apago cosas
 	
 

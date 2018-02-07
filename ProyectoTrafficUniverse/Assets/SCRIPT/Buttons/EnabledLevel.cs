@@ -9,6 +9,8 @@ public class EnabledLevel : MonoBehaviour {
 	void Awake () {
 		image=GetComponent<Image>();
 		button=GetComponent<Button>();
+		//ApplyLevel();
+		button.enabled=false;
 	}
 	public void ApplyLevel(){
 		image.sprite=mySprite;

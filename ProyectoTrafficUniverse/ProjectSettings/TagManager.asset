@@ -47,6 +47,7 @@ TagManager:
   - groupNodes
   - targets
   - managerHow
+  - buttonLevel
   layers:
   - Default
   - TransparentFX
