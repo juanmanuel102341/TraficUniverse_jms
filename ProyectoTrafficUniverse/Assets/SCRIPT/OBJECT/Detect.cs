@@ -7,6 +7,9 @@ public class Detect : MonoBehaviour {
 	public delegate void OnContact();
 	public event OnContact OnContactPlane;
 	public event OnContact OnContactTarget;
+	public GameObject explosion;
+
+
 	//private bool choque=false;//boolean utilizado para el choque y n me saque 2 vidas
 	void Awake () {
 		spawnManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<SpawnManager>();
@@ -24,6 +27,7 @@ public class Detect : MonoBehaviour {
 			//	print("colision asteroide muerte nave");
 			
 				OnContactPlane();
+				Explosion();
 			}else{
 			//		print("aterrizando 2d");
 				//print("paneta");
@@ -38,6 +42,7 @@ public class Detect : MonoBehaviour {
 			GameManager.aviones++;
 			if(GameManager.aviones==2)
 			OnContactPlane();
+			Explosion();
 			
 		}
 		}
@@ -50,6 +55,10 @@ public class Detect : MonoBehaviour {
 	}
 
 
+	private void Explosion(){
 
+		print("entrando explosion");
+		Instantiate(explosion,transform.position,transform.rotation);
+	}
 
 }
