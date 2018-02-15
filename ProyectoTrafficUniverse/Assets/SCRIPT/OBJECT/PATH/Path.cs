@@ -18,7 +18,8 @@ public class Path:PathInputs  {
 	private Vector2 playerPos;
 	private float magnitudTotal;
 
-
+	public delegate void myClickUP(float px,float py);
+	public event myClickUP onMyClickUp;
 	public Path(){
 
 	}
@@ -28,7 +29,7 @@ public class Path:PathInputs  {
 		angleConstrain=new AngleConstrain(myPrincipalPath,_myConstrain);
 		magnitud=distanceNodes;
 		magnitudTotal=pathGraphic.getMagnitudLine+magnitud;
-		print("magn total "+magnitudTotal);
+//		print("magn total "+magnitudTotal);
 	}
 
 	public void SetNewNode(Vector2 input){
@@ -132,8 +133,10 @@ public class Path:PathInputs  {
 			}
 			myPrincipalPath.setlastNode=lastNode;
 			myPrincipalPath.InsertGraphics(lastNode);
+			Vector2 aux=myPrincipalPath.CalcLastNodeVectors();
 			//print("ultimo nodo "+listNodes[listNodes.Count-1]);
-		
+			onMyClickUp(aux.x,aux.y);
+
 		}
 	}
 	public void UpdatePlayerPos(Vector2 pos){

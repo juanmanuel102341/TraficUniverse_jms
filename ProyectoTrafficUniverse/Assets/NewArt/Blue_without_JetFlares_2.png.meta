@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: 980b9ca7e4336cf4aa6297f7a9faa31d
+timeCreated: 1518123311
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Blue_without_JetFlares_2_0
+    21300002: Blue_without_JetFlares_2_1
+    21300004: Blue_without_JetFlares_2_2
+    21300006: Blue_without_JetFlares_2_3
+    21300008: Blue_without_JetFlares_2_4
+    21300010: Blue_without_JetFlares_2_5
+    21300012: Blue_without_JetFlares_2_6
+    21300014: Blue_without_JetFlares_2_7
+    21300016: Blue_without_JetFlares_2_8
+    21300018: Blue_without_JetFlares_2_9
+    21300020: Blue_without_JetFlares_2_10
+    21300022: Blue_without_JetFlares_2_11
+    21300024: Blue_without_JetFlares_2_12
+    21300026: Blue_without_JetFlares_2_13
+    21300028: Blue_without_JetFlares_2_14
+    21300030: Blue_without_JetFlares_2_15
+    21300032: Blue_without_JetFlares_2_16
+    21300034: Blue_without_JetFlares_2_17
+    21300036: Blue_without_JetFlares_2_18
+    21300038: Blue_without_JetFlares_2_19
+    21300040: Blue_without_JetFlares_2_20
+    21300042: Blue_without_JetFlares_2_21
+    21300044: Blue_without_JetFlares_2_22
+    21300046: Blue_without_JetFlares_2_23
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_0
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 3368
+        width: 576
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_1
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 3368
+        width: 566
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_2
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 3352
+        width: 558
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_3
+      rect:
+        serializedVersion: 2
+        x: 2533
+        y: 3341
+        width: 547
+        height: 444
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_4
+      rect:
+        serializedVersion: 2
+        x: 3301
+        y: 3327
+        width: 532
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_5
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 2677
+        width: 514
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_6
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 2664
+        width: 497
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_7
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 2677
+        width: 489
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_8
+      rect:
+        serializedVersion: 2
+        x: 2567
+        y: 2669
+        width: 489
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_9
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 2664
+        width: 489
+        height: 467
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_10
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1997
+        width: 486
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_11
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 2008
+        width: 489
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_12
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 2025
+        width: 488
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_13
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 2053
+        width: 486
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_14
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 2073
+        width: 486
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_15
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1184
+        width: 584
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_16
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 1175
+        width: 578
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_17
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1191
+        width: 576
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_18
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 1193
+        width: 570
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_19
+      rect:
+        serializedVersion: 2
+        x: 3328
+        y: 1166
+        width: 561
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_20
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 527
+        width: 552
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_21
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 552
+        width: 530
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_22
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 605
+        width: 512
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Blue_without_JetFlares_2_23
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 581
+        width: 505
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

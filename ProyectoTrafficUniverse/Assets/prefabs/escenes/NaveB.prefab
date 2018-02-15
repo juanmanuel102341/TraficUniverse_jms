@@ -43,7 +43,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1181498919556538
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,6 +76,8 @@ GameObject:
   - component: {fileID: 114384019541840334}
   - component: {fileID: 114358127709141930}
   - component: {fileID: 114025985627215058}
+  - component: {fileID: 95423007478266544}
+  - component: {fileID: 114108807039471482}
   m_Layer: 0
   m_Name: NaveB
   m_TagString: plane
@@ -196,7 +198,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1475047646499280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -63.030285, y: -19.266386, z: 0}
+  m_LocalPosition: {x: -80.74455, y: 1.56, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4788185549745258}
@@ -281,6 +283,23 @@ BoxCollider2D:
   m_Offset: {x: -0.04533802, y: -0.07771053}
   serializedVersion: 2
   m_Size: {x: 1.8154205, y: 1.517983}
+--- !u!95 &95423007478266544
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5826ec62f2832804ea0bd122ec5dde11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95585465899294466
 Animator:
   serializedVersion: 3
@@ -325,6 +344,17 @@ MonoBehaviour:
   - {fileID: 4185239225923530, guid: 90d27dff4d434c146b1bdb33129a7d99, type: 2}
   - {fileID: 4223826351949002, guid: 494c85136ac0c6c47b3c6ff7f66dbb29, type: 2}
   - {fileID: 4757766875664660, guid: db45a4cba28dc5d4da8e6e55d6c06b85, type: 2}
+--- !u!114 &114108807039471482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16abcc45116b3bf41b4935ae4be7d684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114191400336667548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -571,7 +601,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -185569183
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 959b56b7b329d6a419b0202735de1662, type: 3}
+  m_Sprite: {fileID: 21300000, guid: efc6f7781e8fdfb45b8c70dd41b0d96a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

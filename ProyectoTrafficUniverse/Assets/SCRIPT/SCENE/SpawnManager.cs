@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour {
 	public GuiTarget guiTarget;
 	public Gui guiLifes;
 	private GameManager gameManager;
+
 	void Awake () {
 		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
@@ -43,6 +44,7 @@ public class SpawnManager : MonoBehaviour {
 					float heightObj;
 					GameObject obj;
 					int n=Random.Range(0,4);//random entre los 4 costados dela screen
+				
 					if(i>=1){
 						//print("anterior "+aux);
 						//print("actual "+n);
@@ -61,19 +63,19 @@ public class SpawnManager : MonoBehaviour {
 					}
 			
 
-					//n=3;
+					//n=2;
 				
 					switch(n){
 				
 					case 0://**left
-		//				print("red spawn");
+						print( "spawn izquierda");
 						obj=GetObjetRandom(0,objs.Length);
 						widthObj=obj.GetComponent<Transform>().localScale.x/2;//ancho del objeto dividido 2
 						heightObj=obj.GetComponent<Transform>().localScale.y/2;//alto div2
-						
 						obj.GetComponent<Bounds>().setWidth=widthObj;
 						obj.GetComponent<Bounds>().setHeight=heightObj;
-						GenerateSpawn(obj,-screenData.getWidthScene+widthObj,-screenData.getHeightScene+widthObj,screenData.getHeightScene-heightObj,false,270);
+
+						GenerateSpawn(obj,-screenData.getWidthScene+widthObj,-screenData.getHeightScene+widthObj,screenData.getHeightScene-heightObj,false,90,Vector2.right);
 						break;
 					case 1:
 						//down
@@ -82,7 +84,8 @@ public class SpawnManager : MonoBehaviour {
 						heightObj=obj.GetComponent<Transform>().localScale.y/2;//alto div2
 						obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 						obj.GetComponent<Bounds>().setHeight=heightObj;
-						GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0);
+
+						GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0,Vector2.up);
 
 						break;
 					case 2:
@@ -92,7 +95,7 @@ public class SpawnManager : MonoBehaviour {
 						heightObj=obj.GetComponent<Transform>().localScale.y/2;//alto div2
 						obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 						obj.GetComponent<Bounds>().setHeight=heightObj;
-						GenerateSpawn(obj,screenData.getWidthScene-widthObj,-screenData.getHeightScene+heightObj,screenData.getHeightScene-heightObj,false,90);
+						GenerateSpawn(obj,screenData.getWidthScene-widthObj,-screenData.getHeightScene+heightObj,screenData.getHeightScene-heightObj,false,90,Vector2.left);
 						break;
 					case 3:
 						//up
@@ -101,7 +104,7 @@ public class SpawnManager : MonoBehaviour {
 						heightObj=obj.GetComponent<Transform>().localScale.y/2;//alto div2
 						obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
 						obj.GetComponent<Bounds>().setHeight=heightObj;
-						GenerateSpawn(obj,screenData.getHeightScene-heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,180);
+						GenerateSpawn(obj,screenData.getHeightScene-heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,180,Vector2.down);
 						break;
 						}
 			
@@ -133,14 +136,16 @@ public class SpawnManager : MonoBehaviour {
 		listaObj.Remove(obj);
 	}
 
-	private void GenerateSpawn(GameObject _obj,float ptoFijoSalida,float r1,float r2,bool fijoY,float rot){
+	private void GenerateSpawn(GameObject _obj,float ptoFijoSalida,float r1,float r2,bool fijoY,float rot,Vector2 myVectorOut){
 		if(fijoY){
 			//up down, varia x 
 			Vector2 spawnfY;
 			spawnfY.x=Random.Range(r1,r2);
 			spawnfY.y=ptoFijoSalida;
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
-			auxObjFY.transform.Rotate(0,0,rot);
+			//auxObjFY.transform.Rotate(0,0,rot);
+			auxObjFY.GetComponent<MyAnimations>().setAngleBetween=rot;
+			auxObjFY.GetComponent<MoveSoft>().setMyVector=myVectorOut;
 			detectsIdEvent.EventStart(auxObjFY);
 			soundManager.Events(auxObjFY);
 			guiTarget.EventsMe(auxObjFY);
@@ -154,7 +159,12 @@ public class SpawnManager : MonoBehaviour {
 			spawnFX.x=ptoFijoSalida;
 			spawnFX.y=Random.Range(r1,r2);
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
-			auxObjFX.transform.Rotate(0,0,rot);
+			auxObjFX.GetComponent<MyAnimations>().setAngleBetween=rot;
+			auxObjFX.GetComponent<MoveSoft>().setMyVector=myVectorOut;
+			if(myVectorOut==Vector2.left){
+				auxObjFX.GetComponent<SpriteRenderer>().flipX=true;
+			}
+			//auxObjFX.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFX);
 			soundManager.Events(auxObjFX);
 			guiTarget.EventsMe(auxObjFX);

@@ -15,7 +15,7 @@ public class PathInputs : MonoBehaviour {
 
 	public GameObject id;
 	protected Vector2 playerPos;
-
+	private MoveSoft moveSoft;
 	public delegate void OnClickMe(GameObject obj);//evento q se disprara en detetcs id para prender circulito de identificacion a
 	public event OnClickMe ClickMe;
 	private PositionMouse posMouse;
@@ -30,7 +30,7 @@ public class PathInputs : MonoBehaviour {
 
 		cameraGame=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 		deleteAll=GetComponent<DeleteAllPaths>();
-
+		moveSoft=GetComponent<MoveSoft>();
 	//	print("my last node "+tag+lastNode);
 		pathGraphic=GetComponent<PathGraphic>();
 
@@ -39,14 +39,15 @@ public class PathInputs : MonoBehaviour {
 		posMouse=GetComponent<PositionMouse>();
 //		print("clase path inputs");
 		if(tag=="plane"){
-			myPrincipalPath=new MyPath(pathGraphic);
+			myPrincipalPath=new MyPath(pathGraphic,moveSoft);
 			//pathGraphic.lastNode.GetComponent<PathInputs>().getMyPrinciplePath=myPrincipalPath;
-			print("desde plane my principal path "+myPrincipalPath);
+//			print("desde plane my principal path "+myPrincipalPath);
 		}
 
 	}
 	void Start(){
 		path=new Path(pathGraphic,myConstrainAngle,myPrincipalPath,1.5f);
+//		moveSoft.setMyEvent();
 	}
 	protected void Update () {
 		GetInputMouse();

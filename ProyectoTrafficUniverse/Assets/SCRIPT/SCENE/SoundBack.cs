@@ -10,9 +10,9 @@ public class SoundBack : MonoBehaviour {
 		myAudio=GetComponent<AudioSource>();
 		myAudio.playOnAwake=true;
 
-		print("pause "+pause);
+//		print("pause "+pause);
 	
-		print("event resume "+eventResume);
+//		print("event resume "+eventResume);
 	}
 	void Start(){
 		pause.pauseOff+=StopMe;

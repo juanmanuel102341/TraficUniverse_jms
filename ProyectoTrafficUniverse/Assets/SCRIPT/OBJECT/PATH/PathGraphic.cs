@@ -13,7 +13,7 @@ public class PathGraphic : MonoBehaviour {
 	void Awake(){
 		widthLine=graphicPath.GetComponent<Transform>().localScale.x;
 	
-		print("widh line "+widthLine);
+//		print("widh line "+widthLine);
 	
 			
 	}

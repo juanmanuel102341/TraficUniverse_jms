@@ -21,7 +21,7 @@ public class PathGenerator  {
 //		Debug.Log("distanceNodes "+distanceNodes);
 //		Debug.Log("distance "+distance);
 //		Debug.Log("total "+total);
-		myPath=new MyPath(null);
+		myPath=new MyPath(null,null);
 		path=new Path(pathGraphic,0,myPath,0.9f);//parametro 0, para q la condicion de distanciadentro de la clase path n entre en vigor
 		Calc();
 	}

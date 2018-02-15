@@ -10,9 +10,12 @@ public class MyPath {
 	private int indexLast=0;
 	private PathGraphic pathGraphic;
 	private MoveSoft moveSoft;
-	public MyPath(PathGraphic _pathGraphic){
-		pathGraphic=_pathGraphic;
 
+	public float px;
+	public float py;
+	public MyPath(PathGraphic _pathGraphic,MoveSoft _moveSoft){
+		pathGraphic=_pathGraphic;
+		moveSoft=_moveSoft;
 	}
 
 	public void InsertVector(Vector2 v){
@@ -73,5 +76,33 @@ public class MyPath {
 			return lastNode;
 		}
 	}
+	public Vector2 CalcLastNodeVectors(){
+		Vector2 aux2;
+		if(listVectors.Count>1){
+		Vector2 aux=listVectors[listVectors.Count-1]-listVectors[listVectors.Count-2];
+
+			float d=Vector2.Distance(listVectors[listVectors.Count-1],listVectors[listVectors.Count-2]);
+			//Debug.Log("ulitmo vector "+aux );
+			Debug.Log("distancia "+d);
+			px=aux.x/d;
+			py=aux.y/d;
+			Debug.Log("propx "+px);
+			Debug.Log("prop y "+py);
+		
+			aux2.x=px;
+			aux2.y=py;
+			return aux2;
+		}else{
+			
+			px=0;
+			py=1;
+			aux2.x=px;
+			aux2.y=py;
+		
+			return aux2;
+		}
+	}
+
+
 
 }
