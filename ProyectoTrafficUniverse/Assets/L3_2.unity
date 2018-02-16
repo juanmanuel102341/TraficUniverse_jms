@@ -882,8 +882,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 8
   - 15
+  - 35
 --- !u!114 &565112996 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114691736409492662, guid: fadb1609370d88d419767dabde91dc11,
@@ -1385,8 +1385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 8
-  - 12
+  - 15
+  - 35
 --- !u!1001 &1356343458
 Prefab:
   m_ObjectHideFlags: 0
@@ -1716,8 +1716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 8
-  - 22
+  - 15
+  - 35
 --- !u!1001 &1525356419
 Prefab:
   m_ObjectHideFlags: 0
@@ -2251,8 +2251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 8
   - 15
+  - 35
 --- !u!114 &2073610870 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114199292221951790, guid: 8be1f2e900cad0f47a3084bc56f3435a,

@@ -1263,8 +1263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 3.5
-  - 7
+  - 15
+  - 35
 --- !u!1 &1704146749 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1523985912519656, guid: 8be1f2e900cad0f47a3084bc56f3435a,
@@ -1678,8 +1678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 3.5
-  - 7
+  - 15
+  - 35
 --- !u!114 &2094729540 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114316042303283502, guid: 11aeadb82f0899145907922cf6849a6c,

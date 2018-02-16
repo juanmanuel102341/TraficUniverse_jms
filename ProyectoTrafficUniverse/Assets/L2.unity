@@ -2029,8 +2029,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 4.7
-  - 8
+  - 15
+  - 35
 --- !u!1001 &1288010547
 Prefab:
   m_ObjectHideFlags: 0
@@ -2535,8 +2535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 4.7
-  - 8
+  - 15
+  - 35
 --- !u!1001 &1696390754
 Prefab:
   m_ObjectHideFlags: 0

@@ -108,7 +108,7 @@ public class PathInputs : MonoBehaviour {
 		}
 	}
 	private bool OverMe(Vector2 _clickPoint){
-		if(_clickPoint.x<transform.position.x+transform.localScale.x/2&&_clickPoint.y>transform.position.y-transform.localScale.y/2){
+		if(_clickPoint.x<transform.position.x+transform.localScale.x&&_clickPoint.y>transform.position.y-transform.localScale.y){
 
 			print("click encima objeto");
 			return true;

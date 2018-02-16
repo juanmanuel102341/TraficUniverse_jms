@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour {
 			DataDontDestroy.currentLevelPass++;
 			PlayerPrefs.SetInt("current_level",DataDontDestroy.currentLevelPass);
 			print("level pass "+DataDontDestroy.currentLevelPass);
+			PlayerPrefs.SetInt("charge",1);
 		//guiWin.GetComponent<Reset>().Off();//apago cosas
 	
 

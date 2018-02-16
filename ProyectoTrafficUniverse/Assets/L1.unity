@@ -1739,8 +1739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpAngular:
-  - 8
-  - 14
+  - 15
+  - 35
 --- !u!1001 &2135986302
 Prefab:
   m_ObjectHideFlags: 0
