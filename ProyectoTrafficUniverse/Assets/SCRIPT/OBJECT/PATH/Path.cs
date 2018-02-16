@@ -18,8 +18,6 @@ public class Path:PathInputs  {
 	private Vector2 playerPos;
 	private float magnitudTotal;
 
-	public delegate void myClickUP(float px,float py);
-	public event myClickUP onMyClickUp;
 	public Path(){
 
 	}
@@ -65,6 +63,11 @@ public class Path:PathInputs  {
 		}else {
 			first=true;
 			constrainActive=false;
+//			if(input.x>playerPos.x){
+//				input.x=playerPos.x+0.6f;
+//			}else{
+//				input.x=playerPos.x-0.6f;
+//			}
 			SetList(input);
 		}
 
@@ -76,10 +79,10 @@ public class Path:PathInputs  {
 	}
 	private void Check(Vector2 v1,Vector2 v2){
 		float d=Vector2.Distance(v1,v2);
-		print("distance "+d);
+		//print("distance "+d);
 		if(d>magnitud){
 			SetNewNode(v2);
-			print("entrando");
+		//	print("entrando");
 		}
 	}
 	private void SetList(Vector2 _vec){
@@ -133,9 +136,8 @@ public class Path:PathInputs  {
 			}
 			myPrincipalPath.setlastNode=lastNode;
 			myPrincipalPath.InsertGraphics(lastNode);
-			Vector2 aux=myPrincipalPath.CalcLastNodeVectors();
-			//print("ultimo nodo "+listNodes[listNodes.Count-1]);
-			onMyClickUp(aux.x,aux.y);
+			myPrincipalPath.CalcLastNodeVectors();
+
 
 		}
 	}

@@ -13,6 +13,8 @@ public class MyPath {
 
 	public float px;
 	public float py;
+
+
 	public MyPath(PathGraphic _pathGraphic,MoveSoft _moveSoft){
 		pathGraphic=_pathGraphic;
 		moveSoft=_moveSoft;
@@ -76,22 +78,27 @@ public class MyPath {
 			return lastNode;
 		}
 	}
-	public Vector2 CalcLastNodeVectors(){
+	public void CalcLastNodeVectors(){
 		Vector2 aux2;
 		if(listVectors.Count>1){
 		Vector2 aux=listVectors[listVectors.Count-1]-listVectors[listVectors.Count-2];
-
+			int dx=1;
+			int dy=1;
 			float d=Vector2.Distance(listVectors[listVectors.Count-1],listVectors[listVectors.Count-2]);
 			//Debug.Log("ulitmo vector "+aux );
-			Debug.Log("distancia "+d);
+		//	Debug.Log("distancia "+d);
 			px=aux.x/d;
 			py=aux.y/d;
-			Debug.Log("propx "+px);
-			Debug.Log("prop y "+py);
 		
-			aux2.x=px;
-			aux2.y=py;
-			return aux2;
+		
+			if(moveSoft.getLmitActive){
+			moveSoft.setDir*=-1;
+				moveSoft.getLmitActive=false;
+			}
+			//moveSoft.SetDirec(dx,dy);
+			aux2.x=Mathf.Abs(px);
+			aux2.y=Mathf.Abs(py);
+		//	return aux2;
 		}else{
 			
 			px=0;
@@ -99,8 +106,11 @@ public class MyPath {
 			aux2.x=px;
 			aux2.y=py;
 		
-			return aux2;
+		//	return aux2;
 		}
+	
+		moveSoft.onClickUp(px,py);
+	
 	}
 
 

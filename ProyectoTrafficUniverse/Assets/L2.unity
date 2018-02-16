@@ -1732,13 +1732,13 @@ Prefab:
         type: 2}
       propertyPath: objs.Array.data[0]
       value: 
-      objectReference: {fileID: 1803064828252600, guid: d76b4ee3ea8fc6c49b2f97e015162269,
+      objectReference: {fileID: 1757473692648486, guid: 73ce9a3509e164342bafb81c88893420,
         type: 2}
     - target: {fileID: 114322229019323248, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: objs.Array.data[1]
       value: 
-      objectReference: {fileID: 1803064828252600, guid: d76b4ee3ea8fc6c49b2f97e015162269,
+      objectReference: {fileID: 1475047646499280, guid: ac279d549b75c5f499123ab961a59cab,
         type: 2}
     - target: {fileID: 114020259025387822, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
@@ -1788,7 +1788,7 @@ Prefab:
     - target: {fileID: 114322229019323248, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}
       propertyPath: totalEnemysLimit
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114322229019323248, guid: 7b38f61de90ff8d43b5957d69ca95f66,
         type: 2}

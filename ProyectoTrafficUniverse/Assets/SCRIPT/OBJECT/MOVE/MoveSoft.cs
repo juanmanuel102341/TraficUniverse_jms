@@ -33,12 +33,14 @@ public class MoveSoft : MonoBehaviour {
 	private bool first=false;
 	private float propx;
 	private float propy;
+	private int dirx=1;
+	private int diry=1;
+	private bool limiteActive=false;
 	void Awake () {
 		pathInputs=GetComponent<PathInputs>();
 
 		spr=GetComponent<SpriteRenderer>();
 		angle=new AngleMove();
-		//timer=new Timer(time,this);
 		playerPos=transform.position;
 		bounds=GetComponent<Bounds>();
 		targetVector=transform.up;
@@ -48,7 +50,7 @@ public class MoveSoft : MonoBehaviour {
 	void Start(){
 		nodeState=new NodeState(this,pathInputs.getMyPrinciplePath);
 		myPpath=pathInputs.getMyPrinciplePath;
-		pathInputs.path.onMyClickUp+=onClickUp;
+
 	}
 	void Update () {
 		
@@ -58,8 +60,8 @@ public class MoveSoft : MonoBehaviour {
 	}
 
 		private void Move2(){
-		print("prop x "+propx);
-		print("prop y "+propy);
+	//	print("prop x "+propx);
+	//	print("prop y "+propy);
 		if(!bounds.limiteActive){
 			
 			if(myPpath.getListVectors.Count>0){
@@ -83,8 +85,9 @@ public class MoveSoft : MonoBehaviour {
 				initializeLerp=false;
 
 				if(!initial){
-					myVector.x=1*propx;
-					myVector.y=1*propy;
+					
+					myVector.x=1*propx*dirx;
+					myVector.y=1*propy*diry;
 //					print("myvector "+myVector);
 				}
 
@@ -95,14 +98,29 @@ public class MoveSoft : MonoBehaviour {
 			//Debug.Log("borrando paths ");
 			if(myPpath.getListVectors.Count>0)
 			myPpath.DeleteAllNodes();
+		
+				print("lim8ite activo");
+				dir*=-1;
+				limiteActive=true;
 
-			transform.up=transform.up*-1;
-			bounds.limiteActive=false;
+				bounds.limiteActive=false;
 
 		}
 	}
+	public void SetDirec(int _dirx,int _diry){
 
+		dirx=_dirx;
+		diry=_diry;
 
+	}
+	public int setDir{
+		set{
+			dir=value;
+		}
+		get{
+			return dir;	
+		}
+	}
 	public Vector2 getPlayerPos{
 		get{
 			return playerPos;		
@@ -118,15 +136,20 @@ public class MoveSoft : MonoBehaviour {
 	}
 
 
-	public void setMyEvent(){
-		pathInputs.path.onMyClickUp+=onClickUp;
-	}
 	public void onClickUp(float px,float py){
-		print("entrando en mi evento");
-		print("click x "+px);
-		print("click y "+py);
+		//print("entrando en mi evento");
+		//print("click x "+px);
+		//print("click y "+py);
 		propx=px;
 		propy=py;
+	}
+	public bool getLmitActive{
+		get{
+			return limiteActive;
+		}
+		set{
+			limiteActive=value;
+		}
 	}
 		
 }
