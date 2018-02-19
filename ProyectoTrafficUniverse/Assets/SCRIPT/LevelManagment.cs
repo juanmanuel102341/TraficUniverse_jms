@@ -12,7 +12,7 @@ public class LevelManagment : MonoBehaviour {
 	//private string currentLevel;
 
 	void Awake () {
-	//	PlayerPrefs.DeleteAll();
+	//PlayerPrefs.DeleteAll();
 	//	print("lebg buttons "+aButtons.Length);
 	//	print("first "+aButtons[0].name);
 
