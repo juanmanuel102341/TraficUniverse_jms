@@ -7,6 +7,8 @@ public class Detect : MonoBehaviour {
 	public delegate void OnContact();
 	public event OnContact OnContactPlane;
 	public event OnContact OnContactTarget;
+	public event  OnContact OnContactFrontier;
+	//public Bounds bounds;
 	public GameObject explosion;
 
 
@@ -18,13 +20,13 @@ public class Detect : MonoBehaviour {
 //		print(objParent.name);
 	}
 	void OnTriggerEnter2D(Collider2D col){
-		//print("contacto collider nave");
+		//print("contacto collider nave "+col.name);
 
 		if(checkTarget.CheckMyTarget(col.tag)){
 			TakeOutPlane();
 			if(col.tag=="asteroide")
 			{	
-			//	print("colision asteroide muerte nave");
+				print("colision asteroide muerte nave");
 			
 				OnContactPlane();
 				Explosion();
@@ -36,7 +38,7 @@ public class Detect : MonoBehaviour {
 			}
 
 		}else if(col.gameObject.tag=="shipRed"||col.gameObject.tag=="shipBlue"||col.gameObject.tag=="shipGreen") {
-		//	print("choque d naves");
+			print("choque d naves");
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
 			GameManager.aviones++;
@@ -44,7 +46,11 @@ public class Detect : MonoBehaviour {
 			OnContactPlane();
 			Explosion();
 			
-		}
+		}else if(col.gameObject.tag=="frontier"){
+			print("fontier colisioon!!");
+			//bounds.setLimitOutside=true;
+			OnContactFrontier();
+			}
 		}
 
 	private void TakeOutPlane(){

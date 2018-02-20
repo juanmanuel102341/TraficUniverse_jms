@@ -15,7 +15,7 @@ public class Reset : MonoBehaviour {
 	public GameObject guiFinal;
 	public SoundBack soundBack;
 	private GameManager gameManager;
-
+	public GameObject backsGuiEscene;
 	void Awake () {
 		aAsteroids=GameObject.FindGameObjectsWithTag("asteroide");
 		gameManager=spawnManager.transform.gameObject.GetComponent<GameManager>();
@@ -35,6 +35,7 @@ public class Reset : MonoBehaviour {
 		Planets(false);
 		Asteroids(false);
 		MyGui(false);
+
 		soundBack.StopMe();
 		Scripts(false);
 
@@ -72,9 +73,11 @@ public class Reset : MonoBehaviour {
 		}
 
 
+//		
+		backsGuiEscene.SetActive(_active);
+		gui.transform.GetChild(0).gameObject.GetComponent<Gui>().SwichLifesOn();
+		gui.transform.GetChild(1).gameObject.GetComponent<GuiTarget>().Reset();	
 		gui.SetActive(_active);
-		gui.transform.GetChild(1).gameObject.GetComponent<Gui>().SwichLifesOn();
-		gui.transform.GetChild(0).gameObject.GetComponent<GuiTarget>().Reset();	
 	}
 
 	void Scripts(bool _active){

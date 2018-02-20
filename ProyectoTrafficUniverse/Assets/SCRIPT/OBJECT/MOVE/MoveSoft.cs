@@ -104,7 +104,7 @@ public class MoveSoft : MonoBehaviour {
 				limiteActive=true;
 
 				bounds.limiteActive=false;
-
+			bounds.setLimitOutside=false;
 		}
 	}
 	public void SetDirec(int _dirx,int _diry){

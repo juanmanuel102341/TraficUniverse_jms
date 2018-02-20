@@ -48,6 +48,8 @@ TagManager:
   - targets
   - managerHow
   - buttonLevel
+  - guiBack
+  - frontier
   layers:
   - Default
   - TransparentFX

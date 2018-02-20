@@ -18,7 +18,7 @@ public class AlertColision : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		if(col.gameObject.tag=="colisionRed"||col.gameObject.tag=="colisionBlue"||col.gameObject.tag=="colisionGreen"){
-//			print("area colsion activa");
+			print("area colsion activa "+col.name);
 			objColision.SetActive(true);
 			sprite.SetActive(true);
 			onAlertColsion();
@@ -26,11 +26,14 @@ public class AlertColision : MonoBehaviour {
 		if(checkTarget.CheckMyTarget(col.tag)){
 			if(col.tag=="asteroide")
 			sprite.SetActive(true);//activo carte de sprite attention
-			//print("prendo collider para un posible aterrizaje");
+			print("prendo collider para un posible aterrizaje");
 			objColision.SetActive(true);
 			onAlertColsion();
 		}
-			
+		if(col.gameObject.tag=="frontier"){
+			print("frontier alert!!!");
+			objColision.SetActive(true);
+		}	
 	}
 
 	void OnTriggerExit2D(Collider2D col){

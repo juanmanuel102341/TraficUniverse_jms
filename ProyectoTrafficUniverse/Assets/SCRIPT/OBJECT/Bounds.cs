@@ -7,18 +7,21 @@ public class Bounds : MonoBehaviour {
 	private ScreenValues screenData;
 	private float widthObj=0;
 	private float heightObj=0;
+	private bool limitOutside=false;
 	void Start () {
 		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
+		transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Detect>().OnContactFrontier+=onBoundFrontier;
 	}
 
 	void Update () {
 //		Debug.Log("UP "+transform.up);
-		if(AxisXMin()||AxisYMin()||AxisXMax()||AxisYMax()){
+		if(AxisXMin()||AxisYMin()||AxisXMax()||AxisYMax()||limitOutside){
 			//print("limite activo");
 		limite=true;
 		}else{
 			limite=false;
 		}
+		print("frontier "+limite);
 	}
 	private bool AxisXMin(){
 		if(transform.position.x-widthObj<-screenData.getWidthScene){
@@ -73,5 +76,19 @@ public class Bounds : MonoBehaviour {
 		//	print("height b"+heightObj);
 		}
 	}
+	public bool setLimitOutside{
+		set{
+			limitOutside=value;
+		
+		}
+			
+	}
+
+	public void onBoundFrontier(){
+		print("activando frontier");
+		limitOutside=true;
+	}
+
+
 }
 

@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour {
 	public Gui guiLifes;
 	private GameManager gameManager;
 
+
 	void Awake () {
 		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
@@ -24,6 +25,11 @@ public class SpawnManager : MonoBehaviour {
 		frecuencia=2;//tiro frecuencia yo para q el usuario n tenga q esperar tanto
 //		print("freuenncia "+frecuencia);
 		gameManager=GetComponent<GameManager>();
+	
+
+
+
+	
 	}
 	void Start(){
 		screenData=GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ScreenValues>();
@@ -33,7 +39,9 @@ public class SpawnManager : MonoBehaviour {
 		time+=Time.deltaTime;	
 		}
 		if(time>frecuencia&&!SpawnLimitActive()){
-			int total=QuantityEnemys(rangeQuantity[0],rangeQuantity[1]);
+			int total=1;
+				//QuantityEnemys(rangeQuantity[0],rangeQuantity[1]);
+		
 			//total=2;
 			int aux=0;
 //			print("total "+total);
@@ -44,8 +52,7 @@ public class SpawnManager : MonoBehaviour {
 					float heightObj;
 					GameObject obj;
 					int n=Random.Range(0,4);//random entre los 4 costados dela screen
-				
-					if(i>=1){
+						
 						//print("anterior "+aux);
 						//print("actual "+n);
 						if(aux==n){
@@ -54,19 +61,14 @@ public class SpawnManager : MonoBehaviour {
 								n++;
 						//		print("sumo uno");
 							}else{
-								n--;
-						//		print("resto 1");
+							n--;
+							//		print("resto 1");
 							}
+						}else{
+							aux=n;	
 						}
-					}else{
-						aux=n;			
-					}
-			
-
-					//n=2;
-				
-					switch(n){
-				
+					n=2;
+				switch(n){
 					case 0://**left
 						print( "spawn izquierda");
 						obj=GetObjetRandom(0,objs.Length);
@@ -82,7 +84,7 @@ public class SpawnManager : MonoBehaviour {
 					obj=GetObjetRandom(0,objs.Length);
 						widthObj=obj.GetComponent<Transform>().localScale.x/2;//ancho del objeto dividido 2
 						heightObj=obj.GetComponent<Transform>().localScale.y/2;//alto div2
-						obj.GetComponent<Bounds>().setWidth=widthObj;//seteo del width del obj para calculo de bounds
+						obj.GetComponent<Bounds>().setWidth=widthObj+10;//seteo del width del obj para calculo de bounds
 						obj.GetComponent<Bounds>().setHeight=heightObj;
 
 						GenerateSpawn(obj,-screenData.getHeightScene+heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,0,Vector2.up);
@@ -107,9 +109,7 @@ public class SpawnManager : MonoBehaviour {
 						GenerateSpawn(obj,screenData.getHeightScene-heightObj,-screenData.getWidthScene+widthObj,screenData.getWidthScene-widthObj,true,180,Vector2.down);
 						break;
 						}
-			
-			
-				if(i+1==total){
+			if(i+1==total){
 						//print("limite naves 1 cond");
 						ResetValues();
 					}
@@ -140,8 +140,24 @@ public class SpawnManager : MonoBehaviour {
 		if(fijoY){
 			//up down, varia x 
 			Vector2 spawnfY;
-			spawnfY.x=Random.Range(r1,r2);
+			float restrictionX=r1+screenData.getConstrainGui.x;
+
+			if(myVectorOut==Vector2.up){
+				//down x minimo no me importa
+				//print("entrando restriccion");
+				restrictionX=r1;//no aplica para ese costado la restriccion x eso pongo el ancho de escena
+			}
+		
+//			print(" screem width "+screenData.getWidthScene);
+//			print("r1 "+r1);
+//			print("r2 "+r2);
+//			print("screenData.getConstrainGui.x" +screenData.getConstrainGui.x);
+		
+			spawnfY.x=Random.Range(restrictionX+5,r2-screenData.getConstrainGui.x);
+			//spawnfY.x=restrictionX+5;
+			//spawnfY.x=r2-screenData.getConstrainGui.x;
 			spawnfY.y=ptoFijoSalida;
+			//print("spanw "+spawnfY);
 			GameObject auxObjFY=Instantiate(_obj,spawnfY,transform.rotation);
 			//auxObjFY.transform.Rotate(0,0,rot);
 			auxObjFY.GetComponent<MyAnimations>().setAngleBetween=rot;
@@ -157,7 +173,17 @@ public class SpawnManager : MonoBehaviour {
 		//right left fijo x , varia y
 			Vector2 spawnFX;
 			spawnFX.x=ptoFijoSalida;
-			spawnFX.y=Random.Range(r1,r2);
+			float restrictionY=r1+screenData.getConstrainGui.y;
+			if(myVectorOut==Vector2.right){
+				//esquina izquierda 
+				restrictionY=r1;
+		//		print("entrando restriccion fijox");
+			}
+
+			spawnFX.y=Random.Range(r2-screenData.getConstrainGui.y,restrictionY+5);
+			//spawnFX.y=restrictionY+5;
+			//spawnFX.y=r2-screenData.getConstrainGui.y;
+		//	print("spawn fijo x "+spawnFX );
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
 			auxObjFX.GetComponent<MyAnimations>().setAngleBetween=rot;
 			auxObjFX.GetComponent<MoveSoft>().setMyVector=myVectorOut;
