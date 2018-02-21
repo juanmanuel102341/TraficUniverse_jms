@@ -21,12 +21,12 @@ public class Bounds : MonoBehaviour {
 		}else{
 			limite=false;
 		}
-		print("frontier "+limite);
+//		print("frontier "+limite);
 	}
 	private bool AxisXMin(){
 		if(transform.position.x-widthObj<-screenData.getWidthScene){
 			
-			Debug.Log("limite izq "+transform.position.x);
+			//Debug.Log("limite izq "+transform.position.x);
 			transform.position=new Vector2(-screenData.getWidthScene+widthObj,transform.position.y);
 			return true;
 		}

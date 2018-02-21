@@ -27,14 +27,14 @@ public class Detect : MonoBehaviour {
 			if(col.tag=="asteroide")
 			{	
 				print("colision asteroide muerte nave");
-			
-				OnContactPlane();
+				OnContactPlane();//el evento se vincula con gui y dentro de esta se le resta una vida
 				Explosion();
 			}else{
-			//		print("aterrizando 2d");
+			print("aterrizando 2d");
 				//print("paneta");
 				GameManager.aterrizajes++;//aumento contador aterrizajes
 				OnContactTarget();
+				//OnContactPlane();
 			}
 
 		}else if(col.gameObject.tag=="shipRed"||col.gameObject.tag=="shipBlue"||col.gameObject.tag=="shipGreen") {
@@ -42,9 +42,10 @@ public class Detect : MonoBehaviour {
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
 			GameManager.aviones++;
-			if(GameManager.aviones==2)
+			if(GameManager.aviones==2){
 			OnContactPlane();
 			Explosion();
+			}
 			
 		}else if(col.gameObject.tag=="frontier"){
 			print("fontier colisioon!!");

@@ -35,6 +35,7 @@ public class LevelManagment : MonoBehaviour {
 
 
 	void Start(){
+		levelPass=aButtons.Length;
 		print("current level start "+levelPass);
 		for(int i=0;i<levelPass;i++){
 			aButtons[i].GetComponent<EnabledLevel>().ApplyLevel();

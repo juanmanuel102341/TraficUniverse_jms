@@ -24,11 +24,15 @@ public class AlertColision : MonoBehaviour {
 			onAlertColsion();
 		}
 		if(checkTarget.CheckMyTarget(col.tag)){
-			if(col.tag=="asteroide")
+			if(col.tag=="asteroide"){
 			sprite.SetActive(true);//activo carte de sprite attention
+				onAlertColsion();
+			}
+
 			print("prendo collider para un posible aterrizaje");
 			objColision.SetActive(true);
-			onAlertColsion();
+
+			
 		}
 		if(col.gameObject.tag=="frontier"){
 			print("frontier alert!!!");

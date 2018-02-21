@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 		detect.OnContactTarget+=Conditions;
 	}
 	public void Conditions(){
-		if(DataDontDestroy.myLife<=0){
+		if(DataDontDestroy.myLife<0){
 			print("PERDI ");
 		guiLoose.SetActive(true);
 	//	guiLoose.GetComponent<Reset>().Off();//apago cosas del juego
