@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour {
 						}else{
 							aux=n;	
 						}
-					n=2;
+					//n=2;
 				switch(n){
 					case 0://**left
 						print( "spawn izquierda");
