@@ -89,7 +89,7 @@ public class PathInputs : MonoBehaviour {
 		Vector2 auxInput=posMouse.Calc();
 
 		if(Input.GetMouseButton(0)&&activatePath){
-			//print("click "+auxInput);
+			print("click "+auxInput);
 			path.SetNewNode(auxInput);//parte codigo
 			}
 	}
@@ -107,16 +107,16 @@ public class PathInputs : MonoBehaviour {
 			myPrincipalPath=value;
 		}
 	}
-	private bool OverMe(Vector2 _clickPoint){
-		if(_clickPoint.x<transform.position.x+transform.localScale.x&&_clickPoint.y>transform.position.y-transform.localScale.y){
-
-			print("click encima objeto");
-			return true;
-		}else{
-			print("click fuera del objeto");
-			return true;
-		}
-	}
+//	private bool OverMe(Vector2 _clickPoint){
+//		if(_clickPoint.x<transform.position.x+transform.localScale.x&&_clickPoint.y>transform.position.y-transform.localScale.y){
+//
+//			print("click encima objeto");
+//			return true;
+//		}else{
+//			print("click fuera del objeto");
+//			return false;
+//		}
+//	}
 
 
 

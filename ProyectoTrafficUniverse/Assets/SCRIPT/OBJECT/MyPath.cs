@@ -89,8 +89,9 @@ public class MyPath {
 		//	Debug.Log("distancia "+d);
 			px=aux.x/d;
 			py=aux.y/d;
-		
-		
+			if(d!=0){
+			Debug.Log("px "+px);
+			Debug.Log("py "+py);
 			if(moveSoft.getLmitActive){
 			moveSoft.setDir*=-1;
 				moveSoft.getLmitActive=false;
@@ -99,7 +100,12 @@ public class MyPath {
 			aux2.x=Mathf.Abs(px);
 			aux2.y=Mathf.Abs(py);
 		//	return aux2;
-		}else{
+			}else{
+				Debug.Log("mismo vector");
+				px=0;
+				py=1;
+			}
+			}else{
 			
 			px=0;
 			py=1;

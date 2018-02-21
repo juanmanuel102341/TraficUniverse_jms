@@ -88,10 +88,11 @@ public class MoveSoft : MonoBehaviour {
 					
 					myVector.x=1*propx*dirx;
 					myVector.y=1*propy*diry;
-//					print("myvector "+myVector);
+					print("myvector "+myVector);
 				}
 
 				//myVector=Vector2.up;//quiero q vayan para arriba cuando no tienen mas nodes
+
 				transform.Translate(myVector*dir*velocity*Time.deltaTime,Space.Self);//no tocar space.self!!!!!!!!!!!
 		}
 		}else{
