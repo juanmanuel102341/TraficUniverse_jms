@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 			DataDontDestroy.initialVidas=lifes;
 		
 			DataDontDestroy.myLife=lifes;
-//			print("escena inicial vidas "+DataDontDestroy.myLife);
+			print("escena inicial vidas "+DataDontDestroy.myLife);
 		}else{
 	//		lifes=DataDontDestroy.myLife;
 	//		print("esccena no inicial vidas "+DataDontDestroy.myLife);

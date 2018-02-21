@@ -6,7 +6,9 @@ public class Gui : MonoBehaviour {
 	public GameObject [] lifes=new GameObject[3];
 	void Awake () {
 		
-
+		for(int i=0;i<lifes.Length;i++){
+			lifes[i].SetActive(false);
+		}
 		//DontDestroyOnLoad(gameObject);
 	}
 	void Start(){
