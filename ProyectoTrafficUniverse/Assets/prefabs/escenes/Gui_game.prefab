@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 222062509175664780}
   - component: {fileID: 114286830074223142}
   - component: {fileID: 114965892684837466}
-  - component: {fileID: 114646464750152706}
   m_Layer: 5
   m_Name: fast
   m_TagString: Untagged
@@ -195,7 +194,6 @@ GameObject:
   - component: {fileID: 222342748237316648}
   - component: {fileID: 114498836801969154}
   - component: {fileID: 114635713093113146}
-  - component: {fileID: 114882205379128220}
   m_Layer: 5
   m_Name: normal
   m_TagString: Untagged
@@ -517,7 +515,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114646464750152706}
+      - m_Target: {fileID: 114682448539964664}
         m_MethodName: OnNormal
         m_Mode: 1
         m_Arguments:
@@ -530,17 +528,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114646464750152706
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530504483006028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f5515408fecb64fb6f6aed5dfe9a7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114682448539964664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -654,17 +641,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0
---- !u!114 &114882205379128220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807610360090322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f5515408fecb64fb6f6aed5dfe9a7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114924461680170600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -756,7 +732,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114646464750152706}
+      - m_Target: {fileID: 114682448539964664}
         m_MethodName: OnIncrement
         m_Mode: 1
         m_Arguments:
@@ -843,7 +819,7 @@ RectTransform:
   m_GameObject: {fileID: 1035799079096978}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.6, z: 0.38706714}
+  m_LocalScale: {x: 0.73153216, y: 0.8778388, z: 0.5663042}
   m_Children:
   - {fileID: 224635593101599494}
   - {fileID: 224780415371964126}
@@ -852,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 364.4, y: -211}
+  m_AnchoredPosition: {x: 472, y: -365}
   m_SizeDelta: {x: 113, y: 39.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224290491470351044
@@ -863,7 +839,7 @@ RectTransform:
   m_GameObject: {fileID: 1961167973148936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.2, z: 0.8435521}
+  m_LocalScale: {x: 0.75, y: 0.25, z: 0.8435521}
   m_Children:
   - {fileID: 224803422615036070}
   - {fileID: 224678030470808448}
@@ -873,7 +849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 359.4, y: 209.7}
+  m_AnchoredPosition: {x: 472.2, y: 365.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224321385192436548
@@ -902,7 +878,7 @@ RectTransform:
   m_GameObject: {fileID: 1238443798515748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.47176698}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.47176698}
   m_Children:
   - {fileID: 224321385192436548}
   - {fileID: 224603723569377388}
@@ -912,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -371.7, y: 210.5}
+  m_AnchoredPosition: {x: -474.4, y: 369.2}
   m_SizeDelta: {x: 100, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224603723569377388

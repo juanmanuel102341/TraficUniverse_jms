@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 114776999384507284}
   - component: {fileID: 95189540844900892}
   - component: {fileID: 114763972955648570}
+  - component: {fileID: 114578992064916244}
   m_Layer: 0
   m_Name: NaveA 1 (1)
   m_TagString: plane
@@ -391,7 +392,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90a0bec317c92d419a7767bae232414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounds: {fileID: 114012560989570402}
   explosion: {fileID: 1147663300005522, guid: d560091e1ad4f9443941e224fcbb2683, type: 2}
 --- !u!114 &114535866477708520
 MonoBehaviour:
@@ -404,6 +404,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114578992064916244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757473692648486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c620e482e8708f468d992f6afb12666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1222226894523732, guid: 544ffd03d1775644a93775744dc41249, type: 2}
+  timeId: 1.5
 --- !u!114 &114590417846876704
 MonoBehaviour:
   m_ObjectHideFlags: 1

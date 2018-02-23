@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour {
 	private GameManager gameManager;
 
 
+
 	void Awake () {
 		detectsIdEvent=GetComponent<DetectsId>();
 		time=frecuencia;
@@ -141,11 +142,12 @@ public class SpawnManager : MonoBehaviour {
 			//up down, varia x 
 			Vector2 spawnfY;
 			float restrictionX=r1+screenData.getConstrainGui.x;
-
+			string esq="up";
 			if(myVectorOut==Vector2.up){
 				//down x minimo no me importa
 				//print("entrando restriccion");
 				restrictionX=r1;//no aplica para ese costado la restriccion x eso pongo el ancho de escena
+				esq="down";
 			}
 		
 //			print(" screem width "+screenData.getWidthScene);
@@ -164,19 +166,23 @@ public class SpawnManager : MonoBehaviour {
 			auxObjFY.GetComponent<MoveSoft>().setMyVector=myVectorOut;
 			detectsIdEvent.EventStart(auxObjFY);
 			soundManager.Events(auxObjFY);
+			auxObjFY.GetComponent<IdInicial>().SetMySprite(esq);
 			guiTarget.EventsMe(auxObjFY);
 			guiLifes.Events(auxObjFY);
 			gameManager.Events(auxObjFY);
+
 			listaObj.Add(auxObjFY);
 		
 		}else{
 		//right left fijo x , varia y
 			Vector2 spawnFX;
+			string esq="right";
 			spawnFX.x=ptoFijoSalida;
 			float restrictionY=r1+screenData.getConstrainGui.y;
 			if(myVectorOut==Vector2.right){
 				//esquina izquierda 
 				restrictionY=r1;
+				esq="left";
 		//		print("entrando restriccion fijox");
 			}
 
@@ -187,12 +193,14 @@ public class SpawnManager : MonoBehaviour {
 			GameObject auxObjFX=Instantiate(_obj,spawnFX,transform.rotation);
 			auxObjFX.GetComponent<MyAnimations>().setAngleBetween=rot;
 			auxObjFX.GetComponent<MoveSoft>().setMyVector=myVectorOut;
+
 			if(myVectorOut==Vector2.left){
 				auxObjFX.GetComponent<SpriteRenderer>().flipX=true;
 			}
 			//auxObjFX.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFX);
 			soundManager.Events(auxObjFX);
+			auxObjFX.GetComponent<IdInicial>().SetMySprite(esq);
 			guiTarget.EventsMe(auxObjFX);
 			guiLifes.Events(auxObjFX);
 			gameManager.Events(auxObjFX);

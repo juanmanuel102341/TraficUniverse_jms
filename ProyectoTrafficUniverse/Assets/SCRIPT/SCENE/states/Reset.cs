@@ -41,7 +41,6 @@ public class Reset : MonoBehaviour {
 
 	}
 	public void On(){
-		
 		Planets(true);
 		Asteroids(true);
 		MyGui(true);
@@ -71,9 +70,6 @@ public class Reset : MonoBehaviour {
 			print("vidas desde reset "+DataDontDestroy.initialVidas);
 
 		}
-
-
-//		
 		backsGuiEscene.SetActive(_active);
 		gui.transform.GetChild(0).gameObject.GetComponent<Gui>().SwichLifesOn();
 		gui.transform.GetChild(1).gameObject.GetComponent<GuiTarget>().Reset();	
@@ -90,7 +86,13 @@ public class Reset : MonoBehaviour {
 		int n=spawnManager.getListPlanes.Count;
 
 		for(int i=0;i<n;i++){
+			IdInicial auxInitial=null;
 			GameObject aux=spawnManager.getListPlanes[i];
+			auxInitial=aux.GetComponent<IdInicial>();
+			if(auxInitial!=null){
+				print("destruyendo sprite de id!!!!");
+				auxInitial.DestroySprite();//destruyo sprite de id
+			}
 			aux.GetComponent<Delete>().DeleteMe();//destruyo nave y nodes
 		}
 

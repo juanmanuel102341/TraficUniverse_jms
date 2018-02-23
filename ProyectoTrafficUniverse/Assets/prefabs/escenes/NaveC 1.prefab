@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 114326335571613532}
   - component: {fileID: 95455968177700160}
   - component: {fileID: 114453831356952600}
+  - component: {fileID: 114801416408567872}
   m_Layer: 0
   m_Name: NaveC 1
   m_TagString: plane
@@ -430,6 +431,19 @@ MonoBehaviour:
   graphicPath: {fileID: 1648713528612712, guid: 803cc2b50a2c1924e9710477b299259a,
     type: 2}
   lastNode: {fileID: 1234492673985332, guid: d05d12d0a7a302244ae9217db9484e5b, type: 2}
+--- !u!114 &114801416408567872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803064828252600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c620e482e8708f468d992f6afb12666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1222226894523732, guid: 544ffd03d1775644a93775744dc41249, type: 2}
+  timeId: 1.5
 --- !u!114 &114872659689040052
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,53 +5,91 @@ public class SoundManager : MonoBehaviour {
 
 	private AlertColision alertColision;
 	public DetectsId detectsId;
-	public AudioClip attention;
-	public AudioClip clickMe;
-	public AudioClip explosion;
-	public AudioClip landing;
-	private AudioSource audioSourde;
+	public Pause pause;
+	public FastTime fastTime;
+//	public AudioClip attention;
+//	public AudioClip clickMe;
+//	public AudioClip explosion;
+//	public AudioClip landing;
+	public AudioClip loosee;
+	public AudioClip win;
+	public AudioClip speedUp;
+	public AudioClip speedNormal;
+	private GameManager gameManager;
+	public AudioSource []audioSources;
 
 	void Awake () {
-		audioSourde=GetComponent<AudioSource>();
-		audioSourde.clip=attention;
+	//	audioSource=GetComponent<AudioSource>();
+		//audioSource.clip=attention;
+		gameManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<GameManager>();
+		gameManager.onFinalLoose+=onLoose;
+		gameManager.onFinalWin+=onWin;
+
 	}
 	void Start(){
 		detectsId.OnclickSound+=OnClickMe;
+		pause.pauseOff+=OnPaseOn;
+		fastTime.speedUp+=OnSpeedUp;
+		fastTime.speedNormal+=OnSpeedNormal;
 	}
 	
 	public void Events(GameObject obj){
 		AlertColision alert =obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<AlertColision>();
 		Detect detect=obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).GetComponent<Detect>();//hijo del hijo
-
-//		print("OBJ "+alert);
+		IdInicial idInitial=obj.GetComponent<IdInicial>();
+		//print("OBJ "+alert);
 //		print("detect "+detect);
 		alert.onAlertColsion+=OnContactPlanes;
 		detect.OnContactPlane+=OnContactDestroy;
 		detect.OnContactTarget+=OnContactLanding;
-	}
-	
-	private void OnContactPlanes(){
-//		print("aviones colision");
-		audioSourde.clip=attention;
-		audioSourde.Play();
-	}
-	private void OnClickMe(){
-//		print("click me");
-		audioSourde.clip=clickMe;
-		audioSourde.Play();
-	}
-	private void OnContactDestroy(){
-		//print("destroy sound!!!!!!!!!!!!!!!!!!!");	
-		audioSourde.clip=explosion;
-		if(!audioSourde.isPlaying)
-		audioSourde.Play();
+		idInitial.onMySound+=OnInitialOut;
 
 	}
+	//alert, alert inm,pause,explosion,click,aterrizar,timer
+	private void OnInitialOut(){
+		audioSources[0].Play();
+
+	}
+	private void OnContactPlanes(){
+		print("sonidoo aviones colision");
+		audioSources[1].Play();
+	}
+	private void OnPaseOn(){
+		audioSources[2].Play();
+	}
+
+	private void OnContactDestroy(){
+		print("destroy sound!!!!!!!!!!!!!!!!!!!");	
+		audioSources[3].Play();
+	}
+	private void OnClickMe(){
+		print("click me");
+		audioSources[4].Play();
+	}
 	private void OnContactLanding(){
-		//print("landing");
-		audioSourde.clip=landing;
-		if(!audioSourde.isPlaying)
-			audioSourde.Play();
+		print("landing");
+		audioSources[5].Play();
 		}
+
+	private void OnSpeedNormal(){
+		print("sonido normal");
+		audioSources[6].clip=speedNormal;
+		audioSources[6].Play();
+	}
+	private void OnSpeedUp(){
+		print("sonido speed up");
+		audioSources[6].clip=speedUp;
+		audioSources[6].Play();
+	}
+	private void onLoose(){
+		audioSources[0].clip=loosee;
+		audioSources[0].Play();
+
+	}
+	private void onWin(){
+		audioSources[0].clip=win;
+		audioSources[0].Play();
+	}
+
 
 }

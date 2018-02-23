@@ -34,8 +34,6 @@ public class Pause : MonoBehaviour {
 			DataDontDestroy.myLife=0;
 			gm.Conditions();
 		}
-				
-
 		if(Input.GetKeyDown(KeyCode.Escape)){
 
 			print("pasu game");

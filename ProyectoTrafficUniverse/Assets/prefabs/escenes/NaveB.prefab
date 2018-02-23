@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 114025985627215058}
   - component: {fileID: 95423007478266544}
   - component: {fileID: 114108807039471482}
+  - component: {fileID: 114595222130412124}
   m_Layer: 0
   m_Name: NaveB
   m_TagString: plane
@@ -413,6 +414,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114595222130412124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475047646499280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c620e482e8708f468d992f6afb12666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1222226894523732, guid: 544ffd03d1775644a93775744dc41249, type: 2}
+  timeId: 1.5
 --- !u!114 &114749526721729080
 MonoBehaviour:
   m_ObjectHideFlags: 1
