@@ -38,14 +38,13 @@ GameObject:
   - component: {fileID: 4099620158684858}
   - component: {fileID: 61401742729101438}
   - component: {fileID: 114449210354735214}
-  - component: {fileID: 114249820887579698}
   m_Layer: 0
   m_Name: ColisionObject
   m_TagString: shipRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1439360812370724
 GameObject:
   m_ObjectHideFlags: 1
@@ -73,7 +72,6 @@ GameObject:
   - component: {fileID: 4608301475537956}
   - component: {fileID: 58326139181091838}
   - component: {fileID: 114590417846876704}
-  - component: {fileID: 114535866477708520}
   m_Layer: 0
   m_Name: AlertObject
   m_TagString: colisionRed
@@ -186,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1802458340483258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.22, y: 0.14, z: 0}
+  m_LocalPosition: {x: 1.05, y: -0.04, z: 0}
   m_LocalScale: {x: 2.3937058, y: 2.5644886, z: 0.6700086}
   m_Children: []
   m_Father: {fileID: 4596612634621586}
@@ -199,8 +197,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757473692648486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -105.986206, y: 26.089308, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: 69.68589, y: 9.413014, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.6}
   m_Children:
   - {fileID: 4608301475537956}
   - {fileID: 4380302430586508}
@@ -345,17 +343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81fb6276168fe9a488711dbf31540ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114249820887579698
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1347041740322014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114354284878421236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,17 +380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1147663300005522, guid: d560091e1ad4f9443941e224fcbb2683, type: 2}
---- !u!114 &114535866477708520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1613847642312776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c80cfd3aecbc4343a8eb042eacbb306, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114578992064916244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -454,6 +430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16abcc45116b3bf41b4935ae4be7d684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: {fileID: 1802458340483258}
+  box: {fileID: 61401742729101438}
 --- !u!114 &114764937139314544
 MonoBehaviour:
   m_ObjectHideFlags: 1

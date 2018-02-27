@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour {
 	public GameObject pause;
-	public Reset reset;
-	public Replay replay;
+	//public Reset reset;
+	//public Replay replay;
 	public delegate void EventPause();
 	public event EventPause PauseOn;
 	public event EventPause pauseOff;
@@ -18,7 +18,7 @@ public class Pause : MonoBehaviour {
 	}
 	void Start () {
 		eventResume.onResume+=ResumeGame;
-		replay.activateReplay+=OnReplay;
+	//	replay.activateReplay+=OnReplay;
 
 	}
 	
@@ -56,14 +56,14 @@ public class Pause : MonoBehaviour {
 		pause.SetActive(false);
 		PauseOn();
 	}
-	private void OnReplay(){
-	
-		reset.enabled=true;
-		reset.Off();
-		reset.On();
-		Time.timeScale=1.0f;
-		//PauseOn();//ya lo hace reset
-	}
+//	private void OnReplay(){
+//	
+//		reset.enabled=true;
+//		reset.Off();
+//		reset.On();
+//		Time.timeScale=1.0f;
+//		//PauseOn();//ya lo hace reset
+//	}
 
 
 }

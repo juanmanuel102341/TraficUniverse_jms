@@ -21,23 +21,21 @@ public class Detect : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		//print("contacto collider nave "+col.name);
+		if(col.gameObject.tag=="frontier"){
+			print("fontier colisioon!!");
+			//bounds.setLimitOutside=true;
+			OnContactFrontier();
 
-		if(checkTarget.CheckMyTarget(col.tag)){
-			TakeOutPlane();
-			if(col.tag=="asteroide")
-			{	
-				print("colision asteroide muerte nave");
-				OnContactPlane();//el evento se vincula con gui y dentro de esta se le resta una vida
-				Explosion();
-			}else{
-			print("aterrizando 2d");
+		}
+		if(tag=="shipRed"&&col.tag=="targetRed"||tag=="shipBlue"&&col.tag=="targetBlue"||tag=="shipGreen"&&col.tag=="targetGreen"){
+		TakeOutPlane();
+		print("aterrizando 2d");
 				//print("paneta");
-				GameManager.aterrizajes++;//aumento contador aterrizajes
-				OnContactTarget();
-				//OnContactPlane();
-			}
-
-		}else if(col.gameObject.tag=="shipRed"||col.gameObject.tag=="shipBlue"||col.gameObject.tag=="shipGreen") {
+		GameManager.aterrizajes++;//aumento contador aterrizajes
+		OnContactTarget();
+				
+		}
+		if(col.gameObject.tag=="shipRed"||col.gameObject.tag=="shipBlue"||col.gameObject.tag=="shipGreen") {
 			print("choque d naves");
 			//pregunto si choca nave a nave sn esta la condicion "cuando aterriza"perdes 1/2vida(vida=2 aviones)
 			TakeOutPlane();
@@ -47,12 +45,16 @@ public class Detect : MonoBehaviour {
 			Explosion();
 			}
 			
-		}else if(col.gameObject.tag=="frontier"){
-			print("fontier colisioon!!");
-			//bounds.setLimitOutside=true;
-			OnContactFrontier();
-			}
 		}
+	
+		if(col.tag=="asteroide")
+		{	TakeOutPlane();
+			print("colision asteroide muerte nave");
+			OnContactPlane();//el evento se vincula con gui y dentro de esta se le resta una vida
+			Explosion();
+		}
+	
+	}
 
 	private void TakeOutPlane(){
 		//print("objParent "+objParent.name);

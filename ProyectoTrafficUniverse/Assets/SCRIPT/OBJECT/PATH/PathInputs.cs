@@ -89,7 +89,7 @@ public class PathInputs : MonoBehaviour {
 		Vector2 auxInput=posMouse.Calc();
 
 		if(Input.GetMouseButton(0)&&activatePath){
-			print("click "+auxInput);
+//			print("click "+auxInput);
 			path.SetNewNode(auxInput);//parte codigo
 			}
 	}

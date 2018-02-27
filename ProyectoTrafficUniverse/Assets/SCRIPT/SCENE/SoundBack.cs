@@ -5,21 +5,21 @@ public class SoundBack : MonoBehaviour {
 	
 	public AudioClip loose;
 	public AudioClip win;
-	private AudioSource myAudio;
-	public AudioSource final;
-
+	public AudioSource inGameSound;
+	public AudioSource finalStateSound;
+	private float timeLast;
 	public Pause pause;
 	public EventResume eventResume;
 	private GameManager gameManager;
 	void Awake () {
-		myAudio=GetComponent<AudioSource>();
-		myAudio.Play();
+		inGameSound=GetComponent<AudioSource>();
+		inGameSound.Play();
 		gameManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<GameManager>();
-		myAudio.volume=0.25f;
-		myAudio.loop=true;
-		final.loop=true;
-		final.playOnAwake=false;
-		final.volume=0.25f;
+		inGameSound.volume=0.25f;
+		inGameSound.loop=true;
+		finalStateSound.loop=true;
+		finalStateSound.playOnAwake=false;
+		finalStateSound.volume=0.25f;
 		//	myAudio.priority=200;
 
 //		print("pause "+pause);
@@ -34,21 +34,34 @@ public class SoundBack : MonoBehaviour {
 		gameManager.onFinalWin+=onWin;
 	}
 	public void StopMe(){
-		if(myAudio!=null)
-		myAudio.Stop();
+		if(inGameSound!=null){
+			//timeLast=inGameSound.time;
+			print("ttiempo musica "+timeLast);
+			inGameSound.Stop();
+		}
 	}
 	public void PlayMe(){
-		if(myAudio!=null)
-		myAudio.Play();
+		if(inGameSound!=null){
+		//	inGameSound.PlayScheduled(timeLast);
+			inGameSound.Play();
+			//print("play musica "+timeLast  );
+		}
 	}
 
 	private void onLoose(){
-		final.clip=loose;	
-		final.Play();
+		StopMe();
+		finalStateSound.clip=loose;	
+		finalStateSound.Play();
+
 	}
 	private void onWin(){
-		final.clip=win;
-		final.Play();
+		StopMe();
+		finalStateSound.clip=win;
+		finalStateSound.Play();
 	
+	}
+	public void onInGameSound(){
+		finalStateSound.Stop();
+		inGameSound.Play();
 	}
 }

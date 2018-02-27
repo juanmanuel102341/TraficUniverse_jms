@@ -27,7 +27,8 @@ public class Reset : MonoBehaviour {
 		}
 	}
 	void Start(){
-		Off();
+		//Off();
+		if(replay!=null)
 		replay.activateReplay+=On;
 	}
 	public void Off(){
@@ -35,8 +36,6 @@ public class Reset : MonoBehaviour {
 		Planets(false);
 		Asteroids(false);
 		MyGui(false);
-
-		soundBack.StopMe();
 		Scripts(false);
 
 	}
@@ -46,7 +45,8 @@ public class Reset : MonoBehaviour {
 		MyGui(true);
 		Scripts(true);
 		guiFinal.SetActive(false);
-		soundBack.PlayMe();
+
+		soundBack.onInGameSound(); 
 
 	}
 	

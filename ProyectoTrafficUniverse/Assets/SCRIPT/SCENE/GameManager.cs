@@ -16,17 +16,18 @@ public class GameManager : MonoBehaviour {
 	public event FinalState onFinalLoose;
 
 	void Awake () {
-		Scene scene=SceneManager.GetActiveScene();
-		sceneName=scene.name;
+		//Scene scene=SceneManager.GetActiveScene();
+		//sceneName=scene.name;
 
-		int numScene=SceneUtility.GetBuildIndexByScenePath(sceneName);
+	//	int numScene=SceneUtility.GetBuildIndexByScenePath(sceneName);
 //		print("escena numero "+numScene);
-		if(numScene==3){
-			DataDontDestroy.initialVidas=lifes;
-			DataDontDestroy.myLife=lifes;
-			print("escena inicial vidas "+DataDontDestroy.myLife);
-		}
-	
+//		if(numScene==3){
+//			DataDontDestroy.initialVidas=lifes;
+//			DataDontDestroy.myLife=lifes;
+//			print("escena inicial vidas "+DataDontDestroy.myLife);
+//		}
+		DataDontDestroy.initialVidas=lifes;//si pasa de level actualizo a la vida original
+		DataDontDestroy.myLife=lifes;
 		print("vidas desde gm "+DataDontDestroy.initialVidas);
 		targetGame=targetPlanes;
 
@@ -44,12 +45,14 @@ public class GameManager : MonoBehaviour {
 		if(DataDontDestroy.myLife<=0){
 			print("PERDI ");
 		guiLoose.SetActive(true);
+		guiLoose.GetComponent<Reset>().Off();//apagamos y reseteo valores de escena
 		onFinalLoose();
 	//	guiLoose.GetComponent<Reset>().Off();//apago cosas del juego
 		//	gameOver=true;
 		}else if(aterrizajes>=targetPlanes){
 			print("victory");
 			guiWin.SetActive(true);
+			guiWin.GetComponent<Reset>().Off();//apagamos y reseteo valores de escena
 			print("level limpio");
 			onFinalWin();
 			DataDontDestroy.currentLevelPass++;

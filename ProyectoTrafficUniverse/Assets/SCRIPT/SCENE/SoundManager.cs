@@ -82,13 +82,13 @@ public class SoundManager : MonoBehaviour {
 		audioSources[6].Play();
 	}
 	private void onLoose(){
-		audioSources[0].clip=loosee;
-		audioSources[0].Play();
+		audioSources[7].clip=loosee;
+		audioSources[7].Play();
 
 	}
 	private void onWin(){
-		audioSources[0].clip=win;
-		audioSources[0].Play();
+		audioSources[7].clip=win;
+		audioSources[7].Play();
 	}
 
 

@@ -14,8 +14,8 @@ public class MyAnimations : MonoBehaviour {
 	private SpriteRenderer spr;
 	private MoveSoft moveSoft;
 	private float angleBetween;
-
-
+	public GameObject id;
+	public BoxCollider2D box;
 	//con q angulo de salida saldria , depende de q costtado spawnee
 	void Awake () {
 		//print("vecctor up whorld " +vectorWorld);
@@ -26,11 +26,9 @@ public class MyAnimations : MonoBehaviour {
 		transformUp=new Vector2(0,1);
 		spr=GetComponent<SpriteRenderer>();
 		moveSoft=GetComponent<MoveSoft>();
+		//id=GameObject.FindGameObjectWithTag("id");
+		print("id "+id);
 	}
-	void Start(){
-		
-	}
-
 	void Update () {
 		//Calc();
 		//print("tup "+myTransformUp);
@@ -46,8 +44,15 @@ public class MyAnimations : MonoBehaviour {
 		
 			if (!ClickRight()){
 				spr.flipX=true;
+				id.transform.position=new Vector2(transform.position.x-0.5f,transform.position.y);
+				box.transform.position=new Vector2(transform.position.x-0.35f,transform.position.y);
+
 			}else{
 				spr.flipX=false;
+				print("flipiando");
+				id.transform.position=new Vector2(transform.position.x+0.5f,transform.position.y);
+				box.transform.position=new Vector2(transform.position.x+0.5f,transform.position.y);
+
 			}
 			myTransformUp=angle.VectorUp(ppath.getListVectors[0],transform.position);
 			angleBetween=Vector2.Angle(myTransformUp,transformUp);

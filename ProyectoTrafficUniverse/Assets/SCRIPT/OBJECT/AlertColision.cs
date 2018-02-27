@@ -10,7 +10,7 @@ public class AlertColision : MonoBehaviour {
 	public event ColisionInminent onAlertColsion;
 	void Awake () {
 		id=gameObject.tag;
-		objColision.SetActive(false);
+	//	objColision.SetActive(false);
 
 		sprite.SetActive(false);
 		checkTarget=GetComponent<CheckTargetColision>();
@@ -23,16 +23,13 @@ public class AlertColision : MonoBehaviour {
 			sprite.SetActive(true);
 			onAlertColsion();
 		}
-		if(checkTarget.CheckMyTarget(col.tag)){
-			if(col.tag=="asteroide"){
+//		if(tag=="colisionRed"&&col.tag=="targetRed"){
+//			objColision.SetActive(true);
+//			print("prendo collider para un posible aterrizaje");
+//		}
+		if(col.tag=="asteroide"){
 			sprite.SetActive(true);//activo carte de sprite attention
-				onAlertColsion();
-			}
-
-			print("prendo collider para un posible aterrizaje");
-			objColision.SetActive(true);
-
-			
+			onAlertColsion();
 		}
 		if(col.gameObject.tag=="frontier"){
 			print("frontier alert!!!");
@@ -45,8 +42,9 @@ public class AlertColision : MonoBehaviour {
 		if(sprite.gameObject.activeSelf)
 		sprite.SetActive(false);
 
-		objColision.SetActive(false);
+		//objColision.SetActive(false);
 	}
+
 
 
 }
