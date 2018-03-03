@@ -31,7 +31,10 @@ public class IdInicial : MonoBehaviour {
 //		print("'pos id "+posInitial);
 //		print("sprite "+sprite);
 		mySprite=Instantiate(sprite,transform.position,transform.rotation);
+		if(MyParams.soundActive){
 		onMySound();
+		}
+
 		switch(pos){
 		case "up":
 			separateX=0;

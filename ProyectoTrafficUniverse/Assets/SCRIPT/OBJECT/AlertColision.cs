@@ -21,7 +21,10 @@ public class AlertColision : MonoBehaviour {
 			print("area colsion activa "+col.name);
 			objColision.SetActive(true);
 			sprite.SetActive(true);
+
+			if(MyParams.soundActive){
 			onAlertColsion();
+			}
 		}
 //		if(tag=="colisionRed"&&col.tag=="targetRed"){
 //			objColision.SetActive(true);
@@ -29,7 +32,9 @@ public class AlertColision : MonoBehaviour {
 //		}
 		if(col.tag=="asteroide"){
 			sprite.SetActive(true);//activo carte de sprite attention
+			if(MyParams.soundActive){
 			onAlertColsion();
+			}
 		}
 		if(col.gameObject.tag=="frontier"){
 			print("frontier alert!!!");

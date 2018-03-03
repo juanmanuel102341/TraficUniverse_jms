@@ -165,7 +165,9 @@ public class SpawnManager : MonoBehaviour {
 			auxObjFY.GetComponent<MyAnimations>().setAngleBetween=rot;
 			auxObjFY.GetComponent<MoveSoft>().setMyVector=myVectorOut;
 			detectsIdEvent.EventStart(auxObjFY);
+			if(MyParams.soundActive){
 			soundManager.Events(auxObjFY);
+			}
 			auxObjFY.GetComponent<IdInicial>().SetMySprite(esq);
 			guiTarget.EventsMe(auxObjFY);
 			guiLifes.Events(auxObjFY);
@@ -199,7 +201,9 @@ public class SpawnManager : MonoBehaviour {
 			}
 			//auxObjFX.transform.Rotate(0,0,rot);
 			detectsIdEvent.EventStart(auxObjFX);
+			if(MyParams.soundActive){
 			soundManager.Events(auxObjFX);
+			}
 			auxObjFX.GetComponent<IdInicial>().SetMySprite(esq);
 			guiTarget.EventsMe(auxObjFX);
 			guiLifes.Events(auxObjFX);

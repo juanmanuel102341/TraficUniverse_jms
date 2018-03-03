@@ -41,12 +41,16 @@ public class Pause : MonoBehaviour {
 			if(!pause.activeSelf){
 			Time.timeScale=0.0f;
 			pause.SetActive(true);
-			pauseOff();//para sonido
+				if(MyParams.soundActive){
+				pauseOff();//para sonido
+				}
 			}else{
 			print("despause");
 			pause.SetActive(false);
 			Time.timeScale=1.0f;
+				if(MyParams.soundActive){
 				PauseOn();
+				}
 
 			}
 		}

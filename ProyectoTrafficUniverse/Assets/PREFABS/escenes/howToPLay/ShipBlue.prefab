@@ -23,11 +23,10 @@ GameObject:
   - component: {fileID: 61706317728980822}
   - component: {fileID: 50456987030880920}
   - component: {fileID: 114770312499284172}
-  - component: {fileID: 114844333312692364}
-  - component: {fileID: 114812721173809238}
+  - component: {fileID: 114592056995943762}
   m_Layer: 0
   m_Name: ShipBlue
-  m_TagString: colisionBlue
+  m_TagString: plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727876640434156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.2, y: -28.149088, z: 0}
-  m_LocalScale: {x: 0.96477056, y: 0.9647705, z: 1.8171622}
+  m_LocalPosition: {x: 79.07137, y: -29.564928, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1.8171622}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,6 +78,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5.1599994, y: 5.4799995}
+--- !u!114 &114592056995943762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727876640434156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ebb16bb0ee25e489e591d4af6bbc20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animation_Path: {fileID: 0}
+  velocity: 8
 --- !u!114 &114770312499284172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -91,31 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAnimationPath: {fileID: 0}
---- !u!114 &114812721173809238
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727876640434156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c64841552a3894440939542abd9e79b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114844333312692364
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1727876640434156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5507815e211608e4fb2aee3cdf9a46d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphicPath: {fileID: 1672675589620984, guid: 362ab82c1a635de4787393b4b7e84104,
-    type: 2}
-  lastNode: {fileID: 0}
 --- !u!212 &212447795797059878
 SpriteRenderer:
   m_ObjectHideFlags: 1

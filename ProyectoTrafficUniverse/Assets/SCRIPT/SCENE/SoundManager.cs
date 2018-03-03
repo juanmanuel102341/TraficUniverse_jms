@@ -21,19 +21,25 @@ public class SoundManager : MonoBehaviour {
 	void Awake () {
 	//	audioSource=GetComponent<AudioSource>();
 		//audioSource.clip=attention;
+		if(MyParams.soundActive){
 		gameManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<GameManager>();
 		gameManager.onFinalLoose+=onLoose;
 		gameManager.onFinalWin+=onWin;
-
+		}
 	}
 	void Start(){
+		if(MyParams.soundActive){
 		detectsId.OnclickSound+=OnClickMe;
 		pause.pauseOff+=OnPaseOn;
 		fastTime.speedUp+=OnSpeedUp;
 		fastTime.speedNormal+=OnSpeedNormal;
+		}else{
+		//	this.gameObject.SetActive(false);
+		}
 	}
 	
 	public void Events(GameObject obj){
+		
 		AlertColision alert =obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<AlertColision>();
 		Detect detect=obj.GetComponent<Transform>().GetChild(0).gameObject.GetComponent<Transform>().GetChild(0).GetComponent<Detect>();//hijo del hijo
 		IdInicial idInitial=obj.GetComponent<IdInicial>();
@@ -43,7 +49,7 @@ public class SoundManager : MonoBehaviour {
 		detect.OnContactPlane+=OnContactDestroy;
 		detect.OnContactTarget+=OnContactLanding;
 		idInitial.onMySound+=OnInitialOut;
-
+	
 	}
 	//alert, alert inm,pause,explosion,click,aterrizar,timer
 	private void OnInitialOut(){

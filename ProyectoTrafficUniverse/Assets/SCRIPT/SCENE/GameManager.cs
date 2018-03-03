@@ -46,7 +46,9 @@ public class GameManager : MonoBehaviour {
 			print("PERDI ");
 		guiLoose.SetActive(true);
 		guiLoose.GetComponent<Reset>().Off();//apagamos y reseteo valores de escena
-		onFinalLoose();
+			if(MyParams.soundActive){
+			onFinalLoose();
+			}
 	//	guiLoose.GetComponent<Reset>().Off();//apago cosas del juego
 		//	gameOver=true;
 		}else if(aterrizajes>=targetPlanes){
@@ -54,7 +56,9 @@ public class GameManager : MonoBehaviour {
 			guiWin.SetActive(true);
 			guiWin.GetComponent<Reset>().Off();//apagamos y reseteo valores de escena
 			print("level limpio");
+			if(MyParams.soundActive){
 			onFinalWin();
+			}
 			DataDontDestroy.currentLevelPass++;
 			PlayerPrefs.SetInt("current_level",DataDontDestroy.currentLevelPass);
 			print("level pass "+DataDontDestroy.currentLevelPass);

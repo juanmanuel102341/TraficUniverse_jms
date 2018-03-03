@@ -14,7 +14,9 @@ public class DetectsId : MonoBehaviour {
 			currentActive=obj;
 			currentActive.transform.GetChild(3).gameObject.SetActive(true);//activo objeto id, identificacion
 			print("click primera vez");
+			if(MyParams.soundActive){
 			OnclickSound();
+			}
 		}else{
 			if(obj!=currentActive){
 			currentActive.transform.GetChild(3).gameObject.SetActive(false);//apago id 
@@ -22,7 +24,9 @@ public class DetectsId : MonoBehaviour {
 			currentActive=obj;
 			currentActive.transform .GetChild(3).gameObject.SetActive(true);//prendo nueva id
 			print("prendo nuevva del obj "+currentActive.name);
-			OnclickSound();
+				if(MyParams.soundActive){
+				OnclickSound();
+				}
 			}
 			}
 	}

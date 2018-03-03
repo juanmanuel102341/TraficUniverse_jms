@@ -11,9 +11,14 @@ public class SoundBack : MonoBehaviour {
 	public Pause pause;
 	public EventResume eventResume;
 	private GameManager gameManager;
+
 	void Awake () {
+		print("sound bach bollenano "+MyParams.soundActive);
+		if(MyParams.soundActive){
 		inGameSound=GetComponent<AudioSource>();
+
 		inGameSound.Play();
+
 		gameManager=GameObject.FindGameObjectWithTag("gameManager_tag").GetComponent<GameManager>();
 		inGameSound.volume=0.25f;
 		inGameSound.loop=true;
@@ -25,13 +30,19 @@ public class SoundBack : MonoBehaviour {
 //		print("pause "+pause);
 	
 //		print("event resume "+eventResume);
-	}
+		}
+		}
 	void Start(){
+		if(MyParams.soundActive){
 		pause.pauseOff+=StopMe;
 		pause.PauseOn+=PlayMe;
 		eventResume.onResume+=PlayMe;
 		gameManager.onFinalLoose+=onLoose;
 		gameManager.onFinalWin+=onWin;
+		}else{
+			this.gameObject.SetActive(false);
+			print("desactovando evento sound backkkkk");
+		}
 	}
 	public void StopMe(){
 		if(inGameSound!=null){
@@ -63,5 +74,8 @@ public class SoundBack : MonoBehaviour {
 	public void onInGameSound(){
 		finalStateSound.Stop();
 		inGameSound.Play();
+	}
+	private void CancelSound(){
+		
 	}
 }
