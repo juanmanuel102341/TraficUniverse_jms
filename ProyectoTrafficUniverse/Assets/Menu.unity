@@ -822,6 +822,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f9cb7dcca3904bb19d444c370cecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  apply: 0
+  currentWidth: 0
+  currentHeight: 0
   gameResolution: {fileID: 0}
 --- !u!1 &639930166
 GameObject:
@@ -4514,6 +4517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab88c20f3c7cff146b8b40512841d0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundMenu: {fileID: 1157741678}
 --- !u!1 &2140792794
 GameObject:
   m_ObjectHideFlags: 0

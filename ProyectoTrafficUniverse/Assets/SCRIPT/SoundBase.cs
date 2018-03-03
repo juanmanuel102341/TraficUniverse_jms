@@ -6,8 +6,10 @@ public class SoundBase : MonoBehaviour {
 
 	public SoundMenu soundBack;
 	public SoundButton soundButton;
-	void Start () {
-		
+	void Awake () {
+
+		print("sonido active "+MyParams.soundActive);
+
 	}
 	
 	public void ReceiptState(string name){

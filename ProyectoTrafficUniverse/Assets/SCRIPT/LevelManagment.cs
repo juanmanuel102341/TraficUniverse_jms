@@ -30,7 +30,8 @@ public class LevelManagment : MonoBehaviour {
 	//	levelPass=1;
 	//	print("level pass awake "+levelPass);
 
-
+		MyParams.initialSoundCycle=true;
+		print("setiando initial sound desde level manag "+MyParams.initialSoundCycle);
 	}
 
 

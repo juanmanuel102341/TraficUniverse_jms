@@ -15,13 +15,13 @@ public class Animation_Path : MonoBehaviour {
 	void Awake () {
 		n=transform.childCount;
 		movePointer=GameObject.FindGameObjectWithTag("pointer").GetComponent<MovePointer>();
-		print("cantidad de objetos "+n);
+	//	print("cantidad de objetos "+n);
 		for(int i=0;i<n;i++){
 			objs.Add(transform.GetChild(i).gameObject);
 			//print("obj"+transform.GetChild(0).gameObject.transform.GetChild(i).gameObject);
 		}
-		print("obj 1ro "+objs[0].name);
-		print("obj 1ro "+objs[0].transform.position);
+	//	print("obj 1ro "+objs[0].name);
+	//	print("obj 1ro "+objs[0].transform.position);
 		//activate=true;
 	}
 	
@@ -30,15 +30,15 @@ public class Animation_Path : MonoBehaviour {
 		if(activate){
 			time+=Time.deltaTime;
 			if(time>frameRate){
-				print("entrando ");
+				//print("entrando ");
 				objs[index].SetActive(true);
 				currentVector=objs[index].transform.position;
 				movePointer.SetDestiny(currentVector);
 				time=0;
 				index++;
-				print("currentVector "+currentVector);
+//				print("currentVector "+currentVector);
 				if(index>=n){
-					print("fin de animacion");
+//					print("fin de animacion");
 					activate=false;
 					finish=true;
 				}

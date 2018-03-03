@@ -28,9 +28,9 @@ public class GameManager : MonoBehaviour {
 //		}
 		DataDontDestroy.initialVidas=lifes;//si pasa de level actualizo a la vida original
 		DataDontDestroy.myLife=lifes;
-		print("vidas desde gm "+DataDontDestroy.initialVidas);
+		//print("vidas desde gm "+DataDontDestroy.initialVidas);
 		targetGame=targetPlanes;
-
+		print("initial sound game manager "+MyParams.initialSoundCycle);
 	//	guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 	
 		
