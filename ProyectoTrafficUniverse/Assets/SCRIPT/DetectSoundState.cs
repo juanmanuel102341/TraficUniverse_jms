@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DetectSoundState : MonoBehaviour {
 	public Sprite imageOff;
+
 	public SoundBase soundBase;
 	private Sprite spriteOn;
 	private Image image;
 	private bool onState=false;
 	public DetectSoundState other;
+
 	void Awake () {
 		image=GetComponent<Image>();
 		spriteOn=GetComponent<Button>().spriteState.pressedSprite;
@@ -26,6 +28,7 @@ public class DetectSoundState : MonoBehaviour {
 		if(other.getOnState){
 			other.SetSpriteOff();//si el otro esta prendido lo apago
 		}
+	
 	}
 	private void SetSpriteOn(){
 		image.sprite=spriteOn;

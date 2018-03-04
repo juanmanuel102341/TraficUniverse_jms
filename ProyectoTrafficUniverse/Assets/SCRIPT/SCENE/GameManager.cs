@@ -25,12 +25,35 @@ public class GameManager : MonoBehaviour {
 //			DataDontDestroy.initialVidas=lifes;
 //			DataDontDestroy.myLife=lifes;
 //			print("escena inicial vidas "+DataDontDestroy.myLife);
-//		}
+		//		}
+
+		print("current difficulty "+MyParams.currentDifficulty);
+		switch(MyParams.currentDifficulty){
+		case "easy":
+			print("setiando easy");
+			lifes=3;
+			targetPlanes=10;
+			break;
+
+		case "normal":
+			print("setiando normal");
+			lifes=2;
+			targetPlanes=15;
+			break;
+		case "hard":
+			print("setiando hard");
+			lifes=1;
+			targetPlanes=20;
+			break;
+
+		}
+
+
 		DataDontDestroy.initialVidas=lifes;//si pasa de level actualizo a la vida original
 		DataDontDestroy.myLife=lifes;
 		//print("vidas desde gm "+DataDontDestroy.initialVidas);
 		targetGame=targetPlanes;
-		print("initial sound game manager "+MyParams.initialSoundCycle);
+		print("initial sound game manager "+MyParams.initialCycle);
 	//	guiGame.transform.FindChild("Target").transform.FindChild("NumTarget").GetComponent<SetTarget>().setTarget=targetPlanes;//seteo aviones q tiene q aterrizar
 	
 		

@@ -50,6 +50,7 @@ TagManager:
   - buttonLevel
   - guiBack
   - frontier
+  - on
   layers:
   - Default
   - TransparentFX
