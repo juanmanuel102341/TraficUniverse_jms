@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 	public static int aterrizajes=0;
 	public static int targetGame;
+	public static int lifesGame;
+	public static int initialLifes;
+	public static int currentLevel;
 	private bool gameOver=false;
 	public int lifes;
 	public static int aviones=0;
@@ -49,8 +52,10 @@ public class GameManager : MonoBehaviour {
 		}
 
 
-		DataDontDestroy.initialVidas=lifes;//si pasa de level actualizo a la vida original
-		DataDontDestroy.myLife=lifes;
+		//DataDontDestroy.initialVidas=lifes;//si pasa de level actualizo a la vida original
+		//DataDontDestroy.myLife=lifes;
+		lifesGame=lifes;
+		initialLifes=lifes;
 		//print("vidas desde gm "+DataDontDestroy.initialVidas);
 		targetGame=targetPlanes;
 		print("initial sound game manager "+MyParams.initialCycle);
@@ -65,7 +70,7 @@ public class GameManager : MonoBehaviour {
 		detect.OnContactTarget+=Conditions;
 	}
 	public void Conditions(){
-		if(DataDontDestroy.myLife<=0){
+		if(GameManager.lifesGame<=0){
 			print("PERDI ");
 		guiLoose.SetActive(true);
 		guiLoose.GetComponent<Reset>().Off();//apagamos y reseteo valores de escena
@@ -82,9 +87,9 @@ public class GameManager : MonoBehaviour {
 			if(MyParams.soundActive){
 			onFinalWin();
 			}
-			DataDontDestroy.currentLevelPass++;
-			PlayerPrefs.SetInt("current_level",DataDontDestroy.currentLevelPass);
-			print("level pass "+DataDontDestroy.currentLevelPass);
+			currentLevel++;
+			PlayerPrefs.SetInt("current_level",currentLevel);
+			print("level pass "+currentLevel);
 			PlayerPrefs.SetInt("charge",1);
 		//guiWin.GetComponent<Reset>().Off();//apago cosas
 	

@@ -24,13 +24,13 @@ public class Gui : MonoBehaviour {
 	}
 
 	public void SwichLifesOn(){
-		for(int i=0;i<DataDontDestroy.myLife;i++){
+		for(int i=0;i<GameManager.lifesGame;i++){
 			lifes[i].SetActive(true);
 		}	
 	}
 	public void SwichLifesOff(){
 	//	print("saco vida");
-		switch(DataDontDestroy.myLife){
+		switch(GameManager.lifesGame){
 
 		case 1:
 			if(lifes[0].activeSelf)
@@ -41,16 +41,16 @@ public class Gui : MonoBehaviour {
 			lifes[1].SetActive(false);
 			break;
 		case 3:
-			print("1er contacto "+DataDontDestroy.myLife);
+			print("1er contacto "+GameManager.lifesGame);
 			if(lifes[2].activeSelf)
 			lifes[2].SetActive(false);
 			break;
 		}
 
 	
-		DataDontDestroy.myLife--;
+		GameManager.lifesGame--;
 		GameManager.aviones=0;
-		print("despues contacti"+DataDontDestroy.myLife);
+		print("despues contacti"+GameManager.lifesGame);
 	}
 
 

@@ -64,10 +64,10 @@ public class Reset : MonoBehaviour {
 	void MyGui(bool _active){
 
 		GameManager.aterrizajes=0;
-		if(DataDontDestroy.myLife<=0){
+		if(GameManager.lifesGame<=0){
 			//perdio asi q vuelve a tener las vidas del principio
-			DataDontDestroy.myLife=DataDontDestroy.initialVidas;
-			print("vidas desde reset "+DataDontDestroy.initialVidas);
+			GameManager.lifesGame=GameManager.initialLifes;
+			print("vidas desde reset "+GameManager.lifesGame);
 
 		}
 		backsGuiEscene.SetActive(_active);

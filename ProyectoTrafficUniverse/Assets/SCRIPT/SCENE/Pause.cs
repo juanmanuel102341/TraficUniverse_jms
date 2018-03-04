@@ -28,10 +28,10 @@ public class Pause : MonoBehaviour {
 			print("tecla reset gane");
 			GameManager.aterrizajes=GameManager.targetGame;
 			gm.Conditions();
-			print("vidas "+DataDontDestroy.myLife);
+		
 		}
 		if(Input.GetKeyDown(KeyCode.L)){
-			DataDontDestroy.myLife=0;
+			GameManager.lifesGame=0;
 			gm.Conditions();
 		}
 		if(Input.GetKeyDown(KeyCode.Escape)){

@@ -24,26 +24,26 @@ public class LevelManagment : MonoBehaviour {
 		}
 	//	print("charging "+charging);
 		levelPass=PlayerPrefs.GetInt("current_level",1);
-
+		GameManager.currentLevel=levelPass;
 		//PlayerPrefs.SetInt("charge",1);
 		//levelPass=6;
 	//	levelPass=1;
-	//	print("level pass awake "+levelPass);
+		print("level pass awake "+levelPass);
 
-		MyParams.initialCycle=true;
+		MyParams.initialCycle=true;//para data del game manager
 		print("setiando initial sound desde level manag "+MyParams.initialCycle);
 	}
 
 
 	void Start(){
-		
 	//	print("current level start "+levelPass);
 		for(int i=0;i<levelPass;i++){
 			aButtons[i].GetComponent<EnabledLevel>().ApplyLevel();
 	}
-
-	
+			
 	}
+
+
 
 
 
