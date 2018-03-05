@@ -7,7 +7,7 @@ public class LoadLevel : MonoBehaviour {
 	//public string  path;
 	public int sceneBuild;
 	// Use this for initialization
-	public LevelManagment lm;
+	//public LevelManagment lm;
 	void Start () {
 		
 	}

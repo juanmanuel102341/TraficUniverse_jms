@@ -5,7 +5,7 @@ public class MyEvent : MonoBehaviour {
 
 	private string id;
 	public static int counting=0;
-	public GameObject pointer;
+//	public GameObject pointer;
 	private GameManagmentHowTplay gameManagment;
 
 	void Awake () {

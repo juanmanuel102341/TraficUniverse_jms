@@ -9,6 +9,7 @@ public class MyParams : MonoBehaviour {
 	public SoundMenu soundMenu;
 
 	void Awake(){
+		Screen.SetResolution(1024,768,true);
 		if(!initialCycle){
 			soundActive=true;
 			currentDifficulty="normal";

@@ -9,13 +9,22 @@ public class LevelManagment : MonoBehaviour {
 	public GameObject[] aButtons;
 	private List<string> ListScenes=new List<string>();
 	private int levelPass;
+	private AudioSource audioMenu;
 	//private string currentLevel;
 
 	void Awake () {
-	//PlayerPrefs.DeleteAll();
+//PlayerPrefs.DeleteAll();
 	//	print("lebg buttons "+aButtons.Length);
 	//	print("first "+aButtons[0].name);
+		audioMenu=GetComponent<AudioSource>();
+		if(MyParams.soundActive){
 
+		audioMenu.Play();
+		audioMenu.loop=true;
+		}else{
+		audioMenu.Stop();
+
+		}
 		int n=PlayerPrefs.GetInt("charge");	
 		if(n==0){
 			print("primera vesz");
@@ -26,7 +35,7 @@ public class LevelManagment : MonoBehaviour {
 		levelPass=PlayerPrefs.GetInt("current_level",1);
 		GameManager.currentLevel=levelPass;
 		//PlayerPrefs.SetInt("charge",1);
-		//levelPass=6;
+	//	levelPass=aButtons.Length;
 	//	levelPass=1;
 		print("level pass awake "+levelPass);
 
