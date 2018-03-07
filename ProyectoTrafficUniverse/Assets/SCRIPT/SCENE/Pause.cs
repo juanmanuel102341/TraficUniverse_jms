@@ -55,19 +55,16 @@ public class Pause : MonoBehaviour {
 			}
 		}
 	}
-	private void ResumeGame(){
+	public void ResumeGame(){
 		Time.timeScale=1.0f;
+		if(pause.activeSelf){
 		pause.SetActive(false);
-		PauseOn();
+		}
+		if(MyParams.soundActive){
+			PauseOn();
+		}
 	}
-//	private void OnReplay(){
-//	
-//		reset.enabled=true;
-//		reset.Off();
-//		reset.On();
-//		Time.timeScale=1.0f;
-//		//PauseOn();//ya lo hace reset
-//	}
+
 
 
 }

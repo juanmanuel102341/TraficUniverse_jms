@@ -515,6 +515,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 165158310}
+  - component: {fileID: 165158311}
   m_Layer: 0
   m_Name: asteroids
   m_TagString: Untagged
@@ -558,6 +559,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165158311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 165158309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f594673de18a942bf649ddacbaabef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &169768260
 Prefab:
   m_ObjectHideFlags: 0
@@ -1590,6 +1602,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114814168498393696, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
+        type: 2}
+      propertyPath: asteroids
+      value: 
+      objectReference: {fileID: 165158311}
     m_RemovedComponents:
     - {fileID: 114185395017465090, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
@@ -3776,7 +3793,7 @@ Prefab:
     - target: {fileID: 114331778284359562, guid: b02be7ad713fe9546a3a3a03251795e9,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114331778284359562, guid: b02be7ad713fe9546a3a3a03251795e9,
         type: 2}
@@ -3910,18 +3927,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1243827814102004, guid: b02be7ad713fe9546a3a3a03251795e9, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224601117588711440, guid: b02be7ad713fe9546a3a3a03251795e9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 48
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 224521084823719452, guid: b02be7ad713fe9546a3a3a03251795e9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -43
+      value: -66.8
       objectReference: {fileID: 0}
+    - target: {fileID: 224063866738070076, guid: b02be7ad713fe9546a3a3a03251795e9,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331778284359562, guid: b02be7ad713fe9546a3a3a03251795e9,
+        type: 2}
+      propertyPath: asteroids
+      value: 
+      objectReference: {fileID: 165158311}
     m_RemovedComponents:
     - {fileID: 114183480240253800, guid: b02be7ad713fe9546a3a3a03251795e9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b02be7ad713fe9546a3a3a03251795e9, type: 2}
@@ -5324,6 +5351,11 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 114403294272533414, guid: 867c1f6da344a35429788d014a4ff604,
+        type: 2}
+      propertyPath: asteroids
+      value: 
+      objectReference: {fileID: 165158311}
     m_RemovedComponents:
     - {fileID: 114520339026098024, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
     - {fileID: 114150638195402438, guid: 867c1f6da344a35429788d014a4ff604, type: 2}

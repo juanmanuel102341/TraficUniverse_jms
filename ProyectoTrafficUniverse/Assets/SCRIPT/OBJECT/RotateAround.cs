@@ -9,7 +9,7 @@ public class RotateAround : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		velocity=RandomMe(rangeVelocity.x,rangeVelocity.y);
-		print("vel rotacion "+velocity);
+//		print("vel rotacion "+velocity);
 		dir=RandomDirection();
 		//dir=1;
 	}
@@ -28,7 +28,7 @@ public class RotateAround : MonoBehaviour {
 		}else{
 			n=-1;
 		}
-		print("my direction " +n);
+	//	print("my direction " +n);
 		return n;
 	}
 	public int myDirection{

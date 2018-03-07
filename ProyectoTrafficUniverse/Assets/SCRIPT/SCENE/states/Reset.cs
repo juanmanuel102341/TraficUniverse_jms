@@ -6,7 +6,7 @@ public class Reset : MonoBehaviour {
 	//se encarga de resetiar valores y dejarlos como en su nivel inicil
 
 	public GameObject [] aPlanets;
-	private GameObject [] aAsteroids;
+	public PositionsAsteroids asteroids;
 	public GameObject gui;
 	public SpawnManager spawnManager;
 	public DetectsId detetId;
@@ -16,37 +16,40 @@ public class Reset : MonoBehaviour {
 	public SoundBack soundBack;
 	private GameManager gameManager;
 	public GameObject backsGuiEscene;
+	private Vector2 [] aposAsteroids;
 	void Awake () {
-		aAsteroids=GameObject.FindGameObjectsWithTag("asteroide");
+
 		gameManager=spawnManager.transform.gameObject.GetComponent<GameManager>();
 		print("game manaher "+gameManager);
-		if(tag=="pause"){
-		this.enabled=false;	
-		}else{
-		this.enabled=true;
-		}
+
 	}
 	void Start(){
-		//Off();
-		if(replay!=null)
+		print("activando evento "+gameObject.name);
+		//if(replay!=null)
 		replay.activateReplay+=On;
+
 	}
 	public void Off(){
 		Planes();
 		Planets(false);
-		Asteroids(false);
+		asteroids.SetOffSprite();
 		MyGui(false);
 		Scripts(false);
 
 	}
 	public void On(){
+		if(gameObject.tag=="pause"){
+			Off();
+			pause.ResumeGame();
+		}
 		Planets(true);
-		Asteroids(true);
+		asteroids.SetOnSprite();
 		MyGui(true);
 		Scripts(true);
 		guiFinal.SetActive(false);
-
+		if(MyParams.soundActive){
 		soundBack.onInGameSound(); 
+		}
 
 	}
 	
@@ -55,11 +58,11 @@ public class Reset : MonoBehaviour {
 			aPlanets[i].SetActive(_active);
 		}
 	}
-	void Asteroids(bool _active){
-		for(int i=0;i<aAsteroids.Length;i++){
-			aAsteroids[i].SetActive(_active);
-		}	
-	}
+//	void Asteroids(bool _active){
+//		for(int i=0;i<aAsteroids.Length;i++){
+//			aAsteroids[i].SetActive(_active);
+//		}	
+//	}
 
 	void MyGui(bool _active){
 
