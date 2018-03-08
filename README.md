@@ -3,7 +3,7 @@ descripcion:juego realizado en la cursada de la materia desarrollo 2 en el insti
 autor: Juan Manuel Sala
 
 link a trello:https://trello.com/b/IuFo4tRP/base
-C:\Users\Juan Manuel\Desktop\Traffic Universe\screenshoots
+
 ![alt text](images/Traffic Universe 1.PNG)
 ![alt text](images/Traffic Universe 2.PNG)
 ![alt text](images/Traffic Universe 3.PNG)
