@@ -14,6 +14,7 @@ public class SoundBack : MonoBehaviour {
 
 	void Awake () {
 		print("sound bach bollenano "+MyParams.soundActive);
+	//	MyParams.soundActive=true;
 		if(MyParams.soundActive){
 		inGameSound=GetComponent<AudioSource>();
 
@@ -72,10 +73,9 @@ public class SoundBack : MonoBehaviour {
 	
 	}
 	public void onInGameSound(){
+		print("stoppppp!musicccc");
 		finalStateSound.Stop();
 		inGameSound.Play();
 	}
-	private void CancelSound(){
-		
-	}
+
 }

@@ -48,9 +48,10 @@ public class Reset : MonoBehaviour {
 		Scripts(true);
 		guiFinal.SetActive(false);
 		if(MyParams.soundActive){
+			print("sonido reeset");
 		soundBack.onInGameSound(); 
 		}
-
+		Time.timeScale=1;//por si se apreta la rapidez del tiempo
 	}
 	
 	void Planets(bool _active){
@@ -58,11 +59,7 @@ public class Reset : MonoBehaviour {
 			aPlanets[i].SetActive(_active);
 		}
 	}
-//	void Asteroids(bool _active){
-//		for(int i=0;i<aAsteroids.Length;i++){
-//			aAsteroids[i].SetActive(_active);
-//		}	
-//	}
+
 
 	void MyGui(bool _active){
 

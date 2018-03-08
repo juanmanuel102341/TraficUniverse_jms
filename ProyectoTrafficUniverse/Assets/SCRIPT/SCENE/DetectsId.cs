@@ -10,13 +10,13 @@ public class DetectsId : MonoBehaviour {
 		obj.GetComponent<PathInputs>().ClickMe+=OnClickMe;
 	}
 	private void OnClickMe(GameObject obj){
+		if(MyParams.soundActive){
+			OnclickSound();
+		}
 		if(currentActive==null){
 			currentActive=obj;
 			currentActive.transform.GetChild(3).gameObject.SetActive(true);//activo objeto id, identificacion
-			print("click primera vez");
-			if(MyParams.soundActive){
-			OnclickSound();
-			}
+
 		}else{
 			if(obj!=currentActive){
 			currentActive.transform.GetChild(3).gameObject.SetActive(false);//apago id 

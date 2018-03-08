@@ -506,9 +506,26 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114185837978764972, guid: 11aeadb82f0899145907922cf6849a6c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 160758274}
+    - target: {fileID: 114185837978764972, guid: 11aeadb82f0899145907922cf6849a6c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMenu
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114808735667930744, guid: 11aeadb82f0899145907922cf6849a6c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 11aeadb82f0899145907922cf6849a6c, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &160758274 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114956986683804420, guid: 11aeadb82f0899145907922cf6849a6c,
+    type: 2}
+  m_PrefabInternal: {fileID: 160758273}
+  m_Script: {fileID: 11500000, guid: 71fcdd51079f1a2488f1856cb457a14c, type: 3}
 --- !u!114 &160758276 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114651086288494532, guid: 11aeadb82f0899145907922cf6849a6c,
@@ -2389,7 +2406,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1129548463}
     - target: {fileID: 114238110169230742, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -2513,6 +2530,12 @@ Prefab:
     - {fileID: 114185395017465090, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4d3206a2e5b508b4182cbc25e0f27b6b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1129548463 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114165849210928800, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1129548462}
+  m_Script: {fileID: 11500000, guid: 71fcdd51079f1a2488f1856cb457a14c, type: 3}
 --- !u!114 &1129548465 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114972496878818230, guid: 4d3206a2e5b508b4182cbc25e0f27b6b,
@@ -3402,7 +3425,7 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1804751613}
+      objectReference: {fileID: 1804751612}
     - target: {fileID: 114208086810980420, guid: 867c1f6da344a35429788d014a4ff604,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3529,7 +3552,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1721606018824938, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114403294272533414, guid: 867c1f6da344a35429788d014a4ff604,
         type: 2}
@@ -3540,22 +3563,12 @@ Prefab:
     - {fileID: 114150638195402438, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 867c1f6da344a35429788d014a4ff604, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1804751612 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1749037246694862, guid: 867c1f6da344a35429788d014a4ff604,
+--- !u!114 &1804751612 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114637954026618872, guid: 867c1f6da344a35429788d014a4ff604,
     type: 2}
   m_PrefabInternal: {fileID: 1804751611}
---- !u!114 &1804751613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1804751612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71fcdd51079f1a2488f1856cb457a14c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1841827285 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114045863342794434, guid: c23f528f182b6ce47886a8aad5dc507b,

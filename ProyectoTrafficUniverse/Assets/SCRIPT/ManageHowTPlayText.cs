@@ -6,6 +6,10 @@ public class ManageHowTPlayText : MonoBehaviour {
 	public GameObject objCheck;
 
 	// Use this for initialization
+
+	void Awake(){
+		MyParams.initialCycle=true;
+	}
 	void Start () {
 		next.onFinish+=onFinishing;
 		next.onBack+=onBacking;

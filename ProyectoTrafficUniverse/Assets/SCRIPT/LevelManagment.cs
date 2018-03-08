@@ -21,6 +21,7 @@ public class LevelManagment : MonoBehaviour {
 
 		audioMenu.Play();
 		audioMenu.loop=true;
+		audioMenu.volume=0.75f;
 		}else{
 		audioMenu.Stop();
 

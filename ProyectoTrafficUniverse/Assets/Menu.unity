@@ -380,6 +380,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &158315980
@@ -507,6 +518,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 158383782}
         m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1264,6 +1286,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &727936831
@@ -1487,7 +1520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 357, y: -193.92}
+  m_AnchoredPosition: {x: 357, y: -198.09601}
   m_SizeDelta: {x: 714, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828502424
@@ -1522,7 +1555,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Text:Dafont,Curly Stars, Planet Typographic  '
+  m_Text: Text:Planet Typographic Curly Stars,free, Dafont.
 --- !u!222 &828502425
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1673,7 +1706,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "SoundMusic:Eric, Matyas, free assets, Soundimage.org   \n\n"
+  m_Text: "Sound Music and effects:Eric, Matyas, free assets, Soundimage.org   \n\n"
 --- !u!222 &846504193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2331,6 +2364,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1115877188}
         m_MethodName: OnActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3166,8 +3210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: -39}
-  m_SizeDelta: {x: 600, y: 78}
+  m_AnchoredPosition: {x: 308.5, y: -42.48}
+  m_SizeDelta: {x: 617, y: 84.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352066037
 MonoBehaviour:
@@ -3596,6 +3640,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1569832633}
         m_MethodName: OnActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4078,6 +4133,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1823391663
@@ -4159,7 +4225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 441.5, y: -296.88}
+  m_AnchoredPosition: {x: 441.5, y: -299.664}
   m_SizeDelta: {x: 883, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1830551764
@@ -4194,7 +4260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Gui: buttons,pzUH,public Domain, open game Art https://opengameart.org/content/free-game-gui'
+  m_Text: 'Gui: buttons,pzUH,public Domain, open game Art,free https://opengameart.org/content/free-game-gui'
 --- !u!222 &1830551765
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4233,7 +4299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 441.3, y: -399.94}
+  m_AnchoredPosition: {x: 441.3, y: -401.33203}
   m_SizeDelta: {x: 882.6, y: 68.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838776723
@@ -4268,7 +4334,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Explosion: '
+  m_Text: 'Explosion:Gustav Hagerling,free,assest store unity '
 --- !u!222 &1838776724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4684,7 +4750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 357, y: -118.96}
+  m_AnchoredPosition: {x: 357, y: -124.52801}
   m_SizeDelta: {x: 714, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984176038
@@ -5178,6 +5244,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2140792796}
         m_MethodName: OnActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1307944269}
+        m_MethodName: PlayButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

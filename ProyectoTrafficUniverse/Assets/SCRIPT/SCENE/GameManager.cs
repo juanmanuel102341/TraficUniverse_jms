@@ -17,20 +17,15 @@ public class GameManager : MonoBehaviour {
 	public delegate void FinalState();
 	public event FinalState onFinalWin;
 	public event FinalState onFinalLoose;
+	private int myLevel;
 
 	void Awake () {
-		//Scene scene=SceneManager.GetActiveScene();
-		//sceneName=scene.name;
 
-	//	int numScene=SceneUtility.GetBuildIndexByScenePath(sceneName);
-//		print("escena numero "+numScene);
-//		if(numScene==3){
-//			DataDontDestroy.initialVidas=lifes;
-//			DataDontDestroy.myLife=lifes;
-//			print("escena inicial vidas "+DataDontDestroy.myLife);
-		//		}
-
-		print("current difficulty "+MyParams.currentDifficulty);
+		myLevel=SceneUtility.GetBuildIndexByScenePath(SceneManager.GetActiveScene().name);
+		myLevel-=1;
+		print("MY LEVEL "+myLevel);
+		print("current level "+currentLevel);
+	//	print("current difficulty "+MyParams.currentDifficulty);
 		switch(MyParams.currentDifficulty){
 		case "easy":
 			print("setiando easy");
@@ -80,6 +75,7 @@ public class GameManager : MonoBehaviour {
 	//	guiLoose.GetComponent<Reset>().Off();//apago cosas del juego
 		//	gameOver=true;
 		}else if(aterrizajes>=targetPlanes){
+			
 			print("victory");
 			guiWin.SetActive(true);
 			guiWin.GetComponent<Reset>().Off();//apagamos y reseteo valores de escena
@@ -87,12 +83,19 @@ public class GameManager : MonoBehaviour {
 			if(MyParams.soundActive){
 			onFinalWin();
 			}
+			if(myLevel==currentLevel){
 			currentLevel++;
+				print("paso al siguiente level level no desbloqueado");
+
+			}else{
+				print("level ya desbloqueado");
+			}
+
 			PlayerPrefs.SetInt("current_level",currentLevel);
 			print("level pass "+currentLevel);
 			PlayerPrefs.SetInt("charge",1);
 		//guiWin.GetComponent<Reset>().Off();//apago cosas
-	
+		
 
 		}
 

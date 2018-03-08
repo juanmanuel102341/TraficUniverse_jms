@@ -10,10 +10,10 @@ public class PositionsAsteroids : MonoBehaviour {
 	void Awake () {
 		for(int i=0;i<transform.childCount;i++){
 			asteroids.Add(transform.GetChild(i).gameObject);
-			print(transform.GetChild(i).gameObject.name+" tranform child asteroide "+asteroids[i].transform.position);
+//			print(transform.GetChild(i).gameObject.name+" tranform child asteroide "+asteroids[i].transform.position);
 			listPosInitial.Add(asteroids[i].transform.position);
 		}	
-		print("cant d asteroides "+asteroids.Count);
+//		print("cant d asteroides "+asteroids.Count);
 	}
 	
 	public void SetOffSprite(){
